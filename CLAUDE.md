@@ -31,5 +31,6 @@ See `.claude/rules/` for anything beyond the high-level. Keep this file short â€
 specifics there once it stops fitting comfortably here.
 
 ## Status
-Scaffolded (Next.js + TypeScript + Tailwind + ESLint). Supabase project not yet created.
-No routes/schema built yet.
+Scaffolded (Next.js + TypeScript + Tailwind + ESLint). Supabase project created and
+connected (client at src/lib/supabase.ts, credentials in .env.local, gitignored). Confirmed
+running locally. No routes/schema/features built yet.
