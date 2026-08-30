@@ -98,7 +98,38 @@ for Doc 04 §2's first three sections (This Week's Missions, Circle Snapshot, Ev
 Inbox). Mentor Session Log and Open Contracts (which need `mentors`/`contracts` tables)
 are Milestone 2.
 
-**Status:** Active — in progress.
+**Status:** Complete — shipped 2026-08-29.
+
+---
+
+## 2026-08-29 — Milestone 2: Mentor Session Log + Open Contracts
+
+**Decision:** `mentors` (Doc 02 Knights/Squires roster), `mentor_sessions` (date, mentor,
+quadrant, notes, resulting action), and `contracts` (the reusable Doc 00 §7 / Doc 04 §3
+pattern — student commitment, provider commitment, definition of done, review date,
+active/completed status) tables, plus two more `/dashboard` sections completing Doc 04
+§2's spec: Mentor Session Log (with an inline "add a mentor" form) and Open Contracts.
+
+**Notable schema/RLS choices:**
+- A mentor's `quadrant_id` is only a default (nullable) — the authoritative quadrant tag
+  lives on each `mentor_sessions` row, so a dual-seat mentor like Jahari (basketball +
+  zen) can log sessions against either quadrant even though he's one mentor row, per
+  Doc 02's explicit instruction that this should work.
+- `mentors` write access is `is_family_member()`, not parent-only — deliberately
+  different from every other write-gated table in this schema. Doc 02 explicitly gives
+  Shiloh standing authority to add/swap/drop a mentor seat without Thomas's sign-off
+  first, unlike Doc 00 §6's heavier "Shiloh proposes, Thomas approves" language for
+  Docs 01/04/05 changes generally. Deletes stay parent-only either way (evidence-erasure
+  pattern kept consistent with the rest of the schema).
+- Didn't build a propose/approve workflow for any of Docs 01/02/04/05's amendment
+  protocol (Doc 00 §6) — read the literal instructions per-doc instead (mentors: no
+  approval needed; quadrants/subjects: parent-only, matching existing Milestone-1
+  choices) rather than building a general state machine nobody asked for yet.
+- `contracts.status` is just `active`/`completed` — Doc 00 §7's breach/remedy language
+  is explicitly a conversation-driven process ("the first response to breach is
+  diagnosing the system failure"), not something to encode as a rigid state machine.
+
+**Status:** Complete — shipped 2026-08-29.
 
 ---
 

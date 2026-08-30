@@ -34,24 +34,27 @@ specifics there once it stops fitting comfortably here.
 Infrastructure complete: Next.js scaffolded, Supabase connected, GitHub synced, deployed on
 Vercel at https://homeschool-os-delta.vercel.app (auto-deploys on push to main).
 
-First feature built: curriculum planning.
-- Schema: `supabase/migrations/20260829120000_curriculum_schema.sql` — family_members,
-  subjects, units (optional grouping), lessons (status: not_started/in_progress/complete).
-- Auth: Supabase Auth email magic link, one shared login only for now (not yet one per
-  family member — that's still the target per Stack above). `src/proxy.ts` refreshes the
-  session and gates `/curriculum`; `src/app/login/` sends the link; `src/app/auth/callback/`
-  exchanges it for a session and provisions the account's `family_members` row as 'parent'
-  on first sign-in. Server clients live in `src/lib/supabase/server.ts` (no browser client
-  yet — add one if a Client Component ever needs it).
-- RLS: `supabase/migrations/20260829130000_curriculum_rls_auth.sql` switches
-  subjects/units/lessons from the first migration's open policies to family-aware ones (any
-  signed-in family member can view, only a parent can write).
-- Neither migration is applied yet — run `npx supabase link --project-ref
-  bmshehijapxuismaxsaf` then `npx supabase db push`. Also add
-  `http://localhost:3000/auth/callback` and
-  `https://homeschool-os-delta.vercel.app/auth/callback` to Supabase's Authentication → URL
-  Configuration → Redirect URLs, or the magic link will be rejected.
-- Page: `/curriculum` (`src/app/curriculum/`) lists subjects with their lessons, lets you
-  add a subject and add a lesson under a subject, and sign out.
-- Next steps: per-family-member logins (kids too, with role-appropriate access), unit-level
-  UI, marking lesson status from the page.
+This is now a from-scratch rebuild of the "HomeSchool OS" system Thomas ran conversationally
+in a Claude Project — see `docs/CLAUDE_CODE_KICKOFF_PROMPT.md` for the full brief and
+`docs/00`–`16` for the 19-document source system it digitizes. `DECISIONS.md` is the running
+architecture/decision log — check it before assuming a design choice needs revisiting.
+
+All 6 migrations under `supabase/migrations/` are applied to the live Supabase project
+(`bmshehijapxuismaxsaf`) and in sync (`npx supabase migration list` to confirm). Auth is
+Supabase email magic link + Google OAuth (`src/app/login/`), gated by an `invites` table a
+parent populates at `/family` — no more single shared login. `src/proxy.ts` refreshes the
+session and protects `/curriculum`, `/dashboard`, `/family`. Server clients live in
+`src/lib/supabase/server.ts`. RLS is the real enforcement layer everywhere (app-level
+`requireParent()`/`requireFamilyMember()` in `src/lib/auth.ts` is defense-in-depth, not the
+primary gate) — see DECISIONS.md's 2026-08-29 RLS hardening entry for a real bug this caught.
+
+Built so far:
+- `/curriculum` — subjects/units/lessons (Mind & Mastery only), add subject/lesson.
+- `/dashboard` — Doc 04 §2's full spec: Circle Snapshot (5 quadrant 0–10 scores, weekly),
+  This Week's Missions, Evidence Inbox, Mentor Session Log (Doc 02 Knights/Squires), Open
+  Contracts (Doc 00 §7 / Doc 04 §3 pattern).
+- `/family` — parent-only: invite a family member (email/name/role), view roster.
+
+Next steps: unit-level curriculum UI, North Star (Doc 07 — Horizon Ladder, Interest Ledger,
+Fork Log), The Mind Mansion / Gallery (Doc 08), the three elective courses as a reusable
+Course/CourseUnit model (Docs 14–16), Work Ladder (Doc 13).
