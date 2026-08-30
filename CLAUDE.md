@@ -50,7 +50,8 @@ defense-in-depth, not the primary gate) — see DECISIONS.md's 2026-08-29 RLS ha
 for a real bug this caught.
 
 Built so far:
-- `/curriculum` — subjects/units/lessons (Mind & Mastery only), add subject/lesson.
+- `/curriculum` — subjects/units/lessons (Mind & Mastery only): add a subject, add a unit
+  under a subject, add a lesson under a subject or into a unit, set lesson status.
 - `/dashboard` — Doc 04 §2's full spec: Circle Snapshot (5 quadrant 0–10 scores, weekly),
   This Week's Missions, Evidence Inbox, Mentor Session Log (Doc 02 Knights/Squires), Open
   Contracts (Doc 00 §7 / Doc 04 §3 pattern).
@@ -63,5 +64,5 @@ Built so far:
   versions stay visible instead of being overwritten), Interest Ledger (the Five Audits),
   Fork Log (two-way/one-way decision points).
 
-Next steps: course-authoring UI (or seed Gym/Panel too), unit-level curriculum UI, The Mind
-Mansion / Gallery (Doc 08), Work Ladder (Doc 13).
+Next steps: course-authoring UI (or seed Gym/Panel too), The Mind Mansion / Gallery
+(Doc 08), Work Ladder (Doc 13).

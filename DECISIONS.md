@@ -236,3 +236,24 @@ consistency with the rest of the schema is worth more here than enforcing it in 
 database.
 
 **Status:** Complete — shipped 2026-08-30.
+
+---
+
+## 2026-08-30 — Unit-level curriculum UI
+
+**Decision:** No schema change — `units` and `lessons.unit_id` already existed in the
+original curriculum migration (2026-08-29) but had no UI. `/curriculum` now shows each
+subject's lessons grouped by unit (plus a "Not in a unit" bucket for ungrouped lessons),
+lets a parent add a unit under a subject, add a lesson either directly under a subject or
+into a specific unit, and set a lesson's status from the page (the last item flagged as
+unaddressed back in Milestone 1's CLAUDE.md notes).
+
+**Notable choice:** kept `setLessonStatus` and unit/lesson creation parent-only
+(`requireParent()`), matching the RLS that's actually been live since the 2026-08-29
+family-aware curriculum migration. `lessons.assigned_to` (and the matching
+`lessons_update_own_assignment` RLS policy that would let a child update their own
+assigned lesson) exists in the schema but nothing in the UI sets it yet — a lesson can't
+currently be assigned to a specific family member, so that policy is presently unreachable
+in practice. Out of scope for this pass; flagged here rather than silently left unexplained.
+
+**Status:** Complete — shipped 2026-08-30.
