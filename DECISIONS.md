@@ -293,3 +293,42 @@ as the correct starting state ("Shelves start empty by design... not a failure")
 leaving these tables empty is the right call, not a shortcut around a timing problem.
 
 **Status:** Complete — shipped 2026-08-30.
+
+---
+
+## 2026-08-30 — The Work Ladder (Doc 13)
+
+**Decision:** Four tables covering Rung 0 (Home Job) and Rung 1 (First Paid Job / HTeaO):
+`home_job` (the job description, one row per student — job title, core duties, standard of
+done, schedule), `extras_menu_items` (priced above-and-beyond tasks), `home_job_log_entries`
+(weekly: duties met yes/partial/no, extras completed, pay earned, misses/consequence,
+notes), `hteao_log_entries` (contacts/applications/interviews/shifts with the specific
+HTeaO contact).
+
+**Two things deliberately *not* built as new tables:**
+- **The Home Job Contract (Doc 13 §2.5)** reuses the existing `contracts` table from
+  Milestone 2 — Doc 13 explicitly models it "on the Founding Agreement," the same literal-
+  contracts pattern `contracts` already covers. `/work-ladder` links to `/dashboard`'s Open
+  Contracts section rather than duplicating contract UI.
+- **The HTeaO readiness checklist (Doc 13 §3.4)** isn't stored data — Doc 13 says it should
+  be "evidence-based, pulled straight from the Home Job Log," so `/work-ladder` computes a
+  current consecutive-weeks-met streak directly from `home_job_log_entries` and displays it
+  against Doc 13's starting 4-week target, rather than a separate table that could drift out
+  of sync with the log it's supposed to summarize.
+
+**`home_job` is update-in-place, not append-only** — unlike `visions` (North Star), which
+Doc 07 explicitly expects to be rewritten often. Doc 13 §2.1 makes the opposite case for
+this one: "write them down once and stop relitigating them weekly" is presented as the
+actual fix for why chore systems typically fail, so a single mutable row per student fits
+the doc's own intent better than a revision trail here.
+
+**`home_job_log_entries.duties_met` is a tri-state** (`yes`/`partial`/`no`), not boolean —
+Doc 13's own example log uses a blank/Yes distinction loosely, but a real week is often
+partial, and the honesty-over-binary-pass-fail theme running through this whole system
+(diagnostic rubric, mission status, etc.) argues for the same here.
+
+**Out of scope:** Doc 10 (Work Exposure & Apprenticeship Explorer) — Doc 13 references its
+Exposure Ladder conceptually, but Doc 10 itself wasn't requested and has its own separate
+Exposure Log that would be a distinct feature, not something to fold in silently here.
+
+**Status:** Complete — shipped 2026-08-30.

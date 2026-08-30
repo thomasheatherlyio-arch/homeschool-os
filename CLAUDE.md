@@ -39,12 +39,12 @@ in a Claude Project — see `docs/CLAUDE_CODE_KICKOFF_PROMPT.md` for the full br
 `docs/00`–`16` for the 19-document source system it digitizes. `DECISIONS.md` is the running
 architecture/decision log — check it before assuming a design choice needs revisiting.
 
-All 9 migrations under `supabase/migrations/` are applied to the live Supabase project
+All 10 migrations under `supabase/migrations/` are applied to the live Supabase project
 (`bmshehijapxuismaxsaf`) and in sync (`npx supabase migration list` to confirm). Auth is
 Supabase email magic link + Google OAuth (`src/app/login/`), gated by an `invites` table a
 parent populates at `/family` — no more single shared login. `src/proxy.ts` refreshes the
 session and protects `/curriculum`, `/dashboard`, `/family`, `/courses`, `/north-star`,
-`/mansion`. Server clients live in `src/lib/supabase/server.ts`. RLS is the real enforcement layer
+`/mansion`, `/work-ladder`. Server clients live in `src/lib/supabase/server.ts`. RLS is the real enforcement layer
 everywhere (app-level `requireParent()`/`requireFamilyMember()` in `src/lib/auth.ts` is
 defense-in-depth, not the primary gate) — see DECISIONS.md's 2026-08-29 RLS hardening entry
 for a real bug this caught.
@@ -68,5 +68,10 @@ Built so far:
   before setup via a dedicated action, separate from status), and The Gallery (finished
   work — one of the two most important read surfaces per Doc 08, alongside the evidence
   log). Empty by design until real items get added through the page.
+- `/work-ladder` — Doc 13: Home Job (job description, Extras Menu, weekly log with a
+  computed HTeaO-readiness streak per Doc 13 §3.4) and the HTeaO Work Log (Rung 1). The
+  Home Job Contract itself reuses `/dashboard`'s Open Contracts (the existing `contracts`
+  table), not a new table.
 
-Next steps: course-authoring UI (or seed Gym/Panel too), Work Ladder (Doc 13).
+Next steps: course-authoring UI (or seed Gym/Panel too), Diagnostic Assessment (Doc 09),
+The Studio (Doc 11), Work Exposure & Apprenticeship Explorer (Doc 10).

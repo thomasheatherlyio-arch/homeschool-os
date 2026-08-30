@@ -8,6 +8,7 @@ const LINKS = [
   { href: '/courses', label: 'Courses' },
   { href: '/north-star', label: 'North Star' },
   { href: '/mansion', label: 'Mansion' },
+  { href: '/work-ladder', label: 'Work Ladder' },
 ] as const
 
 export function AppNav({ role, active }: { role: FamilyMember['role']; active: string }) {
