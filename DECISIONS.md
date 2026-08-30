@@ -257,3 +257,39 @@ currently be assigned to a specific family member, so that policy is presently u
 in practice. Out of scope for this pass; flagged here rather than silently left unexplained.
 
 **Status:** Complete — shipped 2026-08-30.
+
+---
+
+## 2026-08-30 — The Mind Mansion + Gallery (Doc 08)
+
+**Decision:** Five tables — `mansion_books` (Study Shelves), `mansion_videos` (Screening
+Room), `mansion_practices` (Practice Room), `mansion_tools` (Toolshed), `gallery_items`
+(The Gallery) — each its own table rather than one polymorphic table, since each has
+genuinely distinct fields and status vocabularies per Doc 08. `/mansion` shows all five as
+sections, matching the dashboard's established list-plus-inline-add-form pattern. No
+`rooms` lookup table — the five rooms map 1:1 to the existing `quadrants` table, so a room
+is just a `quadrant_id` with a display-label map (`ROOM_LABELS`) in the page component.
+
+**Student-scoped, unlike mentors/courses:** every Mansion table has `student_id`, matching
+`missions`/`evidence_log_entries`'s per-student pattern rather than Milestone 2's
+mentors/courses (shared family rosters). Doc 08 frames the Mansion as explicitly personal
+("Shiloh's own memory palace"), not something siblings would share the way a mentor or a
+course curriculum could be — a future second kid needs their own reading list and Gallery,
+not a shared one.
+
+**Toolshed is the one write-pattern exception, matching mentors:** `mansion_tools`
+insert/update uses `is_family_member()`, not the parent-or-own-student pattern every other
+Mansion table uses. Doc 08 §7 explicitly gives Shiloh standing authority to *propose* a
+tool candidate without Thomas's sign-off first — the sign-off gate lives in separate
+`signed_off_by`/`signed_off_at` columns (set only by a dedicated parent-only `signOffTool`
+action), not in the insert/update RLS itself, since Doc 08 is explicit that setup (not
+proposing) is what needs sign-off, and usually because an account, personal info, or real
+money is involved.
+
+**No seed data**, unlike Milestone 3's Kitchen course seed: Mansion items are per-student,
+and there's no guarantee a student's `family_members` row exists at migration-apply time
+the way a student-independent course template's does. Doc 08 itself frames empty shelves
+as the correct starting state ("Shelves start empty by design... not a failure"), so
+leaving these tables empty is the right call, not a shortcut around a timing problem.
+
+**Status:** Complete — shipped 2026-08-30.

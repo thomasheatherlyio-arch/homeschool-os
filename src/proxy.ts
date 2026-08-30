@@ -6,7 +6,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 // fresh session), and does an optimistic redirect-to-/login for protected
 // routes. This check is optimistic only; the real enforcement is Postgres RLS
 // (and, for /family specifically, the page's own parent-only check).
-const PROTECTED_PREFIXES = ['/curriculum', '/dashboard', '/family', '/courses', '/north-star']
+const PROTECTED_PREFIXES = ['/curriculum', '/dashboard', '/family', '/courses', '/north-star', '/mansion']
 
 export default async function proxy(request: NextRequest) {
   const response = NextResponse.next({ request })

@@ -39,12 +39,12 @@ in a Claude Project — see `docs/CLAUDE_CODE_KICKOFF_PROMPT.md` for the full br
 `docs/00`–`16` for the 19-document source system it digitizes. `DECISIONS.md` is the running
 architecture/decision log — check it before assuming a design choice needs revisiting.
 
-All 8 migrations under `supabase/migrations/` are applied to the live Supabase project
+All 9 migrations under `supabase/migrations/` are applied to the live Supabase project
 (`bmshehijapxuismaxsaf`) and in sync (`npx supabase migration list` to confirm). Auth is
 Supabase email magic link + Google OAuth (`src/app/login/`), gated by an `invites` table a
 parent populates at `/family` — no more single shared login. `src/proxy.ts` refreshes the
-session and protects `/curriculum`, `/dashboard`, `/family`, `/courses`, `/north-star`.
-Server clients live in `src/lib/supabase/server.ts`. RLS is the real enforcement layer
+session and protects `/curriculum`, `/dashboard`, `/family`, `/courses`, `/north-star`,
+`/mansion`. Server clients live in `src/lib/supabase/server.ts`. RLS is the real enforcement layer
 everywhere (app-level `requireParent()`/`requireFamilyMember()` in `src/lib/auth.ts` is
 defense-in-depth, not the primary gate) — see DECISIONS.md's 2026-08-29 RLS hardening entry
 for a real bug this caught.
@@ -63,6 +63,10 @@ Built so far:
 - `/north-star` — Doc 07: Horizon Ladder (50yr → monthly target, append-only so old
   versions stay visible instead of being overwritten), Interest Ledger (the Five Audits),
   Fork Log (two-way/one-way decision points).
+- `/mansion` — Doc 08: Study Shelves (books), Screening Room (videos), Practice Room
+  (recurring habits), Toolshed (apps/platforms — Shiloh can propose, Thomas signs off
+  before setup via a dedicated action, separate from status), and The Gallery (finished
+  work — one of the two most important read surfaces per Doc 08, alongside the evidence
+  log). Empty by design until real items get added through the page.
 
-Next steps: course-authoring UI (or seed Gym/Panel too), The Mind Mansion / Gallery
-(Doc 08), Work Ladder (Doc 13).
+Next steps: course-authoring UI (or seed Gym/Panel too), Work Ladder (Doc 13).
