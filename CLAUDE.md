@@ -31,6 +31,7 @@ See `.claude/rules/` for anything beyond the high-level. Keep this file short â€
 specifics there once it stops fitting comfortably here.
 
 ## Status
-Scaffolded (Next.js + TypeScript + Tailwind + ESLint). Supabase project created and
-connected (client at src/lib/supabase.ts, credentials in .env.local, gitignored). Confirmed
-running locally. No routes/schema/features built yet.
+Infrastructure complete: Next.js scaffolded, Supabase connected (client at
+src/lib/supabase.ts), GitHub synced, deployed on Vercel at
+https://homeschool-os-delta.vercel.app (auto-deploys on push to main). No
+routes/schema/features built yet â€” next step is picking the first feature area to build.
