@@ -205,3 +205,34 @@ form.
   table that's premature until course volume actually needs filtering.
 
 **Status:** Complete — shipped 2026-08-30.
+
+---
+
+## 2026-08-30 — North Star (Doc 07): Horizon Ladder, Interest Ledger, Fork Log
+
+**Decision:** Three small, mostly-free-text tables rather than a big schema, per Doc 07's
+own framing and the kickoff prompt's note that this system's narrative visions are "fine
+as loosely-structured notes/markdown rather than rigid entities":
+
+- `visions` — the Horizon Ladder (50/30/10/5/3-year visions, 1-year goals, quarterly
+  objectives, monthly targets). **Append-only, not update-in-place** — Doc 07 §7
+  explicitly expects these to be revisited and rewritten often, and overwriting would lose
+  exactly the trail Doc 00 Principle 3 (evidence over assertion) cares about. "Current" for
+  a horizon is just its latest row; `/north-star` shows older versions collapsed behind a
+  details toggle. Weekly Missions is the existing `missions` table (Doc 04 already owns
+  that horizon); "Today's Next Action" isn't modeled — a single next physical action
+  decided in the moment isn't worth a stored row.
+- `interest_ledger_entries` — Doc 07 §3's Five Audits (Energy/Flow/Admiration/Problem/
+  Feedback) and the small bets they turn into. `result` is free text, not an enum — Doc 07
+  §6 says this doesn't need to be formal.
+- `fork_log_entries` — Doc 07 §5's real decision points, tagged `two_way`/`one_way` door.
+
+**RLS note:** used the same parent-or-own-student pattern as every other student-authored
+table in this schema, even though Doc 07 §1 says the vision itself is Shiloh's to write
+(Thomas reviews, doesn't co-author). Treated that as a norm about how the system gets
+*used*, not a hard access boundary worth a one-off asymmetric RLS rule — a parent being
+technically able to add a vision entry doesn't stop Shiloh from writing his own, and
+consistency with the rest of the schema is worth more here than enforcing it in the
+database.
+
+**Status:** Complete — shipped 2026-08-30.

@@ -6,6 +6,7 @@ const LINKS = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/curriculum', label: 'Curriculum' },
   { href: '/courses', label: 'Courses' },
+  { href: '/north-star', label: 'North Star' },
 ] as const
 
 export function AppNav({ role, active }: { role: FamilyMember['role']; active: string }) {
