@@ -45,6 +45,18 @@ export async function requireParent() {
   return ctx
 }
 
+// Guards against an open redirect: a `next` value must be a same-origin,
+// in-app path (starts with a single `/`, not `//` which browsers treat as
+// protocol-relative to an attacker-controlled host) or it's discarded in
+// favor of the fallback. Used anywhere a `next` query param feeds a
+// redirect — /login's forms and /auth/callback both funnel through this
+// rather than trusting the raw query string.
+export function safeRedirectPath(next: string | null | undefined, fallback = '/dashboard'): string {
+  if (!next) return fallback
+  if (!next.startsWith('/') || next.startsWith('//')) return fallback
+  return next
+}
+
 // Milestone 1 has exactly one student in practice, so "which student's
 // dashboard" resolves to: yourself if you're the child, otherwise the first
 // child family member on record. Once a second kid exists this needs a real

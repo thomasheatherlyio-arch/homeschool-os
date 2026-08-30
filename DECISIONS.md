@@ -99,3 +99,43 @@ Inbox). Mentor Session Log and Open Contracts (which need `mentors`/`contracts` 
 are Milestone 2.
 
 **Status:** Active — in progress.
+
+---
+
+## 2026-08-29 — RLS hardening after code review (post-merge)
+
+**Decision:** `/code-review` against the auth+curriculum+dashboard work already merged to
+`main` surfaced that the `family_members` RLS policies didn't actually enforce the invite
+system — `insert`/`update` only checked `id = auth.uid()`, with no constraint on `role`, so
+any authenticated Supabase account (no invite needed to get a session at all —
+`signInWithOtp` allows sign-up) could self-insert or self-update to `role: 'parent'`
+directly via the client, bypassing the invite check entirely (that check only existed in
+`src/app/auth/callback/route.ts`, application code, not the database). `family_members`
+SELECT was also `using (true)` — readable by any authenticated account, not just real
+family members. Fixed in `supabase/migrations/20260829150000_rls_hardening.sql`:
+insert now requires a matching `invites` row (same email, same role); update allows a
+parent to change anything, but a self-update can't change your own `role`; select is
+scoped to real family members (or your own row). Doing this required making
+`is_family_member()`/`is_parent()` `security definer` — a plain (`security invoker`)
+function checking `family_members` from within `family_members`' own SELECT policy would
+recurse infinitely once that policy calls the function.
+
+Also fixed in the same pass: an open redirect in `/auth/callback` (`next` query param fed
+unsanitized into `new URL(next, request.url)` — closed with a shared `safeRedirectPath`
+allowlist-style helper in `src/lib/auth.ts`, used by both the callback route and the
+`/login` actions that originate `next`); `/curriculum`'s write actions checked
+`requireUser()` instead of `requireParent()` (relied entirely on the broken RLS above for
+real enforcement); the dashboard's Circle Snapshot silently showed a stale (not
+necessarily this-week) quadrant score as if it were current, and could resubmit it onto
+the current week; and an unbounded `quadrant_scores` query that would keep growing every
+week for the life of the app (bounded to an 8-week window, which is already twice what the
+UI ever displays).
+
+**Why this matters going forward:** `src/proxy.ts`'s own comment says "the real enforcement
+is Postgres RLS" — that's the intended design (app-layer `requireParent()` etc. is
+defense-in-depth, not the primary gate), so an RLS gap here isn't a minor inconsistency,
+it's the actual security boundary having a hole. Worth remembering for any future
+table/policy: a self-referencing helper function that queries the same table its own
+policy is defined on needs `security definer` from the start, not bolted on later.
+
+**Status:** Active — fixed, migration applied.

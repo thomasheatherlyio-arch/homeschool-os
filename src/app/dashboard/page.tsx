@@ -57,6 +57,13 @@ export default async function DashboardPage() {
   const weekOf = currentWeekMonday()
   const today = new Date().toISOString().slice(0, 10)
 
+  // Bound the score history pull to the last 8 weeks — plenty to find this
+  // week's score (if set) and the prior one for the trend arrow, without the
+  // query growing unboundedly as more weeks accumulate over years of use.
+  const scoreWindowStart = new Date(weekOf)
+  scoreWindowStart.setDate(scoreWindowStart.getDate() - 7 * 8)
+  const scoreWindowStartStr = scoreWindowStart.toISOString().slice(0, 10)
+
   const [
     { data: quadrants },
     { data: missions },
@@ -76,6 +83,7 @@ export default async function DashboardPage() {
       .from('quadrant_scores')
       .select('quadrant_id, week_of, score')
       .eq('student_id', studentId)
+      .gte('week_of', scoreWindowStartStr)
       .order('week_of', { ascending: false })
       .returns<ScoreRow[]>(),
     supabase
@@ -93,11 +101,19 @@ export default async function DashboardPage() {
   const evidenceList = evidence ?? []
   const subjectList = subjects ?? []
 
-  const scoreByQuadrant = new Map<string, { latest?: number; previous?: number }>()
+  // "This week" only counts if it's actually scored for the current week_of
+  // — an older score is shown separately as "last scored," never silently
+  // reused as if it were current (and never prefilled into the update form,
+  // where resubmitting it would wrongly stamp a stale number onto this week).
+  const scoreByQuadrant = new Map<string, { thisWeek?: number; lastKnown?: number; lastKnownOn?: string }>()
   for (const row of scores ?? []) {
     const entry = scoreByQuadrant.get(row.quadrant_id) ?? {}
-    if (entry.latest === undefined) entry.latest = row.score
-    else if (entry.previous === undefined) entry.previous = row.score
+    if (row.week_of === weekOf) {
+      entry.thisWeek = row.score
+    } else if (entry.lastKnown === undefined) {
+      entry.lastKnown = row.score
+      entry.lastKnownOn = row.week_of
+    }
     scoreByQuadrant.set(row.quadrant_id, entry)
   }
 
@@ -121,10 +137,10 @@ export default async function DashboardPage() {
           {quadrantList.map((q) => {
             const s = scoreByQuadrant.get(q.id)
             const trend =
-              s?.latest !== undefined && s?.previous !== undefined
-                ? s.latest > s.previous
+              s?.thisWeek !== undefined && s?.lastKnown !== undefined
+                ? s.thisWeek > s.lastKnown
                   ? '▲'
-                  : s.latest < s.previous
+                  : s.thisWeek < s.lastKnown
                     ? '▼'
                     : '–'
                 : null
@@ -137,17 +153,22 @@ export default async function DashboardPage() {
                   {q.emoji} {q.name}
                 </div>
                 <div className="text-xl font-semibold">
-                  {s?.latest ?? '—'}
+                  {s?.thisWeek ?? '—'}
                   <span className="text-xs font-normal text-zinc-500">/10</span>
                   {trend && <span className="ml-1 text-sm">{trend}</span>}
                 </div>
+                {s?.thisWeek === undefined && s?.lastKnown !== undefined && (
+                  <div className="text-[11px] text-zinc-500">
+                    Last scored {s.lastKnown}/10 on {s.lastKnownOn}
+                  </div>
+                )}
                 <form action={setQuadrantScore.bind(null, q.id)} className="flex gap-1">
                   <input
                     type="number"
                     name="score"
                     min={0}
                     max={10}
-                    defaultValue={s?.latest ?? ''}
+                    defaultValue={s?.thisWeek ?? ''}
                     required
                     className="w-14 rounded-md border border-zinc-300 px-2 py-1 text-sm dark:border-zinc-700 dark:bg-zinc-900"
                   />

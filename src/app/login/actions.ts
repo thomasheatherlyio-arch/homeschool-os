@@ -3,6 +3,7 @@
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { safeRedirectPath } from '@/lib/auth'
 
 // No signup form for either method below: an account is created by signing
 // in for the first time (see src/app/auth/callback/route.ts, which bootstraps
@@ -10,7 +11,7 @@ import { createClient } from '@/lib/supabase/server'
 // an `invites` row a parent creates at /family).
 export async function signIn(formData: FormData) {
   const email = String(formData.get('email') ?? '').trim()
-  const next = String(formData.get('next') ?? '').trim()
+  const next = safeRedirectPath(String(formData.get('next') ?? '').trim(), '')
 
   if (!email) {
     redirect('/login?error=Enter+an+email+address')
@@ -39,7 +40,7 @@ export async function signIn(formData: FormData) {
 // src/app/auth/callback/route.ts already does for the email-link flow, so
 // that route needs no changes to support this.
 export async function signInWithGoogle(formData: FormData) {
-  const next = String(formData.get('next') ?? '').trim()
+  const next = safeRedirectPath(String(formData.get('next') ?? '').trim(), '')
 
   const supabase = await createClient()
   const origin = (await headers()).get('origin')
