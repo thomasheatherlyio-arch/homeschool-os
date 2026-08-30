@@ -39,12 +39,12 @@ in a Claude Project — see `docs/CLAUDE_CODE_KICKOFF_PROMPT.md` for the full br
 `docs/00`–`16` for the 19-document source system it digitizes. `DECISIONS.md` is the running
 architecture/decision log — check it before assuming a design choice needs revisiting.
 
-All 6 migrations under `supabase/migrations/` are applied to the live Supabase project
+All 7 migrations under `supabase/migrations/` are applied to the live Supabase project
 (`bmshehijapxuismaxsaf`) and in sync (`npx supabase migration list` to confirm). Auth is
 Supabase email magic link + Google OAuth (`src/app/login/`), gated by an `invites` table a
 parent populates at `/family` — no more single shared login. `src/proxy.ts` refreshes the
-session and protects `/curriculum`, `/dashboard`, `/family`. Server clients live in
-`src/lib/supabase/server.ts`. RLS is the real enforcement layer everywhere (app-level
+session and protects `/curriculum`, `/dashboard`, `/family`, `/courses`. Server clients live
+in `src/lib/supabase/server.ts`. RLS is the real enforcement layer everywhere (app-level
 `requireParent()`/`requireFamilyMember()` in `src/lib/auth.ts` is defense-in-depth, not the
 primary gate) — see DECISIONS.md's 2026-08-29 RLS hardening entry for a real bug this caught.
 
@@ -54,7 +54,11 @@ Built so far:
   This Week's Missions, Evidence Inbox, Mentor Session Log (Doc 02 Knights/Squires), Open
   Contracts (Doc 00 §7 / Doc 04 §3 pattern).
 - `/family` — parent-only: invite a family member (email/name/role), view roster.
+- `/courses` + `/courses/[courseId]` — reusable Course/CourseUnit model (kickoff prompt's
+  data model, seeded with Doc 14's The Kitchen: 8 units + capstone). Per-unit status +
+  evidence-link tracking in `course_unit_progress`. New courses are added via a migration
+  for now (no authoring UI yet — see DECISIONS.md's Milestone 3 entry for why).
 
-Next steps: unit-level curriculum UI, North Star (Doc 07 — Horizon Ladder, Interest Ledger,
-Fork Log), The Mind Mansion / Gallery (Doc 08), the three elective courses as a reusable
-Course/CourseUnit model (Docs 14–16), Work Ladder (Doc 13).
+Next steps: course-authoring UI (or seed Gym/Panel too), unit-level curriculum UI, North
+Star (Doc 07 — Horizon Ladder, Interest Ledger, Fork Log), The Mind Mansion / Gallery
+(Doc 08), Work Ladder (Doc 13).

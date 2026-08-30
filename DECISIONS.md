@@ -170,3 +170,38 @@ table/policy: a self-referencing helper function that queries the same table its
 policy is defined on needs `security definer` from the start, not bolted on later.
 
 **Status:** Active — fixed, migration applied.
+
+---
+
+## 2026-08-30 — Milestone 3: Course/CourseUnit model, seeded with The Kitchen
+
+**Decision:** `courses` (reusable template — title, description, primary quadrant,
+informational `subjects_covered` tags, active/archived) + `course_units` (ordered
+unit/week within a course — number, title, teaching notes, deliverable, optional video
+assignment, capstone flag) + `course_unit_progress` (per-student status/evidence-link on a
+unit — the only student-specific row, since courses/units are shared templates). Seeded
+with one real course, Doc 14's The Kitchen (8 units + capstone, from Doc 14 §4's actual
+content) — the kickoff prompt's suggested stress-test for whatever Course/CourseUnit shape
+got proposed. `/courses` lists courses with a completed/total progress bar;
+`/courses/[courseId]` shows each unit with its deliverable and a status + evidence-link
+form.
+
+**Notable choices:**
+- A unit's `video_assignment` is nullable and unused by the Kitchen seed — the base 8-unit
+  course structures (Kitchen, Gym) don't have one per unit; that's a feature of each
+  course's separate 6-week "addendum" variant (e.g. Doc 14 §13a's "Opening Night"), which
+  this migration doesn't model. Worth a real look once a course actually needs to run in
+  that structured weekly-video-clip shape.
+- `subjects_covered` is a plain `text[]` of tag strings, not a join to the `subjects`
+  table — descriptive metadata pulled from each course doc's "Texas Curriculum Tie-In"
+  section, not something queried/joined against anywhere yet. Revisit as a real join if
+  that changes.
+- No course-authoring UI (a parent building a new Course + CourseUnits from scratch in the
+  app) — adding a new course happens via a migration, same as this one's seed. Reasonable
+  given there are only a handful of known courses (Docs 14–16) and they change rarely;
+  worth building a real UI once that stops being true.
+- Didn't build a `course_enrollments` concept (active/dropped/etc. per student) — with a
+  small number of courses, showing all of them with a progress bar is simpler and avoids a
+  table that's premature until course volume actually needs filtering.
+
+**Status:** Complete — shipped 2026-08-30.

@@ -5,6 +5,7 @@ import type { FamilyMember } from '@/lib/auth'
 const LINKS = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/curriculum', label: 'Curriculum' },
+  { href: '/courses', label: 'Courses' },
 ] as const
 
 export function AppNav({ role, active }: { role: FamilyMember['role']; active: string }) {
