@@ -19,7 +19,6 @@ updated: 2026-11-22
 - (none yet)
 
 ## Since last time (Claude writes, Grok reads)
-- 2026-11-22 — Pipeline test: Claude's nightly run works.
 - 2026-11-22 — Vault set up: courses split into sections, Knights files, learner profile, routing.
 
 ## Questions for COLT (Claude writes when a handoff was unclear)

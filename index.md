@@ -26,6 +26,7 @@ updated: 2026-11-22
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
+- [[START-HERE]] — Shiloh's one-time setup (GitHub Desktop, Obsidian, COLT)
 - [[persona|COLT persona]] · [[learner-profile]] · [[grok-setup|Grok setup]]
 - Knights: [[jahari]] · [[mind-mastery-seat]] · [[venture-craft-seat]] · [[spirit-character-seat]] · [[systems-chief-of-staff]]
 
