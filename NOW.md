@@ -2,19 +2,27 @@
 type: hot-cache
 updated: 2026-11-22
 ---
-# NOW — read this first (agents: this file + AGENTS.md is all you load by default)
+# NOW — read this first (agents: this + AGENTS.md is the default load)
 
 **Week of:** 2026-11-23
-**Phase:** Relaunch — moving from the web app to this vault.
+**Phase:** Relaunch — moving from the web app to this vault (post-Grok).
+**Focus quadrant:** Systems & Self-Command (getting the new system running)
 
 ## This week's missions (max 5)
-- [ ] Install Obsidian + GitHub Desktop, clone this vault (Dad helps)
+- [ ] Install Obsidian + GitHub Desktop, clone the `post-grok` branch (Dad helps)
 - [ ] First chat with COLT in Grok — rename COLT if you want (Doc 06 §8)
 - [ ] Write 3 daily notes
-- [ ] Pick the next course unit: Kitchen / Gym / Panel / Forge
+- [ ] Pick the next course: Kitchen / Gym / Panel / Forge
+- [ ] Seat one open Knight (see `60-companions/knights/`)
 
-## Open loops (COLT escalation stage in brackets)
+## Open loops (escalation stage in brackets)
 - (none yet)
+
+## Since last time (Claude writes, Grok reads)
+- 2026-11-22 — Vault set up: courses split into sections, Knights files, learner profile, routing.
+
+## Questions for COLT (Claude writes when a handoff was unclear)
+- (none)
 
 ## Next review
 Friday 2026-11-27 — weekly review with Dad.

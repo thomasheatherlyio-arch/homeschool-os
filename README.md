@@ -1,5 +1,7 @@
 # Shiloh HQ
 
+> Branch `post-grok` of `homeschool-os`. The old web app lives on `main`.
+
 This is your HomeSchool OS — your education, run by you. Open this folder in Obsidian.
 
 ## Start here
@@ -7,6 +9,7 @@ This is your HomeSchool OS — your education, run by you. Open this folder in O
 2. **Journal** — `40-journal/daily/` (Ctrl+P → "Daily note"). A few lines is enough.
 3. **Talk to COLT** in Grok. COLT reads this vault and helps you plan, learn and get unstuck.
 4. **Sync** — Ctrl+P → "Git: Commit and sync" when you finish for the day.
+5. Lost? Open **[[index]]**.
 
 ## Map
 | Folder | What's in it | Who edits |
@@ -17,7 +20,7 @@ This is your HomeSchool OS — your education, run by you. Open this folder in O
 | `30-mansion/` | Mind Mansion — books, videos, practices | You |
 | `40-journal/` | Daily + weekly notes | You |
 | `50-evidence/` | Proof of work — the legal record | You add, Dad reviews quarterly |
-| `60-companions/` | COLT + the Knights (AI mentors) | You (rename COLT anytime) |
+| `60-companions/` | COLT, your learner profile, the Knights (one file per mentor) | You (rename COLT anytime) |
 | `wiki/` | Concept pages COLT/Claude build from what you learn | Agents |
 | `raw/` | Original sources (NotebookLM decks, transcripts) — never edited | You drop files in |
 | `handoff/` | Tasks Grok passes to Claude to execute | Agents |

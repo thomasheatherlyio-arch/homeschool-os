@@ -1,17 +1,20 @@
 ---
 type: handoff
+id: YYYYMMDD-short-slug
 from: grok
 date: YYYY-MM-DD
-priority: normal   # normal | today
+status: open        # open | done | blocked
+priority: normal    # normal | today
+touches: []         # e.g. [NOW.md, 20-courses/kitchen/kitchen-course.md]
 ---
 # <one-line title>
 
 ## Do
-- <concrete action 1, with file path if known>
-- <action 2>
+- <concrete action, with file path>
 
-## Context (max 5 lines)
-<only what Claude can't find in the vault>
+## Context (max 5 lines — only what Claude can't find in the vault)
 
 ## Done when
 - <checkable result>
+
+<!-- Never include "just talking" content. Max 15 lines total. -->
