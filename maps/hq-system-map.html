@@ -112,13 +112,13 @@ footer{font-size:.8rem;color:var(--muted)}
     <div>
       <span class="lbl">HomeSchool OS · post-Grok architecture</span>
       <h1>HQ System Blueprint</h1>
-      <p>How Shiloh's vault is layered, who may change what, and how Grok (thinking) and Claude (doing) pass work to each other through git.</p>
+      <p>How Shiloh's vault is layered, who may change what, and how one AI (COLT in Grok Build) keeps it growing while you verify his progress.</p>
     </div>
     <div class="titleblock">
       <span>repo</span><span>homeschool-os</span>
       <span>branch</span><span>post-grok</span>
       <span>files</span><span>152 tracked</span>
-      <span>rev</span><span>309516d</span>
+      <span>rev</span><span>503030d</span>
       <span>date</span><span>2026-11-22</span>
     </div>
   </header>
@@ -135,8 +135,9 @@ footer{font-size:.8rem;color:var(--muted)}
       <span style="--c:var(--shiloh)">Shiloh finishes work</span><i>→</i>
       <span style="--c:var(--accent)">evidence note · <code>verified: pending</code></span><i>→</i>
       <span style="--c:var(--thomas)">Thomas does a 2-minute check (artifact, oral, quiz, mentor)</span><i>→</i>
-      <span style="--c:var(--claude)">Claude sets <code>verified: yes</code> + updates readiness</span><i>→</i>
-      <span style="--c:var(--grok)">Friday report → Saturday Grok summary to Thomas</span>
+      <span style="--c:var(--thomas)">Thomas writes the verdict in <code>verifications.md</code></span><i>→</i>
+      <span style="--c:var(--grok)">COLT copies it into the note + updates readiness</span><i>→</i>
+      <span style="--c:var(--grok)">Friday review → parent report for Thomas</span>
     </div>
     <div class="callout"><b>Rule:</b> verified is not the same as claimed. Only Thomas, or the mentor named for a subject, can mark work verified, and no agent reports pending work as done. Ask the Headmaster Grok project for a <b>“Dad report”</b>, to <b>“verify evidence”</b>, or to set up a <b>“baseline diagnostic math”</b>. Source: <span class="mono">55-progress/hs-readiness.md</span>.</div>
   </section>
@@ -149,99 +150,94 @@ footer{font-size:.8rem;color:var(--muted)}
         <div class="layer" style="--c:var(--l0)"><span class="bar"></span><div class="in">
           <div class="top"><h3>Charter</h3><span class="lock">Thomas only</span></div>
           <span class="path">00-charter/ · Docs 00, 03</span>
-          <span class="who">Governing rules, Texas compliance. <b>Agents never edit.</b> Proposals go to Thomas through a handoff, and he decides.</span></div></div>
+          <span class="who">Governing rules, Texas compliance. <b>Agents never edit.</b> COLT writes a proposal; Thomas decides.</span></div></div>
         <div class="layer" style="--c:var(--l1)"><span class="bar"></span><div class="in">
           <div class="top"><h3>System</h3><span class="lock">PR → Thomas</span></div>
           <span class="path">10-system/ · Docs 01 02 04 05 07 09a 09b 10a 10b 11 12 13 17</span>
-          <span class="who">The Circle, Knights concept, dashboard, roadmap, North Star, paths. <b>Shiloh proposes → Claude opens a PR → Thomas merges.</b></span></div></div>
+          <span class="who">The Circle, Knights concept, dashboard, roadmap, North Star, paths. <b>Proposal in <code>proposals/</code> → Thomas approves → COLT applies it.</b></span></div></div>
         <div class="layer" style="--c:var(--l5)"><span class="bar"></span><div class="in">
           <div class="top"><h3>Companions</h3><span class="lock">Shiloh decides seats</span></div>
           <span class="path">60-companions/ · colt/ · knights/</span>
           <span class="who">COLT persona, learner profile (evidence only), one file per Knight seat. <b>Shiloh</b> seats mentors and names COLT.</span></div></div>
         <div class="layer" style="--c:var(--l3)"><span class="bar"></span><div class="in">
-          <div class="top"><h3>Courses &amp; Mansion</h3><span class="lock">Claude updates progress</span></div>
+          <div class="top"><h3>Courses &amp; Mansion</h3><span class="lock">COLT updates progress</span></div>
           <span class="path">20-courses/ (4 courses · 69 sections · playbook) · 30-mansion/</span>
           <span class="who">Each course is an index note plus one file per section, so a tutoring chat loads about 4 KB.</span></div></div>
         <div class="layer" style="--c:var(--l2)"><span class="bar"></span><div class="in">
-          <div class="top"><h3>Shiloh's view</h3><span class="lock">Claude maintains</span></div>
+          <div class="top"><h3>Shiloh's view</h3><span class="lock">COLT maintains</span></div>
           <span class="path">HOME · NOW · 05-circle/ (5 hubs) · HQ-map.canvas</span>
           <span class="who">What Shiloh opens daily. NOW.md is also the hot cache every agent reads first.</span></div></div>
         <div class="layer" style="--c:var(--l4)"><span class="bar"></span><div class="in">
-          <div class="top"><h3>Records</h3><span class="lock">Shiloh + Claude</span></div>
+          <div class="top"><h3>Records</h3><span class="lock">Shiloh + COLT</span></div>
           <span class="path">40-journal/ · 50-evidence/ · raw/ → wiki/</span>
           <span class="who">Daily notes and weekly reviews (Shiloh), proof of work (feeds Doc 03 compliance). <span class="mono">raw/</span> is immutable; <span class="mono">private/</span> is never synced.</span></div></div>
         <div class="arrowdown">─── machine layer (hidden from Shiloh's graph) ───</div>
         <div class="layer" style="--c:var(--mach)"><span class="bar"></span><div class="in">
-          <div class="top"><h3>Agent wiring</h3><span class="lock">Claude, via rules</span></div>
-          <span class="path">AGENTS.md · CLAUDE.md · .agents/skills/ (10) · handoff/ · index · log · DECISIONS · scripts/lint · .github/</span>
-          <span class="who">Always-on rules and routing, skills, the handoff inbox, the audit trail, and a lint check that runs on every push.</span></div></div>
+          <div class="top"><h3>Agent wiring</h3><span class="lock">COLT follows them</span></div>
+          <span class="path">AGENTS.md · .agents/skills/ (11) · proposals/ · 55-progress/verifications.md (Thomas only) · index · log · DECISIONS · scripts/ (COLT.cmd, lint)</span>
+          <span class="who">Always-on rules, routing and token limits, skills, proposals waiting for Thomas, the audit trail, the COLT launcher, and a lint check on every backup.</span></div></div>
       </div>
     </div>
 
     <div class="sheet">
       <span class="lbl">Drawing B · The loop</span>
-      <h2>Grok thinks, Claude executes, git carries the messages</h2>
+      <h2>One AI on his PC, a silent backup for you</h2>
       <div class="diagram">
-        <svg viewBox="0 0 560 520" role="img" aria-label="Shiloh talks to COLT in Grok; Grok writes handoffs to the inbox; Claude's 8pm run applies them to the vault and writes Since last time in NOW.md, which Grok reads next conversation; Thomas approves PRs.">
+        <svg viewBox="0 0 560 470" role="img" aria-label="Shiloh talks with COLT in Grok Build on his PC; COLT reads and writes the Obsidian vault directly; Obsidian Git backs the vault up to GitHub every 10 minutes; Thomas reads progress from GitHub and writes verdicts into verifications.md, which syncs back down.">
           <defs>
             <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10z" fill="var(--muted)"/></marker>
           </defs>
-          <!-- Shiloh -->
-          <rect x="20" y="20" width="160" height="70" rx="35" fill="var(--sheet)" stroke="var(--shiloh)" stroke-width="2.5"/>
-          <text x="100" y="51" text-anchor="middle" class="t-b">Shiloh</text>
-          <text x="100" y="69" text-anchor="middle" class="t-s">Windows PC · Obsidian</text>
-          <!-- Grok -->
-          <rect x="300" y="20" width="240" height="86" fill="var(--sheet)" stroke="var(--grok)" stroke-width="2.5"/>
-          <text x="420" y="48" text-anchor="middle" class="t-b">Grok as COLT</text>
-          <text x="420" y="66" text-anchor="middle" class="t-s">strategy · tutoring · planning</text>
-          <text x="420" y="86" text-anchor="middle" class="t-m">reads AGENTS + NOW + 1 skill + 1 section</text>
-          <!-- Shiloh <-> Grok -->
-          <line x1="182" y1="48" x2="296" y2="48" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ah)"/>
-          <text x="240" y="40" text-anchor="middle" class="t-s">talks</text>
-          <!-- inbox -->
-          <rect x="320" y="170" width="200" height="64" fill="var(--sheet)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 3"/>
-          <text x="420" y="196" text-anchor="middle" class="t-b">handoff/inbox/</text>
-          <text x="420" y="216" text-anchor="middle" class="t-m">≤15 lines · id · status · done-when</text>
-          <line x1="420" y1="108" x2="420" y2="166" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
-          <text x="428" y="142" class="t-s">writes (issue or paste)</text>
-          <!-- Claude -->
-          <rect x="300" y="300" width="240" height="86" fill="var(--sheet)" stroke="var(--claude)" stroke-width="2.5"/>
-          <text x="420" y="328" text-anchor="middle" class="t-b">Claude · nightly 8 pm</text>
-          <text x="420" y="346" text-anchor="middle" class="t-s">process-handoffs · bookkeeping · lint</text>
-          <text x="420" y="366" text-anchor="middle" class="t-m">Sonnet · one batched run</text>
-          <line x1="420" y1="236" x2="420" y2="296" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
-          <!-- Vault -->
-          <rect x="20" y="300" width="200" height="86" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5"/>
-          <text x="120" y="328" text-anchor="middle" class="t-b">Vault</text>
-          <text x="120" y="346" text-anchor="middle" class="t-m">post-grok branch</text>
-          <text x="120" y="366" text-anchor="middle" class="t-s">evidence · NOW · log · courses</text>
-          <line x1="298" y1="343" x2="224" y2="343" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
-          <text x="261" y="335" text-anchor="middle" class="t-s">commits</text>
-          <!-- Vault -> Shiloh (git sync) -->
-          <line x1="100" y1="296" x2="100" y2="94" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ah)"/>
-          <text x="108" y="200" class="t-s">Obsidian Git sync</text>
-          <!-- Vault -> Grok feedback -->
-          <path d="M220,318 C 270,250 250,140 296,96" fill="none" stroke="var(--claude)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ah)"/>
-          <text x="236" y="250" class="t-s" fill="var(--claude)" style="fill:var(--claude)">NOW.md “Since last time”</text>
-          <text x="236" y="264" class="t-s" style="fill:var(--claude)">+ “Questions for COLT”</text>
-          <!-- Thomas -->
-          <rect x="300" y="440" width="240" height="64" fill="var(--sheet)" stroke="var(--thomas)" stroke-width="2.5"/>
-          <text x="420" y="466" text-anchor="middle" class="t-b">Thomas · Headmaster</text>
-          <text x="420" y="486" text-anchor="middle" class="t-s">merges PRs · charter calls · quarterly sign-off</text>
-          <line x1="420" y1="388" x2="420" y2="436" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
-          <text x="428" y="416" class="t-s">PRs for 10-system/ · “needs Thomas”</text>
-          <line x1="298" y1="472" x2="120" y2="472" stroke="var(--muted)" stroke-width="1.5"/>
-          <line x1="120" y1="472" x2="120" y2="390" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
-          <text x="128" y="462" class="t-s">merges</text>
+          <rect x="8" y="8" width="318" height="318" fill="none" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="20" y="28" class="t-m">SHILOH'S PC</text>
+          <rect x="24" y="44" width="150" height="66" rx="33" fill="var(--sheet)" stroke="var(--shiloh)" stroke-width="2.5"/>
+          <text x="99" y="73" text-anchor="middle" class="t-b">Shiloh</text>
+          <text x="99" y="91" text-anchor="middle" class="t-s">double-clicks COLT</text>
+          <rect x="24" y="170" width="290" height="80" fill="var(--sheet)" stroke="var(--grok)" stroke-width="2.5"/>
+          <text x="169" y="196" text-anchor="middle" class="t-b">COLT · Grok Build</text>
+          <text x="169" y="214" text-anchor="middle" class="t-s">talks · tutors · plans · writes notes</text>
+          <text x="169" y="234" text-anchor="middle" class="t-m">AGENTS + NOW + 1 skill + 1 card</text>
+          <line x1="99" y1="112" x2="99" y2="166" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ah)"/>
+          <text x="107" y="144" class="t-s">talks</text>
+          <rect x="190" y="44" width="124" height="66" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5"/>
+          <text x="252" y="72" text-anchor="middle" class="t-b">Obsidian vault</text>
+          <text x="252" y="90" text-anchor="middle" class="t-s">updates instantly</text>
+          <line x1="252" y1="166" x2="252" y2="114" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="260" y="144" class="t-s">writes</text>
+          <line x1="24" y1="290" x2="314" y2="290" stroke="var(--line)"/>
+          <text x="24" y="310" class="t-m">no Claude · no handoffs · one subscription</text>
+          <rect x="380" y="44" width="164" height="66" fill="var(--sheet)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 3"/>
+          <text x="462" y="72" text-anchor="middle" class="t-b">GitHub backup</text>
+          <text x="462" y="90" text-anchor="middle" class="t-m">post-grok · dated history</text>
+          <line x1="318" y1="70" x2="376" y2="70" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <line x1="376" y1="88" x2="318" y2="88" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="347" y="62" text-anchor="middle" class="t-m">10 min</text>
+          <text x="347" y="104" text-anchor="middle" class="t-m">0 tokens</text>
+          <rect x="380" y="200" width="164" height="86" fill="var(--sheet)" stroke="var(--thomas)" stroke-width="2.5"/>
+          <text x="462" y="226" text-anchor="middle" class="t-b">Thomas</text>
+          <text x="462" y="244" text-anchor="middle" class="t-s">reads reports, readiness</text>
+          <text x="462" y="262" text-anchor="middle" class="t-s">writes verifications.md</text>
+          <text x="462" y="278" text-anchor="middle" class="t-s">decides proposals</text>
+          <line x1="440" y1="112" x2="440" y2="196" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="432" y="160" text-anchor="end" class="t-s">reads</text>
+          <line x1="490" y1="196" x2="490" y2="112" stroke="var(--thomas)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+          <text x="498" y="160" class="t-s" style="fill:var(--thomas)">verdicts</text>
+          <rect x="380" y="340" width="164" height="70" fill="var(--sheet)" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="462" y="366" text-anchor="middle" class="t-b">Headmaster Grok</text>
+          <text x="462" y="384" text-anchor="middle" class="t-s">optional, his phone</text>
+          <text x="462" y="400" text-anchor="middle" class="t-m">"Dad report"</text>
+          <line x1="462" y1="336" x2="462" y2="290" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="24" y="356" class="t-s">Or on Shiloh's PC: Dad opens COLT and says</text>
+          <text x="24" y="374" class="t-b" style="font-size:13px">“Dad report” · “verify evidence”</text>
+          <text x="24" y="392" class="t-s">· “baseline diagnostic math”</text>
         </svg>
       </div>
       <div class="legend">
         <span><i style="background:var(--shiloh)"></i>Student-CEO</span>
-        <span><i style="background:var(--grok)"></i>Grok: flat subscription, does the talking</span>
-        <span><i style="background:var(--claude)"></i>Claude: pay-per-run, does the writing</span>
+        <span><i style="background:var(--grok)"></i>COLT in Grok Build: one subscription, talks and writes</span>
+        <span><i style="background:var(--accent)"></i>GitHub: backup + history, no tokens</span>
         <span><i style="background:var(--thomas)"></i>Final authority</span>
       </div>
-      <div class="callout"><b>Privacy rule in the loop:</b> just talking with COLT (feelings, friends, worries) never enters a handoff, so it never reaches the vault or Thomas. A real safety concern is the exception, and COLT helps Shiloh bring it to Thomas himself.</div>
+      <div class="callout"><b>Privacy rule in the loop:</b> just talking with COLT (feelings, friends, worries) is never written to the vault, so it never reaches the backup or Thomas. A real safety concern is the exception, and COLT helps Shiloh bring it to Thomas himself.</div>
     </div>
   </section>
 
@@ -251,17 +247,15 @@ footer{font-size:.8rem;color:var(--muted)}
     <div class="tbl"><table>
       <thead><tr><th>Shiloh says</th><th>Skill</th><th>Writes back</th><th>Quadrant</th></tr></thead>
       <tbody>
-        <tr><td>“COLT, morning” / “wrap up”</td><td><code>daily-checkin</code></td><td>daily note + handoffs</td><td>Systems</td></tr>
+        <tr><td>“COLT, morning” / “wrap up”</td><td><code>daily-checkin</code></td><td>daily note, open loops</td><td>Systems</td></tr>
         <tr><td>“plan my week”</td><td><code>monday-plan</code></td><td>NOW.md missions</td><td>Systems</td></tr>
         <tr><td>“weekly review”</td><td><code>friday-review</code></td><td>weekly note, Circle scores, “For Dad”</td><td>all</td></tr>
         <tr><td>“teach me gym unit 2”</td><td><code>tutor-session</code></td><td>course progress, learner profile</td><td>by course</td></tr>
         <tr><td>“hey Jahari” / “talk to my Knight”</td><td><code>talk-to-knight</code></td><td>session takeaway + one action</td><td>by seat</td></tr>
         <tr><td>“I finished…”</td><td><code>log-evidence</code></td><td>50-evidence/ note</td><td>tagged</td></tr>
         <tr><td>dropped a file in raw/</td><td><code>wiki-ingest</code></td><td>wiki/ summary</td><td>Mind</td></tr>
-        <tr><td>Sunday 6 pm (Grok Automation)</td><td><code>strategy-brief</code></td><td>next week's proposal</td><td>all</td></tr>
-        <tr><td>nightly 8 pm (Claude)</td><td><code>process-handoffs</code></td><td>NOW, log, index, evidence</td><td>—</td></tr>
-        <tr><td><b>Thomas: “Dad report” (P1)</b></td><td><code>parent-report</code></td><td>Friday report in 55-progress/reports</td><td>all</td></tr>
-        <tr><td><b>Thomas: “verify evidence” (P1)</b></td><td><code>verify-evidence</code></td><td>verified: yes / needs-redo</td><td>all</td></tr>
+        <tr><td><b>Thomas: “Dad report” (P1)</b></td><td><code>parent-report</code></td><td>report in 55-progress/reports</td><td>all</td></tr>
+        <tr><td><b>Thomas: “verify evidence” (P1)</b></td><td><code>verify-evidence</code></td><td>checks for Thomas to record</td><td>all</td></tr>
         <tr><td><b>Thomas: “baseline diagnostic math” (P1)</b></td><td><code>run-diagnostic</code></td><td>diagnostics log, readiness</td><td>Mind</td></tr>
         <tr><td>Thomas: “quarterly review”</td><td><code>quarterly-review</code></td><td>compliance draft (Doc 03)</td><td>Mind</td></tr>
         <tr><td>just talking</td><td><em>none: COLT persona only</em></td><td><b>nothing</b></td><td>—</td></tr>
@@ -273,18 +267,18 @@ footer{font-size:.8rem;color:var(--muted)}
     <span class="lbl">Drawing D · Cadence</span>
     <h2>The week</h2>
     <div class="week">
-      <div class="day"><h3>Sun</h3><div class="ev" style="--c:var(--grok)"><b>6:00 pm · Grok</b>Strategy brief: focus slice, 5 missions, next units</div></div>
-      <div class="day"><h3>Mon</h3><div class="ev" style="--c:var(--shiloh)"><b>AM · Shiloh + COLT</b>Plan my week → accept the brief</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>NOW.md missions set</div></div>
-      <div class="day"><h3>Tue</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
-      <div class="day"><h3>Wed</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
-      <div class="day"><h3>Thu</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
-      <div class="day"><h3>Fri</h3><div class="ev" style="--c:var(--shiloh)"><b>Shiloh + COLT</b>Weekly review + Circle scores</div><div class="ev" style="--c:var(--thomas)"><b>Thomas</b>Reads “For Dad”</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Weekly note + P1 parent report</div></div>
-      <div class="day"><h3>Sat</h3><div class="ev" style="--c:var(--thomas)"><b>8:00 am · Grok → Thomas</b>Dad report, then verify what's pending</div></div>
+      <div class="day"><h3>Sun</h3><div class="ev" style="--c:var(--line)"><b>off</b>Nothing scheduled</div></div>
+      <div class="day"><h3>Mon</h3><div class="ev" style="--c:var(--shiloh)"><b>AM · Shiloh + COLT</b>Plan my week: up to 5 missions</div></div>
+      <div class="day"><h3>Tue</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div></div>
+      <div class="day"><h3>Wed</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div></div>
+      <div class="day"><h3>Thu</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div></div>
+      <div class="day"><h3>Fri</h3><div class="ev" style="--c:var(--shiloh)"><b>Shiloh + COLT</b>Weekly review, Circle scores, parent report</div><div class="ev" style="--c:var(--thomas)"><b>Thomas</b>Reads report, verifies evidence</div></div>
+      <div class="day"><h3>Sat</h3><div class="ev" style="--c:var(--line)"><b>optional</b>Headmaster Grok “Dad report” on your phone</div></div>
     </div>
     <div class="extra">
-      <div class="ev" style="--c:var(--claude)"><b>Monthly · Claude</b>Wiki lint + learner profile refresh, from evidence only</div>
-      <div class="ev" style="--c:var(--thomas)"><b>Quarterly · Claude → Thomas</b>Quarterly review draft, Thomas signs off</div>
-      <div class="ev" style="--c:var(--accent)"><b>Every push · GitHub Action</b>Vault lint: skills, links, AGENTS.md ≤150 lines</div>
+      <div class="ev" style="--c:var(--thomas)"><b>Weekly · Thomas (P1)</b>One placement test a week until Reading, Writing and Math are done</div>
+      <div class="ev" style="--c:var(--thomas)"><b>Quarterly · COLT → Thomas</b>Quarterly review draft, Thomas signs off</div>
+      <div class="ev" style="--c:var(--accent)"><b>Every 10 min · Obsidian Git</b>Backup to GitHub; lint check runs on each push</div>
     </div>
   </section>
 
@@ -293,16 +287,16 @@ footer{font-size:.8rem;color:var(--muted)}
       <span class="lbl">Drawing E · Token budget</span>
       <h2>What one tutoring chat loads</h2>
       <div class="budget">
-        <div class="brow" style="--c:var(--mach)"><span>AGENTS.md</span><span class="track"><span style="width:10.4%"></span></span><span class="n">5.3 KB</span></div>
-        <div class="brow" style="--c:var(--l2)"><span>NOW.md</span><span class="track"><span style="width:2%"></span></span><span class="n">1.0 KB</span></div>
+        <div class="brow" style="--c:var(--mach)"><span>AGENTS.md</span><span class="track"><span style="width:11.8%"></span></span><span class="n">6.0 KB</span></div>
+        <div class="brow" style="--c:var(--l2)"><span>NOW.md</span><span class="track"><span style="width:2.7%"></span></span><span class="n">1.4 KB</span></div>
         <div class="brow" style="--c:var(--l5)"><span>learner-profile</span><span class="track"><span style="width:2.7%"></span></span><span class="n">1.4 KB</span></div>
-        <div class="brow" style="--c:var(--accent)"><span>tutor-session skill</span><span class="track"><span style="width:1.8%"></span></span><span class="n">0.9 KB</span></div>
-        <div class="brow" style="--c:var(--l3)"><span>gym-course index</span><span class="track"><span style="width:7.5%"></span></span><span class="n">3.8 KB</span></div>
-        <div class="brow" style="--c:var(--l3)"><span>one section</span><span class="track"><span style="width:7.8%"></span></span><span class="n">~4 KB</span></div>
-        <div class="brow" style="--c:var(--ink)"><span><b>Total</b></span><span class="track"><span style="width:32%"></span></span><span class="n"><b>~16 KB</b></span></div>
+        <div class="brow" style="--c:var(--accent)"><span>tutor-session skill</span><span class="track"><span style="width:2.3%"></span></span><span class="n">1.2 KB</span></div>
+        <div class="brow" style="--c:var(--l3)"><span>lesson card</span><span class="track"><span style="width:2.9%"></span></span><span class="n">~1.5 KB</span></div>
+        <div class="brow" style="--c:var(--ink)"><span><b>Usual session</b></span><span class="track"><span style="width:22.5%"></span></span><span class="n"><b>~11.5 KB</b></span></div>
+        <div class="brow" style="--c:var(--l3)"><span>First time on a unit</span><span class="track"><span style="width:35%"></span></span><span class="n">~18 KB</span></div>
         <div class="brow" style="--c:var(--l0)"><span>Old way: whole Gym doc</span><span class="track"><span style="width:100%"></span></span><span class="n">~51 KB</span></div>
       </div>
-      <div class="callout">Routing loads one skill and one section instead of whole documents. Claude runs once a day in a batch on Sonnet, not once per chat.</div>
+      <div class="callout">The first lesson on a unit reads the course index and one section, then saves a short lesson card. Every later session on that unit reads only the card. Closing COLT between sessions keeps each chat short.</div>
     </div>
 
     <div class="sheet">
@@ -312,7 +306,7 @@ footer{font-size:.8rem;color:var(--muted)}
         <li><b>HOME.md</b>: the start page. It links NOW, the five Circle hubs, the courses, people and direction docs.</li>
         <li><b>HQ-map.canvas</b>: a board of live note cards in six bands: This week, The Circle, Courses, People, Where I'm headed, My notes.</li>
         <li><b>Graph view</b>: the 5 Circle hubs sit in the middle. Courses cluster around their index notes, and evidence and journal notes join a hub through <span class="mono">quadrant: "[[body-discipline]]"</span>.</li>
-        <li><b>Filtered out of the graph:</b> templates, handoffs, raw/, agent files, READMEs. Dot-folders (<span class="mono">.agents</span>, <span class="mono">.github</span>) never show.</li>
+        <li><b>Filtered out of the graph:</b> templates, proposals, raw/, agent files, READMEs. Dot-folders (<span class="mono">.agents</span>, <span class="mono">.github</span>) never show.</li>
       </ul>
       <div class="colors">
         <div><i style="background:#f59e0b"></i>05-circle hubs</div>
@@ -338,7 +332,7 @@ footer{font-size:.8rem;color:var(--muted)}
       <thead><tr><th>Branch</th><th>Era</th><th>Contains</th><th>Deploys</th></tr></thead>
       <tbody>
         <tr><td><code>main</code></td><td>pre-Grok (Aug–Nov 2026)</td><td>Next.js + Supabase web app, docs 00–18 final snapshot</td><td>Vercel, live</td></tr>
-        <tr><td><code>post-grok</code></td><td>from Nov 22, 2026</td><td>This vault: Obsidian + agents</td><td>none (Vercel off)</td></tr>
+        <tr><td><code>post-grok</code></td><td>from Nov 22, 2026</td><td>This vault: Obsidian + COLT (Grok Build)</td><td>none (Vercel off)</td></tr>
         <tr><td><code>amend/*</code></td><td>proposals</td><td>System-doc changes waiting for Thomas (PR #1 = Doc 05/17)</td><td>—</td></tr>
       </tbody>
     </table></div>

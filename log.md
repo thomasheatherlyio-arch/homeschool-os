@@ -15,3 +15,4 @@ type: log
 - 2026-11-22 — maps/ v2: P1 readiness section (blueprint) and Road to high school panel (Shiloh map).
 - 2026-11-22 — START-HERE rewritten as full PC + accounts setup (Dad / together / daily); no Claude account for Shiloh (18+).
 - 2026-11-22 — v1 simplified: Grok Build writes the vault directly; Claude removed (CLAUDE.md, .claude, process-handoffs, strategy-brief); handoff/ → proposals/; verifications.md (Thomas only); lesson-card caching; COLT.cmd launcher; Obsidian Git preconfigured.
+- 2026-11-22 — maps/ v3: pages show COLT in Grok Build + GitHub backup (Claude removed).

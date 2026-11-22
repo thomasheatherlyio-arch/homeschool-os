@@ -12,7 +12,7 @@ or right-click it in Obsidian and choose "Open in default app".
 | `shiloh-hq-map.html` | Shiloh | The Circle wheel, this week's missions, courses, Round Table, Obsidian legend |
 | `hq-system-map.html` | Thomas | Authority layers, the COLT loop, routing, weekly cadence, token budget, branches |
 
-Both are snapshots from 2026-11-22 (v2: P1 readiness added). The live state is in [[NOW]] and [[index]].
+Both are snapshots from 2026-11-22 (v3: COLT in Grok Build, no Claude). The live state is in [[NOW]] and [[index]].
 Online copies (private, Thomas's claude.ai account):
 - Shiloh map: https://claude.ai/artifact/FuH83bsMZMrNUa4WFH6aGL
 - System blueprint: https://claude.ai/artifact/YZQMJM7YxNt2W1oVJfLphz
