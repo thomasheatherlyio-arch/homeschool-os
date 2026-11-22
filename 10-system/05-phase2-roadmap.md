@@ -37,6 +37,36 @@ Don't automate a process that hasn't been proven manually first. Everything belo
 
 When Phase 2 work starts, the right move is a fresh planning pass: review what [[00-governing-charter-and-toc|Docs 00]]–04 have actually been used for after a real grading period, identify the two or three components above with the highest payoff, and scope those first rather than building everything at once. Claude Code is the right tool for the automation/engineering work; Cowork is the right tool for ongoing file/task orchestration once the pieces exist; MCP connectors (Google Workspace, and whatever else becomes relevant) are the likely integration layer.
 
+## 4. Status Update — 2026-11-22: the Grok pivot
+
+Phase 2 started (Aug 29–30) as a Next.js + Supabase web app (repo `homeschool-os`, branch
+`main`; Doc 17 is its build brief). It shipped the dashboard, courses, North Star, Mind Mansion
+and Work Ladder, then sat idle for three months. **It is now parked, not deleted.**
+
+**P1 for v1 (Thomas, 2026-11-22): help Thomas track and verify Shiloh's progress toward high school.**
+Every component below serves that first: the readiness tracker (`55-progress/hs-readiness.md`, three
+gates from Docs 03, 09a and 10a), evidence that counts only once Thomas verifies it, Doc 09a baseline
+diagnostics, and a weekly parent report (COLT writes it at the Friday review).
+
+v1 of Phase 2 is instead an **Obsidian vault + one AI** (branch `post-grok`; see `DECISIONS.md`):
+- **COLT in Grok Build** on Shiloh's PC: talks, tutors, plans, and writes the notes directly.
+- **Obsidian Git**: backs the vault up to GitHub every 10 minutes, giving Thomas remote access and a
+  dated record of every change (Doc 00 §6 amendments go through `proposals/`, Thomas decides).
+- No Claude in v1 (decided 2026-11-22, to keep it to one subscription).
+
+How the §2 components map now:
+
+| Component | Now |
+|---|---|
+| Live student dashboard | `NOW.md` + course progress tables in Obsidian (Dataview later if needed) |
+| Weekly check-in form | `daily-checkin` / `friday-review` skills in COLT |
+| Quiz generation from video | `tutor-session` skill + NotebookLM outputs dropped in `raw/` (still manual, per the NotebookLM decision) |
+| Time & progress tracking | `log.md` + `50-evidence/` + `55-progress/` (P1) |
+| Automated evidence portfolio | `quarterly-review` skill drafts it from `50-evidence/` |
+| Khan/Brilliant, health apps | unchanged — still to explore |
+
+The §1 guiding rule still holds: run this manually for a grading period before automating more.
+
 ---
 
-*Changelog: 2026-08-14 — Initial roadmap placeholder drafted (v1.0, MVP). No build work started; this is a scope/sequencing outline only.*
+*Changelog: 2026-08-14 — Initial roadmap placeholder drafted (v1.0, MVP). No build work started; this is a scope/sequencing outline only. 2026-11-22 — Added §4 status update: web app parked, Phase 2 v1 is the Obsidian vault with Grok (strategy) + Claude (execution) — proposed by Claude for Thomas.*

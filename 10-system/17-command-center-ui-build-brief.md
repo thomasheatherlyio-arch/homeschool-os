@@ -1,9 +1,11 @@
 ---
 type: reference
 doc: "17"
-status: active
+status: parked
 source: claude-project-export-2026-11-22
 ---
+
+> **Parked 2026-11-22.** This brief describes the web app on branch `main`. v1 is the vault — see [[05-phase2-roadmap|Doc 05]] §4.
 
 # Shiloh Command Center — Build Brief for Claude Code
 
