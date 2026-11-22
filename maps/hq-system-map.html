@@ -93,6 +93,18 @@ td code{font-family:var(--mono);font-size:.78rem}
 .colors i{width:12px;height:12px;border-radius:50%;flex:none}
 ul.plain{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:.9rem}
 footer{font-size:.8rem;color:var(--muted)}
+.p1{border:2px solid var(--ink)}
+.gates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:760px){.gates{grid-template-columns:minmax(0,1fr)}}
+.gate{background:var(--sheet);border:1px solid var(--line);border-top:4px solid var(--c);padding:12px;display:grid;gap:4px;align-content:start}
+.gate b{font-family:var(--mono);font-size:.7rem;font-weight:500;color:var(--c);text-transform:uppercase;letter-spacing:.08em}
+.gate h3{font-size:1.1rem}
+.gate p{margin:0;font-size:.85rem;color:var(--muted)}
+.gate .st{font-family:var(--mono);font-size:.75rem;margin-top:4px}
+.vflow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:14px;font-size:.84rem}
+.vflow span{background:var(--sheet);border:1px solid var(--line);border-left:3px solid var(--c);padding:6px 8px}
+.vflow i{font-style:normal;color:var(--muted)}
+.vflow code{font-family:var(--mono);font-size:.76rem}
 </style>
 
 <div class="wrap">
@@ -106,10 +118,28 @@ footer{font-size:.8rem;color:var(--muted)}
       <span>repo</span><span>homeschool-os</span>
       <span>branch</span><span>post-grok</span>
       <span>files</span><span>152 tracked</span>
-      <span>rev</span><span>cd5f30b</span>
+      <span>rev</span><span>309516d</span>
       <span>date</span><span>2026-11-22</span>
     </div>
   </header>
+
+  <section class="sheet p1">
+    <span class="lbl">Drawing 0 · Priority 1</span>
+    <h2>Thomas can see, and verify, how close Shiloh is to high school</h2>
+    <div class="gates">
+      <div class="gate" style="--c:var(--l0)"><b>Gate 1</b><h3>Middle school complete</h3><p>8 subjects from Doc 03 §4. Reading, Writing and Math are measured by Doc 09a levels (target L3, proposed).</p><span class="st">⚪ no baseline yet</span></div>
+      <div class="gate" style="--c:var(--l2)"><b>Gate 2</b><h3>The system holds</h3><p>Monday plan, daily notes and Friday review hold for 3 straight weeks before the load goes up (Doc 03 §6.1).</p><span class="st">⚪ week 1 starts Nov 23</span></div>
+      <div class="gate" style="--c:var(--l1)"><b>Gate 3</b><h3>High-school runway</h3><p>Texas Foundation program: 22 credits (26 with endorsement + DLA), from 9th grade (Doc 10a).</p><span class="st">0 / 22 · target start Fall 2027</span></div>
+    </div>
+    <div class="vflow">
+      <span style="--c:var(--shiloh)">Shiloh finishes work</span><i>→</i>
+      <span style="--c:var(--accent)">evidence note · <code>verified: pending</code></span><i>→</i>
+      <span style="--c:var(--thomas)">Thomas does a 2-minute check (artifact, oral, quiz, mentor)</span><i>→</i>
+      <span style="--c:var(--claude)">Claude sets <code>verified: yes</code> + updates readiness</span><i>→</i>
+      <span style="--c:var(--grok)">Friday report → Saturday Grok summary to Thomas</span>
+    </div>
+    <div class="callout"><b>Rule:</b> verified is not the same as claimed. Only Thomas, or the mentor named for a subject, can mark work verified, and no agent reports pending work as done. Ask the Headmaster Grok project for a <b>“Dad report”</b>, to <b>“verify evidence”</b>, or to set up a <b>“baseline diagnostic math”</b>. Source: <span class="mono">55-progress/hs-readiness.md</span>.</div>
+  </section>
 
   <section class="two">
     <div class="sheet">
@@ -230,6 +260,9 @@ footer{font-size:.8rem;color:var(--muted)}
         <tr><td>dropped a file in raw/</td><td><code>wiki-ingest</code></td><td>wiki/ summary</td><td>Mind</td></tr>
         <tr><td>Sunday 6 pm (Grok Automation)</td><td><code>strategy-brief</code></td><td>next week's proposal</td><td>all</td></tr>
         <tr><td>nightly 8 pm (Claude)</td><td><code>process-handoffs</code></td><td>NOW, log, index, evidence</td><td>—</td></tr>
+        <tr><td><b>Thomas: “Dad report” (P1)</b></td><td><code>parent-report</code></td><td>Friday report in 55-progress/reports</td><td>all</td></tr>
+        <tr><td><b>Thomas: “verify evidence” (P1)</b></td><td><code>verify-evidence</code></td><td>verified: yes / needs-redo</td><td>all</td></tr>
+        <tr><td><b>Thomas: “baseline diagnostic math” (P1)</b></td><td><code>run-diagnostic</code></td><td>diagnostics log, readiness</td><td>Mind</td></tr>
         <tr><td>Thomas: “quarterly review”</td><td><code>quarterly-review</code></td><td>compliance draft (Doc 03)</td><td>Mind</td></tr>
         <tr><td>just talking</td><td><em>none: COLT persona only</em></td><td><b>nothing</b></td><td>—</td></tr>
       </tbody>
@@ -245,8 +278,8 @@ footer{font-size:.8rem;color:var(--muted)}
       <div class="day"><h3>Tue</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
       <div class="day"><h3>Wed</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
       <div class="day"><h3>Thu</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
-      <div class="day"><h3>Fri</h3><div class="ev" style="--c:var(--shiloh)"><b>Shiloh + COLT</b>Weekly review + Circle scores</div><div class="ev" style="--c:var(--thomas)"><b>Thomas</b>Reads “For Dad”</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Weekly note</div></div>
-      <div class="day"><h3>Sat</h3><div class="ev" style="--c:var(--line)"><b>off</b>Nothing scheduled</div></div>
+      <div class="day"><h3>Fri</h3><div class="ev" style="--c:var(--shiloh)"><b>Shiloh + COLT</b>Weekly review + Circle scores</div><div class="ev" style="--c:var(--thomas)"><b>Thomas</b>Reads “For Dad”</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Weekly note + P1 parent report</div></div>
+      <div class="day"><h3>Sat</h3><div class="ev" style="--c:var(--thomas)"><b>8:00 am · Grok → Thomas</b>Dad report, then verify what's pending</div></div>
     </div>
     <div class="extra">
       <div class="ev" style="--c:var(--claude)"><b>Monthly · Claude</b>Wiki lint + learner profile refresh, from evidence only</div>
