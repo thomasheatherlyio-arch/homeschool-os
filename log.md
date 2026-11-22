@@ -23,3 +23,7 @@ type: log
 - 2026-11-22 — HOME: Today screen at the top; Obsidian opens on HOME (pinned) with NOW beside it.
 - 2026-11-22 — grok-setup §7: Dad's Chief of Staff (Grok Bot named COLT) seed prompt.
 - 2026-11-22 — DECISIONS: accounts and PC setup entry.
+- 2026-11-22 — COLT — Drafted The Civ course (`20-courses/civ/`, status: draft-pending-approval), including Unit 0, Decision Log template, and campaign-1 log.
+- 2026-11-22 — COLT — Added proposals [[20261122-civ-course]] and [[20261122-khan-academy-connection]]; linked both from NOW.md Waiting on Dad.
+- 2026-11-22 COLT: added Khan Academy progress tracker
+- 2026-11-22 — COLT — Updated [[index]] with The Civ course, the two new proposals, and [[khan-academy]].
