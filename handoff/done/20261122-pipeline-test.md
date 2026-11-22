@@ -3,7 +3,7 @@ type: handoff
 id: 20261122-pipeline-test
 from: thomas
 date: 2026-11-22
-status: open
+status: done
 priority: today
 touches: [NOW.md]
 ---
