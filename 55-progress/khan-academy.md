@@ -22,13 +22,14 @@ Account snapshot: streak 12 weeks; level 40 (32/40 skills); energy points 1,224,
 |---|---|---|---|---|---|---|---|
 | 2026-11-22 | [[khan-grade-6-math-tx\|6th grade math (TX TEKS)]] | (course) | 70% (challenge 73%) | 65 | 50 | 27 | [[2026-11-22-khan-snapshot]] (21 attempted of 163) |
 | 2026-11-22 | [[khan-grade-7-math-tx\|7th grade math (TX TEKS)]] | (course) | 78% | 35 | 52 | 18 | [[2026-11-22-khan-snapshot]] (5 attempted of 110) |
+| 2026-11-22 | [[khan-grade-8-math-tx\|8th grade math (TX TEKS)]] | (course) | 55% | 20 | 34 | 18 | [[2026-11-22-khan-snapshot]] (9 attempted, 17 not started, of 98; challenge not taken) |
 | 2026-11-22 | [[khan-constitution-101\|Constitution 101]] | (course) | 90% | 64 | 41 | 10 | [[2026-11-22-khan-snapshot]] (1 attempted of 116) |
 | 2026-11-22 | [[khan-ms-biology\|MS biology]] | (course) | 19% | 5 | 5 | 5 | [[2026-11-22-khan-snapshot]] (2 attempted of 17 leveled) |
 | 2026-11-22 | [[khan-ms-earth-space\|MS Earth and space]] | (course) | 26% | 4 | 3 | 4 | [[2026-11-22-khan-snapshot]] (1 attempted; no "of N") |
 | 2026-11-22 | [[khan-ms-physics\|MS physics]] | (course) | 35% | 4 | 4 | 4 | [[2026-11-22-khan-snapshot]] (0 attempted; no "of N") |
 | 2026-11-22 | [[khan-grade-6-ela\|6th grade reading/grammar/vocab]] | (course) | no mastery (not started) | 0 | 0 | 0 | [[2026-11-22-khan-snapshot]] (93 skills, all unfamiliar) |
 
-Log-only this sync (minutes from the activity log; no mastery shown): [[khan-grade-8-math-tx\|8th math]] 371; [[khan-grade-8-science-tx\|8th science]] 194; [[khan-grade-8-ela\|8th reading/grammar/vocab]] 194; [[khan-grade-7-science-tx\|7th science]] 125; 6th math TX 54; "6th math" 33; [[khan-grade-7-reading\|7th reading]] 22; US history 0. [[khan-art-history\|Art history]]: no data.
+Log-only this sync (minutes from the activity log; no mastery shown): [[khan-grade-8-science-tx\|8th science]] 194; [[khan-grade-8-ela\|8th reading/grammar/vocab]] 194; [[khan-grade-7-science-tx\|7th science]] 125; 6th math TX 54; "6th math" 33; [[khan-grade-7-reading\|7th reading]] 22; US history 0. [[khan-art-history\|Art history]]: no data.
 
 ## Activity log
 | Date | Minutes | Course | What I did (lessons, quizzes, unit tests) | Score | Pending/verified |

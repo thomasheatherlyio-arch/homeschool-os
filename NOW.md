@@ -22,14 +22,15 @@ updated: 2026-11-22
 - [x] First Khan sync (tell COLT: "Khan sync") — done 2026-11-22; evidence pending Dad
 
 ## Last session (COLT writes)
+- 2026-11-22: Drafted the Khan ELA + science priority plan (pending Dad). 8th TX math is 55%; keep-warm units 1, 7, 8, 10. Weekly sync set to Friday ~6 PM.
 - 2026-11-22: First Khan sync. Constitution 101 at 90% with three pending quizzes/unit tests; 6th/7th TX math in progress; 6th ELA not started. Figures are pending until Dad verifies.
 - 2026-11-22: Built the Khan Academy tracking system in `25-khan/` (dashboard, course stubs, sync + coach skills).
 - 2026-11-22: Applied Dad's approvals — The Civ course is active; Khan Academy: approved 2026-11-22; COLT to connect; Meta Bind installed.
 - 2026-11-22: Drafted The Civ course (Unit 0 + 12 weeks) and three proposals for Dad (Civ course; Khan Academy; Meta Bind plugin).
-- 2026-11-22: Vault ready for Grok Build. COLT now writes notes directly; Dad verifies in [[verifications]].
 
 ## Waiting on Dad (proposals, verifications, decisions)
 - See Open loops marked "needs Thomas".
+- [[20261122-khan-priority-plan|Proposal: Khan ELA + science weekly targets and dates]]. After approval, first mission: Start 6th grade reading on Khan (4 × 25 min).
 
 ## Next review
 Friday 2026-11-27 — weekly review with Dad.

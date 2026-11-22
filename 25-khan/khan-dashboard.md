@@ -23,7 +23,7 @@ Learning minutes, Khan's max range (2024-11-22 through 2026-11-22): exercises **
 |---|---|---|---|---|---|---|
 | [[khan-grade-6-math-tx\|6th grade math (TX TEKS)]] | Mathematics (required) | 70% (challenge 73%) | — | — | 2026-11-22 | 65/50/27/21 of 163; 16 units. Activity log: 54 min (8 rows). Weakest unit: Algebraic representations 13% |
 | [[khan-grade-7-math-tx\|7th grade math (TX TEKS)]] | Mathematics (required) | 78% | — | — | 2026-11-22 | 35/52/18/5 of 110; 11 units. Activity log: 638 min (185 rows) |
-| [[khan-grade-8-math-tx\|8th grade math (TX TEKS)]] | Mathematics (required) | — | — | — | 2026-11-22 | Log only. Activity log: 371 min (93 rows). No mastery shown |
+| [[khan-grade-8-math-tx\|8th grade math (TX TEKS)]] | Mathematics (required) | 55% | — | — | 2026-11-22 | 20/34/18/9/17 of 98; challenge not taken. Activity log: 371 min (93 rows). Keep-warm: units 1, 7, 8, 10 ([[khan-priority-plan]]) |
 | [[khan-constitution-101\|Constitution 101]] | Good Citizenship (required); History / Social Studies | 90% | — | — | 2026-11-22 | 64/41/10/1 of 116; 10 units. Activity log: 416 min (115 rows). Pairs with [[civ-course\|The Civ]] |
 | [[khan-ms-biology\|MS biology]] | Science (standard practice) | 19% | — | — | 2026-11-22 | 5/5/5/2 of 17 leveled; 11 units |
 | [[khan-ms-earth-space\|MS Earth and space science]] | Science (standard practice) | 26% | — | — | 2026-11-22 | 4/3/4/1 (no "of N"); 7 units |
@@ -40,7 +40,7 @@ Activity-log only (no course note beyond the snapshot): **"6th math"** (non-TX l
 ## This week (2026-11-16 through 2026-11-22)
 
 - Minutes Khan showed: **16**
-- Weekly *goal* (set with Shiloh): —
+- Weekly *goal*: — until Thomas approves [[khan-priority-plan]] (proposed: ELA 4×25, science 3×25, math keep-warm 2×20)
 - Quiz / unit tests in this window (pending evidence): Fourteenth Amendment unit test 12/12 (2026-11-16); Elections and Voting Rights Quiz 1 6/6 (2026-11-17); Elections and Voting Rights unit test 13/13 (2026-11-18)
 
 ## Stuck right now / flags (observations, not judgments)
@@ -48,9 +48,11 @@ Activity-log only (no course note beyond the snapshot): **"6th math"** (non-TX l
 - [[khan-grade-6-math-tx\|6th grade math (TX TEKS)]]: Algebraic representations of two-variable relationships is the weakest math unit shown (**13%**).
 - [[khan-grade-6-ela\|6th grade reading, grammar, and vocab]] is not started (93 skills unfamiliar). Reading/grammar has the least Khan work this sync. Reading is a Doc 03 required subject and still has no baseline diagnostic (see [[NOW]]).
 - [[khan-constitution-101\|Constitution 101]]: the Elections and Voting Rights unit test was opened ~7 times with no score before the 13/13 (could be re-attempts). Worth a gentle Socratic check, not an accusation.
+- [[khan-grade-8-math-tx\|8th grade math (TX TEKS)]] is now 55% (no longer log-only). Weakest units: Transformational geometry 0%; Measurement of 3D figures 29%; Value and magnitude of rational numbers 50% (Up next); bivariate statistics 50%.
 
 ## Links
 
+- Priority plan (draft, pending Dad): [[khan-priority-plan]]
 - Snapshots: [[2026-11-22-khan-snapshot]]
 - Weekly log: [[2026-11-16-khan-weekly]]
-- Tell COLT: **"Khan sync"** or **"Khan help"**
+- Automatic **Khan sync: Friday ~6 PM**, so Dad can review over the weekend. Or tell COLT **"Khan sync"** / **"Khan help"**
