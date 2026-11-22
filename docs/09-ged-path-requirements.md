@@ -103,6 +103,30 @@ Job Corps is a free, federally-funded residential (or non-residential, at some c
 
 ---
 
+## Sources
+
+- [Texas GED policy — GED.com](https://www.ged.com/policies/texas.html)
+- [Steps to Earn a Certificate of High School Equivalency — Texas Education Agency](https://tea.texas.gov/ar/node/103694)
+- [TxCHSE Forms for 16 and 17-Year-Olds — Texas Education Agency](https://tea.texas.gov/gedforms.html)
+- [GED Scores Explained — Doctor GED](https://doctorged.com/ged-scores.html)
+- [How Much Does Getting a GED Cost? — GED.com](https://www.ged.com/blog/how-much-does-getting-a-ged--cost--fees--courses---amp--material.html)
+- [GED Preparation Resources — Texas Education Agency](https://tea.texas.gov/student-readiness-and-high-school/certificate-high-school-equivalency/ged-preparation-resources)
+- [Trade School Requirements — Universal Technical Institute](https://www.uti.edu/blog/education/trade-school-requirements)
+- [Best Vocational Trade School Programs in Texas — BestColleges](https://www.bestcolleges.com/united-states/texas/trade-schools/)
+- [TSI Assessment — Austin Community College](https://admissions.austincc.edu/tsi-assessment/)
+- [Vocational Training for Homeschoolers — Texas Home School Coalition](https://thsc.org/vocational-training-homeschoolers/)
+- [Homeschool Dual Credit — Austin Community College](https://dualcredit.austincc.edu/acchomeschool/)
+- [Student FAQs, Dual Credit Programs — Austin Community College](https://dualcredit.austincc.edu/faqs-3/)
+- [Compulsory School Age in Texas — HSLDA](https://hslda.org/post/compulsory-school-age-in-texas)
+- [How to Become an Electrician in Texas — TradeCareerPath](https://tradecareerpath.com/trades/electrician/texas/)
+- [How to Become an Electrician in Texas — StateApproved.com](https://www.stateapproved.com/blog/how-to-become-an-electrician-in-texas/)
+- [Job Corps FAQs — Job Corps](https://www.jobcorps.gov/faqs)
+- [North Texas Job Corps Center](https://northtexas.jobcorps.gov/)
+- [FAQ: FY26 Appropriations — National Job Corps Association](https://njcaweb.org/faq-fy26appropriations/)
+- [Gary Job Corps to close after decades alongside other centers nationwide — FOX 7 Austin](https://www.fox7austin.com/news/job-corps-centers-operations-pause-us-dept-of-labor)
+
+---
+
 *Changelog:*
 *2026-08-14 (v1.0) — Initial research doc: Texas GED age/eligibility rules, test structure and passing scores, cost and prep resources, trade-school admission requirements including the TSI exemption wrinkle, and implications for the current Middle School Completion Year plan.*
 *2026-08-14 (v2.0) — Major expansion on "getting there as early as possible": reframed the homeschool-diploma route (no state age floor, distinct from the GED test's 16/17/18 gate) as the likely fastest path; added dual-credit CTE/workforce-certificate coursework (available from 9th grade, contingent on college-readiness test benchmarks) as possibly the earliest realistic start to real trade training; added Texas registered-apprenticeship age floors (16 for electrician); added Job Corps as a combined GED+trade-training option from age 16, with an honest flag on its 2025–2026 funding volatility and the Texas center closure.*

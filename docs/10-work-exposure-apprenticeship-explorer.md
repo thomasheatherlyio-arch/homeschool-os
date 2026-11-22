@@ -133,4 +133,19 @@ Thomas's sign-off is needed before any actual outside-the-home placement (job sh
 
 ---
 
+## Sources
+
+- [Texas Child Labor Law — Texas Workforce Commission](https://www.twc.texas.gov/programs/wage-and-hour/texas-child-labor-law)
+- [Find Registered Apprenticeship Training Programs — Texas Workforce Commission](https://www.twc.texas.gov/services/job-training/find-apprenticeships)
+- [South Texas Electrical JATC](https://www.sotxjatc.org/)
+- [Electrical Apprentice Training Programs Look Up — TDLR](https://www.tdlr.texas.gov/amps/showapprenticeprograms.aspx)
+- [Registered Apprenticeship — ABC Central Texas](https://abccentraltexas.org/registered-apprenticeship/)
+- [Top Apprenticeship Programs San Antonio — ABC South Texas](https://www.abcsouthtexas.org/apprenticeship-programs-san-antonio-earn-while-you-learn-skilled-trades-training/)
+- [Weld Youth Apprenticeship Program — United Alloy](https://www.unitedalloy.com/youth-apprenticeship-program)
+- [Job Shadowing Helps Youth Explore Careers Before They Commit — Gulf Coast Workforce Solutions](https://www.wrksolutions.com/news/job-shadowing-helps-youth-explore-careers-before-they-commit)
+- [Job Shadowing — CTE Work-based Learning Toolkit](https://wbltoolkit.cte.nyc/job-shadowing/)
+- [Career and Technical Education — Texas Education Agency](https://tea.texas.gov/academics/college-career-and-military-prep/career-and-technical-education)
+
+---
+
 *Changelog: 2026-08-14 — Initial doc drafted (v1.0, MVP): exposure ladder (informational interview → job shadow → helper work → limited paid work → pre-apprenticeship → registered apprenticeship), Texas youth-employment and apprenticeship age/hour rules, trade menu tied to Doc 09's candidates, outreach scripts, small-bet design tying into Doc 07, and an Exposure Log for the evidence trail.*

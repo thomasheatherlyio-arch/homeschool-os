@@ -108,4 +108,22 @@ Treat this table as a starting lens, not a verdict — it's synthesized from mul
 
 ---
 
+## Sources
+
+- [Texas Foundation High School Program requirements — GeneralAcademic](https://generalacademic.com/texas-high-school-graduation-requirements/)
+- [College Admission for Homeschooled Students — Texas Home School Coalition](https://thsc.org/college-admission/)
+- [Average Cost of College 2026 — EducationData.org](https://educationdata.org/average-cost-of-college)
+- [Student Loan Debt Statistics 2026 — EducationData.org](https://educationdata.org/student-loan-debt-statistics)
+- [Federal Student Loan Amounts and Terms 2026-27 — The Institute for College Access & Success (TICAS)](https://ticas.org/federal-student-loan-amounts-and-terms-for-loans/)
+- [Save $80K: Start at Community College, Then Transfer — CommunityCollegeReview.com](https://www.communitycollegereview.com/blog/save-80k-start-at-community-college-then-transfer)
+- [What actually predicts college success? — Michigan Future / Weil College Advising](https://michiganfuture.org/2017/09/actually-predicts-college-success/)
+- [The Secret to Academic Success: Hours — and Hours — of Study — Ohio State News](https://news.osu.edu/the-secret-to-academic-success-hours----and-hours----of-study/)
+- [How AI Broke the Entry-Level Job — Washington Monthly](https://washingtonmonthly.com/2026/05/29/ai-entry-level-jobs-college-graduates/)
+- [Anthropic Economic Index report, June 2026 — Anthropic](https://www.anthropic.com/research/economic-index-june-2026-report)
+- [The white-collar jobs most exposed to AI, according to Anthropic's own data — Fortune](https://www.fortune.com/2026/04/09/the-white-collar-jobs-most-exposed-ai-according-anthropics-own-data)
+- [Future of Jobs Report 2025: fastest growing and declining jobs — World Economic Forum](https://www.weforum.org/stories/2025/01/future-of-jobs-report-2025-the-fastest-growing-and-declining-jobs/)
+- [15 AI-Proof College Majors — MajorMatch](https://majormatch.us/blog/ai-proof-college-majors/)
+
+---
+
 *Changelog: 2026-08-14 — Initial research doc (v1.0): Texas high school diploma/credit requirements, homeschool college admissions process, research on what actually predicts college success (tying directly to Doc 03's process-skill diagnosis), current cost-of-college and student-loan figures with a community-college-first cost strategy, and a non-alarmist synthesis of current AI labor-market research including a directional (not definitive) read on degree-field resilience.*

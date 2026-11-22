@@ -1,5 +1,8 @@
-# HomeSchool OS — web app (parked)
+# HomeSchool OS
 
-**Status (2026-11-22):** parked. v1 of HomeSchool OS now runs as an Obsidian vault + agents in
-[`shiloh-hq`](https://github.com/thomasheatherlyio-arch/shiloh-hq), which is the source of truth
-for the docs. `docs/` here is an older snapshot. See `CLAUDE.md` for what the app built.
+Two eras, two branches:
+
+| Branch | Era | What it is |
+|---|---|---|
+| `main` | **pre-Grok** (Aug–Nov 2026) | Next.js + Supabase web app (live on Vercel) + the Claude Project docs (`docs/00`–`18`, final snapshot 2026-11-22). See `CLAUDE.md`. |
+| `post-grok` | **post-Grok** (from 2026-11-22) | Obsidian vault + agents: Grok (COLT) for strategy/thinking, Claude for execution. Open the branch root in Obsidian. |

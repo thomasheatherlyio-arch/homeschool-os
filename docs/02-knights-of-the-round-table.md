@@ -22,6 +22,24 @@ This roster is explicitly choose-your-own-adventure: the candidates below are st
 **🧠 Mind & Mastery — AI Persona (seat open)**
 No interest signal yet points to a specific figure here. Suggested prompt for Shiloh to consider when picking: "Whose way of thinking about problems do I want to borrow?" Could be a scientist, inventor, writer, or historical figure — intentionally left for Shiloh to name rather than assigned from outside.
 
+**Candidate: Opher Brayer — method-based mentor (living expert)**
+Israeli talent-development methodologist. Since 1984 he has researched, built, and applied educational methodologies which — contrary to the popular notion that talent is inborn — demonstrate that people can *systematically develop* "genius"-level new talents. He founded the jazz department at Thelma Yellin High School of the Fine Arts, launched the STAGES program in 2007 (2,000+ children across socioeconomic lines), and has mentored teen entrepreneurs through Unistream.
+
+Why he fits this seat: Mind & Mastery is the quadrant about *how you think*, not just what you know. Brayer's entire body of work is a claim that thinking ability is trainable — which is the same bet this whole system is making on Shiloh. If the answer to "whose way of thinking do I want to borrow?" is "someone who teaches you how to build a mind," this is the seat for it.
+
+**The four foundations of polymath thinking** (the core of what a Brayer-seated Knight would be teaching):
+
+| Foundation | What it is |
+|---|---|
+| **Pattern Recognition** | The ability to recognize emotional, intellectual, or physical patterns — and how they are built and connected. |
+| **Pattern Design** | The ability to detect different pattern elements and re-design them in a systematic order to generate innovative thinking and transform behavior. |
+| **Analogy** | A technique to help people make the connection between one experience in their lives and another. This is the intuitive element of talent. |
+| **Real-Time Composition** | The fusion of recognized and designed patterns through their common denominator. |
+
+**Handling note — living expert, so method-based not verbatim:** Brayer is alive and actively publishing, which puts him in the "modern living expert" category defined in Part 2. Claude should **not** role-play him in first-person invented dialogue. The correct framing is *"a teacher coached in Opher Brayer's method"* — working from his four foundations above and from real material Shiloh points it to (a podcast episode, interview, or course of his), rather than fabricating quotes.
+
+**Cross-quadrant note:** unlike most seats, these four foundations aren't subject-specific — they apply to math, basketball footwork, cooking, wiring a panel, or writing a hook. If Shiloh seats Brayer here, the four foundations become a lens usable in *every* quadrant, and any Squire elsewhere can be asked to teach its topic through them (e.g., "show me the pattern underneath this," "give me the analogy").
+
 **🚀 Venture & Craft — AI Persona (candidates)**
 - **Richard Branson** — built Virgin from nothing, openly dyslexic and a poor academic fit for traditional school, a direct parallel to Shiloh's own story.
 - **Daymond John** — self-made from the ground up (FUBU), relatable "started with nothing, hustled" voice, well known to teens through Shark Tank.
@@ -51,7 +69,7 @@ This second category is exactly where the Phase 2 plan (Doc 05) is headed: point
 
 | Quadrant (Knight) | Example Squire slots | Notes |
 |---|---|---|
-| 🧠 Mind & Mastery | Math · Science · Writing · History | Sal Khan / Khan Academy is a natural, safe default for a Math or Science Squire given the existing Phase 2 plan (Doc 05) to connect this system to Khan Academy directly — but any real teacher/channel Shiloh actually likes works. |
+| 🧠 Mind & Mastery | Math · Science · Writing · History · **Polymath thinking (Brayer method)** | Sal Khan / Khan Academy is a natural, safe default for a Math or Science Squire given the existing Phase 2 plan (Doc 05) to connect this system to Khan Academy directly — but any real teacher/channel Shiloh actually likes works. If Shiloh doesn't want Brayer at full Knight weight, the four foundations work just as well as a narrow Squire slot: one foundation at a time, practiced against whatever he's already studying. |
 | 💪 Body & Discipline | Basketball skills/technique · Strength & conditioning · Nutrition | Jahari holds the overall Knight seat; a Squire here would be a specific skills trainer or nutrition source Shiloh follows, layered underneath, not a replacement. |
 | 🚀 Venture & Craft | Marketing/branding · Pricing & sales · Content creation | Could reuse a Knight candidate (Branson, Daymond John) at Squire depth for one specific skill, or bring in someone different for a narrower topic. |
 | 🕊️ Spirit & Character | Stoicism · Mindfulness/meditation technique · World religions/ethics | Historical figures fit especially well here (Marcus Aurelius, Epictetus for Stoicism) — well-documented, low-risk, and a natural complement to Jahari's zen practice. |
@@ -73,8 +91,12 @@ Empty slots aren't a gap to fill immediately — this is a menu, not a checklist
 
 > "Act as a teacher coached in [Expert]'s method for [specific skill]. Here's [a video/transcript/notes] from them — teach me this material the way they actually teach it, and quiz me on it afterward."
 
+**Brayer seat specifically (method-based, cross-quadrant):**
+
+> "Act as a teacher coached in Opher Brayer's method. Take [thing I'm working on] and run it through the four foundations: what's the **pattern** here, how would I **re-design** that pattern, what's an **analogy** from something else I already know, and how do I **compose** it in real time? Then make me do it, don't just explain it."
+
 Sessions with either tier get logged in the dashboard (Doc 04) just like any other quadrant activity: what was discussed, what Shiloh decided to do differently. A mentor conversation with no resulting action is a nice chat, not evidence of growth — the log should reflect that distinction. Squire sessions tied to a specific academic subject (Mind & Mastery) also count as evidence for Doc 03's tracker when logged with what was covered.
 
 ---
 
-*Changelog: 2026-08-14 — Initial roster drafted (v1.0, MVP). Jahari confirmed as IRL dual-seat Knight. Three Knight seats left open for Shiloh to fill. 2026-08-14 — Added Part 2: Squires (sub-quadrant teachers), with historical-figure vs. modern-living-expert handling and a starting menu of slots per quadrant.*
+*Changelog: 2026-08-14 — Initial roster drafted (v1.0, MVP). Jahari confirmed as IRL dual-seat Knight. Three Knight seats left open for Shiloh to fill. 2026-08-14 — Added Part 2: Squires (sub-quadrant teachers), with historical-figure vs. modern-living-expert handling and a starting menu of slots per quadrant. 2026-09-05 — Added Opher Brayer as a candidate for the open 🧠 Mind & Mastery Knight seat, with his four foundations of polymath thinking, method-based (non-roleplay) handling note as a living expert, a cross-quadrant usage note, a fallback Squire slot, and a dedicated activation prompt. Seat still unconfirmed — Shiloh's call.*
