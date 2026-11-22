@@ -26,6 +26,17 @@ Right-click `scripts\COLT.cmd` → Send to → Desktop (create shortcut) → ren
 Double-clicking it opens Grok Build in the vault folder, so it loads `AGENTS.md` automatically.
 Check it worked: ask *"What does AGENTS.md say your job is?"* It should say COLT and P1.
 
+## 3b. First prompts (in this order)
+No long seed prompt is needed: Grok Build loads `AGENTS.md` by itself every time COLT opens.
+1. **Dad, right after install (Shiloh not needed):**
+   `Read only AGENTS.md and NOW.md. In 5 lines tell me: who you are, the P1 goal, which files you may never edit, and this week's missions. Don't change any files.`
+   Pass = it says COLT, P1, names `verifications.md` and `00-charter/`, lists the missions, edits nothing.
+   Fail (it reads lots of files or edits something) → stop and fix before Shiloh uses it.
+2. **Together, setup day (Shiloh types):**
+   `COLT, this is our first session. Introduce yourself in 3 sentences, ask me if I want to give you a new name, then do my morning check-in.`
+3. **Dad, the same week, without Shiloh:** `baseline diagnostic reading`. Print the packet; give it on paper.
+4. **Every day after:** just `COLT, morning` and `COLT, wrap up`. Fridays: `weekly review`.
+
 ## 4. Permissions (important)
 Grok Build is an agent: it can edit files and run commands. Set it to **ask before running any
 command**. File edits inside the vault are fine. Tell Shiloh: if COLT asks to run a command or
