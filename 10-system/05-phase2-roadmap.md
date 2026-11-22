@@ -43,6 +43,11 @@ Phase 2 started (Aug 29–30) as a Next.js + Supabase web app (repo `homeschool-
 `main`; Doc 17 is its build brief). It shipped the dashboard, courses, North Star, Mind Mansion
 and Work Ladder, then sat idle for three months. **It is now parked, not deleted.**
 
+**P1 for v1 (Thomas, 2026-11-22): help Thomas track and verify Shiloh's progress toward high school.**
+Every component below serves that first: the readiness tracker (`55-progress/hs-readiness.md`, three
+gates from Docs 03, 09a and 10a), evidence that counts only once Thomas verifies it, Doc 09a baseline
+diagnostics, and a weekly parent report (Claude writes it Friday; Grok "HQ Headmaster" delivers it Saturday).
+
 v1 of Phase 2 is instead an **Obsidian vault + agents** (branch `post-grok`; see `DECISIONS.md`):
 - **Grok, as COLT** — Shiloh's interface for conversation, tutoring and planning (strategy).
 - **Claude** — a daily scheduled run that applies Grok's handoffs to the vault (execution).
