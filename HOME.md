@@ -19,6 +19,7 @@ type: home
 
 ## Road to high school
 [[hs-readiness]]: where you stand on each subject. Work counts once Dad checks it.
+[[khan-dashboard|Khan Academy]]: your course dashboard. Tell COLT **"Khan sync"** to update it, or **"Khan help"** if you're stuck.
 
 ## The Circle
 [[mind-mastery|🧠 Mind]] · [[body-discipline|💪 Body]] · [[venture-craft|🚀 Venture]] ·

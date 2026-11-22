@@ -31,3 +31,6 @@ type: log
 - 2026-11-22 — COLT — Applied [[20261122-civ-course]]: [[civ-course]] status set to active; added Civ checkpoint routing row to AGENTS.md.
 - 2026-11-22 — COLT — Applied [[20261122-khan-academy-connection]]: [[khan-academy]] connection marked approved 2026-11-22; NOW.md notes COLT to connect.
 - 2026-11-22 — COLT — Applied [[20261122-obsidian-meta-bind]]: installed Meta Bind 1.5.1 under `.obsidian/plugins/obsidian-meta-bind-plugin/` and enabled it in community-plugins.json; added drop-down bind line to proposal bodies and TEMPLATE (decision values left unchanged).
+- 2026-11-22 — COLT — Built the Khan Academy tracking system in `25-khan/` (README, [[khan-dashboard]], course stubs, snapshots/ and weekly/ folders) plus templates `khan-course`, `khan-snapshot`, `khan-weekly`.
+- 2026-11-22 — COLT — Added skills `khan-sync` and `khan-coach`; routing rows in AGENTS.md for "Khan sync" and "Khan help".
+- 2026-11-22 — COLT — Linked [[khan-dashboard]] from [[HOME]], [[index]], and the P1 summary [[khan-academy]] (summary only, no duplicate unit tables). Added "First Khan sync" to NOW.md open loops.

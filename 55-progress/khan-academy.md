@@ -11,6 +11,10 @@ Self-reported by Shiloh (pasted or screenshot from Khan Academy), logged by COLT
 Counts as **pending** until Thomas verifies it in [[verifications]]. Feeds [[hs-readiness]].
 Direct account connection: approved by Thomas 2026-11-22 ([[20261122-khan-academy-connection]]).
 
+The working system lives in `25-khan/`: start at [[khan-dashboard]] · how it works: [[25-khan/README|Khan system README]]. This page is the **P1 summary only** (feeds [[hs-readiness]]). Do not copy unit-level tables here.
+
+**Last synced:** — (no Khan data yet; first pull is a "Khan sync").
+
 ## Course mastery
 | Date | Course | Unit | Mastery % | Skills mastered | Proficient | Familiar | Source |
 |---|---|---|---|---|---|---|---|
@@ -27,4 +31,4 @@ Direct account connection: approved by Thomas 2026-11-22 ([[20261122-khan-academ
 | 2026-11-23 | | | | |
 
 ---
-Back to [[hs-readiness]] · [[NOW]]
+Back to [[hs-readiness]] · [[NOW]] · [[khan-dashboard]]

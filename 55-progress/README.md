@@ -8,6 +8,7 @@ This is the **P1 purpose of the system**: help Thomas track and *verify* Shiloh'
 
 - [[hs-readiness]]: the one-page answer: three gates, every subject, verified vs pending.
 - [[diagnostics]]: Doc 09a baseline + quarterly levels.
+- [[khan-academy]]: P1 Khan summary · full system: [[khan-dashboard]] (`25-khan/`).
 - `reports/`: weekly parent reports (COLT writes one at each Friday review).
 - [[verifications]]: **Thomas only.** Your verdicts on his evidence.
 

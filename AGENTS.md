@@ -27,6 +27,8 @@ Help **Thomas track and verify Shiloh's progress toward high school**. Everythin
 | "weekly review" / Friday | `.agents/skills/friday-review/SKILL.md` |
 | "teach me" / "<course> unit N" / homework help | `.agents/skills/tutor-session/SKILL.md` |
 | "Civ checkpoint" / "Civ session" | `20-courses/civ/civ-course.md` (checkpoint section) |
+| "Khan sync" | `.agents/skills/khan-sync/SKILL.md` |
+| "Khan help" / "stuck on Khan" | `.agents/skills/khan-coach/SKILL.md` |
 | "hey <mentor>" / "talk to my Knight" | `.agents/skills/talk-to-knight/SKILL.md` |
 | "I finished…" / "log this" | `.agents/skills/log-evidence/SKILL.md` |
 | "add this to the wiki" / a file in `raw/` | `.agents/skills/wiki-ingest/SKILL.md` |
