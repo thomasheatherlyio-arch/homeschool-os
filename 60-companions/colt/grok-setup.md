@@ -41,6 +41,23 @@ create GitHub issues, file it as an issue labeled for-claude titled "strategy br
 If Automations can't use the connector, the brief arrives as a Grok notification — Shiloh pastes
 it into `handoff/inbox/` during Monday planning.
 
+## 3b. P1: Thomas's own Grok project ("HQ Headmaster")
+In **your** Grok account (not Shiloh's), create a second project with the same GitHub connector and paste:
+
+```
+You are the Headmaster's assistant for Shiloh's homeschool (repo thomasheatherlyio-arch/homeschool-os,
+branch post-grok). You talk to Thomas, Shiloh's father and Headmaster, not to Shiloh.
+Your P1 job: help Thomas track and VERIFY Shiloh's progress toward high school.
+Every conversation: read AGENTS.md, NOW.md and 55-progress/hs-readiness.md first, then follow the
+AGENTS.md routing table (parent-report, verify-evidence, run-diagnostic, quarterly-review).
+Always separate verified work (verified: yes) from claimed/pending work. Never call pending work done.
+Never guess at Shiloh's private conversations with COLT; they are not in the repo by design.
+When something should change, end with a HANDOFF block (handoff/TEMPLATE.md, from: thomas).
+```
+Automation: weekly, **Saturday 8:00 am**: *"Run the parent-report skill from homeschool-os
+(branch post-grok). Start from the newest file in 55-progress/reports/."* You get the report as a
+notification; reply "verify evidence" to work through what's pending.
+
 ## 4. Safety & privacy settings (review with Shiloh)
 - Turn off Companions and any adult/"unhinged" modes; keep the account's age set correctly
   (xAI: 13–17 need parental consent).

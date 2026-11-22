@@ -11,3 +11,4 @@ type: log
 - 2026-11-22 — Obsidian layer: 05-circle quadrant hubs, HOME.md, HQ-map.canvas, graph color groups, folder notes for journal/evidence/raw/wiki, quadrant-as-link in templates.
 - 2026-11-22 — Added maps/ (shiloh-hq-map.html, hq-system-map.html): visual snapshots of the HQ.
 - 2026-11-22 — README/START-HERE point to HOME, canvas, 05-circle, maps/; architecture review marked implemented.
+- 2026-11-22 — P1 set: 55-progress/ (hs-readiness, diagnostics, reports), parent-report/verify-evidence/run-diagnostic skills, verified fields on evidence, Headmaster Grok project, Friday parent report.

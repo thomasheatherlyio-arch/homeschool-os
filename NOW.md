@@ -7,6 +7,7 @@ updated: 2026-11-22
 **Week of:** 2026-11-23
 **Phase:** Relaunch — moving from the web app to this vault (post-Grok).
 **Focus quadrant:** Systems & Self-Command (getting the new system running)
+**P1:** high-school readiness, tracked and verified in [[hs-readiness]]
 
 ## This week's missions (max 5)
 - [ ] Install Obsidian + GitHub Desktop, clone the `post-grok` branch (Dad helps)
@@ -16,7 +17,8 @@ updated: 2026-11-22
 - [ ] Seat one open Knight (see `60-companions/knights/`)
 
 ## Open loops (escalation stage in brackets)
-- (none yet)
+- [needs Thomas · P1] Give the Reading baseline diagnostic this week (Grok: "baseline diagnostic reading"); Writing and Math on the next two weeks. Readiness can't be measured until these are done.
+- [needs Thomas · P1] Confirm the target 9th-grade start (proposed Fall 2027) and the proposed L3 targets in [[hs-readiness]].
 
 ## Since last time (Claude writes, Grok reads)
 - 2026-11-22 — Vault set up: courses split into sections, Knights files, learner profile, routing.

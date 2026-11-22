@@ -364,3 +364,13 @@ Exposure Ladder conceptually, but Doc 10 itself wasn't requested and has its own
 Exposure Log that would be a distinct feature, not something to fold in silently here.
 
 **Status:** Complete — shipped 2026-08-30.
+
+## 2026-11-22: P1 for v1 = parent-verifiable high-school readiness
+**Decision (Thomas):** The main job of this version is helping Thomas track and verify Shiloh's progress
+toward high school. Built as `55-progress/` (readiness tracker with three gates from Docs 03, 09a, 10a;
+diagnostics log; weekly parent reports), `verified:` fields on every evidence note (only Thomas or the named
+mentor verifies), three Headmaster skills (parent-report, verify-evidence, run-diagnostic), a separate
+"HQ Headmaster" Grok project with a Saturday report, and a Friday report from Claude's nightly run.
+**Why:** progress you can't verify isn't progress you can attest to (Doc 03: Thomas is the sole authority
+on grade level and completion). **Alternatives:** Shiloh self-reporting only (unverifiable); Thomas reading
+raw notes (too much time).

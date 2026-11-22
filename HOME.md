@@ -6,6 +6,9 @@ type: home
 **Today:** [[NOW]] — this week's missions and open loops.
 **Map:** open `HQ-map.canvas` (the visual board) or `maps/shiloh-hq-map.html` in a browser · Graph view: Ctrl+G
 
+## Road to high school
+[[hs-readiness]]: where you stand on each subject. Work counts once Dad checks it.
+
 ## The Circle
 [[mind-mastery|🧠 Mind]] · [[body-discipline|💪 Body]] · [[venture-craft|🚀 Venture]] ·
 [[spirit-character|🕊️ Spirit]] · [[systems-self-command|🗂️ Systems]]

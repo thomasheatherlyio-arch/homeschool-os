@@ -26,6 +26,7 @@ updated: 2026-11-22
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
+- **P1:** [[hs-readiness]] · [[diagnostics]] · `55-progress/reports/` (weekly parent reports)
 - [[HOME]] — Shiloh's home note; `HQ-map.canvas` is the visual board
 - Circle hubs (`05-circle/`): [[mind-mastery]] · [[body-discipline]] · [[venture-craft]] · [[spirit-character]] · [[systems-self-command]]
 - `maps/`: visual web pages (Shiloh map, system blueprint). See the folder's README.

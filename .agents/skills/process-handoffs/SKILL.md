@@ -15,6 +15,9 @@ description: Claude's daily executor run — apply every open handoff (handoff/i
    - Commit: `handoff: <id>`.
 3. Bookkeeping: NOW.md "Since last time" (≤5 lines, newest first, drop items >7 days old),
    one line per change in `log.md`, `index.md` if files were added/renamed,
-   course progress tables, `learner-profile.md` observations (evidence-based only).
-4. Fridays: also run `friday-review` step 3–4 if a review handoff exists.
+   course progress tables, `55-progress/hs-readiness.md` evidence counts (P1), `learner-profile.md` observations (evidence-based only).
+4. Fridays (check `TZ=America/Chicago date`; this run starts after midnight UTC): run `friday-review`
+   step 3–4 if a review handoff exists, and **always** write the P1 parent report per
+   `.agents/skills/parent-report/SKILL.md` into `55-progress/reports/`. Never set `verified: yes`
+   unless a handoff carries Thomas's verdict.
 5. Push. If nothing was open, make no commit.

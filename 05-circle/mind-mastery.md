@@ -8,6 +8,7 @@ Academics — the five Texas-required subjects plus science, history and any aca
 Part of [[01-holistic-quadrants-the-circle|the Circle]] · back to [[HOME]]
 
 ## Where this gets built
+- [[hs-readiness]] · [[diagnostics]] (P1: road to high school)
 - [[kitchen-course]]
 - [[gym-course]]
 - [[panel-course]]
