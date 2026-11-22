@@ -13,3 +13,4 @@ type: log
 - 2026-11-22 — README/START-HERE point to HOME, canvas, 05-circle, maps/; architecture review marked implemented.
 - 2026-11-22 — P1 set: 55-progress/ (hs-readiness, diagnostics, reports), parent-report/verify-evidence/run-diagnostic skills, verified fields on evidence, Headmaster Grok project, Friday parent report.
 - 2026-11-22 — maps/ v2: P1 readiness section (blueprint) and Road to high school panel (Shiloh map).
+- 2026-11-22 — START-HERE rewritten as full PC + accounts setup (Dad / together / daily); no Claude account for Shiloh (18+).
