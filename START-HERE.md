@@ -25,7 +25,8 @@ Do this once, with Dad. It takes about 30 minutes.
 - [ ] "Open folder as vault" → pick `Documents\Shiloh HQ`. Trust the author when it asks.
 - [ ] Settings → Community plugins → turn on → Browse → install **Obsidian Git** → enable.
 - [ ] In the Obsidian Git settings: auto pull on startup = on; auto commit-and-sync every 10 minutes.
-- [ ] Open the graph view (Ctrl+G) and look around.
+- [ ] Open [[HOME]], then `HQ-map.canvas` (your visual board), then the graph view (Ctrl+G).
+      Colors = folders; the five big dots in the middle are your Circle.
 
 ## 4. Meet COLT
 - [ ] Open the Grok "Shiloh HQ" project Dad set up. Say: **"COLT, morning."**

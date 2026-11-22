@@ -1,9 +1,12 @@
 ---
 type: decision-draft
-status: proposed
+status: implemented
 date: 2026-11-22
 ---
 # Agent architecture review — Grok (strategy) + Claude (execution)
+
+> **Implemented 2026-11-22.** All 13 gaps were fixed (courses became `sections/` files rather than `units/`;
+> the nightly Claude routine is live; Circle hubs, HOME and HQ-map.canvas added). Open: verify (a) and (b) below in Grok.
 
 ## What the research says (Nov 2026)
 
