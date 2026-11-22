@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "-path:templates -path:handoff -path:raw -file:AGENTS -file:CLAUDE -file:log -file:index -file:DECISIONS -file:README",
+  "search": "-path:templates -path:proposals -path:raw -path:scripts -file:AGENTS -file:log -file:index -file:DECISIONS -file:README",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,

@@ -4,7 +4,7 @@ updated: 2026-11-22
 ---
 # Shiloh — learner profile
 
-Maintained by Claude from **evidence only** (quiz scores, finished work, Doc 09 diagnostics,
+Maintained by COLT from **evidence only** (quiz scores, finished work, Doc 09 diagnostics,
 Thomas's notes). Never from "just talking". Read by COLT before tutoring or planning.
 
 ## Snapshot

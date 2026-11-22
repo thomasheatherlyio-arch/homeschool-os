@@ -5,26 +5,26 @@ updated: 2026-11-22
 # NOW — read this first (agents: this + AGENTS.md is the default load)
 
 **Week of:** 2026-11-23
-**Phase:** Relaunch — moving from the web app to this vault (post-Grok).
+**Phase:** Relaunch: moving from the web app to this vault, with COLT in Grok Build.
 **Focus quadrant:** Systems & Self-Command (getting the new system running)
 **P1:** high-school readiness, tracked and verified in [[hs-readiness]]
 
 ## This week's missions (max 5)
-- [ ] Install Obsidian + GitHub Desktop, clone the `post-grok` branch (Dad helps)
-- [ ] First chat with COLT in Grok — rename COLT if you want (Doc 06 §8)
+- [ ] Set up the PC with Dad ([[START-HERE]])
+- [ ] First chat with COLT (double-click COLT): rename COLT if you want (Doc 06 §8)
 - [ ] Write 3 daily notes
 - [ ] Pick the next course: Kitchen / Gym / Panel / Forge
 - [ ] Seat one open Knight (see `60-companions/knights/`)
 
 ## Open loops (escalation stage in brackets)
-- [needs Thomas · P1] Give the Reading baseline diagnostic this week (Grok: "baseline diagnostic reading"); Writing and Math on the next two weeks. Readiness can't be measured until these are done.
+- [needs Thomas · P1] Give the Reading baseline diagnostic this week (tell COLT: "baseline diagnostic reading"); Writing and Math on the next two weeks. Readiness can't be measured until these are done.
 - [needs Thomas · P1] Confirm the target 9th-grade start (proposed Fall 2027) and the proposed L3 targets in [[hs-readiness]].
 
-## Since last time (Claude writes, Grok reads)
-- 2026-11-22 — Vault set up: courses split into sections, Knights files, learner profile, routing.
+## Last session (COLT writes)
+- 2026-11-22: Vault ready for Grok Build. COLT now writes notes directly; Dad verifies in [[verifications]].
 
-## Questions for COLT (Claude writes when a handoff was unclear)
-- (none)
+## Waiting on Dad (proposals, verifications, decisions)
+- See Open loops marked "needs Thomas".
 
 ## Next review
 Friday 2026-11-27 — weekly review with Dad.

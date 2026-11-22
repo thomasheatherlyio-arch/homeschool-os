@@ -1,11 +1,13 @@
 ---
 type: decision-draft
-status: implemented
+status: superseded
 date: 2026-11-22
 ---
 # Agent architecture review — Grok (strategy) + Claude (execution)
 
-> **Implemented 2026-11-22.** All 13 gaps were fixed (courses became `sections/` files rather than `units/`;
+> **Superseded 2026-11-22 (later the same day):** v1 is now Grok Build only, writing the vault directly; no Claude. See DECISIONS.md. Kept for history.
+>
+> Earlier: **Implemented 2026-11-22.** All 13 gaps were fixed (courses became `sections/` files rather than `units/`;
 > the nightly Claude routine is live; Circle hubs, HOME and HQ-map.canvas added). Open: verify (a) and (b) below in Grok.
 
 ## What the research says (Nov 2026)

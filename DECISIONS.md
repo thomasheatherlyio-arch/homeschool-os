@@ -374,3 +374,15 @@ mentor verifies), three Headmaster skills (parent-report, verify-evidence, run-d
 **Why:** progress you can't verify isn't progress you can attest to (Doc 03: Thomas is the sole authority
 on grade level and completion). **Alternatives:** Shiloh self-reporting only (unverifiable); Thomas reading
 raw notes (too much time).
+
+## 2026-11-22: Simple v1 = Grok Build + Obsidian, no Claude
+**Decision (Thomas):** Drop Claude (no paid Claude subscription for this). COLT runs in **Grok Build** on
+Shiloh's PC, opened in the vault, and reads/writes notes directly. GitHub stays only as an automatic
+Obsidian Git backup (no tokens) so Thomas can see and verify progress from his devices (P1).
+Handoffs → `proposals/` (only for changes Thomas must approve). Thomas's verdicts live in
+`55-progress/verifications.md`, which COLT never edits. Claude's nightly routine paused.
+**Why:** one subscription, instant updates in Obsidian, fewer moving parts. **Token controls:** AGENTS.md
+forbids vault scans, one skill + one file per task, cached lesson cards, a fresh session each time.
+**Alternatives:** Grok app + Claude nightly via GitHub (two subscriptions, overnight delay); ZIP copy with
+no backup (Thomas can't see progress; no tamper-evident record).
+

@@ -1,7 +1,7 @@
 ---
 type: log
 ---
-# Activity log (append-only — Claude adds one line per change, newest at bottom)
+# Activity log (append-only — COLT adds one line per change, newest at bottom)
 
 - 2026-11-22 — setup — vault created; 21 Claude Project docs + playbook imported
 - 2026-11-22 — setup — pivot to branch `post-grok` of homeschool-os
@@ -14,3 +14,4 @@ type: log
 - 2026-11-22 — P1 set: 55-progress/ (hs-readiness, diagnostics, reports), parent-report/verify-evidence/run-diagnostic skills, verified fields on evidence, Headmaster Grok project, Friday parent report.
 - 2026-11-22 — maps/ v2: P1 readiness section (blueprint) and Road to high school panel (Shiloh map).
 - 2026-11-22 — START-HERE rewritten as full PC + accounts setup (Dad / together / daily); no Claude account for Shiloh (18+).
+- 2026-11-22 — v1 simplified: Grok Build writes the vault directly; Claude removed (CLAUDE.md, .claude, process-handoffs, strategy-brief); handoff/ → proposals/; verifications.md (Thomas only); lesson-card caching; COLT.cmd launcher; Obsidian Git preconfigured.

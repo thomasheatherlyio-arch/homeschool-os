@@ -1,9 +1,11 @@
 ---
 name: monday-plan
-description: Run Shiloh's Monday planning session — set up to 5 missions across Circle quadrants and rewrite NOW.md. Use when Shiloh says plan my week / Monday planning.
+description: Plan the week with Shiloh: carry-overs, weakest quadrant, up to 5 missions. Use when he says plan my week, or on Mondays.
 ---
-1. Read NOW.md and the latest `40-journal/weekly/` review.
-2. Ask Shiloh (Socratic): what's carrying over, what quadrant is weakest, what's due.
-3. Agree up to 5 missions, each with a clear "done when".
-4. Grok: write a handoff "Update NOW.md for week of <date>" with the mission list.
-   Claude: rewrite NOW.md (missions, open loops, next review date). Keep it under 40 lines.
+1. Read NOW.md and the newest note in `40-journal/weekly/` (if any).
+2. Ask Shiloh (Socratic): what's carrying over, which quadrant is weakest, what's due, what Dad flagged
+   in "Waiting on Dad" or the last report.
+3. P1 check: is a baseline diagnostic or a re-check due (`55-progress/diagnostics.md`)? If so, one
+   mission is "do the <subject> check-in with Dad".
+4. Agree up to 5 missions, each with a clear "done when".
+5. Rewrite only NOW.md's header, missions, open loops and next review date. Keep NOW.md under 40 lines.

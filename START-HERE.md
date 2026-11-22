@@ -6,73 +6,66 @@ quadrant: "[[systems-self-command]]"
 ---
 # Start here: Shiloh's PC and accounts
 
+v1 = **Obsidian + COLT (Grok Build)** on Shiloh's PC. COLT reads and writes the notes directly.
+GitHub is only a silent backup (every 10 min, no tokens) so Dad can check progress from his phone.
 Part A is Dad alone (~30 min). Part B is together (~60 min). Part C is Shiloh's every day.
-Accounts in v1: **GitHub · Grok · Obsidian.** No Claude account for Shiloh (see A4).
 
 ## Part A: Dad, before setup day
-- [ ] **A1. Windows:** run Windows Update. Make Shiloh a **Standard** (not admin) user; keep the admin
-      login yourself. Optional: Microsoft Family Safety for screen time and web filtering.
-- [ ] **A2. Install as admin** (so Shiloh can't uninstall or swap tools; Toolshed rule, Doc 08):
-  - **Git for Windows** (git-scm.com). Obsidian Git needs it; GitHub Desktop's built-in git isn't enough.
-    Defaults are fine; keep "Git Credential Manager" checked.
-  - **GitHub Desktop** (desktop.github.com)
-  - **Obsidian** (obsidian.md)
-- [ ] **A3. Email:** Shiloh needs his own email address for GitHub and Grok (you keep the password recovery).
-- [ ] **A4. Claude: no account for Shiloh.** Claude's consumer terms are 18+. Claude only runs the
-      nightly job on Dad's account; Shiloh never needs to sign in to it.
-- [ ] **A5. Your Grok "HQ Headmaster" project** (P1), per [[grok-setup]] §3b.
+- [ ] **A1. Windows:** run Windows Update. Make Shiloh a **Standard** (not admin) user; you keep admin.
+      Optional: Microsoft Family Safety.
+- [ ] **A2. Install as admin:** **Git for Windows** (git-scm.com, defaults; keep "Git Credential
+      Manager"), **Obsidian** (obsidian.md), and **Grok Build** ([[grok-setup]] §2).
+- [ ] **A3. Email:** Shiloh's own address for GitHub and Grok (you keep the recovery).
+- [ ] **A4. Plan check:** confirm Shiloh's Grok plan includes Grok Build ([[grok-setup]] §1).
+- [ ] **A5. No Claude account for Shiloh.** Not part of v1 (and Claude's consumer terms are 18+).
 
 ## Part B: together, setup day
-**B1. GitHub**
-- [ ] Shiloh signs up at github.com with his email. Username: not his full name.
-- [ ] Settings → Emails → turn on "Keep my email address private" (commits use a noreply address).
-- [ ] Settings → Password and authentication → add a **passkey** (Windows Hello) or authenticator app.
-      Dad saves the recovery codes.
-- [ ] Dad invites him to `homeschool-os` (Settings → Collaborators, role **Write**). Shiloh accepts.
+**B1. GitHub (backup only)**
+- [ ] Shiloh signs up at github.com. Username: not his full name. Settings → Emails →
+      "Keep my email address private". Add a passkey (Windows Hello); Dad keeps the recovery codes.
+- [ ] Dad invites him to `homeschool-os` (Settings → Collaborators, **Write**). He accepts.
 
-**B2. Get the HQ onto the PC**
-- [ ] GitHub Desktop → sign in → File → Options → Git: name = first name, email = the GitHub noreply address.
-- [ ] File → Clone repository → `homeschool-os` → `Documents\Shiloh HQ`.
-- [ ] Current branch → **`post-grok`**. (`main` is the old web app. Never work there; pushing to it redeploys the old site.)
+**B2. Put the vault on the PC** (PowerShell, as Shiloh)
+```
+git config --global user.name "Shiloh"
+git config --global user.email "<his GitHub noreply address>"
+git clone -b post-grok https://github.com/thomasheatherlyio-arch/homeschool-os "$HOME\Documents\Shiloh HQ"
+```
+A browser window asks him to sign in to GitHub once (Git Credential Manager). That's it for git.
 
 **B3. Obsidian**
 - [ ] Open folder as vault → `Documents\Shiloh HQ` → Trust author.
 - [ ] Settings → Community plugins → turn on → Browse → **Obsidian Git** → Install → Enable.
-- [ ] Obsidian Git settings: Pull on startup = on · Auto commit-and-sync interval = 10 min.
-- [ ] **Test the sync:** Ctrl+P → "Open today's daily note" → write one line → Ctrl+P →
-      "Git: Commit and sync". Check the note shows up on github.com (branch post-grok).
-      First time, a browser window asks him to sign in to GitHub; that's Git Credential Manager.
-- [ ] Open [[HOME]], then `HQ-map.canvas`, then the graph (Ctrl+G). The five big dots are his Circle.
+      (Its settings are already in the vault: pull on open, back up every 10 min.)
+- [ ] Test: write one line in today's daily note (Ctrl+P → "Open today's daily note"), wait for the
+      backup (or Ctrl+P → "Git: Commit and sync"), and check it appears on github.com.
+- [ ] Open [[HOME]], then `HQ-map.canvas`, then the graph (Ctrl+G).
 
-**B4. Grok (COLT)**
-- [ ] Grok account with his **real birth date** (14). xAI requires parental consent for 13–17; you give it.
-- [ ] Settings: Companions off, adult/"unhinged" modes off, training on chats off (if offered).
-- [ ] Memory: off for the project, *or* show him what it remembers and how to delete it ([[grok-setup]] §4).
-- [ ] Connectors → GitHub → sign in as **Shiloh's** GitHub → allow **only** `homeschool-os`.
-- [ ] Create project **"Shiloh HQ"**, paste the instructions from [[grok-setup]] §2, upload `AGENTS.md`
-      and `persona.md`.
-- [ ] Test: "COLT, morning." It should name this week's missions from [[NOW]]. If it can't read
-      `post-grok`, tell Claude to make post-grok the default branch.
+**B4. COLT (Grok Build)**
+- [ ] Sign in to Grok Build with **Shiloh's** Grok account (real birth date; Dad gives consent).
+- [ ] Make the **COLT** desktop shortcut from `scripts\COLT.cmd` ([[grok-setup]] §3).
+- [ ] Set Grok Build to ask before running commands ([[grok-setup]] §4).
+- [ ] Test: double-click COLT → "COLT, morning." It should name this week's missions from [[NOW]].
 
-**B5. First loop (the next 24 hours)**
-- [ ] Evening: "COLT, wrap up" → paste the HANDOFF into a new note in `handoff/inbox/` → Commit and sync.
-- [ ] Next morning: "COLT, morning" should mention Claude's overnight update ("Since last time").
+**B5. First week**
+- [ ] Each evening: "COLT, wrap up" (COLT writes the daily note with him).
 - [ ] This week: Reading baseline with Dad (P1, [[hs-readiness]]).
+- [ ] Friday: "weekly review" → COLT writes the report for Dad.
 
 ## Part C: Shiloh, every day
 | When | What you do |
 |---|---|
-| Morning | "COLT, morning" → do the first move it suggests |
+| Morning | Double-click COLT → "COLT, morning" → do the first move it suggests |
 | Working | "teach me <course> unit N" · "hey <mentor>" |
 | Finished something | "I finished <thing>", then show Dad the proof. It counts once he checks it |
-| End of day | "COLT, wrap up" → paste any HANDOFF into `handoff/inbox/` → Ctrl+P → "Git: Commit and sync" |
+| End of day | "COLT, wrap up". Close COLT when done (a fresh session each time saves tokens) |
 | Friday | "weekly review", then show Dad |
 
 ## Good to know
 - **What's private:** just talking with COLT (feelings, friends, worries) is never written down.
   Finished work, quizzes and missions *are* tracked. That's your evidence.
-- You decide your mentor seats and COLT's name. Rule changes go through Dad.
-- "Merge conflict" or a red Git error? Don't fix it alone. Stop and get Dad.
-- Later (not v1): iPhone.
+- You decide your mentor seats and COLT's name. Rule changes go to Dad as a proposal.
+- If COLT asks to run a command or install something: say no and get Dad.
+- Red Git error or "merge conflict" in Obsidian? Don't fix it alone. Get Dad.
 
 Next: [[NOW]] · [[index]] · [[AGENTS]]

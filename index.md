@@ -2,7 +2,7 @@
 type: index
 updated: 2026-11-22
 ---
-# Index — what's where (Claude keeps this current)
+# Index — what's where (COLT keeps this current)
 
 ## Start
 [[README]] · [[NOW]] · [[AGENTS]] · [[DECISIONS]] · [[log]]
@@ -26,7 +26,8 @@ updated: 2026-11-22
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
-- **P1:** [[hs-readiness]] · [[diagnostics]] · `55-progress/reports/` (weekly parent reports)
+- **P1:** [[hs-readiness]] · [[verifications]] (Thomas only) · [[diagnostics]] · `55-progress/reports/` (weekly parent reports)
+- `proposals/`: changes waiting for Dad's decision · lesson cards: `20-courses/<course>/cards/`
 - [[HOME]] — Shiloh's home note; `HQ-map.canvas` is the visual board
 - Circle hubs (`05-circle/`): [[mind-mastery]] · [[body-discipline]] · [[venture-craft]] · [[spirit-character]] · [[systems-self-command]]
 - `maps/`: visual web pages (Shiloh map, system blueprint). See the folder's README.

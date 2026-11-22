@@ -52,5 +52,5 @@ Foundation program: 22 credits (4 English, 3 Math, 3 Science, 3 Social Studies, 
 | | |
 
 ---
-Maintained by Claude (counts, statuses from evidence). **Only Thomas sets 🟢.**
+Maintained by COLT (counts from evidence + [[verifications]]). **Only Thomas sets 🟢.**
 Details: [[diagnostics]] · reports in `55-progress/reports/` · how-to: [[55-progress/README|README]]

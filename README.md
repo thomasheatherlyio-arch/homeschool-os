@@ -8,8 +8,8 @@ This is your HomeSchool OS — your education, run by you. Open this folder in O
 0. New? Do **[[START-HERE]]** once with Dad. Your home page is **[[HOME]]**; the visual board is `HQ-map.canvas`.
 1. **[[NOW]]** — what this week is about. Check it every morning.
 2. **Journal** — `40-journal/daily/` (Ctrl+P → "Daily note"). A few lines is enough.
-3. **Talk to COLT** in Grok. COLT reads this vault and helps you plan, learn and get unstuck.
-4. **Sync** — Ctrl+P → "Git: Commit and sync" when you finish for the day.
+3. **Talk to COLT**: double-click the COLT shortcut. COLT reads and writes this vault with you.
+4. **Backup** happens by itself every 10 minutes (Obsidian Git).
 5. Lost? Open **[[index]]**.
 
 ## Map
@@ -24,9 +24,9 @@ This is your HomeSchool OS — your education, run by you. Open this folder in O
 | `50-evidence/` | Proof of work — the legal record | You add, Dad reviews quarterly |
 | `55-progress/` | **P1**: high-school readiness tracker, diagnostics, weekly reports for Dad | Agents count; only Dad verifies |
 | `60-companions/` | COLT, your learner profile, the Knights (one file per mentor) | You (rename COLT anytime) |
-| `wiki/` | Concept pages COLT/Claude build from what you learn | Agents |
+| `wiki/` | Concept pages COLT builds from what you learn | COLT |
 | `raw/` | Original sources (NotebookLM decks, transcripts) — never edited | You drop files in |
-| `handoff/` | Tasks Grok passes to Claude to execute | Agents |
+| `proposals/` | Rule changes waiting for Dad's decision | COLT writes, Dad decides |
 | `maps/` | Visual web pages of the HQ (open in a browser) | Agents |
 | `private/` | Yours only. Not synced, not read by any AI. | You |
 

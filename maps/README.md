@@ -10,7 +10,7 @@ or right-click it in Obsidian and choose "Open in default app".
 | File | For | Shows |
 |---|---|---|
 | `shiloh-hq-map.html` | Shiloh | The Circle wheel, this week's missions, courses, Round Table, Obsidian legend |
-| `hq-system-map.html` | Thomas | Authority layers, the Grok → Claude loop, routing, weekly cadence, token budget, branches |
+| `hq-system-map.html` | Thomas | Authority layers, the COLT loop, routing, weekly cadence, token budget, branches |
 
 Both are snapshots from 2026-11-22 (v2: P1 readiness added). The live state is in [[NOW]] and [[index]].
 Online copies (private, Thomas's claude.ai account):

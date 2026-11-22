@@ -10,7 +10,7 @@ Teaches basketball; guides spiritual focus and zen practice. One mentor, two qua
 basketball and zen sessions separately (quadrant tag per session).
 
 **Agents do not role-play Jahari.** COLT's job: help Shiloh prep questions before a session and
-capture the takeaway + one action after (→ handoff → evidence / NOW.md).
+capture the takeaway + one action after (→ evidence note / NOW.md).
 
 ## Session log
 | Date | Quadrant | Takeaway | Action |
