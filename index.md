@@ -26,6 +26,8 @@ updated: 2026-11-22
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
+- [[HOME]] — Shiloh's home note; `HQ-map.canvas` is the visual board
+- Circle hubs (`05-circle/`): [[mind-mastery]] · [[body-discipline]] · [[venture-craft]] · [[spirit-character]] · [[systems-self-command]]
 - [[START-HERE]] — Shiloh's one-time setup (GitHub Desktop, Obsidian, COLT)
 - [[persona|COLT persona]] · [[learner-profile]] · [[grok-setup|Grok setup]]
 - Knights: [[jahari]] · [[mind-mastery-seat]] · [[venture-craft-seat]] · [[spirit-character-seat]] · [[systems-chief-of-staff]]

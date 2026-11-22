@@ -1,0 +1,336 @@
+{
+ "nodes": [
+  {
+   "id": "g-today",
+   "type": "group",
+   "label": "THIS WEEK",
+   "x": -420,
+   "y": -760,
+   "width": 840,
+   "height": 420,
+   "color": "4"
+  },
+  {
+   "id": "now",
+   "type": "file",
+   "file": "NOW.md",
+   "x": -400,
+   "y": -720,
+   "width": 520,
+   "height": 360
+  },
+  {
+   "id": "rhythm",
+   "type": "text",
+   "text": "**Daily**\n- COLT, morning\n- do the work\n- I finished\u2026\n- COLT, wrap up\n\n**Fri** weekly review",
+   "x": 140,
+   "y": -720,
+   "width": 260,
+   "height": 360
+  },
+  {
+   "id": "g-circle",
+   "type": "group",
+   "label": "THE CIRCLE",
+   "x": -1100,
+   "y": -260,
+   "width": 2200,
+   "height": 300,
+   "color": "6"
+  },
+  {
+   "id": "mind-mastery",
+   "type": "file",
+   "file": "05-circle/mind-mastery.md",
+   "x": -1080,
+   "y": -220,
+   "width": 400,
+   "height": 220,
+   "color": "1"
+  },
+  {
+   "id": "body-discipline",
+   "type": "file",
+   "file": "05-circle/body-discipline.md",
+   "x": -645,
+   "y": -220,
+   "width": 400,
+   "height": 220,
+   "color": "2"
+  },
+  {
+   "id": "venture-craft",
+   "type": "file",
+   "file": "05-circle/venture-craft.md",
+   "x": -210,
+   "y": -220,
+   "width": 400,
+   "height": 220,
+   "color": "3"
+  },
+  {
+   "id": "spirit-character",
+   "type": "file",
+   "file": "05-circle/spirit-character.md",
+   "x": 225,
+   "y": -220,
+   "width": 400,
+   "height": 220,
+   "color": "5"
+  },
+  {
+   "id": "systems-self-command",
+   "type": "file",
+   "file": "05-circle/systems-self-command.md",
+   "x": 660,
+   "y": -220,
+   "width": 400,
+   "height": 220,
+   "color": "4"
+  },
+  {
+   "id": "g-courses",
+   "type": "group",
+   "label": "COURSES",
+   "x": -1100,
+   "y": 120,
+   "width": 1300,
+   "height": 340,
+   "color": "3"
+  },
+  {
+   "id": "kitchen",
+   "type": "file",
+   "file": "20-courses/kitchen/kitchen-course.md",
+   "x": -1080,
+   "y": 160,
+   "width": 300,
+   "height": 280
+  },
+  {
+   "id": "gym",
+   "type": "file",
+   "file": "20-courses/gym/gym-course.md",
+   "x": -760,
+   "y": 160,
+   "width": 300,
+   "height": 280
+  },
+  {
+   "id": "panel",
+   "type": "file",
+   "file": "20-courses/panel/panel-course.md",
+   "x": -440,
+   "y": 160,
+   "width": 300,
+   "height": 280
+  },
+  {
+   "id": "forge",
+   "type": "file",
+   "file": "20-courses/forge/forge-course.md",
+   "x": -120,
+   "y": 160,
+   "width": 300,
+   "height": 280
+  },
+  {
+   "id": "g-people",
+   "type": "group",
+   "label": "PEOPLE",
+   "x": 260,
+   "y": 120,
+   "width": 840,
+   "height": 340,
+   "color": "5"
+  },
+  {
+   "id": "colt",
+   "type": "file",
+   "file": "60-companions/colt/persona.md",
+   "x": 280,
+   "y": 160,
+   "width": 260,
+   "height": 280
+  },
+  {
+   "id": "jahari",
+   "type": "file",
+   "file": "60-companions/knights/jahari.md",
+   "x": 560,
+   "y": 160,
+   "width": 260,
+   "height": 130
+  },
+  {
+   "id": "knights",
+   "type": "file",
+   "file": "60-companions/knights/README.md",
+   "x": 560,
+   "y": 310,
+   "width": 260,
+   "height": 130
+  },
+  {
+   "id": "dad",
+   "type": "text",
+   "text": "**Dad (Thomas)**\nHeadmaster. Final say on rules, grades, accounts, money.",
+   "x": 840,
+   "y": 160,
+   "width": 240,
+   "height": 280
+  },
+  {
+   "id": "g-dir",
+   "type": "group",
+   "label": "WHERE I'M HEADED",
+   "x": -1100,
+   "y": 540,
+   "width": 2200,
+   "height": 220,
+   "color": "2"
+  },
+  {
+   "id": "north",
+   "type": "file",
+   "file": "10-system/07-north-star-life-path.md",
+   "x": -1080,
+   "y": 580,
+   "width": 400,
+   "height": 160
+  },
+  {
+   "id": "blue",
+   "type": "file",
+   "file": "10-system/12-shilohs-divine-blueprint.md",
+   "x": -645,
+   "y": 580,
+   "width": 400,
+   "height": 160
+  },
+  {
+   "id": "ladder",
+   "type": "file",
+   "file": "10-system/13-the-work-ladder-home-job-and-first-job.md",
+   "x": -210,
+   "y": 580,
+   "width": 400,
+   "height": 160
+  },
+  {
+   "id": "play",
+   "type": "file",
+   "file": "20-courses/venture/shiloh-playbook.md",
+   "x": 225,
+   "y": 580,
+   "width": 400,
+   "height": 160
+  },
+  {
+   "id": "mansion",
+   "type": "file",
+   "file": "30-mansion/08-mind-mansion-living-library.md",
+   "x": 660,
+   "y": 580,
+   "width": 400,
+   "height": 160
+  },
+  {
+   "id": "g-notes",
+   "type": "group",
+   "label": "MY NOTES",
+   "x": -1100,
+   "y": 840,
+   "width": 2200,
+   "height": 200,
+   "color": "1"
+  },
+  {
+   "id": "j",
+   "type": "file",
+   "file": "40-journal/README.md",
+   "x": -1080,
+   "y": 880,
+   "width": 520,
+   "height": 140
+  },
+  {
+   "id": "ev",
+   "type": "file",
+   "file": "50-evidence/README.md",
+   "x": -540,
+   "y": 880,
+   "width": 520,
+   "height": 140
+  },
+  {
+   "id": "home",
+   "type": "file",
+   "file": "HOME.md",
+   "x": 0,
+   "y": 880,
+   "width": 520,
+   "height": 140
+  },
+  {
+   "id": "graph",
+   "type": "text",
+   "text": "**Graph view:** Ctrl+G\nColors = folders. Big dots = hubs.",
+   "x": 540,
+   "y": 880,
+   "width": 540,
+   "height": 140
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-now-venture-craft",
+   "fromNode": "now",
+   "fromSide": "bottom",
+   "toNode": "venture-craft",
+   "toSide": "top"
+  },
+  {
+   "id": "e-mind-mastery-kitchen",
+   "fromNode": "mind-mastery",
+   "fromSide": "bottom",
+   "toNode": "kitchen",
+   "toSide": "top"
+  },
+  {
+   "id": "e-body-discipline-gym",
+   "fromNode": "body-discipline",
+   "fromSide": "bottom",
+   "toNode": "gym",
+   "toSide": "top"
+  },
+  {
+   "id": "e-mind-mastery-panel",
+   "fromNode": "mind-mastery",
+   "fromSide": "bottom",
+   "toNode": "panel",
+   "toSide": "top"
+  },
+  {
+   "id": "e-venture-craft-forge",
+   "fromNode": "venture-craft",
+   "fromSide": "bottom",
+   "toNode": "forge",
+   "toSide": "top"
+  },
+  {
+   "id": "e-body-discipline-jahari",
+   "fromNode": "body-discipline",
+   "fromSide": "bottom",
+   "toNode": "jahari",
+   "toSide": "top"
+  },
+  {
+   "id": "e-spirit-character-jahari",
+   "fromNode": "spirit-character",
+   "fromSide": "bottom",
+   "toNode": "jahari",
+   "toSide": "top"
+  }
+ ]
+}

@@ -77,7 +77,8 @@ After every run: update `NOW.md`, append one line per change to `log.md`, keep `
 current when files are added/renamed. Compile, don't duplicate — update existing notes.
 
 ## Formats
-- YAML front matter on every note: `type`, `status`, `date`, `quadrant` where relevant.
+- YAML front matter on every note: `type`, `status`, `date`, `quadrant` where relevant —
+  as a hub link, e.g. `quadrant: "[[body-discipline]]"` (hubs in `05-circle/`), so the graph clusters.
   Quadrants (Doc 01): Mind & Mastery · Body & Discipline · Venture & Craft ·
   Spirit & Character · Systems & Self-Command.
 - Wikilinks (double-bracket) everywhere so the Obsidian graph shows structure. Unique filenames.

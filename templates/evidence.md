@@ -1,7 +1,7 @@
 ---
 type: evidence
 date: {{date}}
-quadrant: 
+quadrant: "[[]]"   # mind-mastery | body-discipline | venture-craft | spirit-character | systems-self-command
 course: 
 subject: 
 status: submitted   # submitted | reviewed
