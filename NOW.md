@@ -19,9 +19,10 @@ updated: 2026-11-22
 ## Open loops (escalation stage in brackets)
 - [needs Thomas · P1] Give the Reading baseline diagnostic this week (tell COLT: "baseline diagnostic reading"); Writing and Math on the next two weeks. Readiness can't be measured until these are done.
 - [needs Thomas · P1] Confirm the target 9th-grade start (proposed Fall 2027) and the proposed L3 targets in [[hs-readiness]].
-- [ ] First Khan sync (tell COLT: "Khan sync")
+- [x] First Khan sync (tell COLT: "Khan sync") — done 2026-11-22; evidence pending Dad
 
 ## Last session (COLT writes)
+- 2026-11-22: First Khan sync. Constitution 101 at 90% with three pending quizzes/unit tests; 6th/7th TX math in progress; 6th ELA not started. Figures are pending until Dad verifies.
 - 2026-11-22: Built the Khan Academy tracking system in `25-khan/` (dashboard, course stubs, sync + coach skills).
 - 2026-11-22: Applied Dad's approvals — The Civ course is active; Khan Academy: approved 2026-11-22; COLT to connect; Meta Bind installed.
 - 2026-11-22: Drafted The Civ course (Unit 0 + 12 weeks) and three proposals for Dad (Civ course; Khan Academy; Meta Bind plugin).

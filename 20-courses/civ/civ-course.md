@@ -43,4 +43,7 @@ quadrant: "[[mind-mastery]]"
 <!-- Claude updates: unit, date, evidence link -->
 | Unit | Status | Date | Evidence |
 |---|---|---|---|
+| Khan Constitution 101 — Fourteenth Amendment unit test | pending | 2026-11-16 | [[2026-11-16-constitution-101-fourteenth-amendment-unit-test]] (12/12) |
+| Khan Constitution 101 — Elections and Voting Rights Quiz 1 | pending | 2026-11-17 | [[2026-11-17-constitution-101-elections-voting-rights-quiz-1]] (6/6) |
+| Khan Constitution 101 — Elections and Voting Rights unit test | pending | 2026-11-18 | [[2026-11-18-constitution-101-elections-voting-rights-unit-test]] (13/13) |
 

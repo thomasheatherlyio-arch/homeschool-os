@@ -34,3 +34,7 @@ type: log
 - 2026-11-22 — COLT — Built the Khan Academy tracking system in `25-khan/` (README, [[khan-dashboard]], course stubs, snapshots/ and weekly/ folders) plus templates `khan-course`, `khan-snapshot`, `khan-weekly`.
 - 2026-11-22 — COLT — Added skills `khan-sync` and `khan-coach`; routing rows in AGENTS.md for "Khan sync" and "Khan help".
 - 2026-11-22 — COLT — Linked [[khan-dashboard]] from [[HOME]], [[index]], and the P1 summary [[khan-academy]] (summary only, no duplicate unit tables). Added "First Khan sync" to NOW.md open loops.
+- 2026-11-22 — COLT — First Khan sync: wrote [[2026-11-22-khan-snapshot]]; updated [[khan-dashboard]] and [[khan-academy]] from the site (no invented numbers).
+- 2026-11-22 — COLT — Re-scoped `25-khan/courses/` to the courses on the account (TX grade math, Constitution 101, MS science, 6th ELA, art history, plus log-only 8th math / 7th–8th science and reading). Removed stubs not on the account (Pre-algebra, combined 7th/8th math, generic US Gov, split grammar/reading, World History).
+- 2026-11-22 — COLT — Filed pending evidence: [[2026-11-16-constitution-101-fourteenth-amendment-unit-test]] (12/12), [[2026-11-17-constitution-101-elections-voting-rights-quiz-1]] (6/6), [[2026-11-18-constitution-101-elections-voting-rights-unit-test]] (13/13). Good Citizenship ⏳ pending on [[hs-readiness]] set to 3. Status and verified columns unchanged.
+- 2026-11-22 — COLT — Closed NOW.md open loop "First Khan sync"; added rows to [[civ-course]] Progress (pending, Khan Constitution 101).

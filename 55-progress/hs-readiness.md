@@ -25,7 +25,7 @@ Status key: ⚪ not started · 🟡 in progress · 🟢 met (Thomas verified) ·
 | Reading | Yes | Grade-appropriate comprehension, sustained through a full book/unit | — | — | L3 (proposed) | 0 / 0 | ⚪ |
 | Spelling & Grammar | Yes | Correct usage in independent writing | — | — | L3 (proposed) | 0 / 0 | ⚪ |
 | Mathematics | Yes | Pre-algebra / Algebra-I readiness solid | — | — | L3 (proposed) | 0 / 0 | ⚪ |
-| Good Citizenship | Yes | Basic civics + lived practice | — | — | met/not met | 0 / 0 | ⚪ |
+| Good Citizenship | Yes | Basic civics + lived practice | — | — | met/not met | 0 / 3 | ⚪ |
 | Science | std. | Core middle-school concepts, tied to interests | queued | — | L3 (proposed) | 0 / 0 | ⚪ |
 | History / Social Studies | std. | Basic world/US history literacy | queued | — | L3 (proposed) | 0 / 0 | ⚪ |
 | Health & PE | std. | Ongoing; training log + Jahari sign-off | n/a | — | met/not met | 0 / 0 | ⚪ |

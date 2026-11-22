@@ -7,42 +7,50 @@ quadrant: "[[mind-mastery]]"
 ---
 # Khan Academy dashboard
 
-Current view of Shiloh's Khan work. **No data has been synced yet.** Every mastery %, minute goal, and "last synced" cell stays — until a Khan sync writes what the Khan pages actually showed. Never invent numbers.
+Current view of Shiloh's Khan work after the **2026-11-22** sync. Numbers below were read from the Khan Academy site. Never invent numbers. Targets and weekly-minute *goals* are still — until set with Shiloh (and Dad, if a readiness target is involved).
 
-P1 summary: [[khan-academy]] · How this system works: [[25-khan/README|README]] · Evidence: `50-evidence/` (pending until Dad verifies)
+P1 summary: [[khan-academy]] · How this system works: [[25-khan/README|README]] · Snapshot: [[2026-11-22-khan-snapshot]] · Evidence: `50-evidence/` (pending until Dad verifies)
 
-**Last successful sync:** — · **Latest snapshot:** —
+**Last successful sync:** 2026-11-22 · **Latest snapshot:** [[2026-11-22-khan-snapshot]]
+
+Account (display name Kang Shiloh; username handle not recorded): streak 12 weeks; level 40 (32/40 skills); energy points 1,224,118; badges 115; videos completed 222; joined ~9 years ago.
+
+Learning minutes, Khan's max range (2024-11-22 through 2026-11-22): exercises **7,207** min; time on task **7,649** min. Visible activity log starts 2025-03-26 and totals **~2,050** min — that mismatch with the summary range is unexplained; both are recorded as shown.
 
 ## Current courses
 
-Stubs below are the likely courses for a middle-school completion year (Math, Reading, Grammar, Good Citizenship, History / Social Studies, Science per [[03-academic-tracker-tx-compliance|Doc 03]]). A sync may add, rename, or drop rows to match what is actually on the account.
-
 | Course | Doc 03 subject | Mastery % | Target | Weekly goal (minutes) | Last synced | Note |
 |---|---|---|---|---|---|---|
-| [[khan-pre-algebra\|Pre-algebra / Algebra 1 readiness]] | Mathematics (required) | — | — | — | — | |
-| [[khan-ms-math\|7th / 8th grade math]] | Mathematics (required) | — | — | — | — | Split into grade-7 / grade-8 notes later if the site shows both |
-| [[khan-grammar\|Grammar]] | Spelling & Grammar (required) | — | — | — | — | |
-| [[khan-reading-vocab\|Reading & vocabulary]] | Reading (required) | — | — | — | — | |
-| [[khan-us-government-civics\|U.S. Government & Civics]] | Good Citizenship (required); History / Social Studies | — | — | — | — | Pairs with [[civ-course\|The Civ]] |
-| [[khan-world-history\|World History]] | History / Social Studies (standard practice) | — | — | — | — | Pairs with [[civ-course\|The Civ]] |
-| [[khan-ms-biology\|Middle school biology]] | Science (standard practice) | — | — | — | — | |
-| [[khan-ms-physics\|Middle school physics]] | Science (standard practice) | — | — | — | — | |
+| [[khan-grade-6-math-tx\|6th grade math (TX TEKS)]] | Mathematics (required) | 70% (challenge 73%) | — | — | 2026-11-22 | 65/50/27/21 of 163; 16 units. Activity log: 54 min (8 rows). Weakest unit: Algebraic representations 13% |
+| [[khan-grade-7-math-tx\|7th grade math (TX TEKS)]] | Mathematics (required) | 78% | — | — | 2026-11-22 | 35/52/18/5 of 110; 11 units. Activity log: 638 min (185 rows) |
+| [[khan-grade-8-math-tx\|8th grade math (TX TEKS)]] | Mathematics (required) | — | — | — | 2026-11-22 | Log only. Activity log: 371 min (93 rows). No mastery shown |
+| [[khan-constitution-101\|Constitution 101]] | Good Citizenship (required); History / Social Studies | 90% | — | — | 2026-11-22 | 64/41/10/1 of 116; 10 units. Activity log: 416 min (115 rows). Pairs with [[civ-course\|The Civ]] |
+| [[khan-ms-biology\|MS biology]] | Science (standard practice) | 19% | — | — | 2026-11-22 | 5/5/5/2 of 17 leveled; 11 units |
+| [[khan-ms-earth-space\|MS Earth and space science]] | Science (standard practice) | 26% | — | — | 2026-11-22 | 4/3/4/1 (no "of N"); 7 units |
+| [[khan-ms-physics\|MS physics]] | Science (standard practice) | 35% | — | — | 2026-11-22 | 4/4/4/0 (no "of N"); 6 units |
+| [[khan-grade-6-ela\|6th grade reading, grammar, and vocab]] | Reading (required); Spelling & Grammar (required) | no mastery (not started) | — | — | 2026-11-22 | 93 skills, all unfamiliar |
+| [[khan-grade-7-science-tx\|7th grade science (TX TEKS)]] | Science (standard practice) | — | — | — | 2026-11-22 | Log only. Activity log: 125 min (32 rows) |
+| [[khan-grade-8-science-tx\|8th grade science (TX TEKS)]] | Science (standard practice) | — | — | — | 2026-11-22 | Log only. Activity log: 194 min (80 rows) |
+| [[khan-grade-7-reading\|7th grade reading]] | Reading (required) | — | — | — | 2026-11-22 | Log only. Activity log: 22 min (7 rows) |
+| [[khan-grade-8-ela\|8th grade reading, grammar, and vocab]] | Reading (required); Spelling & Grammar (required) | — | — | — | 2026-11-22 | Log only. Activity log: 194 min (53 rows) |
+| [[khan-art-history\|Art history]] | — | no data | — | — | 2026-11-22 | Listed on the account; no mastery or minutes shown |
 
-Weekly minute goals and targets are set with Shiloh (and Dad, if it touches a readiness target). Leave them — until that conversation happens.
+Activity-log only (no course note beyond the snapshot): **"6th math"** (non-TX label) 33 min (31 rows); **US history** 0 min (1 row).
 
-## This week's Khan goal
+## This week (2026-11-16 through 2026-11-22)
 
-- Minutes: —
-- Focus course / skill: —
-- Quiz or unit test in view: —
+- Minutes Khan showed: **16**
+- Weekly *goal* (set with Shiloh): —
+- Quiz / unit tests in this window (pending evidence): Fourteenth Amendment unit test 12/12 (2026-11-16); Elections and Voting Rights Quiz 1 6/6 (2026-11-17); Elections and Voting Rights unit test 13/13 (2026-11-18)
 
-## Stuck right now
+## Stuck right now / flags (observations, not judgments)
 
-- (none logged — filled from course notes after real work or a coach session)
+- [[khan-grade-6-math-tx\|6th grade math (TX TEKS)]]: Algebraic representations of two-variable relationships is the weakest math unit shown (**13%**).
+- [[khan-grade-6-ela\|6th grade reading, grammar, and vocab]] is not started (93 skills unfamiliar). Reading/grammar has the least Khan work this sync. Reading is a Doc 03 required subject and still has no baseline diagnostic (see [[NOW]]).
+- [[khan-constitution-101\|Constitution 101]]: the Elections and Voting Rights unit test was opened ~7 times with no score before the 13/13 (could be re-attempts). Worth a gentle Socratic check, not an accusation.
 
 ## Links
 
-- Snapshots: `25-khan/snapshots/`
-- Weekly logs: `25-khan/weekly/`
-- Course template: `templates/khan-course.md`
+- Snapshots: [[2026-11-22-khan-snapshot]]
+- Weekly log: [[2026-11-16-khan-weekly]]
 - Tell COLT: **"Khan sync"** or **"Khan help"**
