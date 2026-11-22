@@ -13,17 +13,21 @@ folder up to GitHub every 10 minutes (no tokens), which is how Thomas sees progr
   free tier exists now). Pick the plan for Shiloh's account.
 - That Grok Build allows a 13–17 account with parental consent.
 
-## 2. Install (Dad, admin PowerShell on Shiloh's PC)
+## 2. Install (PowerShell on Shiloh's PC, no admin needed)
 ```
 irm https://x.ai/cli/install.ps1 | iex
 grok --version
 ```
-Use the native Windows installer, not WSL. Then open a normal (non-admin) terminal as Shiloh, `cd` into
-`Documents\Shiloh HQ`, run `grok`, and sign in with **Shiloh's** Grok account.
+Use the native Windows installer, not WSL. It installs to `%USERPROFILE%\.grok\bin` and adds that to
+his PATH. **Done 2026-11-22: Grok 1.0.92.** Still to do: double-click COLT (below), sign in with
+**Shiloh's** Grok account, and say yes when it asks to **trust this folder** (without trust it does
+not load `AGENTS.md`).
 
 ## 3. The COLT shortcut
-Right-click `scripts\COLT.cmd` → Send to → Desktop (create shortcut) → rename it **COLT**.
-Double-clicking it opens Grok Build in the vault folder, so it loads `AGENTS.md` automatically.
+**Done 2026-11-22:** `COLT` on the desktop (`OneDrive\Desktop\COLT.lnk`, since his Desktop is in
+OneDrive) runs `scripts\COLT.cmd` with the vault as the working folder. COLT.cmd finds
+`%USERPROFILE%\.grok\bin\grok.exe` (or `grok` on PATH), so it loads `AGENTS.md` automatically.
+To remake it: right-click `scripts\COLT.cmd` → Send to → Desktop (create shortcut) → rename it **COLT**.
 Check it worked: ask *"What does AGENTS.md say your job is?"* It should say COLT and P1.
 
 ## 3b. First prompts (in this order)
@@ -38,10 +42,21 @@ No long seed prompt is needed: Grok Build loads `AGENTS.md` by itself every time
 4. **Every day after:** just `COLT, morning` and `COLT, wrap up`. Fridays: `weekly review`.
 
 ## 4. Permissions (important)
-Grok Build is an agent: it can edit files and run commands. Set it to **ask before running any
-command**. File edits inside the vault are fine. Tell Shiloh: if COLT asks to run a command or
-install something, say no and get Dad (AGENTS.md already forbids it; this is the backstop).
-Keep Shiloh's Windows account a Standard user.
+Grok Build is an agent: it can edit files and run commands. Shiloh uses his own Windows account,
+which is an admin, so the backstop is **Grok Build set to ask before running commands** plus the
+AGENTS.md rule (no commands except `git status` / `git pull`). **Done 2026-11-22** in
+`%USERPROFILE%\.grok\config.toml` (on the PC, not in the vault):
+```
+[ui]
+permission_mode = "ask"          # ask before commands (and edits outside the allow list)
+[permission]
+allow = ["Edit(./**)", "Bash(git status)", "Bash(git pull)"]   # edits inside the vault are fine
+deny  = ["Read(**/private/**)", "Edit(**/private/**)", "Edit(**/55-progress/verifications.md)",
+         "Edit(**/00-charter/**)", "Edit(~/.grok/**)"]           # hard blocks, even if approved
+```
+Don't switch it to auto-review or always-approve (Shift+Tab, `/always-approve`) on his PC. Check with
+`grok inspect` in the vault: Permissions should say 8 loaded. Tell Shiloh: if COLT asks to run a
+command or install something, say no and get Dad.
 
 ## 5. Keep tokens low
 - COLT only loads `AGENTS.md` + `NOW.md` by default; the rules forbid scanning the vault.
@@ -57,14 +72,36 @@ Keep Shiloh's Windows account a Standard user.
 
 ## 7. Thomas's view (P1)
 - On Shiloh's PC: open COLT and say **"Dad report"**, **"verify evidence"**, **"baseline diagnostic math"**.
-- From your own devices (optional): a Grok app project with the GitHub connector on
-  `thomasheatherlyio-arch/homeschool-os` (branch `post-grok`), read-only. Instructions:
+- From your own devices: **Dad's Chief of Staff**, your Grok Bot (also named **COLT**, Dad's side).
+  It's read-only and reports only to you. (Not the same as Shiloh's open "Chief of Staff" Knight seat,
+  [[systems-chief-of-staff]].) Seed prompt:
   ```
-  You are the Headmaster's assistant for Shiloh's homeschool. Read AGENTS.md, NOW.md and
-  55-progress/hs-readiness.md from homeschool-os (branch post-grok), then follow the parent-report
-  skill. Always separate verified from pending work. You talk to Thomas, not Shiloh.
+  You are COLT, Thomas's Chief of Staff for Shiloh's homeschool (Shiloh HQ, v1). You work for
+  Thomas (Dad, Headmaster, legal administrator of record in Texas), not for Shiloh (14).
+
+  Source of truth: GitHub repo thomasheatherlyio-arch/homeschool-os, branch post-grok. Read
+  AGENTS.md, NOW.md and 55-progress/hs-readiness.md first, then only the one file a task needs.
+  Never scan the whole repo. Never read private/.
+
+  P1: help Thomas track and verify Shiloh's progress toward high school. Always separate verified
+  work (in 55-progress/verifications.md) from pending or claimed work. Never call pending work done,
+  and never edit verifications.md or 00-charter/.
+
+  Your jobs:
+  1. Saturday 8am: run the parent-report skill (.agents/skills/parent-report/SKILL.md) and send me
+     the weekly report: missions done, evidence waiting for my verification, readiness gaps, and
+     open loops marked "needs Thomas".
+  2. When I ask "what needs me": list pending verifications, proposals in proposals/ waiting on a
+     decision, and overdue items in NOW.md.
+  3. Track the baseline diagnostics (Reading, then Writing, then Math) and remind me when one is due.
+  4. Flag anything that looks off: missions stuck 2+ weeks, no daily notes for 3+ days, or gaps in
+     the Git backup (no commits on post-grok for 2+ days).
+
+  Read-only by default. Don't message Shiloh, don't change files, and don't commit anything unless
+  I explicitly ask.
   ```
-  Optional Automation: Saturday 8:00 am, *"Run the parent-report skill"*.
+- Alternative (no Grok Bot): a Grok app project with the GitHub connector on the same repo and
+  branch, read-only, with the seed prompt above and a Saturday 8:00 am Automation.
 - Your verdicts go in `55-progress/verifications.md`: type them in Obsidian on his PC, or edit the file
   on github.com (it syncs down within 10 minutes). COLT never edits that file.
 

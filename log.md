@@ -17,3 +17,9 @@ type: log
 - 2026-11-22 — v1 simplified: Grok Build writes the vault directly; Claude removed (CLAUDE.md, .claude, process-handoffs, strategy-brief); handoff/ → proposals/; verifications.md (Thomas only); lesson-card caching; COLT.cmd launcher; Obsidian Git preconfigured.
 - 2026-11-22 — maps/ v3: pages show COLT in Grok Build + GitHub backup (Claude removed).
 - 2026-11-22 — grok-setup: first prompts (install check, first session, baseline, daily).
+- 2026-11-22 — Grok Build 1.0.92 installed on Shiloh's PC; ask mode + deny rules in ~/.grok/config.toml; COLT desktop shortcut; COLT.cmd finds grok.exe.
+- 2026-11-22 — Windows account: Shiloh keeps his admin account; Standard-user requirement removed (START-HERE A1, grok-setup §4); AGENTS.md safety line added.
+- 2026-11-22 — START-HERE: accounts table (hs-shiloh, noreply git identity); B2/B3 marked done; collaborator invite still open.
+- 2026-11-22 — HOME: Today screen at the top; Obsidian opens on HOME (pinned) with NOW beside it.
+- 2026-11-22 — grok-setup §7: Dad's Chief of Staff (Grok Bot named COLT) seed prompt.
+- 2026-11-22 — DECISIONS: accounts and PC setup entry.

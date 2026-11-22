@@ -386,3 +386,17 @@ forbids vault scans, one skill + one file per task, cached lesson cards, a fresh
 **Alternatives:** Grok app + Claude nightly via GitHub (two subscriptions, overnight delay); ZIP copy with
 no backup (Thomas can't see progress; no tamper-evident record).
 
+## 2026-11-22: Accounts and PC setup for Shiloh HQ
+**Decision (Thomas):**
+- **Windows:** Shiloh keeps his own admin account (`shilo`); no Standard-user switch. Backstop: Grok Build
+  in ask mode with deny rules in `~/.grok/config.toml` (no edits to `verifications.md`, `00-charter/`,
+  `private/` or Grok's own config) plus the AGENTS.md rule (no commands except `git status` / `git pull`).
+- **GitHub:** Shiloh's account is `hs-shiloh` (made with his Gmail, email kept private). Commits from his PC
+  use `Shiloh <359997595+hs-shiloh@users.noreply.github.com>`. Needs Write on `homeschool-os`.
+- **Obsidian:** opens to [[HOME]] (a pinned "Today" screen) with [[NOW]] beside it; no new community
+  plugins. The Command Center web app (Doc 17) waits for v2.
+- **Dad's side:** Thomas's Chief of Staff is a Grok Bot also named COLT, read-only, reporting only to
+  Thomas ([[grok-setup]] §7).
+**Why:** less friction for a 14-year-old; one place to work; Thomas's call on the Windows account.
+**Alternatives:** Standard user (declined by Thomas); a Homepage plugin (one more plugin to trust);
+a separate kid app now (two systems to keep in sync).

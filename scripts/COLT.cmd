@@ -1,5 +1,8 @@
 @echo off
-rem Double-click (or a desktop shortcut to this file) opens COLT in the Shiloh HQ vault.
+rem Double-click (or the COLT desktop shortcut) opens COLT (Grok Build) in the Shiloh HQ vault.
 cd /d "%~dp0.."
 title COLT - Shiloh HQ
-grok
+set "GROK=%USERPROFILE%\.grok\bin\grok.exe"
+if not exist "%GROK%" set "GROK=grok"
+"%GROK%"
+if errorlevel 1 pause
