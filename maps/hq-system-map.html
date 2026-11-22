@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HQ System Blueprint</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an architect's blueprint sheet. Authority stack on the left, agent loop on the right, then routing, cadence, token budget and Obsidian view as labeled drawing panels. */
+:root{
+  --bg:#eef2f6; --sheet:#ffffff; --ink:#14202e; --muted:#5a6878; --line:#cfd8e2; --grid:#e3e9ef;
+  --accent:#1d5fd1; --grok:#0e0e10; --claude:#c25b34; --thomas:#9b2c2c; --shiloh:#1f8a5b;
+  --l0:#b9312b; --l1:#2f6fd6; --l2:#d59410; --l3:#e0701f; --l4:#2f9a6a; --l5:#7a4fd0; --mach:#5a6878;
+  --display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0b1119; --sheet:#111a25; --ink:#e4ebf3; --muted:#93a2b3; --line:#243243; --grid:#18222f;
+  --accent:#6fa0ff; --grok:#e9e9ee; --claude:#ec8a62; --thomas:#ef7f7f; --shiloh:#4fd197;
+  --l0:#f0706a; --l1:#6f9fff; --l2:#f1bb45; --l3:#f39a55; --l4:#53cc95; --l5:#a88bff; --mach:#93a2b3; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1119; --sheet:#111a25; --ink:#e4ebf3; --muted:#93a2b3; --line:#243243; --grid:#18222f;
+  --accent:#6fa0ff; --grok:#e9e9ee; --claude:#ec8a62; --thomas:#ef7f7f; --shiloh:#4fd197;
+  --l0:#f0706a; --l1:#6f9fff; --l2:#f1bb45; --l3:#f39a55; --l4:#53cc95; --l5:#a88bff; --mach:#93a2b3; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:22px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+.lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-size:.82rem}
+header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;border:2px solid var(--ink);background:var(--sheet);padding:18px 20px}
+@media (max-width:640px){header{grid-template-columns:minmax(0,1fr)}}
+header h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.05}
+header p{margin:.4rem 0 0;color:var(--muted);max-width:62ch}
+.titleblock{display:grid;grid-template-columns:auto auto;gap:2px 14px;font-family:var(--mono);font-size:.74rem;border-left:1px solid var(--line);padding-left:14px}
+.titleblock span:nth-child(odd){color:var(--muted)}
+.sheet{background:var(--sheet);border:1px solid var(--line);padding:20px;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;background-position:-1px -1px}
+.sheet>.lbl{display:block;margin-bottom:4px}
+.sheet h2{font-size:1.35rem;margin-bottom:14px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+@media (max-width:900px){.two{grid-template-columns:minmax(0,1fr)}}
+/* authority stack */
+.stack{display:grid;gap:6px}
+.layer{display:grid;grid-template-columns:8px minmax(0,1fr);background:var(--sheet);border:1px solid var(--line)}
+.layer .bar{background:var(--c)}
+.layer .in{padding:10px 12px;display:grid;gap:4px}
+.layer .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;align-items:baseline}
+.layer h3{font-size:1.05rem}
+.layer .path{font-family:var(--mono);font-size:.75rem;color:var(--c)}
+.layer .who{font-size:.85rem;color:var(--muted)}
+.layer .who b{color:var(--ink);font-weight:600}
+.lock{font-family:var(--mono);font-size:.68rem;padding:1px 7px;border:1px solid var(--c);color:var(--c);border-radius:3px;white-space:nowrap}
+.arrowdown{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:center}
+/* loop svg */
+.diagram{overflow-x:auto}
+.diagram svg{width:100%;min-width:520px;height:auto;display:block}
+.diagram text{font-family:var(--body);fill:var(--ink)}
+.diagram .t-s{font-size:11px;fill:var(--muted)}
+.diagram .t-b{font-size:14px;font-weight:600}
+.diagram .t-m{font-family:var(--mono);font-size:10.5px;fill:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:.82rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+/* tables */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:var(--sheet)}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td code{font-family:var(--mono);font-size:.78rem}
+/* cadence */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+@media (max-width:760px){.week{grid-template-columns:minmax(0,1fr)}}
+.day{background:var(--sheet);border:1px solid var(--line);padding:10px;display:grid;gap:6px;align-content:start;min-height:140px}
+@media (max-width:760px){.day{min-height:0}}
+.day h3{font-size:.95rem}
+.ev{font-size:.8rem;padding:4px 6px;border-left:3px solid var(--c);background:var(--bg)}
+.ev b{font-family:var(--mono);font-size:.7rem;font-weight:500;color:var(--muted);display:block}
+.extra{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.extra .ev{flex:1 1 220px}
+/* budget */
+.budget{display:grid;gap:10px}
+.brow{display:grid;grid-template-columns:150px minmax(0,1fr) 70px;gap:10px;align-items:center;font-size:.85rem}
+@media (max-width:560px){.brow{grid-template-columns:minmax(0,1fr) 60px}.brow .track{grid-column:1/-1;order:3}}
+.track{height:14px;background:var(--bg);border:1px solid var(--line);position:relative}
+.track span{position:absolute;inset:0 auto 0 0;background:var(--c)}
+.brow .n{font-family:var(--mono);font-size:.78rem;text-align:right;font-variant-numeric:tabular-nums}
+.callout{font-size:.88rem;border:1px dashed var(--line);padding:10px 12px;background:var(--sheet);margin-top:12px}
+.colors{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px}
+.colors div{display:flex;gap:8px;align-items:center;font-family:var(--mono);font-size:.78rem}
+.colors i{width:12px;height:12px;border-radius:50%;flex:none}
+ul.plain{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:.9rem}
+footer{font-size:.8rem;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <span class="lbl">HomeSchool OS · post-Grok architecture</span>
+      <h1>HQ System Blueprint</h1>
+      <p>How Shiloh's vault is layered, who may change what, and how Grok (thinking) and Claude (doing) pass work to each other through git.</p>
+    </div>
+    <div class="titleblock">
+      <span>repo</span><span>homeschool-os</span>
+      <span>branch</span><span>post-grok</span>
+      <span>files</span><span>152 tracked</span>
+      <span>rev</span><span>cd5f30b</span>
+      <span>date</span><span>2026-11-22</span>
+    </div>
+  </header>
+
+  <section class="two">
+    <div class="sheet">
+      <span class="lbl">Drawing A · Authority</span>
+      <h2>Vault layers, top = most protected</h2>
+      <div class="stack">
+        <div class="layer" style="--c:var(--l0)"><span class="bar"></span><div class="in">
+          <div class="top"><h3>Charter</h3><span class="lock">Thomas only</span></div>
+          <span class="path">00-charter/ · Docs 00, 03</span>
+          <span class="who">Governing rules, Texas compliance. <b>Agents never edit.</b> Proposals go to Thomas through a handoff, and he decides.</span></div></div>
+        <div class="layer" style="--c:var(--l1)"><span class="bar"></span><div class="in">
+          <div class="top"><h3>System</h3><span class="lock">PR → Thomas</span></div>
+          <span class="path">10-system/ · Docs 01 02 04 05 07 09a 09b 10a 10b 11 12 13 17</span>
+          <span class="who">The Circle, Knights concept, dashboard, roadmap, North Star, paths. <b>Shiloh proposes → Claude opens a PR → Thomas merges.</b></span></div></div>
+        <div class="layer" style="--c:var(--l5)"><span class="bar"></span><div class="in">
+          <div class="top"><h3>Companions</h3><span class="lock">Shiloh decides seats</span></div>
+          <span class="path">60-companions/ · colt/ · knights/</span>
+          <span class="who">COLT persona, learner profile (evidence only), one file per Knight seat. <b>Shiloh</b> seats mentors and names COLT.</span></div></div>
+        <div class="layer" style="--c:var(--l3)"><span class="bar"></span><div class="in">
+          <div class="top"><h3>Courses &amp; Mansion</h3><span class="lock">Claude updates progress</span></div>
+          <span class="path">20-courses/ (4 courses · 69 sections · playbook) · 30-mansion/</span>
+          <span class="who">Each course is an index note plus one file per section, so a tutoring chat loads about 4 KB.</span></div></div>
+        <div class="layer" style="--c:var(--l2)"><span class="bar"></span><div class="in">
+          <div class="top"><h3>Shiloh's view</h3><span class="lock">Claude maintains</span></div>
+          <span class="path">HOME · NOW · 05-circle/ (5 hubs) · HQ-map.canvas</span>
+          <span class="who">What Shiloh opens daily. NOW.md is also the hot cache every agent reads first.</span></div></div>
+        <div class="layer" style="--c:var(--l4)"><span class="bar"></span><div class="in">
+          <div class="top"><h3>Records</h3><span class="lock">Shiloh + Claude</span></div>
+          <span class="path">40-journal/ · 50-evidence/ · raw/ → wiki/</span>
+          <span class="who">Daily notes and weekly reviews (Shiloh), proof of work (feeds Doc 03 compliance). <span class="mono">raw/</span> is immutable; <span class="mono">private/</span> is never synced.</span></div></div>
+        <div class="arrowdown">─── machine layer (hidden from Shiloh's graph) ───</div>
+        <div class="layer" style="--c:var(--mach)"><span class="bar"></span><div class="in">
+          <div class="top"><h3>Agent wiring</h3><span class="lock">Claude, via rules</span></div>
+          <span class="path">AGENTS.md · CLAUDE.md · .agents/skills/ (10) · handoff/ · index · log · DECISIONS · scripts/lint · .github/</span>
+          <span class="who">Always-on rules and routing, skills, the handoff inbox, the audit trail, and a lint check that runs on every push.</span></div></div>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <span class="lbl">Drawing B · The loop</span>
+      <h2>Grok thinks, Claude executes, git carries the messages</h2>
+      <div class="diagram">
+        <svg viewBox="0 0 560 520" role="img" aria-label="Shiloh talks to COLT in Grok; Grok writes handoffs to the inbox; Claude's 8pm run applies them to the vault and writes Since last time in NOW.md, which Grok reads next conversation; Thomas approves PRs.">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10z" fill="var(--muted)"/></marker>
+          </defs>
+          <!-- Shiloh -->
+          <rect x="20" y="20" width="160" height="70" rx="35" fill="var(--sheet)" stroke="var(--shiloh)" stroke-width="2.5"/>
+          <text x="100" y="51" text-anchor="middle" class="t-b">Shiloh</text>
+          <text x="100" y="69" text-anchor="middle" class="t-s">Windows PC · Obsidian</text>
+          <!-- Grok -->
+          <rect x="300" y="20" width="240" height="86" fill="var(--sheet)" stroke="var(--grok)" stroke-width="2.5"/>
+          <text x="420" y="48" text-anchor="middle" class="t-b">Grok as COLT</text>
+          <text x="420" y="66" text-anchor="middle" class="t-s">strategy · tutoring · planning</text>
+          <text x="420" y="86" text-anchor="middle" class="t-m">reads AGENTS + NOW + 1 skill + 1 section</text>
+          <!-- Shiloh <-> Grok -->
+          <line x1="182" y1="48" x2="296" y2="48" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ah)"/>
+          <text x="240" y="40" text-anchor="middle" class="t-s">talks</text>
+          <!-- inbox -->
+          <rect x="320" y="170" width="200" height="64" fill="var(--sheet)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 3"/>
+          <text x="420" y="196" text-anchor="middle" class="t-b">handoff/inbox/</text>
+          <text x="420" y="216" text-anchor="middle" class="t-m">≤15 lines · id · status · done-when</text>
+          <line x1="420" y1="108" x2="420" y2="166" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="428" y="142" class="t-s">writes (issue or paste)</text>
+          <!-- Claude -->
+          <rect x="300" y="300" width="240" height="86" fill="var(--sheet)" stroke="var(--claude)" stroke-width="2.5"/>
+          <text x="420" y="328" text-anchor="middle" class="t-b">Claude · nightly 8 pm</text>
+          <text x="420" y="346" text-anchor="middle" class="t-s">process-handoffs · bookkeeping · lint</text>
+          <text x="420" y="366" text-anchor="middle" class="t-m">Sonnet · one batched run</text>
+          <line x1="420" y1="236" x2="420" y2="296" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <!-- Vault -->
+          <rect x="20" y="300" width="200" height="86" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5"/>
+          <text x="120" y="328" text-anchor="middle" class="t-b">Vault</text>
+          <text x="120" y="346" text-anchor="middle" class="t-m">post-grok branch</text>
+          <text x="120" y="366" text-anchor="middle" class="t-s">evidence · NOW · log · courses</text>
+          <line x1="298" y1="343" x2="224" y2="343" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="261" y="335" text-anchor="middle" class="t-s">commits</text>
+          <!-- Vault -> Shiloh (git sync) -->
+          <line x1="100" y1="296" x2="100" y2="94" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ah)"/>
+          <text x="108" y="200" class="t-s">Obsidian Git sync</text>
+          <!-- Vault -> Grok feedback -->
+          <path d="M220,318 C 270,250 250,140 296,96" fill="none" stroke="var(--claude)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ah)"/>
+          <text x="236" y="250" class="t-s" fill="var(--claude)" style="fill:var(--claude)">NOW.md “Since last time”</text>
+          <text x="236" y="264" class="t-s" style="fill:var(--claude)">+ “Questions for COLT”</text>
+          <!-- Thomas -->
+          <rect x="300" y="440" width="240" height="64" fill="var(--sheet)" stroke="var(--thomas)" stroke-width="2.5"/>
+          <text x="420" y="466" text-anchor="middle" class="t-b">Thomas · Headmaster</text>
+          <text x="420" y="486" text-anchor="middle" class="t-s">merges PRs · charter calls · quarterly sign-off</text>
+          <line x1="420" y1="388" x2="420" y2="436" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="428" y="416" class="t-s">PRs for 10-system/ · “needs Thomas”</text>
+          <line x1="298" y1="472" x2="120" y2="472" stroke="var(--muted)" stroke-width="1.5"/>
+          <line x1="120" y1="472" x2="120" y2="390" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="128" y="462" class="t-s">merges</text>
+        </svg>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--shiloh)"></i>Student-CEO</span>
+        <span><i style="background:var(--grok)"></i>Grok: flat subscription, does the talking</span>
+        <span><i style="background:var(--claude)"></i>Claude: pay-per-run, does the writing</span>
+        <span><i style="background:var(--thomas)"></i>Final authority</span>
+      </div>
+      <div class="callout"><b>Privacy rule in the loop:</b> just talking with COLT (feelings, friends, worries) never enters a handoff, so it never reaches the vault or Thomas. A real safety concern is the exception, and COLT helps Shiloh bring it to Thomas himself.</div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <span class="lbl">Drawing C · Routing</span>
+    <h2>What Shiloh says → the one file the agent loads</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Shiloh says</th><th>Skill</th><th>Writes back</th><th>Quadrant</th></tr></thead>
+      <tbody>
+        <tr><td>“COLT, morning” / “wrap up”</td><td><code>daily-checkin</code></td><td>daily note + handoffs</td><td>Systems</td></tr>
+        <tr><td>“plan my week”</td><td><code>monday-plan</code></td><td>NOW.md missions</td><td>Systems</td></tr>
+        <tr><td>“weekly review”</td><td><code>friday-review</code></td><td>weekly note, Circle scores, “For Dad”</td><td>all</td></tr>
+        <tr><td>“teach me gym unit 2”</td><td><code>tutor-session</code></td><td>course progress, learner profile</td><td>by course</td></tr>
+        <tr><td>“hey Jahari” / “talk to my Knight”</td><td><code>talk-to-knight</code></td><td>session takeaway + one action</td><td>by seat</td></tr>
+        <tr><td>“I finished…”</td><td><code>log-evidence</code></td><td>50-evidence/ note</td><td>tagged</td></tr>
+        <tr><td>dropped a file in raw/</td><td><code>wiki-ingest</code></td><td>wiki/ summary</td><td>Mind</td></tr>
+        <tr><td>Sunday 6 pm (Grok Automation)</td><td><code>strategy-brief</code></td><td>next week's proposal</td><td>all</td></tr>
+        <tr><td>nightly 8 pm (Claude)</td><td><code>process-handoffs</code></td><td>NOW, log, index, evidence</td><td>—</td></tr>
+        <tr><td>Thomas: “quarterly review”</td><td><code>quarterly-review</code></td><td>compliance draft (Doc 03)</td><td>Mind</td></tr>
+        <tr><td>just talking</td><td><em>none: COLT persona only</em></td><td><b>nothing</b></td><td>—</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sheet">
+    <span class="lbl">Drawing D · Cadence</span>
+    <h2>The week</h2>
+    <div class="week">
+      <div class="day"><h3>Sun</h3><div class="ev" style="--c:var(--grok)"><b>6:00 pm · Grok</b>Strategy brief: focus slice, 5 missions, next units</div></div>
+      <div class="day"><h3>Mon</h3><div class="ev" style="--c:var(--shiloh)"><b>AM · Shiloh + COLT</b>Plan my week → accept the brief</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>NOW.md missions set</div></div>
+      <div class="day"><h3>Tue</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
+      <div class="day"><h3>Wed</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
+      <div class="day"><h3>Thu</h3><div class="ev" style="--c:var(--shiloh)"><b>AM / PM</b>Morning, then wrap up</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Process handoffs</div></div>
+      <div class="day"><h3>Fri</h3><div class="ev" style="--c:var(--shiloh)"><b>Shiloh + COLT</b>Weekly review + Circle scores</div><div class="ev" style="--c:var(--thomas)"><b>Thomas</b>Reads “For Dad”</div><div class="ev" style="--c:var(--claude)"><b>8 pm · Claude</b>Weekly note</div></div>
+      <div class="day"><h3>Sat</h3><div class="ev" style="--c:var(--line)"><b>off</b>Nothing scheduled</div></div>
+    </div>
+    <div class="extra">
+      <div class="ev" style="--c:var(--claude)"><b>Monthly · Claude</b>Wiki lint + learner profile refresh, from evidence only</div>
+      <div class="ev" style="--c:var(--thomas)"><b>Quarterly · Claude → Thomas</b>Quarterly review draft, Thomas signs off</div>
+      <div class="ev" style="--c:var(--accent)"><b>Every push · GitHub Action</b>Vault lint: skills, links, AGENTS.md ≤150 lines</div>
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="sheet">
+      <span class="lbl">Drawing E · Token budget</span>
+      <h2>What one tutoring chat loads</h2>
+      <div class="budget">
+        <div class="brow" style="--c:var(--mach)"><span>AGENTS.md</span><span class="track"><span style="width:10.4%"></span></span><span class="n">5.3 KB</span></div>
+        <div class="brow" style="--c:var(--l2)"><span>NOW.md</span><span class="track"><span style="width:2%"></span></span><span class="n">1.0 KB</span></div>
+        <div class="brow" style="--c:var(--l5)"><span>learner-profile</span><span class="track"><span style="width:2.7%"></span></span><span class="n">1.4 KB</span></div>
+        <div class="brow" style="--c:var(--accent)"><span>tutor-session skill</span><span class="track"><span style="width:1.8%"></span></span><span class="n">0.9 KB</span></div>
+        <div class="brow" style="--c:var(--l3)"><span>gym-course index</span><span class="track"><span style="width:7.5%"></span></span><span class="n">3.8 KB</span></div>
+        <div class="brow" style="--c:var(--l3)"><span>one section</span><span class="track"><span style="width:7.8%"></span></span><span class="n">~4 KB</span></div>
+        <div class="brow" style="--c:var(--ink)"><span><b>Total</b></span><span class="track"><span style="width:32%"></span></span><span class="n"><b>~16 KB</b></span></div>
+        <div class="brow" style="--c:var(--l0)"><span>Old way: whole Gym doc</span><span class="track"><span style="width:100%"></span></span><span class="n">~51 KB</span></div>
+      </div>
+      <div class="callout">Routing loads one skill and one section instead of whole documents. Claude runs once a day in a batch on Sonnet, not once per chat.</div>
+    </div>
+
+    <div class="sheet">
+      <span class="lbl">Drawing F · Obsidian</span>
+      <h2>How Shiloh sees it</h2>
+      <ul class="plain">
+        <li><b>HOME.md</b>: the start page. It links NOW, the five Circle hubs, the courses, people and direction docs.</li>
+        <li><b>HQ-map.canvas</b>: a board of live note cards in six bands: This week, The Circle, Courses, People, Where I'm headed, My notes.</li>
+        <li><b>Graph view</b>: the 5 Circle hubs sit in the middle. Courses cluster around their index notes, and evidence and journal notes join a hub through <span class="mono">quadrant: "[[body-discipline]]"</span>.</li>
+        <li><b>Filtered out of the graph:</b> templates, handoffs, raw/, agent files, READMEs. Dot-folders (<span class="mono">.agents</span>, <span class="mono">.github</span>) never show.</li>
+      </ul>
+      <div class="colors">
+        <div><i style="background:#f59e0b"></i>05-circle hubs</div>
+        <div><i style="background:#dc2626"></i>00-charter</div>
+        <div><i style="background:#3b82f6"></i>10-system</div>
+        <div><i style="background:#f97316"></i>kitchen</div>
+        <div><i style="background:#22c55e"></i>gym</div>
+        <div><i style="background:#eab308"></i>panel</div>
+        <div><i style="background:#a855f7"></i>forge</div>
+        <div><i style="background:#ec4899"></i>venture playbook</div>
+        <div><i style="background:#06b6d4"></i>30-mansion</div>
+        <div><i style="background:#94a3b8"></i>40-journal</div>
+        <div><i style="background:#10b981"></i>50-evidence</div>
+        <div><i style="background:#8b5cf6"></i>60-companions</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <span class="lbl">Drawing G · Branches</span>
+    <h2>Two eras in one repo</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Branch</th><th>Era</th><th>Contains</th><th>Deploys</th></tr></thead>
+      <tbody>
+        <tr><td><code>main</code></td><td>pre-Grok (Aug–Nov 2026)</td><td>Next.js + Supabase web app, docs 00–18 final snapshot</td><td>Vercel, live</td></tr>
+        <tr><td><code>post-grok</code></td><td>from Nov 22, 2026</td><td>This vault: Obsidian + agents</td><td>none (Vercel off)</td></tr>
+        <tr><td><code>amend/*</code></td><td>proposals</td><td>System-doc changes waiting for Thomas (PR #1 = Doc 05/17)</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <footer>Drawn from the vault at commit cd5f30b on Nov 22, 2026. When the structure changes, the source of truth is AGENTS.md and index.md.</footer>
+</div>
+
+</html>

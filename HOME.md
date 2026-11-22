@@ -4,7 +4,7 @@ type: home
 # Shiloh HQ
 
 **Today:** [[NOW]] — this week's missions and open loops.
-**Map:** open `HQ-map.canvas` (the visual board) · Graph view: Ctrl+G
+**Map:** open `HQ-map.canvas` (the visual board) or `maps/shiloh-hq-map.html` in a browser · Graph view: Ctrl+G
 
 ## The Circle
 [[mind-mastery|🧠 Mind]] · [[body-discipline|💪 Body]] · [[venture-craft|🚀 Venture]] ·

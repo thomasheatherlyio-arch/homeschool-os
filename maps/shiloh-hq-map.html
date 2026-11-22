@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Shiloh HQ Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a game-HUD style command board — the Circle wheel is the centerpiece, missions beside it, courses / people / map below. */
+:root{
+  --bg:#f3f4f7; --panel:#ffffff; --ink:#151a24; --muted:#5d6577; --line:#dde1ea; --chip:#eef0f5;
+  --accent:#2b4cff;
+  --q-mind:#2f62e8; --q-body:#d9482f; --q-venture:#c98a00; --q-spirit:#7a4fe0; --q-systems:#0f9370;
+  --display:"Chakra Petch", "Arial Narrow", system-ui, sans-serif;
+  --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1017; --panel:#151a24; --ink:#e9ecf3; --muted:#9aa3b5; --line:#262d3b; --chip:#1d2330; --accent:#7d93ff;
+  --q-mind:#6f95ff; --q-body:#ff7a5f; --q-venture:#f2b833; --q-spirit:#a88bff; --q-systems:#3fd1a6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1017; --panel:#151a24; --ink:#e9ecf3; --muted:#9aa3b5; --line:#262d3b; --chip:#1d2330; --accent:#7d93ff;
+  --q-mind:#6f95ff; --q-body:#ff7a5f; --q-venture:#f2b833; --q-spirit:#a88bff; --q-systems:#3fd1a6; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
+h2{font-size:1.05rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600}
+.mono{font-family:var(--mono);font-size:.8rem}
+header{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+header h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:700;line-height:1}
+header h1 span{color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:.75rem;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);white-space:nowrap}
+.tag b{font-weight:500;color:var(--q-systems)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px}
+@media (max-width:820px){.top{grid-template-columns:minmax(0,1fr)}}
+.circle{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:20px;align-items:center}
+@media (max-width:560px){.circle{grid-template-columns:minmax(0,1fr)}}
+svg.wheel{width:100%;max-width:260px;margin:0 auto;display:block}
+svg.wheel path{cursor:pointer;transition:transform .2s;transform-origin:130px 130px;stroke:var(--panel);stroke-width:3}
+svg.wheel path:hover,svg.wheel path[aria-pressed="true"]{transform:scale(1.045)}
+svg.wheel path:focus-visible{outline:none;stroke:var(--ink)}
+svg.wheel text{font-family:var(--display);font-size:22px;pointer-events:none}
+.hubtxt{font-family:var(--display);fill:var(--ink)}
+.qdetail h3{font-size:1.4rem}
+.qdetail p{margin:.3rem 0 .8rem;color:var(--muted)}
+.qdetail ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.qdetail li{display:flex;gap:8px;align-items:baseline}
+.qdetail li .k{font-family:var(--mono);font-size:.7rem;color:var(--muted);min-width:64px;text-transform:uppercase}
+.missions ol{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:m}
+.missions li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start}
+.box{width:22px;height:22px;border:2px solid var(--ink);border-radius:6px;margin-top:2px}
+.note{font-size:.82rem;color:var(--muted);margin-top:14px}
+.say{display:grid;gap:8px;margin-top:16px;border-top:1px dashed var(--line);padding-top:14px}
+.say div{display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;font-size:.9rem}
+.say .when{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;padding-top:2px}
+.say q{font-weight:600;quotes:"“" "”"}
+.courses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:960px){.courses{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.courses{grid-template-columns:minmax(0,1fr)}}
+.course{display:flex;flex-direction:column;gap:10px}
+.course .doc{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.course h3{font-size:1.35rem}
+.course p{margin:0;font-size:.88rem;color:var(--muted);flex:1}
+.mix{display:flex;height:10px;border-radius:5px;overflow:hidden;gap:2px}
+.mix span{display:block}
+.prog{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.status{font-family:var(--mono);font-size:.7rem;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--muted)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:820px){.row{grid-template-columns:minmax(0,1fr)}}
+.people{display:grid;gap:10px;margin-top:12px}
+.person{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.person:last-child{border-bottom:0}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;color:var(--panel);font-size:1rem}
+.av.open{background:transparent;border:2px dashed var(--muted);color:var(--muted)}
+.person small{display:block;color:var(--muted);font-size:.82rem}
+.pill{font-family:var(--mono);font-size:.7rem;padding:2px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.tree{font-family:var(--mono);font-size:.82rem;line-height:1.9;margin-top:12px;overflow-x:auto}
+.tree div{display:grid;grid-template-columns:18px 170px minmax(0,1fr);gap:8px;align-items:center;white-space:nowrap}
+.tree .dot{width:12px;height:12px;border-radius:50%}
+.tree .d{color:var(--muted);font-family:var(--body);white-space:normal}
+footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion:reduce){svg.wheel path{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="mono" style="color:var(--muted)">HOMESCHOOL OS · STUDENT-CEO VIEW</div>
+      <h1>Shiloh <span>HQ</span></h1>
+    </div>
+    <div class="meta">
+      <span class="tag">Week of Nov 23, 2026</span>
+      <span class="tag">Phase: Relaunch</span>
+      <span class="tag">Focus: <b>🗂️ Systems</b></span>
+      <span class="tag">Next review: Fri Nov 27</span>
+    </div>
+  </header>
+
+  <section class="top">
+    <div class="panel">
+      <h2>The Circle</h2>
+      <div class="circle" style="margin-top:12px">
+        <svg class="wheel" viewBox="0 0 260 260" role="group" aria-label="The Circle — five slices of your life"></svg>
+        <div class="qdetail" aria-live="polite"></div>
+      </div>
+      <p class="note">Tap a slice. You score each slice 0–10 at the Friday review. No scores yet; the first one is Nov 27.</p>
+    </div>
+
+    <div class="panel missions">
+      <h2>This week's missions</h2>
+      <ol>
+        <li><span class="box"></span><span>Install Obsidian + GitHub Desktop, clone the <span class="mono">post-grok</span> branch (Dad helps)</span></li>
+        <li><span class="box"></span><span>First chat with COLT in Grok. Rename COLT if you want.</span></li>
+        <li><span class="box"></span><span>Write 3 daily notes</span></li>
+        <li><span class="box"></span><span>Pick the next course: Kitchen, Gym, Panel or Forge</span></li>
+        <li><span class="box"></span><span>Seat one open Knight</span></li>
+      </ol>
+      <p class="note">This is a snapshot. Check missions off in <span class="mono">NOW.md</span> in Obsidian.</p>
+      <div class="say">
+        <div><span class="when">Morning</span><span><q>COLT, morning</q></span></div>
+        <div><span class="when">Learning</span><span><q>teach me gym unit 2</q> · <q>hey Jahari</q></span></div>
+        <div><span class="when">Done</span><span><q>I finished my stretching routine</q></span></div>
+        <div><span class="when">Night</span><span><q>COLT, wrap up</q>, then Git: Commit and sync</span></div>
+        <div><span class="when">Friday</span><span><q>weekly review</q>, then show Dad</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="margin-bottom:12px">Courses · pick your next one</h2>
+    <div class="courses"></div>
+    <p class="note">The color bar shows which slices of the Circle each course builds, based on its quadrant map.</p>
+  </section>
+
+  <section class="row">
+    <div class="panel">
+      <h2>Your Round Table</h2>
+      <div class="people">
+        <div class="person"><div class="av" style="background:var(--accent)">C</div><div><b>COLT</b><small>Your companion in Grok. Plans, tutors, listens. Rename any time.</small></div><span class="pill" style="color:var(--accent)">daily</span></div>
+        <div class="person"><div class="av" style="background:var(--q-body)">J</div><div><b>Jahari</b><small>Real-life Knight: basketball, zen and spiritual focus.</small></div><span class="pill" style="color:var(--q-body)">seated</span></div>
+        <div class="person"><div class="av open">?</div><div><b>Mind &amp; Mastery seat</b><small>Open. Candidate: a teacher coached in Opher Brayer's method.</small></div><span class="pill" style="color:var(--muted)">open</span></div>
+        <div class="person"><div class="av open">?</div><div><b>Venture &amp; Craft seat</b><small>Open. Candidates: Branson-style or Daymond John-style coach.</small></div><span class="pill" style="color:var(--muted)">open</span></div>
+        <div class="person"><div class="av open">?</div><div><b>Chief of Staff</b><small>Open. A Systems &amp; Self-Command coach.</small></div><span class="pill" style="color:var(--muted)">open</span></div>
+        <div class="person"><div class="av" style="background:var(--ink)">D</div><div><b>Dad</b><small>Headmaster. Final say on rules, grades, accounts and money.</small></div><span class="pill" style="color:var(--ink)">always</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Your map in Obsidian</h2>
+      <div class="tree">
+        <div><span class="dot" style="background:#ffffff;border:1px solid var(--muted)"></span><b>HOME · NOW</b><span class="d">Start here every day</span></div>
+        <div><span class="dot" style="background:#f59e0b"></span>05-circle</div>
+        <div><span class="dot" style="background:#f97316"></span>20-courses</div>
+        <div><span class="dot" style="background:#06b6d4"></span>30-mansion</div>
+        <div><span class="dot" style="background:#94a3b8"></span>40-journal</div>
+        <div><span class="dot" style="background:#10b981"></span>50-evidence</div>
+        <div><span class="dot" style="background:#8b5cf6"></span>60-companions</div>
+        <div><span class="dot" style="background:#3b82f6"></span>10-system</div>
+        <div><span class="dot" style="background:#dc2626"></span>00-charter</div>
+      </div>
+      <p class="note">The dot colors match the Graph view (Ctrl+G). Open <span class="mono">HQ-map.canvas</span> for the same board inside Obsidian.</p>
+    </div>
+  </section>
+
+  <footer>Snapshot of the vault on Nov 22, 2026. The live version is in Obsidian, and COLT reads it from there.</footer>
+</div>
+
+<script>
+const Q=[
+ {id:"mind",e:"🧠",name:"Mind & Mastery",d:"Reading, writing, math, science, history. The subjects that count for school.",
+  build:["Every course (math and science run through all four)","Mind Mansion: your library"],knight:"Open seat"},
+ {id:"body",e:"💪",name:"Body & Discipline",d:"Training, nutrition, basketball. Where toughness gets built.",
+  build:["The Gym"],knight:"Jahari"},
+ {id:"venture",e:"🚀",name:"Venture & Craft",d:"Building things that are real, and ideally things that earn.",
+  build:["The Forge","The Kitchen","The Panel","Venture playbook","Work Ladder"],knight:"Open seat"},
+ {id:"spirit",e:"🕊️",name:"Spirit & Character",d:"Values, reflection, zen practice, who you're becoming.",
+  build:["North Star","Divine Blueprint"],knight:"Jahari"},
+ {id:"systems",e:"🗂️",name:"Systems & Self-Command",d:"Planning, time, follow-through. The skill under every other skill.",
+  build:["NOW.md + daily notes","Monday plan / Friday review"],knight:"Chief of Staff (open)"}
+];
+const svg=document.querySelector("svg.wheel"),det=document.querySelector(".qdetail"),NS="http://www.w3.org/2000/svg";
+const cx=130,cy=130,R=122,r=52;
+function pt(a,rad){return[cx+rad*Math.cos(a),cy+rad*Math.sin(a)]}
+function show(i){
+  const q=Q[i];
+  svg.querySelectorAll("path").forEach((p,j)=>p.setAttribute("aria-pressed",j===i));
+  det.innerHTML=`<h3 style="color:var(--q-${q.id})">${q.e} ${q.name}</h3><p>${q.d}</p><ul>
+   <li><span class="k">Built in</span><span>${q.build.join(" · ")}</span></li>
+   <li><span class="k">Knight</span><span>${q.knight}</span></li>
+   <li><span class="k">Score</span><span>— / 10 (first score Fri)</span></li></ul>`;
+  try{localStorage.setItem("hq-q",i)}catch(e){}
+}
+Q.forEach((q,i)=>{
+  const a0=-Math.PI/2+i*2*Math.PI/5+0.02,a1=-Math.PI/2+(i+1)*2*Math.PI/5-0.02;
+  const [x0,y0]=pt(a0,R),[x1,y1]=pt(a1,R),[x2,y2]=pt(a1,r),[x3,y3]=pt(a0,r);
+  const p=document.createElementNS(NS,"path");
+  p.setAttribute("d",`M${x0},${y0} A${R},${R} 0 0 1 ${x1},${y1} L${x2},${y2} A${r},${r} 0 0 0 ${x3},${y3}Z`);
+  p.setAttribute("fill",`var(--q-${q.id})`);p.setAttribute("tabindex","0");p.setAttribute("role","button");
+  p.setAttribute("aria-label",q.name);
+  p.addEventListener("click",()=>show(i));
+  p.addEventListener("keydown",ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();show(i)}});
+  svg.appendChild(p);
+  const am=(a0+a1)/2,[tx,ty]=pt(am,(R+r)/2),t=document.createElementNS(NS,"text");
+  t.setAttribute("x",tx);t.setAttribute("y",ty+8);t.setAttribute("text-anchor","middle");t.textContent=q.e;svg.appendChild(t);
+});
+const hub=document.createElementNS(NS,"text");hub.setAttribute("x",cx);hub.setAttribute("y",cy+6);
+hub.setAttribute("text-anchor","middle");hub.setAttribute("class","hubtxt");hub.setAttribute("style","font-size:15px;font-weight:700");
+hub.textContent="YOU";svg.appendChild(hub);
+let start=4;try{const s=localStorage.getItem("hq-q");if(s!==null)start=+s}catch(e){}
+show(start);
+
+const C=[
+ {n:"The Kitchen",doc:"Doc 14",len:"Self-paced",sec:14,d:"Cooking, menu design, and where food actually comes from. Capstone: a real Menu Night.",mix:{mind:4,venture:3,systems:2}},
+ {n:"The Gym",doc:"Doc 15",len:"Self-paced + 6 wk",sec:22,d:"How training works, building programs, and the road to personal trainer. Capstone: run a real program.",mix:{mind:4,venture:2,body:2}},
+ {n:"The Panel",doc:"Doc 16",len:"12 weeks",sec:17,d:"Electrical basics and the electrician trade, from apprentice to owning a shop. Capstone: build, test, pitch.",mix:{mind:5,venture:3,systems:2}},
+ {n:"The Forge",doc:"Doc 18",len:"10 weeks",sec:16,d:"How AI works and how to make real things with it. Capstone: an AI-assisted short film.",mix:{venture:3,mind:3,spirit:1}}
+];
+const names={mind:"Mind",body:"Body",venture:"Venture",spirit:"Spirit",systems:"Systems"};
+document.querySelector(".courses").innerHTML=C.map(c=>{
+  const tot=Object.values(c.mix).reduce((a,b)=>a+b,0);
+  const bar=Object.entries(c.mix).map(([k,v])=>`<span title="${names[k]} ${v}" style="flex:${v};background:var(--q-${k})"></span>`).join("");
+  const legend=Object.entries(c.mix).map(([k,v])=>`${names[k]} ${Math.round(v/tot*100)}%`).join(" · ");
+  return `<article class="panel course"><div style="display:flex;justify-content:space-between;gap:8px"><span class="doc">${c.doc} · ${c.len}</span><span class="status">not started</span></div>
+  <h3>${c.n}</h3><p>${c.d}</p><div class="mix" aria-label="${legend}">${bar}</div><div class="mono" style="color:var(--muted);font-size:.7rem">${legend}</div>
+  <div class="prog"><span>0 / ${c.sec} sections</span><span>unit —</span></div></article>`}).join("");
+</script>
+
+</html>
