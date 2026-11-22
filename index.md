@@ -22,12 +22,12 @@ updated: 2026-11-22
 - [[17-command-center-ui-build-brief|17 Command Center UI brief]] (parked web app)
 
 ## Courses
-[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] (draft) · [[shiloh-playbook|Venture playbook]]
+[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] · [[shiloh-playbook|Venture playbook]]
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
 - **P1:** [[hs-readiness]] · [[verifications]] (Thomas only) · [[diagnostics]] · [[khan-academy]] · `55-progress/reports/` (weekly parent reports)
-- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · lesson cards: `20-courses/<course>/cards/`
+- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · [[20261122-obsidian-meta-bind]] · lesson cards: `20-courses/<course>/cards/`
 - [[HOME]] — Shiloh's home note; `HQ-map.canvas` is the visual board
 - Circle hubs (`05-circle/`): [[mind-mastery]] · [[body-discipline]] · [[venture-craft]] · [[spirit-character]] · [[systems-self-command]]
 - `maps/`: visual web pages (Shiloh map, system blueprint). See the folder's README.

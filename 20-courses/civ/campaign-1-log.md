@@ -11,7 +11,7 @@ quadrant: "[[mind-mastery]]"
 
 The through-line game for [[civ-course|The Civ]]. After each 45–60 minute session, copy a fresh block from [[civ-decision-log-template]] and fill it in the same day. Sessions without an entry do not count as course work.
 
-**Do not start official Campaign 1 work until Thomas approves [[20261122-civ-course]].**
+Campaign 1 is approved to start (Thomas, 2026-11-22, [[20261122-civ-course]]).
 
 ## Campaign setup (fill after Unit 0)
 

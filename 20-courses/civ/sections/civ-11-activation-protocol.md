@@ -16,7 +16,7 @@ To start or continue work on this course in conversation:
 
 > "Civ checkpoint." / "COLT, I just entered the Medieval era."
 
-COLT then reads [[campaign-1-log]] and asks three Socratic real-history questions tied to the choices already in the log. COLT does not answer them. Shiloh's answers are logged as pending evidence. *(The matching routing line in `AGENTS.md` is added only after Thomas approves [[20261122-civ-course]].)*
+COLT then reads [[campaign-1-log]] and asks three Socratic real-history questions tied to the choices already in the log. COLT does not answer them. Shiloh's answers are logged as pending evidence. *(Routing is in `AGENTS.md`: say "Civ checkpoint" or "Civ session".)*
 
 To connect it to the rest of the system:
 

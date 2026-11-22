@@ -7,6 +7,7 @@ touches:
   - 55-progress/khan-academy.md
 decision: approved
 ---
+Dad only: `INPUT[inlineSelect(option(pending), option(approved), option(declined)):decision]` (COLT never edits this field.)
 # Connect Khan Academy to track Shiloh's progress
 ## Change
 - Approve a Khan Academy account (or parent-linked progress access) so COLT can help track work in World History and US Government & Civics, including units used by the proposed Civ course. Progress is already logged (self-reported) in [[khan-academy]] until a direct connection is approved.

@@ -21,13 +21,13 @@ updated: 2026-11-22
 - [needs Thomas · P1] Confirm the target 9th-grade start (proposed Fall 2027) and the proposed L3 targets in [[hs-readiness]].
 
 ## Last session (COLT writes)
-- 2026-11-22: Drafted The Civ course (Unit 0 + 12 weeks) and two proposals for Dad (Civ course; Khan Academy).
+- 2026-11-22: Applied Dad's approvals — The Civ course is active; Khan Academy: approved 2026-11-22; COLT to connect; Meta Bind installed.
+- 2026-11-22: Drafted The Civ course (Unit 0 + 12 weeks) and three proposals for Dad (Civ course; Khan Academy; Meta Bind plugin).
 - 2026-11-22: Vault ready for Grok Build. COLT now writes notes directly; Dad verifies in [[verifications]].
 
 ## Waiting on Dad (proposals, verifications, decisions)
 - See Open loops marked "needs Thomas".
-- [[20261122-civ-course|Proposal: approve The Civ course]] (History/Social Studies + Good Citizenship)
-- [[20261122-khan-academy-connection|Proposal: connect Khan Academy to track progress]]
+- Khan Academy: approved 2026-11-22; COLT to connect
 
 ## Next review
 Friday 2026-11-27 — weekly review with Dad.

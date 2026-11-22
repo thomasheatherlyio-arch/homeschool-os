@@ -27,3 +27,7 @@ type: log
 - 2026-11-22 — COLT — Added proposals [[20261122-civ-course]] and [[20261122-khan-academy-connection]]; linked both from NOW.md Waiting on Dad.
 - 2026-11-22 COLT: added Khan Academy progress tracker
 - 2026-11-22 — COLT — Updated [[index]] with The Civ course, the two new proposals, and [[khan-academy]].
+- 2026-11-22 — COLT — Added proposal [[20261122-obsidian-meta-bind]] (Meta Bind decision drop-down); linked from NOW.md Waiting on Dad. Left all proposal decisions pending.
+- 2026-11-22 — COLT — Applied [[20261122-civ-course]]: [[civ-course]] status set to active; added Civ checkpoint routing row to AGENTS.md.
+- 2026-11-22 — COLT — Applied [[20261122-khan-academy-connection]]: [[khan-academy]] connection marked approved 2026-11-22; NOW.md notes COLT to connect.
+- 2026-11-22 — COLT — Applied [[20261122-obsidian-meta-bind]]: installed Meta Bind 1.5.1 under `.obsidian/plugins/obsidian-meta-bind-plugin/` and enabled it in community-plugins.json; added drop-down bind line to proposal bodies and TEMPLATE (decision values left unchanged).

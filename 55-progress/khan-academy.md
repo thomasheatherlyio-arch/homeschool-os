@@ -1,4 +1,4 @@
-﻿---
+---
 type: progress-tracker
 status: active
 date: 2026-11-22
@@ -9,7 +9,7 @@ quadrant: "[[mind-mastery]]"
 
 Self-reported by Shiloh (pasted or screenshot from Khan Academy), logged by COLT.
 Counts as **pending** until Thomas verifies it in [[verifications]]. Feeds [[hs-readiness]].
-Direct account connection: waiting on Dad's sign-off (Toolshed rule).
+Direct account connection: approved by Thomas 2026-11-22 ([[20261122-khan-academy-connection]]).
 
 ## Course mastery
 | Date | Course | Unit | Mastery % | Skills mastered | Proficient | Familiar | Source |
