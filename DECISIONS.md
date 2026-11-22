@@ -5,6 +5,22 @@ alternatives, why, status. Pre-Grok entries (from the web-app era on `main`) are
 
 ---
 
+## 2026-11-22 — Approvals: Civ course, Khan connection, Meta Bind, Khan priority plan
+
+**Decision (Thomas):** approved four proposals:
+- The Civ course ([[20261122-civ-course]])
+- Khan Academy connection ([[20261122-khan-academy-connection]])
+- Meta Bind plugin for proposal `decision` drop-downs ([[20261122-obsidian-meta-bind]])
+- Khan ELA + science weekly minutes and milestone dates ([[20261122-khan-priority-plan]])
+
+**Alternatives:** leave them pending; decline and keep the old week shape.
+
+**Why:** Shiloh asked (with Dad) for a Civ history/civics course and for science, reading, and grammar to be the Khan priority. The connection lets COLT sync real progress from the site; Meta Bind makes the decision field usable in the note.
+
+**Status:** Active. Applied in the vault (Civ course active; Khan system and first sync live; Meta Bind installed; [[khan-priority-plan]] status active). These do not change [[hs-readiness]] L3 targets.
+
+---
+
 ## 2026-11-22 — Pivot: vault-first v1, Grok for strategy, Claude for execution
 
 **Decision:** HomeSchool OS v1 is an Obsidian vault (this branch, `post-grok`), not the Next.js

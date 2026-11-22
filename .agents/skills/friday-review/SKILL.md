@@ -10,3 +10,4 @@ description: Run the Friday weekly review and write the weekly parent report. Us
 5. P1: write the parent report per `.agents/skills/parent-report/SKILL.md` to
    `55-progress/reports/<YYYY-MM-DD>-weekly.md`, refresh counts in `hs-readiness.md`, add the Gate 2 row.
 6. Update `learner-profile.md` Circle scores. Bookkeeping.
+7. Then follow `.agents/skills/status-update/SKILL.md`.

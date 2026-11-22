@@ -31,7 +31,7 @@ How COLT helps Shiloh monitor, track, and work through Khan Academy. Thomas appr
 
 - **"Khan sync"** — pull the latest progress from the site. The regular pull is **Friday ~6 PM**, so Dad can look over the weekend.
 - **"Khan help"** / **"stuck on Khan"** — COLT coaches from the dashboard and that course note (`.agents/skills/khan-coach/SKILL.md`). Socratic: ask, then hint, then explain. COLT never gives answers to Khan exercises. Work is broken into 15–25 minute steps.
-- A weekly Khan log (`25-khan/weekly/`, from `templates/khan-weekly.md`) is written at the **Friday ~6 PM** sync once there are real minutes to report. Priority plan: [[khan-priority-plan]] (minutes and dates pending Dad's approval).
+- A weekly Khan log (`25-khan/weekly/`, from `templates/khan-weekly.md`) is written at the **Friday ~6 PM** sync once there are real minutes to report. Priority plan: [[khan-priority-plan]] (weekly minutes and dates approved 2026-11-22).
 
 ## Privacy
 

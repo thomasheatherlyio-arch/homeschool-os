@@ -9,3 +9,4 @@ description: Pull Shiloh's Khan Academy progress from the website in a browser (
 5. **Unit tests and mastery jumps** are evidence: follow `.agents/skills/log-evidence/SKILL.md`. `verified: pending` always. Never set `verified: yes`. Never edit `55-progress/verifications.md`.
 6. The regular weekly sync runs **automatically Friday ~6 PM**, so Thomas can review over the weekend. At that sync (or any Friday wrap), write a log in `25-khan/weekly/` from `templates/khan-weekly.md`, using only numbers from this sync and earlier snapshots.
 7. Bookkeeping: one line in `log.md`, `NOW.md` if a "First Khan sync" mission/loop should be ticked. Tell Shiloh the new figures are pending until Dad checks the evidence.
+8. Then follow `.agents/skills/status-update/SKILL.md`.

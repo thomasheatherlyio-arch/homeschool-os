@@ -15,11 +15,13 @@ type: home
 > Stuck, a red Git error, or COLT wants to run a command? Stop and get Dad.
 
 ---
-**Map:** open `HQ-map.canvas` (the visual board) or `maps/shiloh-hq-map.html` in a browser · Graph view: Ctrl+G
+**Map:** open `HQ-map.canvas` (the visual board) or `maps/shiloh-hq-map.html` in a browser · [[command-center|Command Center]]: `maps/shiloh-command-center.html` · Graph view: Ctrl+G
 
 ## Road to high school
 [[hs-readiness]]: where you stand on each subject. Work counts once Dad checks it.
 [[khan-dashboard|Khan Academy]]: your course dashboard. Tell COLT **"Khan sync"** to update it, or **"Khan help"** if you're stuck.
+[[project-priority-board]]: all projects and tasks, ranked by school requirements vs. your interests.
+[[command-center|Command Center]] · [[status-tracker]]: living status of courses and projects.
 
 ## The Circle
 [[mind-mastery|🧠 Mind]] · [[body-discipline|💪 Body]] · [[venture-craft|🚀 Venture]] ·

@@ -1,6 +1,6 @@
 ---
 type: plan
-status: draft-pending-approval
+status: active
 date: 2026-11-22
 updated: 2026-11-22
 quadrant: "[[mind-mastery]]"
@@ -9,7 +9,7 @@ quadrant: "[[mind-mastery]]"
 
 Shiloh, with Dad, asked to **get science, reading, and grammar done as a priority**, from the week of **2026-11-23** through a **Fall 2027** high-school start (about 38 weeks to mid-August 2027; the exact 9th-grade date is still Thomas's to confirm on [[NOW]] / [[hs-readiness]]).
 
-**This plan's weekly minutes and target dates are proposals.** They need Thomas's approval ([[20261122-khan-priority-plan]]). They do **not** change the L3 (or other) targets on [[hs-readiness]].
+**Thomas approved these weekly minutes and milestone dates on 2026-11-22** ([[20261122-khan-priority-plan]]). They do **not** change the L3 (or other) targets on [[hs-readiness]].
 
 Dashboard: [[khan-dashboard]] · P1: [[khan-academy]] · Latest snapshot: [[2026-11-22-khan-snapshot]]
 
@@ -93,7 +93,7 @@ Week of **2026-12-14**
 - Science: if Cells is done, start MS physics — Waves (40%) or MS Earth — Weather and climate (50%).
 - Math: unit 7 or unit 10 (29%), keep-warm pace.
 
-## Target dates (proposed only)
+## Target dates (approved 2026-11-22)
 
 "Substantially done" means every *named* unit in that course meets the ≥80% or unit-test bar, with TBD units added to the list as Friday syncs name them (dates may slip when names appear).
 
@@ -108,9 +108,9 @@ Week of **2026-12-14**
 | 8th math keep-warm (units 1, 7, 8, 10) | 55% course; those units 50 / 50 / 0 / 29% | week of 2027-04-12 |
 | 7th math keep-warm | 78% | ongoing; units under 80% first |
 
-These dates aim to finish the priority Khan work **before Fall 2027**. They are not hs-readiness targets and are not in force until Thomas approves the proposal.
+These dates aim to finish the priority Khan work **before Fall 2027**. They are not hs-readiness targets.
 
-## After approval
-- Put "Start 6th grade reading on Khan: 4 × 25 min" on the week's missions.
-- Copy approved weekly-minute goals onto [[khan-dashboard]] (leave them as — until then).
+## After approval (applied 2026-11-22)
+- "Start 6th grade reading on Khan: 4 × 25 min this week" is the top Open loop on [[NOW]] (this week's 5 missions were already full).
+- Approved weekly-minute goals are on [[khan-dashboard]] (ELA 100, science 75 shared, math keep-warm 40 shared).
 - Friday 2026-11-27 sync: fill in the first 6th-ELA unit name and any still-TBD science unit names from the live pages.

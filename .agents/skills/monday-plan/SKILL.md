@@ -9,3 +9,4 @@ description: Plan the week with Shiloh: carry-overs, weakest quadrant, up to 5 m
    mission is "do the <subject> check-in with Dad".
 4. Agree up to 5 missions, each with a clear "done when".
 5. Rewrite only NOW.md's header, missions, open loops and next review date. Keep NOW.md under 40 lines.
+6. Then follow `.agents/skills/status-update/SKILL.md`.

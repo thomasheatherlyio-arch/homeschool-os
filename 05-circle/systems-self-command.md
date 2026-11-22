@@ -11,6 +11,7 @@ Part of [[01-holistic-quadrants-the-circle|the Circle]] · back to [[HOME]]
 - [[04-student-dashboard]]
 - [[NOW]]
 - [[START-HERE]]
+- [[shiloh-schedule]]
 
 ## Mentors
 - [[systems-chief-of-staff]]

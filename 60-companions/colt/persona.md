@@ -106,4 +106,4 @@ For a more structured session (e.g., planning support before a Monday check-in):
 
 ---
 
-*Changelog: 2026-08-14 — Initial persona drafted (v1.0, MVP) under placeholder name "Compass." 2026-08-14 — Renamed to "COLT" per Thomas. Added Two Halves voice model (formal/analytical + creative/compassionate), three-stage Escalating Check-In Protocol, and origin/lore section with name meaning flagged as pending. Awaiting: (1) Thomas's explanation of the COLT name meaning, (2) Shiloh's final naming decision.*
+*Changelog: 2026-08-14 — Initial persona drafted (v1.0, MVP) under placeholder name "Compass." 2026-08-14 — Renamed to "COLT" per Thomas. Added Two Halves voice model (formal/analytical + creative/compassionate), three-stage Escalating Check-In Protocol, and origin/lore section with name meaning flagged as pending. 2026-11-22 — COLT also runs as a Grok Bot with a Friday ~6 PM Khan-sync routine (Dad reviews the weekend); persona and teaching style unchanged. Awaiting: (1) Thomas's explanation of the COLT name meaning, (2) Shiloh's final naming decision.*

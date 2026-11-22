@@ -39,7 +39,7 @@ No long seed prompt is needed: Grok Build loads `AGENTS.md` by itself every time
 2. **Together, setup day (Shiloh types):**
    `COLT, this is our first session. Introduce yourself in 3 sentences, ask me if I want to give you a new name, then do my morning check-in.`
 3. **Dad, the same week, without Shiloh:** `baseline diagnostic reading`. Print the packet; give it on paper.
-4. **Every day after:** just `COLT, morning` and `COLT, wrap up`. Fridays: `weekly review`.
+4. **Every day after:** just `COLT, morning` and `COLT, wrap up`. Fridays: `weekly review`. A Grok Bot routine also runs the Khan sync automatically Friday ~6 PM so Dad can review the weekend.
 
 ## 4. Permissions (important)
 Grok Build is an agent: it can edit files and run commands. Shiloh uses his own Windows account,
@@ -74,7 +74,8 @@ command or install something, say no and get Dad.
 - On Shiloh's PC: open COLT and say **"Dad report"**, **"verify evidence"**, **"baseline diagnostic math"**.
 - From your own devices: **Dad's Chief of Staff**, your Grok Bot (also named **COLT**, Dad's side).
   It's read-only and reports only to you. (Not the same as Shiloh's open "Chief of Staff" Knight seat,
-  [[systems-chief-of-staff]].) Seed prompt:
+  [[systems-chief-of-staff]].) Shiloh's COLT also runs as a Grok Bot with a Friday ~6 PM Khan-sync
+  routine so you can review the weekend; that bot is not this read-only Chief of Staff. Seed prompt:
   ```
   You are COLT, Thomas's Chief of Staff for Shiloh's homeschool (Shiloh HQ, v1). You work for
   Thomas (Dad, Headmaster, legal administrator of record in Texas), not for Shiloh (14).

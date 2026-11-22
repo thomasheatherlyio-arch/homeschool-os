@@ -41,3 +41,13 @@ type: log
 - 2026-11-22 — COLT — Updated [[khan-grade-8-math-tx]] from the course page (no longer log-only): 55% mastery, 10 units; keep-warm focus units 1, 7, 8, 10. Dashboard, snapshot, and [[khan-academy]] summary updated.
 - 2026-11-22 — COLT — Drafted [[khan-priority-plan]] (ELA then science, math keep-warm) and proposal [[20261122-khan-priority-plan]] (decision left pending). Weekly minutes and dates are proposals; hs-readiness targets not edited.
 - 2026-11-22 — COLT — Set the regular Khan sync to Friday ~6 PM in [[25-khan/README]] and the khan-sync skill, so Dad can review over the weekend.
+- 2026-11-22 — COLT — Drafted [[shiloh-schedule]] (`40-journal/schedule/`, status: draft) and template `day-plan`. Times are proposed (Shiloh + Dad adjust). Calendar mirror is ready for Google Calendar 'Shiloh HQ' once times are approved.
+- 2026-11-22 — COLT — Added [[project-priority-board]] (55-progress/): academic vs interest weighting, master table, Top 5, and interest-driven view. Linked from [[HOME]] and [[index]]. No commit.
+- 2026-11-22 — COLT — Applied Dad's approval of [[20261122-khan-priority-plan]] (decision line untouched): set [[khan-priority-plan]] to active; copied weekly-minute goals onto [[khan-dashboard]]; did not edit hs-readiness targets.
+- 2026-11-22 — COLT — Appended 2026-11-22 approvals (Civ course, Khan connection, Meta Bind, Khan priority plan) to [[DECISIONS]].
+- 2026-11-22 — COLT — Added [[status-tracker]], `55-progress/status-history/2026-11-22-status.md`, and the `status-update` skill. Hooked khan-sync, friday-review, log-evidence, and monday-plan to follow it.
+- 2026-11-22 — COLT — Built [[command-center]] (`maps/shiloh-command-center.html`) and `scripts/build_dashboard.py`. Linked from [[HOME]], [[NOW]], and [[index]].
+- 2026-11-22 — COLT — Updated AGENTS.md (status/dashboard routing, standing notes: Friday Khan sync, Homie School calendar, proposal decision rules, priority plan and board). Noted the Grok Bot Friday routine in [[grok-setup]] and [[persona]].
+- 2026-11-22 — COLT — Renamed the schedule's Google Calendar from 'Shiloh HQ' to **Homie School** (Shiloh's Gmail). Khan weekly minutes are approved; clock times stay draft until Shiloh + Dad approve.
+- 2026-11-22 — COLT — Shifted the [[shiloh-schedule]] school-day start to 9:00 AM (Monday plan 9:00–9:20; ELA 9:15–9:40; science 9:50–10:15; math 10:25–10:45; flex until 12:00). Afternoon unchanged. Times still draft.
+- 2026-11-22 — COLT — Set Shiloh's Interest for The Civ to 3.5 on [[project-priority-board]] (removed p). Recomputed Priority to **6.0**. Top 5 unchanged. First ELA mission is the top Open loop on [[NOW]] (missions already at 5).
