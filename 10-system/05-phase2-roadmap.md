@@ -46,21 +46,22 @@ and Work Ladder, then sat idle for three months. **It is now parked, not deleted
 **P1 for v1 (Thomas, 2026-11-22): help Thomas track and verify Shiloh's progress toward high school.**
 Every component below serves that first: the readiness tracker (`55-progress/hs-readiness.md`, three
 gates from Docs 03, 09a and 10a), evidence that counts only once Thomas verifies it, Doc 09a baseline
-diagnostics, and a weekly parent report (Claude writes it Friday; Grok "HQ Headmaster" delivers it Saturday).
+diagnostics, and a weekly parent report (COLT writes it at the Friday review).
 
-v1 of Phase 2 is instead an **Obsidian vault + agents** (branch `post-grok`; see `DECISIONS.md`):
-- **Grok, as COLT** — Shiloh's interface for conversation, tutoring and planning (strategy).
-- **Claude** — a daily scheduled run that applies Grok's handoffs to the vault (execution).
-- **Git** — the record and the amendment protocol (Doc 00 §6 → pull requests).
+v1 of Phase 2 is instead an **Obsidian vault + one AI** (branch `post-grok`; see `DECISIONS.md`):
+- **COLT in Grok Build** on Shiloh's PC: talks, tutors, plans, and writes the notes directly.
+- **Obsidian Git**: backs the vault up to GitHub every 10 minutes, giving Thomas remote access and a
+  dated record of every change (Doc 00 §6 amendments go through `proposals/`, Thomas decides).
+- No Claude in v1 (decided 2026-11-22, to keep it to one subscription).
 
 How the §2 components map now:
 
 | Component | Now |
 |---|---|
 | Live student dashboard | `NOW.md` + course progress tables in Obsidian (Dataview later if needed) |
-| Weekly check-in form | `daily-checkin` / `friday-review` skills in Grok |
+| Weekly check-in form | `daily-checkin` / `friday-review` skills in COLT |
 | Quiz generation from video | `tutor-session` skill + NotebookLM outputs dropped in `raw/` (still manual, per the NotebookLM decision) |
-| Time & progress tracking | handoffs → `log.md` + `50-evidence/` |
+| Time & progress tracking | `log.md` + `50-evidence/` + `55-progress/` (P1) |
 | Automated evidence portfolio | `quarterly-review` skill drafts it from `50-evidence/` |
 | Khan/Brilliant, health apps | unchanged — still to explore |
 
