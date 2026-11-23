@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Shiloh HQ Command Center</title>
+<style>
+:root{
+  --bg:#0d1017; --panel:#151a24; --ink:#e9ecf3; --muted:#9aa3b5; --line:#262d3b; --chip:#1d2330;
+  --accent:#7d93ff;
+  --q-mind:#6f95ff; --q-body:#ff7a5f; --q-venture:#f2b833; --q-spirit:#a88bff; --q-systems:#3fd1a6; --q-personal:#8b93a7;
+  --display:"Segoe UI Narrow","Arial Narrow","Franklin Gothic Medium","Trebuchet MS",sans-serif;
+  --body:"Segoe UI","Helvetica Neue",system-ui,-apple-system,sans-serif;
+  --mono:Consolas,"Cascadia Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+body{padding:28px 20px 64px;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.wrap{max-width:1160px;margin:0 auto;display:grid;gap:22px}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:.01em;text-wrap:balance}
+h1{font-size:clamp(2.1rem,5vw,3.2rem);font-weight:700;line-height:1;letter-spacing:.02em}
+h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:600;margin-bottom:12px}
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+header.hero{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px;border-bottom:2px solid var(--ink);padding-bottom:18px}
+.stats{display:flex;flex-wrap:wrap;gap:10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:140px}
+.stat span{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat b{display:block;font-family:var(--display);font-size:1.25rem;font-weight:700;margin-top:2px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+@media (max-width:820px){.row{grid-template-columns:minmax(0,1fr)}}
+ol.pri{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+ol.pri li{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:12px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line)}
+ol.pri li:last-child{border-bottom:0;padding-bottom:0}
+.rank{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;background:var(--chip);color:var(--accent);border:1px solid var(--line)}
+.pri .do{color:var(--muted);font-size:.86rem;margin:2px 0 0}
+.badge{font-family:var(--mono);font-size:.7rem;padding:3px 8px;border-radius:999px;border:1px solid var(--line);background:var(--chip);white-space:nowrap;align-self:center}
+.courses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:960px){.courses{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.courses{grid-template-columns:minmax(0,1fr)}}
+.course{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:center}
+.course h3{font-size:1.02rem;line-height:1.2}
+.course .meta{font-size:.8rem;color:var(--muted);margin-top:4px}
+.ring{flex:0 0 64px;width:64px;height:64px}
+.ring text{font-family:var(--display);font-size:13px;font-weight:700;fill:var(--ink)}
+.khan-grid{display:grid;gap:8px;margin-top:8px}
+.krow{display:grid;grid-template-columns:minmax(120px,1.1fr) 52px minmax(0,2fr) auto;gap:10px;align-items:center;font-size:.88rem}
+.bar{height:8px;background:var(--chip);border-radius:99px;overflow:hidden}
+.bar > span{display:block;height:100%;border-radius:99px;background:var(--q-mind)}
+.krow .goal{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.mins{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.mins .stat{min-width:160px}
+.list{display:grid;gap:0}
+.list .item{display:grid;grid-template-columns:minmax(0,1.1fr) auto;gap:8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.list .item:last-child{border-bottom:0}
+.list .item small{display:block;color:var(--muted);font-size:.8rem}
+.gates{display:grid;gap:8px;margin-bottom:12px}
+.gate{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;padding:8px 0;border-bottom:1px solid var(--line)}
+.gate:last-of-type{border-bottom:0}
+.subjects{display:grid;gap:6px}
+.sub{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;font-size:.82rem;align-items:center}
+.sub .nm{font-weight:600}
+.pill{font-family:var(--mono);font-size:.68rem;padding:2px 7px;border-radius:999px;background:var(--chip);color:var(--muted)}
+.ev{display:flex;gap:14px;flex-wrap:wrap}
+.ev .stat b{font-size:1.8rem}
+.circle-wrap{display:grid;grid-template-columns:160px minmax(0,1fr);gap:16px;align-items:center}
+@media (max-width:560px){.circle-wrap{grid-template-columns:minmax(0,1fr)}}
+svg.wheel{width:100%;max-width:160px;margin:0 auto;display:block}
+.qleg{display:grid;gap:7px}
+.qleg div{display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:.86rem}
+.sw{width:12px;height:12px;border-radius:3px}
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media (max-width:800px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.strip{grid-template-columns:minmax(0,1fr)}}
+.day{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px}
+.day h3{font-size:.95rem;margin-bottom:8px}
+.blk{border-left:3px solid var(--line);padding:4px 0 4px 8px;margin:0 0 6px;font-size:.78rem}
+.blk .t{font-family:var(--mono);font-size:.66rem;color:var(--muted);display:block}
+.blk.mind{border-color:var(--q-mind)}
+.blk.body{border-color:var(--q-body)}
+.blk.venture{border-color:var(--q-venture)}
+.blk.spirit{border-color:var(--q-spirit)}
+.blk.systems{border-color:var(--q-systems)}
+.blk.personal{border-color:var(--q-personal)}
+footer.foot{color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);padding-top:14px}
+footer.foot strong{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="kicker">Shiloh HQ</p>
+      <h1>Command Center</h1>
+    </div>
+    <div class="stats" id="header-stats"></div>
+  </header>
+  <section class="panel" id="priorities"></section>
+  <section class="panel" id="courses-sec"></section>
+  <section class="panel" id="khan"></section>
+  <div class="row">
+    <section class="panel" id="projects"></section>
+    <section class="panel" id="readiness"></section>
+  </div>
+  <div class="row">
+    <section class="panel" id="evidence"></section>
+    <section class="panel" id="circle"></section>
+  </div>
+  <section class="panel" id="schedule"></section>
+  <footer class="foot" id="foot"></footer>
+</div>
+<script id="hq-data" type="application/json">
+{
+  "generated": "2026-11-22",
+  "timezone": "America/Chicago",
+  "weekOf": "2026-11-23",
+  "streakWeeks": 12,
+  "streakSource": "Khan Academy account, latest dashboard / snapshot",
+  "weeksToFall2027": 39,
+  "weeksSource": "hs-readiness (Fall 2027 is proposed; Thomas confirms or changes)",
+  "priorities": [
+    {
+      "rank": 1,
+      "item": "Khan 6th grade reading, grammar, and vocab",
+      "priority": "8.4p",
+      "do": "**Yes — Shiloh.** Start unit 1 (one skill)."
+    },
+    {
+      "rank": 2,
+      "item": "Khan MS biology",
+      "priority": "7.0p",
+      "do": "**Yes — Shiloh.** One science only to start (biology)."
+    },
+    {
+      "rank": 3,
+      "item": "Khan MS Earth and space science",
+      "priority": "6.9p",
+      "do": "Queue behind biology unless energy is high."
+    },
+    {
+      "rank": 4,
+      "item": "Khan MS physics",
+      "priority": "6.7p",
+      "do": "Queue behind biology."
+    },
+    {
+      "rank": 5,
+      "item": "Khan 8th grade math (TX)",
+      "priority": "6.7p",
+      "do": "Yes, as keep-warm only (one 15–20 min skill), not a third new track."
+    }
+  ],
+  "prioritiesNote": "The Civ is just below the cut at 6.0 (Shiloh's Interest 3.5; no longer provisional). Top 5 is unchanged. Reading baseline remains this week's P1 for Dad.",
+  "courses": [
+    {
+      "name": "6th grade math (TX TEKS)",
+      "status": "in-progress",
+      "progress": "70% (challenge 73%)",
+      "pct": 70.0,
+      "quadrant": "mind",
+      "next": "Keep-warm as needed; weakest unit Algebraic representations 13%",
+      "link": "khan-grade-6-math-tx"
+    },
+    {
+      "name": "7th grade math (TX TEKS)",
+      "status": "in-progress",
+      "progress": "78%",
+      "pct": 78.0,
+      "quadrant": "mind",
+      "next": "Keep-warm 2×20 min; Geometric equations 70%",
+      "link": "khan-grade-7-math-tx"
+    },
+    {
+      "name": "8th grade math (TX TEKS)",
+      "status": "in-progress",
+      "progress": "55%",
+      "pct": 55.0,
+      "quadrant": "mind",
+      "next": "Keep-warm units 1, 7, 8, 10 (unit 1 is \"Up next\")",
+      "link": "khan-grade-8-math-tx"
+    },
+    {
+      "name": "Constitution 101",
+      "status": "in-progress",
+      "progress": "90%",
+      "pct": 90.0,
+      "quadrant": "mind",
+      "next": "Show Dad the 3 pending unit tests/quiz",
+      "link": "khan-constitution-101"
+    },
+    {
+      "name": "MS biology",
+      "status": "in-progress",
+      "progress": "19%",
+      "pct": 19.0,
+      "quadrant": "mind",
+      "next": "Cells and organisms (13%) toward ≥80% or a unit test",
+      "link": "khan-ms-biology"
+    },
+    {
+      "name": "MS Earth and space science",
+      "status": "in-progress",
+      "progress": "26%",
+      "pct": 26.0,
+      "quadrant": "mind",
+      "next": "After nearer science units; Weather and climate 50%",
+      "link": "khan-ms-earth-space"
+    },
+    {
+      "name": "MS physics",
+      "status": "in-progress",
+      "progress": "35%",
+      "pct": 35.0,
+      "quadrant": "mind",
+      "next": "Motion and forces (75%) toward ≥80% or a unit test",
+      "link": "khan-ms-physics"
+    },
+    {
+      "name": "6th grade reading, grammar, and vocab",
+      "status": "not-started",
+      "progress": "no mastery (93 skills unfamiliar)",
+      "pct": null,
+      "quadrant": "mind",
+      "next": "Start this week: 4 × 25 min (plan approved)",
+      "link": "khan-grade-6-ela"
+    },
+    {
+      "name": "The Civ",
+      "status": "active",
+      "progress": "units done 0; interest 3.5; priority 6.0",
+      "pct": null,
+      "quadrant": "mind",
+      "next": "Start Unit 0 after the ELA week is rolling; 3 Khan civics items pending",
+      "link": "civ-course",
+      "interest": 3.5,
+      "priority": 6.0
+    },
+    {
+      "name": "The Kitchen",
+      "status": "not-started",
+      "progress": "0 units",
+      "pct": null,
+      "quadrant": "venture",
+      "next": "Pick as a next HQ course when the week's missions allow",
+      "link": "kitchen-course"
+    },
+    {
+      "name": "The Gym",
+      "status": "not-started",
+      "progress": "0 units",
+      "pct": null,
+      "quadrant": "body",
+      "next": "Pick as a next HQ course when the week's missions allow",
+      "link": "gym-course"
+    },
+    {
+      "name": "The Panel",
+      "status": "not-started",
+      "progress": "0 units",
+      "pct": null,
+      "quadrant": "venture",
+      "next": "Pick as a next HQ course when the week's missions allow",
+      "link": "panel-course"
+    },
+    {
+      "name": "The Forge",
+      "status": "not-started",
+      "progress": "0 units",
+      "pct": null,
+      "quadrant": "venture",
+      "next": "Pick as a next HQ course when the week's missions allow",
+      "link": "forge-course"
+    },
+    {
+      "name": "Venture playbook",
+      "status": "ongoing",
+      "progress": "—",
+      "pct": null,
+      "quadrant": "venture",
+      "next": "Continue when a venture task is chosen",
+      "link": "shiloh-playbook"
+    }
+  ],
+  "khan": {
+    "lastSync": "2026-11-22",
+    "thisWeekMinutes": 16,
+    "thisWeekRange": "2026-11-16 through 2026-11-22",
+    "weeklyGoal": 215,
+    "weeklyGoalNote": "ELA 100 + science 75 + math 40 = **215** min. Last week's actual (2026-11-16–22): 16 min. The new cadence starts the week of 2026-11-23.",
+    "streakWeeks": 12,
+    "courses": [
+      {
+        "name": "6th grade math (TX TEKS)",
+        "mastery": 70.0,
+        "goal": "—",
+        "subject": "Mathematics (required)",
+        "label": null
+      },
+      {
+        "name": "7th grade math (TX TEKS)",
+        "mastery": 78.0,
+        "goal": "share 40",
+        "subject": "Mathematics (required)",
+        "label": null
+      },
+      {
+        "name": "8th grade math (TX TEKS)",
+        "mastery": 55.0,
+        "goal": "share 40",
+        "subject": "Mathematics (required)",
+        "label": null
+      },
+      {
+        "name": "Constitution 101",
+        "mastery": 90.0,
+        "goal": "—",
+        "subject": "Good Citizenship (required); History / Social Studies",
+        "label": null
+      },
+      {
+        "name": "MS biology",
+        "mastery": 19.0,
+        "goal": "share 75",
+        "subject": "Science (standard practice)",
+        "label": null
+      },
+      {
+        "name": "MS Earth and space science",
+        "mastery": 26.0,
+        "goal": "share 75",
+        "subject": "Science (standard practice)",
+        "label": null
+      },
+      {
+        "name": "MS physics",
+        "mastery": 35.0,
+        "goal": "share 75",
+        "subject": "Science (standard practice)",
+        "label": null
+      },
+      {
+        "name": "6th grade reading, grammar, and vocab",
+        "mastery": null,
+        "goal": "100",
+        "subject": "Reading (required); Spelling & Grammar (required)",
+        "label": "no mastery (not started)"
+      },
+      {
+        "name": "7th grade science (TX TEKS)",
+        "mastery": null,
+        "goal": "—",
+        "subject": "Science (standard practice)",
+        "label": "—"
+      },
+      {
+        "name": "8th grade science (TX TEKS)",
+        "mastery": null,
+        "goal": "—",
+        "subject": "Science (standard practice)",
+        "label": "—"
+      },
+      {
+        "name": "7th grade reading",
+        "mastery": null,
+        "goal": "—",
+        "subject": "Reading (required)",
+        "label": "—"
+      },
+      {
+        "name": "8th grade reading, grammar, and vocab",
+        "mastery": null,
+        "goal": "—",
+        "subject": "Reading (required); Spelling & Grammar (required)",
+        "label": "—"
+      },
+      {
+        "name": "Art history",
+        "mastery": null,
+        "goal": "—",
+        "subject": "—",
+        "label": "no data"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "7th grade ELA",
+      "status": "log-only",
+      "progress": "— (22 min in activity log; no mastery)",
+      "next": "After 6th ELA is substantially done"
+    },
+    {
+      "name": "8th grade ELA",
+      "status": "log-only",
+      "progress": "— (194 min in activity log; no mastery)",
+      "next": "After 7th ELA"
+    },
+    {
+      "name": "Book reports",
+      "status": "—",
+      "progress": "—",
+      "next": "No book-report log in the vault yet"
+    },
+    {
+      "name": "Gym 6-week workbook (Drive)",
+      "status": "not-started",
+      "progress": "—",
+      "next": "Start with The Gym"
+    },
+    {
+      "name": "Electrician 12-week workbook (Drive)",
+      "status": "not-started",
+      "progress": "—",
+      "next": "Start with The Panel"
+    },
+    {
+      "name": "Restaurant 6-week workbook (Drive)",
+      "status": "not-started",
+      "progress": "—",
+      "next": "Start with The Kitchen"
+    },
+    {
+      "name": "Baseline diagnostics",
+      "status": "not-started",
+      "progress": "—",
+      "next": "Reading baseline this week (needs Thomas); Writing and Math the next two weeks"
+    },
+    {
+      "name": "System setup (PC / vault)",
+      "status": "in-progress",
+      "progress": "—",
+      "next": "Finish remaining [[START-HERE]] / [[NOW]] setup missions with Dad"
+    },
+    {
+      "name": "Khan priority plan",
+      "status": "active",
+      "progress": "minutes approved 2026-11-22",
+      "next": "Run the approved week: ELA 4×25, science 3×25, math 2×20"
+    }
+  ],
+  "readiness": {
+    "overall": "Not measurable yet: no baseline diagnostics. First step: Reading, Writing, Math (Doc 09a)",
+    "targetStart": "Fall 2027 (Thomas confirms)",
+    "weeksToTarget": 39,
+    "gate2": {
+      "weekOf": "2026-11-23",
+      "missions": "–/5",
+      "dailyNotes": "–/5",
+      "fridayReview": "–"
+    },
+    "gate3Credits": "0 / 22",
+    "subjects": [
+      {
+        "name": "Reading",
+        "req": "Yes",
+        "verified": 0,
+        "pending": 0,
+        "status": "not started"
+      },
+      {
+        "name": "Spelling & Grammar",
+        "req": "Yes",
+        "verified": 0,
+        "pending": 0,
+        "status": "not started"
+      },
+      {
+        "name": "Mathematics",
+        "req": "Yes",
+        "verified": 0,
+        "pending": 0,
+        "status": "not started"
+      },
+      {
+        "name": "Good Citizenship",
+        "req": "Yes",
+        "verified": 0,
+        "pending": 3,
+        "status": "not started"
+      },
+      {
+        "name": "Science",
+        "req": "std.",
+        "verified": 0,
+        "pending": 0,
+        "status": "not started"
+      },
+      {
+        "name": "History / Social Studies",
+        "req": "std.",
+        "verified": 0,
+        "pending": 0,
+        "status": "not started"
+      },
+      {
+        "name": "Health & PE",
+        "req": "std.",
+        "verified": 0,
+        "pending": 0,
+        "status": "not started"
+      },
+      {
+        "name": "Executive function",
+        "req": "core",
+        "verified": 0,
+        "pending": 0,
+        "status": "not started"
+      }
+    ]
+  },
+  "evidence": {
+    "pending": 3,
+    "verified": 0,
+    "note": "Pending items are in 50-evidence/. Constitution 101 and The Civ share the same pending Khan civics notes when both list them. Counts are pending until Thomas verifies."
+  },
+  "circle": {
+    "scores": {
+      "mind": null,
+      "body": null,
+      "venture": null,
+      "spirit": null,
+      "systems": null
+    },
+    "scoresNote": "No Circle scores are in the vault yet. Template minutes below are from the draft schedule, not tracked actuals.",
+    "templateMinutes": {
+      "mind": "355–385",
+      "body": "200",
+      "venture": "150",
+      "spirit": "60 (proposed)",
+      "systems": "150"
+    }
+  },
+  "schedule": {
+    "status": "draft",
+    "timesApproved": false,
+    "calendarName": "Homie School",
+    "calendarNote": "Google Calendar in Shiloh's Gmail. COLT adds events only after Shiloh and Dad approve the times.",
+    "dayStart": "9:00",
+    "khanMinutesApproved": true,
+    "days": {
+      "Mon": [
+        {
+          "time": "9:00–9:15",
+          "name": "Monday plan with COLT",
+          "kind": "systems"
+        },
+        {
+          "time": "9:15–9:40",
+          "name": "Khan ELA",
+          "kind": "mind"
+        },
+        {
+          "time": "9:50–10:15",
+          "name": "Khan Science",
+          "kind": "mind"
+        },
+        {
+          "time": "12:00–1:00",
+          "name": "Lunch",
+          "kind": "personal"
+        },
+        {
+          "time": "1:00–1:50",
+          "name": "Kitchen",
+          "kind": "venture"
+        },
+        {
+          "time": "2:00–2:50",
+          "name": "Body block",
+          "kind": "body"
+        },
+        {
+          "time": "4:30–4:35",
+          "name": "Evening wrap-up with COLT",
+          "kind": "systems"
+        }
+      ],
+      "Tue": [
+        {
+          "time": "9:00–9:15",
+          "name": "Morning check-in with COLT",
+          "kind": "systems"
+        },
+        {
+          "time": "9:15–9:40",
+          "name": "Khan ELA",
+          "kind": "mind"
+        },
+        {
+          "time": "10:25–10:45",
+          "name": "Math keep-warm",
+          "kind": "mind"
+        },
+        {
+          "time": "12:00–1:00",
+          "name": "Lunch",
+          "kind": "personal"
+        },
+        {
+          "time": "1:00–1:50",
+          "name": "Panel",
+          "kind": "venture"
+        },
+        {
+          "time": "3:00–4:00",
+          "name": "Civ play 45–60 min + same-day decision log",
+          "kind": "mind"
+        },
+        {
+          "time": "4:30–4:35",
+          "name": "Evening wrap-up with COLT",
+          "kind": "systems"
+        }
+      ],
+      "Wed": [
+        {
+          "time": "9:00–9:15",
+          "name": "Morning check-in with COLT",
+          "kind": "systems"
+        },
+        {
+          "time": "9:15–9:40",
+          "name": "Khan ELA",
+          "kind": "mind"
+        },
+        {
+          "time": "9:50–10:15",
+          "name": "Khan Science",
+          "kind": "mind"
+        },
+        {
+          "time": "12:00–1:00",
+          "name": "Lunch",
+          "kind": "personal"
+        },
+        {
+          "time": "1:00–1:50",
+          "name": "Forge",
+          "kind": "venture"
+        },
+        {
+          "time": "2:00–2:50",
+          "name": "Body block",
+          "kind": "body"
+        },
+        {
+          "time": "4:30–4:35",
+          "name": "Evening wrap-up with COLT",
+          "kind": "systems"
+        }
+      ],
+      "Thu": [
+        {
+          "time": "9:00–9:15",
+          "name": "Morning check-in with COLT",
+          "kind": "systems"
+        },
+        {
+          "time": "9:15–9:40",
+          "name": "Khan ELA",
+          "kind": "mind"
+        },
+        {
+          "time": "10:25–10:45",
+          "name": "Math keep-warm",
+          "kind": "mind"
+        },
+        {
+          "time": "12:00–1:00",
+          "name": "Lunch",
+          "kind": "personal"
+        },
+        {
+          "time": "1:00–1:50",
+          "name": "Gym",
+          "kind": "body"
+        },
+        {
+          "time": "3:00–4:00",
+          "name": "Civ play 45–60 min + same-day decision log",
+          "kind": "mind"
+        },
+        {
+          "time": "4:30–4:35",
+          "name": "Evening wrap-up with COLT",
+          "kind": "systems"
+        }
+      ],
+      "Fri": [
+        {
+          "time": "9:00–9:15",
+          "name": "Morning check-in with COLT",
+          "kind": "systems"
+        },
+        {
+          "time": "9:50–10:15",
+          "name": "Khan Science",
+          "kind": "mind"
+        },
+        {
+          "time": "12:00–1:00",
+          "name": "Lunch",
+          "kind": "personal"
+        },
+        {
+          "time": "1:00–1:50",
+          "name": "Course catch-up or Civ reading",
+          "kind": "mind"
+        },
+        {
+          "time": "2:00–2:50",
+          "name": "Body block",
+          "kind": "body"
+        },
+        {
+          "time": "3:00–4:00",
+          "name": "Friday review with Dad ~3:00–3:45",
+          "kind": "systems"
+        },
+        {
+          "time": "4:30–4:35",
+          "name": "Evening wrap-up with COLT",
+          "kind": "systems"
+        },
+        {
+          "time": "6:00",
+          "name": "Automatic Khan sync",
+          "kind": "systems"
+        }
+      ]
+    }
+  }
+}
+</script>
+<script>
+(function(){
+  const data = JSON.parse(document.getElementById("hq-data").textContent);
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const dash = (v) => (v === null || v === undefined || v === "" || v === "None") ? "—" : String(v);
+
+  function fmtWeek(iso){
+    if(!iso) return "—";
+    const [y,m,d] = iso.split("-").map(Number);
+    const dt = new Date(y, m-1, d);
+    return dt.toLocaleDateString("en-US",{month:"short", day:"numeric", year:"numeric"});
+  }
+
+  function ring(pct, color){
+    const r=26, c=2*Math.PI*r;
+    const known = (typeof pct === "number" && !isNaN(pct));
+    const val = known ? Math.max(0, Math.min(100, pct)) : 0;
+    const off = c - (val/100)*c;
+    const label = known ? (Math.round(val)+"%") : "—";
+    return `<svg class="ring" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="${r}" fill="none" stroke="var(--chip)" stroke-width="6"/>
+      <circle cx="32" cy="32" r="${r}" fill="none" stroke="${color||"var(--q-mind)"}" stroke-width="6"
+        stroke-linecap="round" stroke-dasharray="${c.toFixed(2)}" stroke-dashoffset="${off.toFixed(2)}"
+        transform="rotate(-90 32 32)"/>
+      <text x="32" y="36" text-anchor="middle">${esc(label)}</text>
+    </svg>`;
+  }
+
+  const qColor = {mind:"var(--q-mind)",body:"var(--q-body)",venture:"var(--q-venture)",spirit:"var(--q-spirit)",systems:"var(--q-systems)"};
+
+  $("header-stats").innerHTML = `
+    <div class="stat"><span>Week of</span><b>${esc(fmtWeek(data.weekOf))}</b></div>
+    <div class="stat"><span>Khan streak</span><b>${data.streakWeeks != null ? esc(data.streakWeeks)+" weeks" : "—"}</b></div>
+    <div class="stat"><span>To Fall 2027</span><b>${data.weeksToFall2027 != null ? "≈ "+esc(data.weeksToFall2027)+" weeks" : "—"}</b></div>
+  `;
+
+  const pri = data.priorities || [];
+  $("priorities").innerHTML = `<h2>Top priorities this week</h2>
+    <ol class="pri">${pri.map(p => `<li>
+      <div class="rank">${esc(p.rank)}</div>
+      <div><strong>${esc(p.item)}</strong><div class="do">${esc(p.do)}</div></div>
+      <span class="badge">${esc(p.priority)}</span>
+    </li>`).join("")}</ol>
+    ${data.prioritiesNote ? `<p class="note">${esc(data.prioritiesNote)}</p>` : ""}`;
+
+  const courses = data.courses || [];
+  $("courses-sec").innerHTML = `<h2>Courses</h2>
+    <div class="courses">${courses.map(c => `<article class="course">
+      ${ring(c.pct, qColor[c.quadrant])}
+      <div>
+        <h3>${esc(c.name)}</h3>
+        <div class="meta">${esc(c.status)} · ${esc(dash(c.progress))}${c.interest ? " · interest "+esc(c.interest)+" · priority "+esc(c.priority) : ""}</div>
+        <div class="meta">${esc(c.next||"")}</div>
+      </div>
+    </article>`).join("")}</div>`;
+
+  const k = data.khan || {};
+  const kcs = k.courses || [];
+  $("khan").innerHTML = `<h2>Khan Academy</h2>
+    <div class="mins">
+      <div class="stat"><span>Last synced</span><b>${esc(dash(k.lastSync))}</b></div>
+      <div class="stat"><span>Minutes (last window)</span><b>${k.thisWeekMinutes != null ? esc(k.thisWeekMinutes)+" min" : "—"}</b></div>
+      <div class="stat"><span>Weekly goal</span><b>${k.weeklyGoal != null ? esc(k.weeklyGoal)+" min" : "—"}</b></div>
+    </div>
+    <div class="khan-grid">${kcs.map(c => {
+      const known = typeof c.mastery === "number";
+      const w = known ? Math.max(0, Math.min(100, c.mastery)) : 0;
+      const label = known ? c.mastery+"%" : dash(c.label || null);
+      return `<div class="krow">
+        <div>${esc(c.name)}</div>
+        <div>${esc(label)}</div>
+        <div class="bar" aria-hidden="true"><span style="width:${w}%"></span></div>
+        <div class="goal">${esc(c.goal || "—")}</div>
+      </div>`;
+    }).join("")}</div>
+    <p class="note">${esc(k.weeklyGoalNote||"")} ${k.thisWeekRange ? "Window: "+esc(k.thisWeekRange)+"." : ""} Figures are pending until Dad verifies.</p>`;
+
+  const projects = data.projects || [];
+  $("projects").innerHTML = `<h2>Projects &amp; tasks</h2>
+    <div class="list">${projects.map(p => `<div class="item">
+      <div><strong>${esc(p.name)}</strong><small>${esc(p.status)} · ${esc(dash(p.progress))}</small></div>
+      <small>${esc(p.next||"")}</small>
+    </div>`).join("")}</div>`;
+
+  const r = data.readiness || {};
+  const g2 = r.gate2 || {};
+  $("readiness").innerHTML = `<h2>Readiness gates</h2>
+    <div class="gates">
+      <div class="gate"><span>Overall</span><strong>${esc(dash(r.overall))}</strong></div>
+      <div class="gate"><span>9th-grade start</span><strong>${esc(dash(r.targetStart))}</strong></div>
+      <div class="gate"><span>Gate 2 (week of ${esc(dash(g2.weekOf))})</span><strong>missions ${esc(dash(g2.missions))} · notes ${esc(dash(g2.dailyNotes))} · review ${esc(dash(g2.fridayReview))}</strong></div>
+      <div class="gate"><span>Gate 3 credits</span><strong>${esc(dash(r.gate3Credits))}</strong></div>
+    </div>
+    <div class="subjects">${(r.subjects||[]).map(s => `<div class="sub">
+      <span class="nm">${esc(s.name)}</span>
+      <span class="pill">${esc(s.status||"—")}</span>
+      <span class="pill">✔ ${esc(s.verified)} / ⏳ ${esc(s.pending)}</span>
+    </div>`).join("")}</div>
+    <p class="note">Verified work is what counts. Pending figures are claimed, not done.</p>`;
+
+  const ev = data.evidence || {};
+  $("evidence").innerHTML = `<h2>Evidence</h2>
+    <div class="ev">
+      <div class="stat"><span>Pending</span><b>${esc(dash(ev.pending))}</b></div>
+      <div class="stat"><span>Verified</span><b>${esc(dash(ev.verified))}</b></div>
+    </div>
+    <p class="note">${esc(ev.note||"")}</p>`;
+
+  const circ = data.circle || {};
+  const scores = circ.scores || {};
+  const labels = {mind:"Mind",body:"Body",venture:"Venture",spirit:"Spirit",systems:"Systems"};
+  const colors = {mind:"#6f95ff",body:"#ff7a5f",venture:"#f2b833",spirit:"#a88bff",systems:"#3fd1a6"};
+  const order = ["mind","body","venture","spirit","systems"];
+  // 5-slice wheel
+  const cx=80, cy=80, r0=28, r1=74;
+  let paths="", ang=-Math.PI/2, slice=2*Math.PI/5;
+  order.forEach((k,i) => {
+    const a0=ang, a1=ang+slice;
+    const p = (r,a)=>[cx+r*Math.cos(a), cy+r*Math.sin(a)];
+    const [x0,y0]=p(r1,a0),[x1,y1]=p(r1,a1),[x2,y2]=p(r0,a1),[x3,y3]=p(r0,a0);
+    paths += `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${r1} ${r1} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)} A${r0} ${r0} 0 0 0 ${x3.toFixed(1)} ${y3.toFixed(1)} Z" fill="${colors[k]}" opacity="0.92"/>`;
+    ang=a1;
+  });
+  $("circle").innerHTML = `<h2>Circle balance</h2>
+    <div class="circle-wrap">
+      <svg class="wheel" viewBox="0 0 160 160" role="img" aria-label="Circle quadrants">${paths}</svg>
+      <div class="qleg">${order.map(k => {
+        const sc = scores[k];
+        const mins = (circ.templateMinutes||{})[k];
+        return `<div><span class="sw" style="background:${colors[k]}"></span><span>${labels[k]}</span><span>${dash(sc)}${mins ? " · "+mins+" min (template)" : ""}</span></div>`;
+      }).join("")}</div>
+    </div>
+    <p class="note">${esc(circ.scoresNote||"")}</p>`;
+
+  const sch = data.schedule || {};
+  const days = sch.days || {};
+  $("schedule").innerHTML = `<h2>This week's schedule</h2>
+    <p class="note" style="margin-top:0;margin-bottom:12px">Day starts at <strong>${esc(dash(sch.dayStart))}</strong>. Times are <strong>draft</strong> until Shiloh and Dad approve. Khan sitting lengths are approved. Calendar to mirror: <strong>${esc(sch.calendarName||"—")}</strong> — ${esc(sch.calendarNote||"")}</p>
+    <div class="strip">${["Mon","Tue","Wed","Thu","Fri"].map(d => {
+      const blks = days[d] || [];
+      return `<div class="day"><h3>${d}</h3>${blks.map(b => `<div class="blk ${esc(b.kind||"")}"><span class="t">${esc(b.time)}</span>${esc(b.name)}</div>`).join("")}</div>`;
+    }).join("")}</div>`;
+
+  $("foot").innerHTML = `Generated ${esc(dash(data.generated))} (${esc(data.timezone||"America/Chicago")}) from <strong>status-tracker</strong>, the Khan dashboard, and the project board. Missing figures show as —. COLT never invents numbers. Work counts once Dad verifies it.`;
+})();
+</script>
+</body>
+</html>

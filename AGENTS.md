@@ -31,6 +31,7 @@ Help **Thomas track and verify Shiloh's progress toward high school**. Everythin
 | "Khan sync" | `.agents/skills/khan-sync/SKILL.md` |
 | "Khan help" / "stuck on Khan" | `.agents/skills/khan-coach/SKILL.md` |
 | "status" / "dashboard" | `.agents/skills/status-update/SKILL.md` |
+| "readiness exam" / "test me" | `.agents/skills/readiness-exam/SKILL.md` |
 | "hey <mentor>" / "talk to my Knight" | `.agents/skills/talk-to-knight/SKILL.md` |
 | "I finished…" / "log this" | `.agents/skills/log-evidence/SKILL.md` |
 | "add this to the wiki" / a file in `raw/` | `.agents/skills/wiki-ingest/SKILL.md` |

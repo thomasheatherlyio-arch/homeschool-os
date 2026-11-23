@@ -11,6 +11,7 @@ or right-click it in Obsidian and choose "Open in default app".
 |---|---|---|
 | `shiloh-hq-map.html` | Shiloh | The Circle wheel, this week's missions, courses, Round Table, Obsidian legend |
 | `hq-system-map.html` | Thomas | Authority layers, the COLT loop, routing, weekly cadence, token budget, branches |
+| `shiloh-command-center.html` | Shiloh + Dad | Living Command Center (courses, Khan, priorities, evidence, draft schedule). Data from [[status-tracker]] via `scripts/build_dashboard.py`. Also [[command-center]] |
 
 Both are snapshots from 2026-11-22 (v3: COLT in Grok Build, no Claude). The live state is in [[NOW]] and [[index]].
 Online copies (private, Thomas's claude.ai account):

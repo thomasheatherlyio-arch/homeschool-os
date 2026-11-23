@@ -31,6 +31,7 @@ updated: 2026-11-22
 
 ## Waiting on Dad (proposals, verifications, decisions)
 - See Open loops marked "needs Thomas".
+- [[20261122-readiness-examiner|Proposal: Readiness Examiner]] (short check-sits; 2-week schedule from 2026-11-30).
 
 ## Next review
 Friday 2026-11-27 — weekly review with Dad.

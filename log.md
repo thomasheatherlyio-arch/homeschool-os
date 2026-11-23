@@ -51,3 +51,4 @@ type: log
 - 2026-11-22 — COLT — Renamed the schedule's Google Calendar from 'Shiloh HQ' to **Homie School** (Shiloh's Gmail). Khan weekly minutes are approved; clock times stay draft until Shiloh + Dad approve.
 - 2026-11-22 — COLT — Shifted the [[shiloh-schedule]] school-day start to 9:00 AM (Monday plan 9:00–9:20; ELA 9:15–9:40; science 9:50–10:15; math 10:25–10:45; flex until 12:00). Afternoon unchanged. Times still draft.
 - 2026-11-22 — COLT — Set Shiloh's Interest for The Civ to 3.5 on [[project-priority-board]] (removed p). Recomputed Priority to **6.0**. Top 5 unchanged. First ELA mission is the top Open loop on [[NOW]] (missions already at 5).
+- 2026-11-22 — COLT — Drafted the Readiness Examiner (`55-progress/readiness-exam/`, skill `readiness-exam`, templates, [[readiness-matrix]], proposed 2-week schedule [[2026-11-30-exam-schedule]]). Proposal [[20261122-readiness-examiner]] left pending. Does not replace Doc 09a baselines. No commit.

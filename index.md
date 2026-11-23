@@ -26,8 +26,8 @@ updated: 2026-11-22
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
-- **P1:** [[hs-readiness]] · [[verifications]] (Thomas only) · [[diagnostics]] · [[khan-academy]] · [[khan-dashboard]] (`25-khan/`, incl. [[khan-constitution-101]] and other course notes) · [[khan-priority-plan]] · [[project-priority-board]] · [[status-tracker]] · [[command-center]] · `55-progress/reports/` (weekly parent reports)
-- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · [[20261122-obsidian-meta-bind]] · [[20261122-khan-priority-plan]] · lesson cards: `20-courses/<course>/cards/`
+- **P1:** [[hs-readiness]] · [[verifications]] (Thomas only) · [[diagnostics]] · [[readiness-matrix]] (Examiner, draft) · [[khan-academy]] · [[khan-dashboard]] (`25-khan/`, incl. [[khan-constitution-101]] and other course notes) · [[khan-priority-plan]] · [[project-priority-board]] · [[status-tracker]] · [[command-center]] · `55-progress/reports/` (weekly parent reports)
+- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · [[20261122-obsidian-meta-bind]] · [[20261122-khan-priority-plan]] · [[20261122-readiness-examiner]] · lesson cards: `20-courses/<course>/cards/`
 - [[HOME]] — Shiloh's home note; `HQ-map.canvas` is the visual board
 - Circle hubs (`05-circle/`): [[mind-mastery]] · [[body-discipline]] · [[venture-craft]] · [[spirit-character]] · [[systems-self-command]]
 - `maps/`: visual web pages (Shiloh map, system blueprint, [[command-center]]). See the folder's README.
