@@ -41,7 +41,7 @@ Visual dashboard: [[command-center]] (`maps/shiloh-command-center.html`) · Khan
 | Baseline diagnostics | not-started | — | — | Reading baseline this week (needs Thomas); Writing and Math the next two weeks | Thomas + Shiloh | 0 | 0 | [[diagnostics]] |
 | System setup (PC / vault) | in-progress | — | 2026-11-22 | Finish remaining [[START-HERE]] / [[NOW]] setup missions with Dad | Shiloh + Thomas | 0 | 0 | [[START-HERE]] |
 | Khan priority plan | active | minutes approved 2026-11-22 | 2026-11-22 | Run the approved week: ELA 4×25, science 3×25, math 2×20 | Shiloh | 0 | 0 | [[khan-priority-plan]] |
-| Readiness Examiner | draft-pending-approval | no sittings; banks empty | 2026-11-22 | Waiting on Dad ([[20261122-readiness-examiner]]); first proposed sit Mon 2026-11-30 | Thomas + Shiloh | 0 | 0 | [[readiness-matrix]] |
+| Readiness Examiner | draft-pending-approval | no sittings; 9 draft banks filled (111 items) | 2026-11-22 | Waiting on Dad ([[20261122-readiness-examiner]]); first proposed sit Mon 2026-11-30 | Thomas + Shiloh | 0 | 0 | [[readiness-matrix]] |
 
 Pending vs verified are vault evidence counts (`50-evidence/` + [[verifications]]). Constitution 101 and The Civ share the same three pending Khan civics notes (not six pieces of work).
 
@@ -65,6 +65,7 @@ Append-only. One new row per change (skill `status-update`). Do not edit old row
 | 2026-11-22 | Daily schedule | School-day start shifted to 9:30 AM (morning blocks moved; afternoon unchanged). Times still draft. Calendar: Homie School. | [[shiloh-schedule]] |
 | 2026-11-22 | Daily schedule | Start time corrected to 9:00 AM (Monday plan 9:00–9:20; ELA 9:15–9:40; science 9:50–10:15; math 10:25–10:45; flex until 12:00). Afternoon unchanged. Times still draft. | [[shiloh-schedule]] |
 | 2026-11-22 | Readiness Examiner | System drafted (matrix, empty banks, 2-week schedule starting 2026-11-30). Proposal left pending. | [[20261122-readiness-examiner]] |
+| 2026-11-22 | Readiness Examiner | Nine draft banks filled with original TEKS-aligned items (111 total); keys in keys/. Proposal still pending. No sittings. | [[readiness-matrix]] |
 | 2026-11-22 | Status tracker | Living tracker and history started | this file |
 
 Weekly snapshots: `55-progress/status-history/` (this week's: [[2026-11-22-status]]).

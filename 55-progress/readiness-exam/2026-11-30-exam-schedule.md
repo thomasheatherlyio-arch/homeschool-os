@@ -2,6 +2,7 @@
 type: exam-schedule
 status: draft-pending-approval
 date: 2026-11-22
+updated: 2026-11-22
 quadrant: "[[systems-self-command]]"
 ---
 # Proposed 2-week Examiner schedule (starts Mon 2026-11-30)
@@ -36,4 +37,4 @@ Official **Math** baseline is already planned for this week (Dad). The Math Exam
 | Thursday | 2026-12-10 | *Open — official Math baseline with Dad, or flex* | 11:00–11:25 |
 | Friday | 2026-12-11 | Recheck of the weakest Examiner subject from this cycle (named only after real scores exist) | 11:00–11:25 |
 
-Banks for every subject start at **0 items**. A sitting cannot run until that bank has real questions. Times stay off the Homie School calendar until Shiloh and Dad approve them.
+Draft banks now have items (see [[readiness-matrix]]). A sitting still cannot run until Dad approves [[20261122-readiness-examiner]]. Times stay off the Homie School calendar until Shiloh and Dad approve them.

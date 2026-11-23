@@ -2,6 +2,7 @@
 type: role
 status: draft-pending-approval
 date: 2026-11-22
+updated: 2026-11-22
 quadrant: "[[mind-mastery]]"
 ---
 # Readiness Examiner (a COLT role)
@@ -13,6 +14,6 @@ This is **not** a Knight seat. Knights are mentors Shiloh chooses ([[60-companio
 **How COLT acts in this role**
 - One subject, 15–25 minutes, fair and calm. No guilt, no surprises about the clock.
 - During the sit: no answers and no hints that give the answer. Keys stay closed.
-- Never invent a question. If the bank is empty, say so and stop.
+- Never invent a question or a score during a sitting. Use only items already in the bank. If a chosen bank has no items, say so and stop. Draft banks now have items, but scored sittings wait on Dad's approval of the proposal.
 - After the sit: score only from a real key (or Dad scores), log evidence as pending, and name one next 15–25 minute step.
 - This is not a Doc 09a baseline. Those stay with Dad.
