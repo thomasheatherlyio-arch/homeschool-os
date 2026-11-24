@@ -2,12 +2,12 @@
 type: dashboard
 status: active
 date: 2026-11-22
-updated: 2026-11-22
+updated: 2026-11-23
 quadrant: "[[mind-mastery]]"
 ---
 # Khan Academy dashboard
 
-Current view of Shiloh's Khan work after the **2026-11-22** sync. Numbers below were read from the Khan Academy site. Never invent numbers. Weekly-minute *goals* follow the approved [[khan-priority-plan]] (2026-11-22): ELA 4×25 = 100, science 3×25 = 75 shared, math keep-warm 2×20 = 40 shared. Course *targets* on this table stay — (they are not hs-readiness L3 targets).
+Current view of Shiloh's Khan work after the **2026-11-22** sync. Numbers below were read from the Khan Academy site. Never invent numbers. Weekly-minute *goals* follow the approved [[khan-priority-plan]] minutes (2026-11-22): ELA 4×25 = 100, science 3×25 = 75 shared, math keep-warm 2×20 = 40 shared. ELA *course order* follows Shiloh's 2026-11-23 request (7th, then 8th; 6th deferred), pending Dad's confirm at Friday review. Course *targets* on this table stay — (they are not hs-readiness L3 targets).
 
 P1 summary: [[khan-academy]] · How this system works: [[25-khan/README|README]] · Snapshot: [[2026-11-22-khan-snapshot]] · Evidence: `50-evidence/` (pending until Dad verifies)
 
@@ -28,10 +28,10 @@ Learning minutes, Khan's max range (2024-11-22 through 2026-11-22): exercises **
 | [[khan-ms-biology\|MS biology]] | Science (standard practice) | 19% | — | share 75 | 2026-11-22 | 5/5/5/2 of 17 leveled; 11 units. Science share of the approved 3×25 min |
 | [[khan-ms-earth-space\|MS Earth and space science]] | Science (standard practice) | 26% | — | share 75 | 2026-11-22 | 4/3/4/1 (no "of N"); 7 units. Science share of the approved 3×25 min |
 | [[khan-ms-physics\|MS physics]] | Science (standard practice) | 35% | — | share 75 | 2026-11-22 | 4/4/4/0 (no "of N"); 6 units. Science share of the approved 3×25 min |
-| [[khan-grade-6-ela\|6th grade reading, grammar, and vocab]] | Reading (required); Spelling & Grammar (required) | no mastery (not started) | — | 100 | 2026-11-22 | 93 skills, all unfamiliar. This week's ELA focus: approved 4×25 min |
+| [[khan-grade-6-ela\|6th grade reading, grammar, and vocab]] | Reading (required); Spelling & Grammar (required) | no mastery (not started) | — | — | 2026-11-22 | 93 skills, all unfamiliar. **Deferred** (Shiloh asked 2026-11-23 not to go below 7th grade; confirm Friday) |
 | [[khan-grade-7-science-tx\|7th grade science (TX TEKS)]] | Science (standard practice) | — | — | — | 2026-11-22 | Log only. Activity log: 125 min (32 rows) |
 | [[khan-grade-8-science-tx\|8th grade science (TX TEKS)]] | Science (standard practice) | — | — | — | 2026-11-22 | Log only. Activity log: 194 min (80 rows) |
-| [[khan-grade-7-reading\|7th grade reading]] | Reading (required) | — | — | — | 2026-11-22 | Log only. Activity log: 22 min (7 rows) |
+| [[khan-grade-7-reading\|7th grade reading]] | Reading (required) | — | — | 100 | 2026-11-22 | Log only. Activity log: 22 min (7 rows). This week's ELA focus: 4×25 min (requested 2026-11-23; confirm Friday). Use unit tests to test out of easy units |
 | [[khan-grade-8-ela\|8th grade reading, grammar, and vocab]] | Reading (required); Spelling & Grammar (required) | — | — | — | 2026-11-22 | Log only. Activity log: 194 min (53 rows) |
 | [[khan-art-history\|Art history]] | — | no data | — | — | 2026-11-22 | Listed on the account; no mastery or minutes shown |
 
@@ -46,13 +46,13 @@ Activity-log only (no course note beyond the snapshot): **"6th math"** (non-TX l
 ## Stuck right now / flags (observations, not judgments)
 
 - [[khan-grade-6-math-tx\|6th grade math (TX TEKS)]]: Algebraic representations of two-variable relationships is the weakest math unit shown (**13%**).
-- [[khan-grade-6-ela\|6th grade reading, grammar, and vocab]] is not started (93 skills unfamiliar). Reading/grammar has the least Khan work this sync. Reading is a Doc 03 required subject and still has no baseline diagnostic (see [[NOW]]).
+- [[khan-grade-6-ela\|6th grade reading, grammar, and vocab]] is not started (93 skills unfamiliar) and is now **deferred** pending Friday confirm. This week's requested ELA focus is [[khan-grade-7-reading\|7th grade reading]] (log only as of the 2026-11-22 sync: 22 min). Reading is a Doc 03 required subject and still has no baseline diagnostic (see [[NOW]]).
 - [[khan-constitution-101\|Constitution 101]]: the Elections and Voting Rights unit test was opened ~7 times with no score before the 13/13 (could be re-attempts). Worth a gentle Socratic check, not an accusation.
 - [[khan-grade-8-math-tx\|8th grade math (TX TEKS)]] is now 55% (no longer log-only). Weakest units: Transformational geometry 0%; Measurement of 3D figures 29%; Value and magnitude of rational numbers 50% (Up next); bivariate statistics 50%.
 
 ## Links
 
-- Priority plan (approved 2026-11-22): [[khan-priority-plan]]
+- Priority plan (minutes approved 2026-11-22; ELA order change requested 2026-11-23, pending Friday confirm): [[khan-priority-plan]]
 - Snapshots: [[2026-11-22-khan-snapshot]]
 - Weekly log: [[2026-11-16-khan-weekly]]
 - Automatic **Khan sync: Friday ~6 PM**, so Dad can review over the weekend. Or tell COLT **"Khan sync"** / **"Khan help"**

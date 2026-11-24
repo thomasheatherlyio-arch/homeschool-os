@@ -2,7 +2,7 @@
 type: plan
 status: active
 date: 2026-11-22
-updated: 2026-11-22
+updated: 2026-11-23
 quadrant: "[[mind-mastery]]"
 ---
 # Khan priority plan — ELA and science (with math keep-warm)
@@ -11,11 +11,17 @@ Shiloh, with Dad, asked to **get science, reading, and grammar done as a priorit
 
 **Thomas approved these weekly minutes and milestone dates on 2026-11-22** ([[20261122-khan-priority-plan]]). They do **not** change the L3 (or other) targets on [[hs-readiness]].
 
+## Change requested by Shiloh, for Dad to confirm at Friday review
+
+**2026-11-23 (America/Chicago).** Shiloh asked to start Khan ELA at **7th grade**, not 6th — "let's not go down further than 7th grade." Skip [[khan-grade-6-ela|6th ELA]]. Use **unit tests to test out of easy units**.
+
+This changes the **course order** in the plan Thomas approved on 2026-11-22 ([[20261122-khan-priority-plan]]). The approved proposal file was **not** edited. Approved weekly minutes (ELA 4 × 25, science 3 × 25, math 2 × 20) and the science / math keep-warm plan are unchanged. Until Dad confirms at the Friday **2026-11-27** review, this living plan follows Shiloh's requested ELA order: **7th, then 8th; 6th deferred**. Target dates in the table below still show the 2026-11-22 approved calendar (which assumed 6th → 7th → 8th); Dad can keep or adjust them on Friday.
+
 Dashboard: [[khan-dashboard]] · P1: [[khan-academy]] · Latest snapshot: [[2026-11-22-khan-snapshot]]
 
 ## Priority order
 
-1. **ELA first:** [[khan-grade-6-ela|6th grade reading, grammar, and vocab]] (not started; 93 skills all unfamiliar). Reading is a Texas-required Doc 03 subject and still has **no baseline diagnostic**. After this course is substantially done, continue with [[khan-grade-7-reading|7th]] then [[khan-grade-8-ela|8th]] ELA (those two were log-only on 2026-11-22: minutes only, no mastery or unit lists).
+1. **ELA first (requested order 2026-11-23, pending Friday confirm):** start [[khan-grade-7-reading|7th grade reading]], then continue with [[khan-grade-8-ela|8th]] ELA. **Skip / defer** [[khan-grade-6-ela|6th grade reading, grammar, and vocab]] — Shiloh asked not to go below 7th grade. Use unit tests to test out of easy units (a passed unit test still counts as done). Reading is a Texas-required Doc 03 subject and still has **no baseline diagnostic**. 7th and 8th ELA were log-only on 2026-11-22 (minutes only, no mastery or unit lists). The 2026-11-22 approved order was 6th, then 7th, then 8th.
 2. **Science next to it, not after it:** [[khan-ms-biology|MS biology]] 19% (11 units), [[khan-ms-earth-space|MS Earth and space science]] 26% (7 units), [[khan-ms-physics|MS physics]] 35% (6 units). Work science in the same weeks as ELA, at a slightly lighter minute load.
 3. **Math stays warm, not the main push:** 2×20 min/week on 7th and 8th TX math. 8th grade math is no longer log-only (course page read 2026-11-22): **55%** mastery. Keep-warm focus: units **1, 7, 8, and 10** (see below).
 
@@ -35,6 +41,9 @@ Shiloh and Dad set the final numbers. If 215 minutes is too heavy in a given wee
 ### What "done" means for a unit
 A unit is **done** when a Friday sync shows **mastery ≥ 80%** *or* a **unit test passed**. File tests as pending evidence. Do not mark a unit done from memory.
 
+### Testing out of easy units (requested 2026-11-23)
+On 7th (then 8th) ELA, if a unit already feels easy, take the **unit test** first. A passed unit test counts as done (same rule as above) and should be filed as pending evidence. If the test is not passed, work the unit in 15–25 minute sessions as usual. Do not mark a unit done from memory, and do not invent a score.
+
 ### Session size
 Every sitting is **15–25 minutes** (the 25- and 20-minute blocks above). One skill, one quiz, or one short lesson — not a whole unit in one go. If stuck twice, tell COLT **"Khan help"** (ask → hint → explain; no answers to Khan exercises).
 
@@ -44,8 +53,8 @@ Official course pages for 6th ELA, MS biology, MS Earth and space, and MS physic
 
 | Course | Units known | Named units (mastery as of 2026-11-22) | Still TBD |
 |---|---|---|---|
-| 6th ELA | skill count only (93, all unfamiliar) | — | all unit names |
-| 7th / 8th ELA | — (log only) | — | all |
+| 6th ELA | skill count only (93, all unfamiliar) | — | all unit names. **Deferred** (requested 2026-11-23) |
+| 7th / 8th ELA | — (log only) | — | all. **7th is the requested start course this week** |
 | MS biology | 11 | Cells and organisms 13%; Matter and energy in ecosystems 100% | 9 units |
 | MS Earth and space | 7 | Weather and climate 50%; Geosphere 40%; Earth and society 33% | 4 units |
 | MS physics | 6 | Motion and forces 75%; Waves 40% | 4 units |
@@ -74,22 +83,22 @@ Holiday weeks (late December) may be lighter; skip or shrink blocks rather than 
 ## First four weeks (proposed milestones)
 
 Week of **2026-11-23**
-- ELA: start 6th grade reading/grammar/vocab — complete four 25-minute sessions (leave "not started"). First unit name TBD at the 2026-11-27 Friday sync.
+- ELA: start **7th grade reading** — complete four 25-minute sessions. Use unit tests to test out of easy units. First unit name / mastery TBD at the 2026-11-27 Friday sync (the course was log-only on 2026-11-22). 6th ELA is deferred.
 - Science: move MS physics — Motion and forces from 75% toward ≥80% or a passed unit test (one or more of the three science blocks). Start or continue biology — Cells and organisms (13%).
 - Math: 8th grade unit 1 (50%, "Up next"), two 20-minute blocks.
 
 Week of **2026-11-30**
-- ELA: keep going on the first 6th-ELA unit (name from the prior Friday sync) toward ≥80% or a unit test.
+- ELA: keep going on 7th-grade reading (unit names from the prior Friday sync) toward ≥80% or a unit test; test out of easy units.
 - Science: finish Motion and forces if not done; continue Cells and organisms.
 - Math: continue unit 1 toward ≥80% or a unit test.
 
 Week of **2026-12-07**
-- ELA: close the first 6th-ELA unit if it is not already done; begin the next TBD unit.
+- ELA: close a 7th-ELA unit if it is not already done (including by a passed unit test); begin the next unit or the next test-out.
 - Science: Cells and organisms toward ≥80% or a unit test.
 - Math: close unit 1 if still open, or begin unit 7 (bivariate, 50%).
 
 Week of **2026-12-14**
-- ELA: continue the second 6th-ELA unit (TBD).
+- ELA: continue 7th grade reading (unit names TBD).
 - Science: if Cells is done, start MS physics — Waves (40%) or MS Earth — Weather and climate (50%).
 - Math: unit 7 or unit 10 (29%), keep-warm pace.
 
@@ -99,9 +108,9 @@ Week of **2026-12-14**
 
 | Course | As of 2026-11-22 | Proposed substantially-done week |
 |---|---|---|
-| 6th grade reading, grammar, and vocab | not started (93 skills) | week of 2027-03-22 |
-| 7th grade ELA | log only (22 min; no mastery) | start ~2027-03-29; done week of 2027-05-17 |
-| 8th grade ELA | log only (194 min; no mastery) | start ~2027-05-24; done week of 2027-07-19 |
+| 6th grade reading, grammar, and vocab | not started (93 skills) | **Deferred** (requested 2026-11-23). Approved 2026-11-22 done-week was 2027-03-22 — on hold pending Friday confirm. |
+| 7th grade ELA | log only (22 min; no mastery) | Requested **start this week (2026-11-23)**. Approved 2026-11-22 plan had start ~2027-03-29 and done week of 2027-05-17; those dates may pull forward if Dad confirms. |
+| 8th grade ELA | log only (194 min; no mastery) | Still after 7th. Approved 2026-11-22 start ~2027-05-24 and done week of 2027-07-19; may pull forward if 7th starts now. |
 | MS physics | 35%, 6 units | week of 2027-02-22 |
 | MS Earth and space science | 26%, 7 units | week of 2027-05-10 |
 | MS biology | 19%, 11 units | week of 2027-07-26 |
@@ -111,6 +120,8 @@ Week of **2026-12-14**
 These dates aim to finish the priority Khan work **before Fall 2027**. They are not hs-readiness targets.
 
 ## After approval (applied 2026-11-22)
-- "Start 6th grade reading on Khan: 4 × 25 min this week" is the top Open loop on [[NOW]] (this week's 5 missions were already full).
-- Approved weekly-minute goals are on [[khan-dashboard]] (ELA 100, science 75 shared, math keep-warm 40 shared).
-- Friday 2026-11-27 sync: fill in the first 6th-ELA unit name and any still-TBD science unit names from the live pages.
+- Approved weekly-minute goals are on [[khan-dashboard]] (ELA 100, science 75 shared, math keep-warm 40 shared). Those minute totals are unchanged.
+
+## After Shiloh's 2026-11-23 request (pending Friday confirm)
+- The top Open loop on [[NOW]] is "Khan 7th grade reading: 4 x 25 min this week".
+- Friday 2026-11-27 review: Dad confirms or adjusts this ELA-order change. The same day's Khan sync should fill in 7th-ELA unit names (if the live page lists them) and any still-TBD science unit names.

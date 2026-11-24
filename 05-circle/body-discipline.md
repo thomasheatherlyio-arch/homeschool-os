@@ -9,9 +9,11 @@ Part of [[01-holistic-quadrants-the-circle|the Circle]] · back to [[HOME]]
 
 ## Where this gets built
 - [[gym-course]]
+- [[hoops-course]] (draft, pending Dad)
 
 ## Mentors
 - [[jahari]]
+- [[basketball]] (Hoops mentor)
 
 ## Evidence and journal entries
 Notes in `50-evidence/` and `40-journal/` that set `quadrant: "[[body-discipline]]"` show up as links here

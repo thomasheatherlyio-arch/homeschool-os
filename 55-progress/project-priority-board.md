@@ -2,14 +2,14 @@
 type: priority-board
 status: active
 date: 2026-11-22
-updated: 2026-11-22
+updated: 2026-11-23
 quadrant: "[[mind-mastery]]"
 ---
 # Project & task priority board
 
 A single board for every current project and task, ranked by **academic requirements vs. Shiloh's interests**. Built for Thomas (Headmaster) and Shiloh (Student-CEO). This note lives in `55-progress/` (P1), not in `10-system/`.
 
-**As of:** 2026-11-22, evening (America/Chicago). Progress figures are only what is already in the vault or was read from the Google Drive workbooks that day. Never invent a mastery % or a completion number. Interest ratings are blank until Shiloh fills them; every Priority score that uses a stand-in is marked **p** (provisional). Shiloh rated **The Civ at 3.5** on 2026-11-22 (Priority **6.0**, no longer provisional).
+**As of:** 2026-11-23, morning (America/Chicago). Progress figures are only what is already in the vault or was read from the Google Drive workbooks that day. Never invent a mastery % or a completion number. Interest ratings are blank until Shiloh fills them; every Priority score that uses a stand-in is marked **p** (provisional). Shiloh rated **The Civ at 3.5** on 2026-11-22 (Priority **6.0**, no longer provisional).
 
 Related: [[hs-readiness]] · [[NOW]] · [[khan-dashboard]] · [[khan-priority-plan]] · [[03-academic-tracker-tx-compliance|Doc 03]] · [[01-holistic-quadrants-the-circle|The Circle]] · [Drive course folder](https://drive.google.com/drive/folders/1vSc39UBWnl5g7kXUPfIDG4wpgWrX56kY)
 
@@ -75,15 +75,15 @@ Figures from the 2026-11-22 sync ([[khan-dashboard]]); still **pending** Dad's c
 
 | Name | Type | Doc 03 subject | Quadrant | Source | Status | Progress | Academic | Interest | Priority | Next action (15–25 min) | Owner |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 6th grade reading, grammar, and vocab | Khan | Reading + Spelling & Grammar (required) | [[mind-mastery]] | [[khan-grade-6-ela]] | not started | no mastery (93 skills, all unfamiliar) | 10.0 |  | 8.4p | Open the course and finish the first skill in unit 1 | Shiloh |
+| 6th grade reading, grammar, and vocab | Khan | Reading + Spelling & Grammar (required) | [[mind-mastery]] | [[khan-grade-6-ela]] | deferred | no mastery (93 skills, all unfamiliar) | 8.5 |  | 7.5p | Hold — Shiloh asked 2026-11-23 not to go below 7th grade. Confirm with Dad at Friday review | Shiloh |
 | MS biology | Khan | Science (standard) | [[mind-mastery]] | [[khan-ms-biology]] | in progress | 19% mastery | 7.7 |  | 7.0p | Open MS biology and do one skill in the lowest unfinished unit | Shiloh |
 | MS Earth and space science | Khan | Science (standard) | [[mind-mastery]] | [[khan-ms-earth-space]] | in progress | 26% mastery | 7.5 |  | 6.9p | After biology has a foothold, resume the lowest unfinished Earth/space unit (one skill) | Shiloh |
 | MS physics | Khan | Science (standard) | [[mind-mastery]] | [[khan-ms-physics]] | in progress | 35% mastery | 7.1 |  | 6.7p | Same rule: one skill in the lowest unfinished unit, not all three sciences in one day | Shiloh |
 | 6th grade math (TX TEKS) | Khan | Mathematics (required) | [[mind-mastery]] | [[khan-grade-6-math-tx]] | in progress | 70% mastery (challenge 73%); weakest unit Algebraic representations 13% | 6.5 |  | 6.3p | One practice set in Algebraic representations of two-variable relationships | Shiloh |
 | 7th grade math (TX TEKS) | Khan | Mathematics (required) | [[mind-mastery]] | [[khan-grade-7-math-tx]] | in progress | 78% mastery | 6.2 |  | 6.1p | Continue the next unfinished 7th-grade skill (after the 6th-grade weak unit, if doing math today) | Shiloh |
 | 8th grade math (TX TEKS) | Khan | Mathematics (required) | [[mind-mastery]] | [[khan-grade-8-math-tx]] · [[khan-priority-plan]] | in progress | 55% mastery (20/34/18/9/17 of 98; challenge not taken; 371 min, 93 activity-log rows). Keep-warm units 1, 7, 8, 10 | 7.1 |  | 6.7p | One keep-warm skill in unit 1, 7, 8, or 10 (15–20 min) | Shiloh |
-| 7th grade reading | Khan | Reading (required) | [[mind-mastery]] | [[khan-grade-7-reading]] | log only | — (22 min, 7 rows; no mastery %) | 5.4 |  | 5.6p | Start [[khan-grade-6-ela]] first; treat this as a later placement check, not this week's course | Shiloh |
-| 8th grade reading, grammar, and vocab | Khan | Reading + Spelling & Grammar (required) | [[mind-mastery]] | [[khan-grade-8-ela]] | log only | — (194 min, 53 rows; no mastery %) | 5.4 |  | 5.6p | Same: 6th ELA is the current official course. Log this % at the next sync if Khan shows one | Shiloh |
+| 7th grade reading | Khan | Reading (required) | [[mind-mastery]] | [[khan-grade-7-reading]] | log only | — (22 min, 7 rows; no mastery %) | 6.2 |  | 6.1p | Start this week's 4 × 25 min (requested 2026-11-23; confirm Friday). Use unit tests to test out of easy units | Shiloh |
+| 8th grade reading, grammar, and vocab | Khan | Reading + Spelling & Grammar (required) | [[mind-mastery]] | [[khan-grade-8-ela]] | log only | — (194 min, 53 rows; no mastery %) | 5.4 |  | 5.6p | After 7th grade reading. Log a mastery % at the next sync if Khan shows one | Shiloh |
 | Constitution 101 | Khan | Good Citizenship (required); History / Social Studies | [[mind-mastery]] | [[khan-constitution-101]] · pairs with [[civ-course]] | in progress | 90% mastery; three 2026-11-16–18 quizzes/unit tests pending evidence | 5.0 |  | 5.4p | Start the next unit after Elections and Voting Rights (one lesson or quiz) | Shiloh |
 | 7th grade science (TX TEKS) | Khan | Science (standard) | [[mind-mastery]] | [[khan-grade-7-science-tx]] | log only | — (125 min, 32 rows; no mastery %) | 4.6 |  | 5.2p | Prefer the MS science courses (which have mastery %) until this one shows a figure | Shiloh |
 | 8th grade science (TX TEKS) | Khan | Science (standard) | [[mind-mastery]] | [[khan-grade-8-science-tx]] | log only | — (194 min, 80 rows; no mastery %) | 4.6 |  | 5.2p | Same as 7th science: record mastery at the next sync; don't start a fourth science track this week | Shiloh |
@@ -127,7 +127,7 @@ Art history is listed on the Khan account with no mastery or minutes; it is not 
 | The Civ course proposal | admin | [[20261122-civ-course]] | approved and applied 2026-11-22 | course is active | — (done) | none | Dad |
 | Khan Academy connection proposal | admin | [[20261122-khan-academy-connection]] | approved and applied 2026-11-22 | first sync complete; evidence pending | — (done) | none | Dad |
 | Meta Bind decision drop-down proposal | admin | [[20261122-obsidian-meta-bind]] | approved and applied 2026-11-22 | plugin installed; restart Obsidian if the drop-down isn't visible | — (done) | Restart Obsidian once, if needed | Dad |
-| Khan ELA + science priority plan | admin | [[20261122-khan-priority-plan]] · [[khan-priority-plan]] | proposal file reads `approved` | plan drafted (ELA then science, math keep-warm). Weekly minutes are in that plan, not copied here | — (plan in effect if the approval stands) | Open the plan with Dad and start this week's first ELA block | Dad |
+| Khan ELA + science priority plan | admin | [[20261122-khan-priority-plan]] · [[khan-priority-plan]] | proposal file reads `approved`; ELA order change requested 2026-11-23 | approved minutes unchanged; Shiloh asked to start at 7th grade ELA (6th deferred). Confirm at Friday review | — (minutes in effect; course order pending Friday) | Confirm the 7th-grade ELA start at Friday review; Shiloh's first ELA block this week is 7th grade reading | Dad |
 
 A fourth proposal, [[20261122-khan-priority-plan]] (weekly ELA / science / math keep-warm cadence in [[khan-priority-plan]]), currently reads `decision: approved`. It is not a closed setup item — it is the living Khan priority plan that this board should follow once Dad and Shiloh are working from it.
 
@@ -139,15 +139,17 @@ Sorted by **provisional Priority** (I = 3) except where Shiloh has already rated
 
 | Rank | Item | Priority | Why it scored here | Do this week? |
 |---|---|---|---|---|
-| 1 | Khan 6th grade reading, grammar, and vocab | **8.4p** | Required Reading + Grammar, not started (G = 5.0), and the family priority for reading/grammar. Highest possible academic-side (10.0) | **Yes — Shiloh.** Start unit 1 (one skill). |
-| 2 | Khan MS biology | **7.0p** | Standard Science, lowest mastery among the three MS science courses (19%), and science is a stated priority | **Yes — Shiloh.** One science only to start (biology). |
-| 3 | Khan MS Earth and space science | **6.9p** | Same Science priority, 26% mastery | Queue behind biology unless energy is high. |
-| 4 | Khan MS physics | **6.7p** | Same Science priority, 35% mastery | Queue behind biology. |
-| 5 | Khan 8th grade math (TX) | **6.7p** | Required Math at 55% mastery (G = 2.25). Ties physics on academic-side. Keep-warm units 1, 7, 8, 10 in [[khan-priority-plan]] | Yes, as keep-warm only (one 15–20 min skill), not a third new track. |
+| 1 | Khan MS biology | **7.0p** | Standard Science, lowest mastery among the three MS science courses (19%), and science is a stated priority | **Yes — Shiloh.** One science only to start (biology). |
+| 2 | Khan MS Earth and space science | **6.9p** | Same Science priority, 26% mastery | Queue behind biology unless energy is high. |
+| 3 | Khan MS physics | **6.7p** | Same Science priority, 35% mastery | Queue behind biology. |
+| 4 | Khan 8th grade math (TX) | **6.7p** | Required Math at 55% mastery (G = 2.25). Ties physics on academic-side. Keep-warm units 1, 7, 8, 10 in [[khan-priority-plan]] | Yes, as keep-warm only (one 15–20 min skill), not a third new track. |
+| 5 | Khan 6th grade math (TX) | **6.3p** | Required Math at 70% mastery; weakest unit Algebraic representations 13% | Only if a math block is already in the day; 7th/8th keep-warm is the planned math cadence. |
 
-**Just below the cut, and still this week's P1 for Dad:** the Reading baseline diagnostic (**6.1p**). It scores under the Khan rows only because it has no mastery figure yet — that missing number is the reason to give it. [[NOW]] already schedules it **this week** (Writing and Math on the next two weeks; one subject per sitting). Dad should run Reading before science and ELA get stacked on top of an unmeasured baseline. **The Civ** is also just below the cut at **6.0** (Shiloh's Interest 3.5; no longer provisional). That does not change this week's Top 5.
+**Held out of this week's Top 5:** Khan 6th ELA is **deferred** (Shiloh asked 2026-11-23 not to go below 7th grade; U dropped from 3 to 1; Priority now **7.5p**). It would still rank first on score because it is not started (G = 5.0), but it is not this week's ELA action until Dad confirms or changes that request on Friday.
 
-**Recommended focus for the week of 2026-11-23** (score + [[NOW]] + the right-size rule): (1) Reading baseline — Dad, (2) Khan 6th ELA — first skill, (3) Khan MS biology — one skill, (4) daily note toward Gate 2, (5) either Civ Unit 0 or the *Book of Elsewhere* slide-title list, not both if the day is already full. 8th-grade math keep-warm can replace (5) if the approved [[khan-priority-plan]] cadence is the one you're following.
+**Just below the cut, and still this week's P1 for Dad:** the Reading baseline diagnostic (**6.1p**). It scores under the Khan rows only because it has no mastery figure yet — that missing number is the reason to give it. [[NOW]] already schedules it **this week** (Writing and Math on the next two weeks; one subject per sitting). Dad should run Reading before science and ELA get stacked on top of an unmeasured baseline. **Khan 7th grade reading** is also **6.1p** (U raised to 3 as this week's requested ELA start; still no mastery figure). It is this week's ELA action (4 × 25 min) pending Friday confirm, even though the missing mastery % keeps it out of the Top 5 cut. **The Civ** is also just below the cut at **6.0** (Shiloh's Interest 3.5; no longer provisional).
+
+**Recommended focus for the week of 2026-11-23** (score + [[NOW]] + the right-size rule): (1) Reading baseline — Dad, (2) Khan 7th grade reading — 4 × 25 min, using unit tests to test out of easy units (requested 2026-11-23; confirm Friday), (3) Khan MS biology — one skill, (4) daily note toward Gate 2, (5) either Civ Unit 0 or the *Book of Elsewhere* slide-title list, not both if the day is already full. 8th-grade math keep-warm can replace (5) if the approved [[khan-priority-plan]] minute cadence is the one you're following.
 
 ---
 
@@ -172,7 +174,7 @@ I_used = 3 (provisional) on every open row except **The Civ**, which uses Shiloh
 
 | Item | W | U | G | G note | Academic-side | Priority (p) |
 |---|---|---|---|---|---|---|
-| Khan 6th ELA | 5 | 3 | 5.00 | not started (93 unfamiliar skills) | 10.0 | 8.4p |
+| Khan 6th ELA | 5 | 1 | 5.00 | deferred 2026-11-23 (not started; 93 unfamiliar skills). U dropped to 1 (queued, not this week's course) | 8.5 | 7.5p |
 | Khan MS biology | 4 | 2 | 4.05 | (100 − 19) / 20 | 7.7 | 7.0p |
 | Khan MS Earth and space | 4 | 2 | 3.70 | (100 − 26) / 20 | 7.5 | 6.9p |
 | Khan MS physics | 4 | 2 | 3.25 | (100 − 35) / 20 | 7.1 | 6.7p |
@@ -182,7 +184,7 @@ I_used = 3 (provisional) on every open row except **The Civ**, which uses Shiloh
 | Writing baseline | 5 | 3 | 0 | no mastery data; gate blocked, queued after Reading | 6.2 | 6.1p |
 | Math baseline | 5 | 3 | 0 | no mastery data; gate blocked, queued after Writing | 6.2 | 6.1p |
 | Khan 8th math (TX) | 5 | 2 | 2.25 | (100 − 55) / 20 | 7.1 | 6.7p |
-| Khan 7th reading | 5 | 2 | 0 | minutes only | 5.4 | 5.6p |
+| Khan 7th reading | 5 | 3 | 0 | minutes only; U raised to 3 as this week's requested ELA start (pending Friday confirm) | 6.2 | 6.1p |
 | Khan 8th ELA | 5 | 2 | 0 | minutes only | 5.4 | 5.6p |
 | The Civ | 5 | 2 | 0 | units done = 0; no course mastery %; I = 3.5 (rated) | 5.4 | **6.0** |
 | *The Book of Elsewhere* | 5 | 2 | 0 | qualitative: log/synthesis done, pipeline open | 5.4 | 5.6p |
@@ -215,7 +217,7 @@ Please put a **1–5** in the Interest column for each row you actually care abo
 
 Highest-leverage ratings first (they can change the Top 5 once I is real):
 
-- Khan 6th ELA; MS biology; Earth and space; physics
+- Khan 7th reading; MS biology; Earth and space; physics
 - 6th / 7th / 8th math; Constitution 101
 - Kitchen / Solara; The Gym; The Panel; The Forge; Venture playbook
 - *The Book of Elsewhere* follow-through; the Karu_Mar log (or a "0 / not this book" note)

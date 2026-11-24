@@ -10,6 +10,7 @@ any seat without Thomas's sign-off (Charter §6).
 | Quadrant | Knight seat | Status | File |
 |---|---|---|---|
 | 💪 Body & Discipline | Jahari (IRL) | ✅ confirmed | [[jahari]] |
+| 💪 Body & Discipline | Hoops mentor (AI coach) | ✅ seated 2026-11-23 | [[basketball]] |
 | 🕊️ Spirit & Character | Jahari (IRL, co-seat) + optional 2nd voice | ✅ / open | [[jahari]] · [[spirit-character-seat]] |
 | 🧠 Mind & Mastery | open — candidate: Opher Brayer method | 🟡 open | [[mind-mastery-seat]] |
 | 🚀 Venture & Craft | open — candidates: Branson, Daymond John | 🟡 open | [[venture-craft-seat]] |

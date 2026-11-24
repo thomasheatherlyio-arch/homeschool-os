@@ -32,13 +32,14 @@ type: home
 |---|---|---|
 | [[kitchen-course|The Kitchen]] — culinary, menus, food systems | 14 | self-paced |
 | [[gym-course|The Gym]] — personal training & fitness science | 15 | self-paced + 6-wk addendum |
+| [[hoops-course|The Hoops]] — basketball fundamentals & AAU tryout prep (draft, pending Dad) | — | 10 weeks |
 | [[panel-course|The Panel]] — electrical & electrician career | 16 | 12 weeks |
 | [[forge-course|The Forge]] — AI & applied AI projects | 18 | 10 weeks |
 | [[shiloh-playbook|Venture playbook]] | — | ongoing |
 
 ## People
 - COLT — [[persona|your companion]] (rename any time)
-- Knights — [[60-companions/knights/README|seat map]] · [[jahari]]
+- Knights — [[60-companions/knights/README|seat map]] · [[jahari]] · [[basketball]]
 
 ## Direction
 [[07-north-star-life-path|North Star]] · [[12-shilohs-divine-blueprint|Divine Blueprint]] ·
