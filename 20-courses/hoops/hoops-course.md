@@ -24,7 +24,7 @@ This course runs **alongside, not instead of**, Shiloh's existing basketball wor
 |---|---|
 | 1 | [[hoops-01-why-this-fits-this-system\|1. Why This Fits This System]] |
 | 2 | [[hoops-02-quadrant-map\|2. Quadrant Map]] |
-| 3 | [[hoops-03-texas-curriculum-tie-in-per-03-academic-tracker-\|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
+| 3 | [[hoops-03-texas-curriculum-tie-in|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
 | 4 | [[hoops-04-course-structure-10-weeks\|4. Course Structure — 10 Weeks]] |
 | 5 | [[hoops-05-skill-placement-baseline-test\|5. Skill Placement — Baseline Test]] |
 | 6 | [[hoops-06-weekly-rhythm\|6. Weekly Rhythm]] |

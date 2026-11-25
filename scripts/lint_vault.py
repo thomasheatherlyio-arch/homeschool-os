@@ -13,19 +13,19 @@ for dp, dn, fn in os.walk(root):
 sk = os.path.join(root, ".agents/skills")
 for s in sorted(os.listdir(sk)):
     p = os.path.join(sk, s, "SKILL.md")
-    t = open(p).read() if os.path.exists(p) else ""
+    t = open(p, encoding='utf-8').read() if os.path.exists(p) else ""
     m = re.match(r"---\n(.*?)\n---", t, re.S)
     fm = m.group(1) if m else ""
     if f"name: {s}" not in fm: errs.append(f"{p}: front matter name must be '{s}'")
     d = re.search(r"^description: (.+)$", fm, re.M)
     if not d or len(d.group(1)) > 1024: errs.append(f"{p}: missing/too-long description")
 # 2. AGENTS.md size
-n = len(open(os.path.join(root, "AGENTS.md")).read().splitlines())
+n = len(open(os.path.join(root, "AGENTS.md"), encoding="utf-8").read().splitlines())
 if n > 120: errs.append(f"AGENTS.md is {n} lines (max 120)")
 # 3. wikilinks
 for name, paths in notes.items():
     for p in paths:
-        for link in re.findall(r"\[\[([^\]|#\\]+)", open(p).read()):
+        for link in re.findall(r"\[\[([^\]|#\\]+)", open(p, encoding='utf-8').read()):
             tgt = os.path.basename(link.strip())
             if tgt.endswith(".md"): tgt = tgt[:-3]
             if tgt not in notes and "/" not in link and not p.endswith(("TEMPLATE.md","_squire-template.md")):
@@ -38,7 +38,7 @@ for name, paths in notes.items():
 pd = os.path.join(root, "proposals")
 for f in sorted(os.listdir(pd)) if os.path.isdir(pd) else []:
     if f.endswith(".md") and f != "TEMPLATE.md":
-        t = open(os.path.join(pd, f)).read()
+        t = open(os.path.join(pd, f), encoding='utf-8').read()
         for k in ("id:", "decision:", "## Change"):
             if k not in t: errs.append(f"proposals/{f}: missing '{k}'")
 print("\n".join(errs) or "vault lint: OK")

@@ -39,6 +39,7 @@ Help **Thomas track and verify Shiloh's progress toward high school**. Everythin
 | Thomas: "verify evidence" (P1) | `.agents/skills/verify-evidence/SKILL.md` |
 | Thomas: "baseline diagnostic <subject>" (P1) | `.agents/skills/run-diagnostic/SKILL.md` |
 | Thomas: "quarterly review" | `.agents/skills/quarterly-review/SKILL.md` |
+| "build product" / "product dev" / "build spec" / "release note" / "product retro" | `.agents/skills/product-dev/SKILL.md` |
 | How the OS works | `index.md`, then the one doc it points to |
 | Just talking | nothing: be COLT (persona only), write nothing |
 
@@ -105,3 +106,5 @@ added or renamed a file. Compile, don't duplicate: update existing notes.
 - **Khan:** no public API (shut 2020). COLT reads the live site in a browser with the Google sign-in Thomas approved. Weekly sync is automatic **Friday ~6 PM** via COLT's Grok Bot routine, so Dad can review the weekend.
 - **Calendar:** Google Calendar **"Homie School"** in Shiloh's Gmail. COLT adds blocks only after Shiloh and Dad approve times in [[shiloh-schedule]].
 - **Priorities:** Khan order lives in [[khan-priority-plan]]. The project board is [[project-priority-board]] (academic 60 / interest 40; interest ratings are Shiloh's).
+- **House rules:** [[house-rules]] (single writer, handoffs, proposals, vault hygiene).
+- **Product builds:** [[product-dev-process]] and the `product-dev` skill. Code stays out of the vault.

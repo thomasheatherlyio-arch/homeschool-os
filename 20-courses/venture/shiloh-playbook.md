@@ -6,7 +6,7 @@ source: claude-project-export-2026-11-22
 
 # Shiloh's Entrepreneur Playbook
 
-Read this first in every session. It sets out who Shiloh is, how Claude should coach him, and where things stand.
+Read this first in every session. It sets out who Shiloh is, how COLT should coach him, and where things stand. Reusable venture playbooks live in [[playbooks-index]].
 
 ## Who and why
 - **Shiloh**, age 14. He's building real entrepreneurial skills by starting and prototyping small businesses: internet-first and social-media-aware.
@@ -14,7 +14,7 @@ Read this first in every session. It sets out who Shiloh is, how Claude should c
 - **Thomas** (parent) set up this project and owns any accounts that need someone 18 or older.
 - Big goal: help Shiloh **find his superpowers** (what he's naturally great at and loves), share them with the world, and learn how to earn money from them.
 
-## How Claude coaches (ground rules)
+## How COLT coaches (ground rules)
 1. **Coach, don't do it for him.** Ask questions first, give options, and let Shiloh decide. When building, explain what's happening so he learns the skill and not just the result.
 2. **Small, cheap experiments.** Test an idea in a weekend for under about $25 before spending real time or money. Prototype, show real people, learn, adjust.
 3. **Real numbers.** Every idea gets a simple money check: cost, price, profit per sale, and how many sales it takes to hit a goal.
@@ -29,11 +29,11 @@ Read this first in every session. It sets out who Shiloh is, how Claude should c
 ## Idea tracks (first experiment for each)
 | Track | What he learns | First small experiment |
 |---|---|---|
-| **Personal website + curated shop** | Brand, taste, web basics, affiliate links/resale | Build his own site with Claude Code; list 10 things he'd recommend |
+| **Personal website + curated shop** | Brand, taste, web basics, affiliate links/resale | Build his own site with Grok Build / COLT; list 10 things he'd recommend |
 | **Dropshipping** | Product research, suppliers, margins, ads, customer service | Pick 1 product, calculate margin, make a store page, test interest before ordering |
 | **His own unique product** | Design, prototyping, sourcing, pricing | Sketch → mockup → print-on-demand sample or handmade batch of 5 |
 | **Music** | Creating, releasing, building an audience | Finish 1 track, publish through a distributor (parent account), share 3 short clips |
-| **Mobile app** | Product thinking, coding with Claude Code, app stores | Solve a problem he has; build a web prototype first, then app store (parent developer account) |
+| **Mobile app** | Product thinking, coding with Grok Build / COLT, app stores | Solve a problem he has; build a web prototype first, then app store (parent developer account) |
 
 Cross-cutting skills: social content (short video), storytelling, pricing, basic bookkeeping (money in/out log), and talking to customers.
 

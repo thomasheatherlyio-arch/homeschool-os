@@ -18,7 +18,7 @@ source: claude-project-export-2026-11-22
 |---|---|
 | 1 | [[kitchen-01-why-this-fits-this-system\|1. Why This Fits This System]] |
 | 2 | [[kitchen-02-quadrant-map\|2. Quadrant Map]] |
-| 3 | [[kitchen-03-texas-curriculum-tie-in-per-03-academic-tracker-\|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
+| 3 | [[kitchen-03-texas-curriculum-tie-in|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
 | 4 | [[kitchen-04-course-structure-units\|4. Course Structure — Units]] |
 | 5 | [[kitchen-05-skill-placement-start-where-he-actually-is\|5. Skill Placement — Start Where He Actually Is]] |
 | 6 | [[kitchen-06-weekly-rhythm\|6. Weekly Rhythm]] |

@@ -20,7 +20,7 @@ This course leads with something the other trade candidates in Doc 10 don't have
 |---|---|
 | 1 | [[panel-01-why-this-fits-this-system\|1. Why This Fits This System]] |
 | 2 | [[panel-02-quadrant-map\|2. Quadrant Map]] |
-| 3 | [[panel-03-texas-curriculum-tie-in-per-03-academic-tracker-\|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
+| 3 | [[panel-03-texas-curriculum-tie-in|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
 | 4 | [[panel-04-course-structure-12-weeks\|4. Course Structure — 12 Weeks]] |
 | 5 | [[panel-05-skill-placement-start-where-he-actually-is\|5. Skill Placement — Start Where He Actually Is]] |
 | 6 | [[panel-06-weekly-rhythm\|6. Weekly Rhythm]] |

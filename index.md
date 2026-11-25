@@ -19,21 +19,23 @@ updated: 2026-11-24
 - [[09b-ged-path-requirements|09b GED path]] · [[10a-college-path-requirements|10a College path]]
 - [[10b-work-exposure-apprenticeship-explorer|10b Work exposure]] · [[11-the-studio-experiential-learning-menu|11 The Studio]]
 - [[12-shilohs-divine-blueprint|12 Divine Blueprint]] · [[13-the-work-ladder-home-job-and-first-job|13 Work Ladder]]
-- [[17-command-center-ui-build-brief|17 Command Center UI brief]] (parked web app)
+- [[17-command-center-ui-build-brief|17 Command Center UI brief]] (parked web app) · `70-dashboard/` v2 design ([[dashboard-product-spec]], [[dashboard-build-plan]], [[dashboard-agent-contract]], [[co-build-guide]]; [[20261124-learning-dashboard]])
 
 ## Courses
-[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] · [[hoops-course|Hoops]] (draft) · [[shiloh-playbook|Venture playbook]] · [[shiloh-hq-venture-dashboard|Homeschool OS venture]] (draft) · [[shiloh-hq-phase-1-kickoff|Phase 1 kickoff]] (draft)
+[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] · [[hoops-course|Hoops]] (draft) · [[shiloh-playbook|Venture playbook]] · [[playbooks-index|Venture playbooks]] · [[shiloh-hq-venture-brief|Venture brief]] · [[shiloh-hq-venture-roadmap|Venture roadmap]] · [[shiloh-hq-venture-dashboard|Homeschool OS venture]] (draft) · [[shiloh-hq-phase-1-kickoff|Phase 1 kickoff]] (draft)
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
 - **P1:** [[hs-readiness]] · [[verifications]] (Thomas only) · [[diagnostics]] · [[readiness-matrix]] (Examiner, draft) · [[khan-academy]] · [[khan-dashboard]] (`25-khan/`, incl. [[khan-constitution-101]] and other course notes) · [[khan-priority-plan]] · [[project-priority-board]] · [[status-tracker]] · [[command-center]] · `55-progress/reports/` (weekly parent reports)
-- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · [[20261122-obsidian-meta-bind]] · [[20261122-khan-priority-plan]] · [[20261122-readiness-examiner]] · [[20261123-hoops-course]] · [[20261124-five-hour-schedule]] · [[20261124-venture-shiloh-hq-product]] · lesson cards: `20-courses/<course>/cards/`
+- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · [[20261122-obsidian-meta-bind]] · [[20261122-khan-priority-plan]] · [[20261122-readiness-examiner]] · [[20261123-hoops-course]] · [[20261124-five-hour-schedule]] · [[20261124-venture-shiloh-hq-product]] · [[20261124-learning-dashboard]] · lesson cards: `20-courses/<course>/cards/`
 - [[HOME]] — Shiloh's home note; `HQ-map.canvas` is the visual board
 - Circle hubs (`05-circle/`): [[mind-mastery]] · [[body-discipline]] · [[venture-craft]] · [[spirit-character]] · [[systems-self-command]]
 - `maps/`: visual web pages (Shiloh map, system blueprint, [[command-center]]). See the folder's README.
 - [[START-HERE]] — Shiloh's one-time setup (GitHub Desktop, Obsidian, COLT)
-- [[persona|COLT persona]] · [[learner-profile]] · [[grok-setup|Grok setup]]
+- [[persona|COLT persona]] · [[learner-profile]] · [[grok-setup|Grok setup]] · [[architecture-review-2026-11-22|architecture review]] (superseded) · [[house-rules]]
 - Knights: [[jahari]] · [[basketball]] · [[mind-mastery-seat]] · [[venture-craft-seat]] · [[spirit-character-seat]] · [[systems-chief-of-staff]]
 
 ## Wiki (agent-built concepts)
-- (empty — grows via the wiki-ingest skill)
+- [[house-rules]] — single writer, handoffs, proposals, vault hygiene
+- [[product-dev-process]] — build-process standard (`products/`; skill: `.agents/skills/product-dev/`)
+- (other pages grow via the wiki-ingest skill)

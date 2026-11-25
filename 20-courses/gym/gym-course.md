@@ -20,7 +20,7 @@ This course runs alongside, not instead of, Shiloh's existing basketball work wi
 |---|---|
 | 1 | [[gym-01-why-this-fits-this-system\|1. Why This Fits This System]] |
 | 2 | [[gym-02-quadrant-map\|2. Quadrant Map]] |
-| 3 | [[gym-03-texas-curriculum-tie-in-per-03-academic-tracker-\|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
+| 3 | [[gym-03-texas-curriculum-tie-in|3. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
 | 4 | [[gym-04-course-structure-units\|4. Course Structure — Units]] |
 | 5 | [[gym-05-skill-placement-start-where-he-actually-is\|5. Skill Placement — Start Where He Actually Is]] |
 | 6 | [[gym-06-deep-dive-exercise-physiology-the-types-of-fitne\|6. Deep Dive — Exercise Physiology & the Types of Fitness]] |
@@ -37,9 +37,9 @@ This course runs alongside, not instead of, Shiloh's existing basketball work wi
 | 17 | [[gym-17-weekly-rhythm\|17. Weekly Rhythm]] |
 | 18 | [[gym-18-getting-started\|18. Getting Started]] |
 | 19 | [[gym-19-activation-protocol\|19. Activation Protocol]] |
-| 20 | [[gym-20-deep-dive-fasting-research-what-testing-if-any-\|20. Deep Dive — Fasting: Research & What Testing (If Any) Actually Makes Sense for Shiloh]] |
+| 20 | [[gym-20-deep-dive-fasting-research|20. Deep Dive — Fasting: Research & What Testing (If Any) Actually Makes Sense for Shiloh]] |
 | 21 | [[gym-21-addendum-the-6-week-structured-course-client-ze\|21. Addendum — The 6-Week Structured Course: "Client Zero to Coach"]] |
-| 22 | [[gym-22-the-companion-workbook-fillable-syllabus-video-\|22. The Companion Workbook — Fillable Syllabus & Video Log]] |
+| 22 | [[gym-22-the-companion-workbook|22. The Companion Workbook — Fillable Syllabus & Video Log]] |
 
 ## Progress
 <!-- Claude updates: unit, date, evidence link -->

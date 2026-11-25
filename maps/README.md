@@ -13,9 +13,6 @@ or right-click it in Obsidian and choose "Open in default app".
 | `hq-system-map.html` | Thomas | Authority layers, the COLT loop, routing, weekly cadence, token budget, branches |
 | `shiloh-command-center.html` | Shiloh + Dad | Living Command Center (courses, Khan, priorities, evidence, draft schedule). Data from [[status-tracker]] via `scripts/build_dashboard.py`. Also [[command-center]] |
 
-Both are snapshots from 2026-11-22 (v3: COLT in Grok Build, no Claude). The live state is in [[NOW]] and [[index]].
-Online copies (private, Thomas's claude.ai account):
-- Shiloh map: https://claude.ai/artifact/FuH83bsMZMrNUa4WFH6aGL
-- System blueprint: https://claude.ai/artifact/YZQMJM7YxNt2W1oVJfLphz
+The HTML maps are snapshots (v3: COLT in Grok Build). The live state is in [[NOW]] and [[index]]. The living Command Center is regenerated from [[status-tracker]] by `scripts/build_dashboard.py`.
 
 Back to [[HOME]]

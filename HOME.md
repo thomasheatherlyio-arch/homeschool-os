@@ -32,10 +32,12 @@ type: home
 |---|---|---|
 | [[kitchen-course|The Kitchen]] — culinary, menus, food systems | 14 | self-paced |
 | [[gym-course|The Gym]] — personal training & fitness science | 15 | self-paced + 6-wk addendum |
-| [[hoops-course|The Hoops]] — basketball fundamentals & AAU tryout prep (draft, pending Dad) | — | 10 weeks |
+| [[civ-course|The Civ]] — history, civics & society through Civ VI | 19 | self-paced |
+| [[hoops-course|The Hoops]] — basketball fundamentals & AAU tryout prep (**draft**, pending Dad) | — | 10 weeks |
 | [[panel-course|The Panel]] — electrical & electrician career | 16 | 12 weeks |
 | [[forge-course|The Forge]] — AI & applied AI projects | 18 | 10 weeks |
 | [[shiloh-playbook|Venture playbook]] | — | ongoing |
+| [[shiloh-hq-venture-dashboard|Homeschool OS venture]] (**draft**, pending Dad) | — | Phase 1 after approval |
 
 ## People
 - COLT — [[persona|your companion]] (rename any time)

@@ -19,7 +19,7 @@ source: claude-project-export-2026-11-22
 | 1 | [[forge-01-why-this-fits-this-system\|1. Why This Fits This System]] |
 | 2 | [[forge-02-landscape-research-what-already-exists-for-teach\|2. Landscape Research — What Already Exists for Teaching AI to Kids]] |
 | 3 | [[forge-03-quadrant-map\|3. Quadrant Map]] |
-| 4 | [[forge-04-texas-curriculum-tie-in-per-03-academic-tracker-\|4. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
+| 4 | [[forge-04-texas-curriculum-tie-in|4. Texas Curriculum Tie-In (per [[03-academic-tracker-tx-compliance|Doc 03]])]] |
 | 5 | [[forge-05-course-structure-10-weeks\|5. Course Structure — 10 Weeks]] |
 | 6 | [[forge-06-skill-placement-start-where-he-actually-is\|6. Skill Placement — Start Where He Actually Is]] |
 | 7 | [[forge-07-weekly-rhythm\|7. Weekly Rhythm]] |

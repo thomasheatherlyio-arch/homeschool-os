@@ -11,3 +11,4 @@ description: Run the Friday weekly review and write the weekly parent report. Us
    `55-progress/reports/<YYYY-MM-DD>-weekly.md`, refresh counts in `hs-readiness.md`, add the Gate 2 row.
 6. Update `learner-profile.md` Circle scores. Bookkeeping.
 7. Then follow `.agents/skills/status-update/SKILL.md`.
+8. Three-minute cleanup (see [[house-rules]]): close applied or declined proposals out of NOW.md "Waiting on Dad"; confirm this week's daily notes and pending evidence match the work done; the Friday status-tracker snapshot is already in step 7; move `/workspace/` staging folders older than 7 days into `/workspace/archive-YYYY-MM-DD/`.
