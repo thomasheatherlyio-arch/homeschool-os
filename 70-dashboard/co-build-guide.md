@@ -13,13 +13,22 @@ This is your build book, Shiloh. You and an AI helper (COLT, or chat in VS Code 
 
 Product: [[dashboard-product-spec]]. Architecture: [[dashboard-build-plan]]. Agent rules: [[dashboard-agent-contract]]. Clickable preview (sample data only): `70-dashboard/dashboard-mockup.html`.
 
-Nothing in this guide is already built. **Do not install new programs without Dad at the computer** (Doc 08 Toolshed). Session 0 is written so you can do it as early as **Wednesday 2026-11-25**.
+**Update 2026-11-24 (night): a working v0 already exists.** DaD built a jump-start version so you can use HQ from tomorrow morning. Your sessions now *extend and improve* it instead of starting from an empty folder. See "v0 is already built" just below. **Do not install new programs without Dad at the computer** (Doc 08 Toolshed). Session 0 can still happen as early as **Wednesday 2026-11-25**.
+
+## v0 is already built (2026-11-24)
+- **Start it:** double-click **Shiloh HQ** on the desktop (or `start-hq.cmd` in `C:\Users\shilo\Projects\hq-dashboard`). The browser opens `http://127.0.0.1:4317`. Keep the black window open while you use it.
+- **What works:** My Day (energy + block → 3 quests → focus timer with parking lot → Done / Partly / Stuck → confetti + XP, weekly ring with a grace day); Board (Now / Next / Later, one note per task in `45-tasks/`); Notes (adds to `40-journal/daily/`); Dad tab (Needs-you list, PIN-gated verify that writes one row to [[verifications]]).
+- **How it's built:** plain Node.js with **zero packages** (no `npm install`), plain HTML/CSS/JS in `public/`. All vault reading and writing is in `lib/vault.js`; the rules are in `lib/hq.js`. The project's `README.md` lists every API route. `node test/smoke.js` tests everything on a throwaway copy of the vault.
+- **Seeded tasks:** this week's open missions and open loops from [[NOW]], plus Khan science, Khan math and The Civ, are already cards in `45-tasks/`.
+- **What it's missing (your sessions):** an MCP server for COLT (Session 9), Skill-up views (table, calendar, timeline, projects), a Friday-review screen, settings, and anything you find annoying in the first week. Write those down as you use it.
+
+How the sessions below change now that v0 exists: do Session 0 as written (VS Code with Dad), but skip creating the folder; it's there with a first git commit. For Sessions 1–8, open the matching file first, read it with your AI helper until you can explain it, then make the session's "Done when" list true by *improving* that part: Session 1 = `server.js`, Session 2 = `lib/vault.js` + `lib/markdown.js`, Session 3 = `suggest()` in `lib/hq.js` + My Day in `public/app.js`, Session 4 = the focus timer in `public/app.js`, Session 5 = `finishFocus()` + `fileEvidence()`, Session 6 = `appendDaily()`, Session 7 = the Board, Session 8 = the Dad tab + `lib/auth.js`. Session 9 builds the MCP server in `mcp/` (still a TODO). Commit after each sitting.
 
 ## What is already true (checked 2026-11-24)
 - **Node.js is already installed.** `node -v` printed `v24.18.1` (LTS, codename Krypton). `npm` is `12.0.2`. You do **not** need to install Node again.
 - **Git is already installed** (`git version 2.56.1.windows.1`).
 - **VS Code is not installed** (not in PATH, and not in the usual Program Files folders). Session 0 installs it with Dad.
-- The folder `C:\Users\shilo\Projects\` does not exist yet. You will create it.
+- Update 2026-11-24: `C:\Users\shilo\Projects\hq-dashboard` now exists, with v0 and its own git repo.
 
 ## How to run a session
 1. Pick one session below. Set a 25–50 minute timer (the dashboard's own idea: start, then stop).

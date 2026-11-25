@@ -1,0 +1,4 @@
+# Keep backups, the hashed Dad PIN, and the derived progress cache off GitHub.
+backups/
+secret/
+progress.json
