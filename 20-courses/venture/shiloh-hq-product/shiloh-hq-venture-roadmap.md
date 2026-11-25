@@ -6,7 +6,7 @@ quadrant: "[[venture-craft]]"
 ---
 # Venture Roadmap: Homeschool OS (8 Phases)
 
-Linked to: [[shiloh-hq-venture-dashboard]] | [[shiloh-hq-venture-brief]] | [[playbooks-index]] | [[playbook-persona-creation]] | [[shiloh-playbook]]
+Linked to: [[shiloh-hq-venture-dashboard]] | [[shiloh-hq-venture-brief]] | [[shiloh-hq-phase-1-kickoff]] | [[playbooks-index]] | [[playbook-persona-creation]] | [[shiloh-playbook]]
 
 ## Realistic Pacing for a 14-Year-Old Student-CEO
 - **Weekly Time Budget**: **4–6 hours/week** inside the Venture course block (protects the 60% core academic block).
@@ -19,10 +19,11 @@ Linked to: [[shiloh-hq-venture-dashboard]] | [[shiloh-hq-venture-brief]] | [[pla
 ---
 
 ## Phase 1: Discover & Score (Weeks 1–2)
-- **Playbook**: [[playbook-idea-research-scorecard]]
-- **Shiloh's Activities**: Audit our existing 15 skills and dashboard; research 5 homeschool competitors/alternatives (Notion homeschool templates, Trello, Outschool, Khanmigo); complete and challenge the Shiloh HQ Venture Scorecard; pick 3 riskiest assumptions.
-- **Deliverables**: Completed Venture Scorecard (>=75/100 to proceed), Competitor Matrix, Top 3 Risky Assumptions list.
-- **Dad's Role**: Challenge optimistic scores; approve research scope; sign off on [[20261124-venture-shiloh-hq-product]].
+- **Week 1 kickoff**: [[shiloh-hq-phase-1-kickoff]] (`status: draft` — starts only after Thomas approves [[20261124-venture-shiloh-hq-product]]; do not ship or publish).
+- **Playbook**: [[playbook-idea-research-scorecard]] (plus [[playbook-customer-discovery-validation]] prep)
+- **Shiloh's Activities**: Audit our existing 15 skills and dashboard; research 5 homeschool competitors/alternatives (Notion homeschool templates, Trello, Outschool, Khanmigo); **score the idea himself** on the Venture Scorecard and compare to the reference 80/100; write a one-sentence problem and a parent customer persona; build a 10-person interview list sourced through Dad (no outreach from his accounts) with Mom Test prep; draft smoke-test copy and a <$25 budget (brand persona only, not live); Friday retro.
+- **Deliverables**: Self-scored Venture Scorecard + comparison notes, problem sentence + parent persona, 10 Dad-sourced interview leads + script, smoke-test draft + budget, Friday retro and evidence notes.
+- **Dad's Role**: Approve the proposal before Week 1 starts; challenge optimistic scores; source/vet interviewees and hold contacts; privacy-gate the draft copy; verify evidence. No publishing this week.
 
 ## Phase 2: Validate (Weeks 3–4)
 - **Playbook**: [[playbook-customer-discovery-validation]]

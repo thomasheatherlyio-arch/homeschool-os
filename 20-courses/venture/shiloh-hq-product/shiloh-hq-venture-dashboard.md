@@ -12,6 +12,7 @@ quadrant: "[[venture-craft]]"
 - **Proposal**: [[20261124-venture-shiloh-hq-product]] (`decision: pending`)
 - **Charter & Scope**: [[shiloh-hq-venture-brief]]
 - **8-Phase Roadmap**: [[shiloh-hq-venture-roadmap]]
+- **Phase 1 Kickoff**: [[shiloh-hq-phase-1-kickoff]] (`status: draft` — starts after proposal approval)
 - **Product Hunt & Age Rules**: [[shiloh-hq-product-hunt-launch-notes]]
 - **Playbooks Hub**: [[playbooks-index]]
 - **Reuse Guide**: [[playbook-next-product-reuse]]
@@ -28,11 +29,11 @@ quadrant: "[[venture-craft]]"
 
 ## Current Next 3 Actions (Phase 1)
 1. Thomas reviews and decides on [[20261124-venture-shiloh-hq-product]].
-2. Shiloh reviews the draft scorecard in [[playbook-idea-research-scorecard]] and picks 3 assumptions to test first.
-3. Run [[playbook-customer-discovery-validation]] to interview 5–10 US homeschool parents (Dad approves outreach list first).
+2. After approval, Shiloh starts [[shiloh-hq-phase-1-kickoff]] (scores the idea himself; does not ship or publish).
+3. Dad sources/vets interview leads and verifies the week's evidence; no outreach from Shiloh's accounts.
 
 ## Active Playbooks by Phase
-- **Phase 1–2 (Discover & Validate)**: [[playbook-idea-research-scorecard]], [[playbook-customer-discovery-validation]]
+- **Phase 1–2 (Discover & Validate)**: [[shiloh-hq-phase-1-kickoff]], [[playbook-idea-research-scorecard]], [[playbook-customer-discovery-validation]]
 - **Phase 3 (Prototype & Sanitize)**: [[playbook-prototype-cursor]]
 - **Phase 4–5 (Persona, Brand, Legal, Prep)**: [[playbook-persona-creation]], [[playbook-digital-presence]], [[playbook-business-planning-finance]], [[playbook-legal-setup]], [[playbook-content-founder-influencer]]
 - **Phase 6–8 (Launch, Sell, Measure)**: [[playbook-launch-and-sales]], [[playbook-metrics-and-retros]]

@@ -10,7 +10,7 @@ quadrant: "[[venture-craft]]"
 
 ## Current venture (draft, pending Dad)
 - [[shiloh-hq-venture-dashboard]] — Hub for the first product (Homeschool OS)
-- [[shiloh-hq-venture-brief]] | [[shiloh-hq-venture-roadmap]] | [[shiloh-hq-product-hunt-launch-notes]]
+- [[shiloh-hq-venture-brief]] | [[shiloh-hq-venture-roadmap]] | [[shiloh-hq-phase-1-kickoff]] | [[shiloh-hq-product-hunt-launch-notes]]
 - [[playbook-next-product-reuse]] — How to clone this system for Venture #2, #3, etc.
 
 ## Reusable Persona Creation Step

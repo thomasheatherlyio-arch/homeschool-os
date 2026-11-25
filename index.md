@@ -22,7 +22,7 @@ updated: 2026-11-24
 - [[17-command-center-ui-build-brief|17 Command Center UI brief]] (parked web app)
 
 ## Courses
-[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] · [[hoops-course|Hoops]] (draft) · [[shiloh-playbook|Venture playbook]] · [[shiloh-hq-venture-dashboard|Homeschool OS venture]] (draft)
+[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] · [[hoops-course|Hoops]] (draft) · [[shiloh-playbook|Venture playbook]] · [[shiloh-hq-venture-dashboard|Homeschool OS venture]] (draft) · [[shiloh-hq-phase-1-kickoff|Phase 1 kickoff]] (draft)
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
