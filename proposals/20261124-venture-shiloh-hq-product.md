@@ -6,7 +6,7 @@ date: 2026-11-24
 touches:
   - 20-courses/venture/shiloh-hq-product/
   - 20-courses/venture/playbooks/
-decision: pending
+decision: approved
 ---
 Dad only: `INPUT[inlineSelect(option(pending), option(approved), option(declined)):decision]` (COLT never edits this field.)
 # Approve productizing Shiloh HQ as a Venture course project

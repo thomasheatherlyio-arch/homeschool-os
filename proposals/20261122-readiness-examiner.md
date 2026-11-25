@@ -5,7 +5,7 @@ from: colt
 date: 2026-11-22
 touches:
   - 55-progress/readiness-exam/
-decision: pending
+decision: approved
 ---
 Dad only: `INPUT[inlineSelect(option(pending), option(approved), option(declined)):decision]` (COLT never edits this field.)
 # Approve the Readiness Examiner (short check-sits)

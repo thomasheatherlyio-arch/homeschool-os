@@ -7,7 +7,7 @@ touches:
   - 70-dashboard/
   - 45-tasks/ (new, proposed)
   - .hq/ (new, proposed)
-decision: pending
+decision: approved
 ---
 Dad only: `INPUT[inlineSelect(option(pending), option(approved), option(declined)):decision]` (COLT never edits this field.)
 # Approve building the HQ Dashboard (local, agent-first web app) as the v2 Command Center

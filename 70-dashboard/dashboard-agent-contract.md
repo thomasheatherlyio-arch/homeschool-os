@@ -1,7 +1,8 @@
 ---
 type: spec
-status: draft-pending-approval
+status: approved-in-chat
 date: 2026-11-24
+updated: 2026-11-24
 quadrant: "[[systems-self-command]]"
 author: DaD (Headmaster Grok Bot, at Thomas's request)
 proposal: "[[20261124-learning-dashboard]]"
@@ -31,7 +32,10 @@ All inputs and outputs are validated by shared zod schemas. All mutations pass t
 | `get_today` | `{date?}` | check-in state, 3 suggestions, missions, due soon, minutes | ✅ | ✅ | ✅ | ✅ |
 | `list_tasks` | `{lane?, area?, quadrant?, status?, due_before?}` | `Task[]` | ✅ | ✅ | ✅ | ✅ |
 | `get_task` | `{id}` | `Task` + `version` | ✅ | ✅ | ✅ | ✅ |
-| `create_task` | `{title, area, quadrant, est_min, due?, first_move?, lane?}` | `Task` | ✅ | ✅ (created_by colt) | ❌ | ✅ |
+| `create_task` | `{title, area, quadrant, est_min, due?, first_move?, lane?, project?, parent?}` | `Task` | ✅ | ✅ (created_by colt) | ❌ | ✅ |
+| `list_projects` / `create_project` | `{name, quadrant, outcome?}` | `Project[]` / `Project` | ✅ | ✅ | ✅ read-only | ✅ |
+| `set_dependency` | `{id, depends_on[]}` (Skill-up 4) | `Task` | ✅ if unlocked | ✅ if unlocked | ❌ | ✅ |
+| `start_pm_lesson` / `complete_pm_lesson` | `{skill: 1..6}` | lesson state | ✅ (Shiloh completes it) | may open a lesson, may not mark complete | ❌ | ✅ |
 | `update_task` | `{id, patch, if_match}`: lane, pinned, due, est_min, first_move, title | `Task` | ✅ | ✅ (not `pinned`) | ❌ | ✅ |
 | `prioritize` | `{ordered_ids[], lane}` | ok | ✅ | ❌ (suggest only) | ❌ | ✅ |
 | `start_timer` | `{task_id, minutes: 15\|20\|25\|50\|55}` | `Session` | ✅ | ✅ (when Shiloh asks) | ❌ | ✅ |
@@ -77,6 +81,11 @@ Path: `.hq/events/YYYY-MM.jsonl`, append-only, one line per event, UTF-8.
 | `evidence.verified` | parent only | `{path, verdict}` |
 | `proposal.drafted` | proposals | `{id}` |
 | `file.changed` | watcher | `{path, actor:"external"}` |
+| `xp.earned` | minutes, quest, note, certified bonus | `{amount, reason, certified?: false}` |
+| `badge.awarded` | real milestone only | `{badge_id}` |
+| `pm-skill.unlocked` | Shiloh finishes a PM lesson | `{skill}` |
+| `project.created` | new project | `{id}` |
+| `node.certified` | after parent verify | `{task_id, evidence}` |
 | `guard.denied` | any blocked write | `{principal, action, field}` |
 
 Agents read with `events_since(cursor)` or subscribe (MCP notifications, SSE `/api/v1/events/stream`). Note *text* is not copied into events, which keeps the log small and private. Events are for patterns ("did he start?"), not content.
@@ -89,3 +98,12 @@ Agents read with `events_since(cursor)` or subscribe (MCP notifications, SSE `/a
 
 ## 6. Versioning
 The contract is `hq/v1`. Breaking changes bump the major version and are listed here. Agents send `X-HQ-Contract: v1`, or the MCP server name `hq` version `1.x`.
+
+## 7. Play layer (agents)
+- `get_today` includes `xp`, `level`, `week_ring`, `grace_left`, `path` (nearby nodes), and quest XP labels.
+- `get_progress` includes the same, plus badges. P1 gates stay verified-only; XP is a separate field.
+- `suggest_next` is what powers daily quests (pick 1 of 3).
+- Completing a task awards claimed XP only. The Certified bonus is awarded inside `verify_evidence`, which remains **parent / human session only**. There is no `award_certified` tool for agents.
+- Agents never invent badges or XP totals. They read `.hq/progress.json` and events.
+
+- Shiloh's Board is the same task data as My Day. `list_tasks` can group by `project` and `lane`. Agents may create tasks and (after Skill-up 1) projects when Shiloh asks. Only the learner (or Dad) can mark a PM lesson complete and unlock a view. Agents cannot grant Skill-ups. Dependencies are rejected if the skill is locked or if they would cycle.

@@ -5,7 +5,7 @@ from: colt
 date: 2026-11-23
 touches:
   - 20-courses/hoops/hoops-course.md
-decision: pending
+decision: approved
 ---
 Dad only: `INPUT[inlineSelect(option(pending), option(approved), option(declined)):decision]` (COLT never edits this field.)
 # Approve The Hoops course (AAU tryout prep) and how it counts

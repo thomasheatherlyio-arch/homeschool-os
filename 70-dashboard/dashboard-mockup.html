@@ -12,19 +12,29 @@
   --spirit:oklch(52% 0.1 305);--systems:oklch(45% 0.035 60);
   --mind-bg:oklch(93% 0.03 245);--venture-bg:oklch(93% 0.045 50);--bodyq-bg:oklch(93% 0.03 165);--neutral-bg:oklch(94% 0.012 75);
   --serif:"Lora",Georgia,"Times New Roman",serif;--sans:"Public Sans","Segoe UI",system-ui,sans-serif;
+  --gold:oklch(70% 0.12 80);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 var(--sans)}
 .banner{background:var(--venture-bg);color:oklch(40% 0.12 50);font-size:12.5px;padding:6px 40px;border-bottom:1px solid var(--border)}
-header{display:flex;align-items:center;justify-content:space-between;padding:22px 40px 10px}
+header.top{display:flex;align-items:center;gap:16px;padding:16px 40px 10px}
+.colt{width:64px;height:64px;flex:none}
 h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0}
-h1{font-size:24px}h2{font-size:17px;margin-bottom:10px}
+h1{font-size:24px}h2{font-size:16px;margin-bottom:8px}
 .sub{color:var(--muted);font-size:13px}
+.speech{font:italic 14px var(--serif);color:var(--text);margin-top:2px}
+.xpbox{margin-left:auto;min-width:260px}
+.xpnum{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.bar{height:8px;background:var(--neutral-bg);border-radius:3px;overflow:hidden}.bar>b{display:block;height:100%;background:var(--text)}
+.ringdays{display:flex;gap:6px;align-items:center;margin-top:8px}
+.dot{width:14px;height:14px;border-radius:50%;border:1.6px solid var(--faint);background:transparent}
+.dot.on{background:var(--text);border-color:var(--text)}
+.dot.grace{border-radius:3px;border-style:dashed}
 nav{display:flex;gap:4px;padding:0 40px;border-bottom:1px solid var(--border)}
 nav button{background:none;border:0;border-bottom:2px solid transparent;padding:10px 14px;font:500 14px var(--sans);color:var(--muted);cursor:pointer}
 nav button.on{color:var(--text);border-color:var(--text)}
-main{padding:24px 40px 60px;max-width:1180px}
-section{margin-bottom:26px}
+main{padding:22px 40px 70px;max-width:1180px}
+section{margin-bottom:22px}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:16px 18px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .grid2{display:grid;grid-template-columns:3fr 2fr;gap:14px}
@@ -35,13 +45,14 @@ section{margin-bottom:26px}
 .venture{color:var(--venture)}.venture i{background:var(--venture)}
 .spirit{color:var(--spirit)}.spirit i{background:var(--spirit)}
 .systems{color:var(--systems)}.systems i{background:var(--systems)}
-.sug{display:flex;flex-direction:column;gap:6px;min-height:190px}
+.sug{display:flex;flex-direction:column;gap:6px;min-height:200px}
 .sug.default{border-color:var(--text)}
 .sug h3{font-size:16px}
-.why{font-size:12px;color:var(--muted)}
-.fm{font-size:13px}
+.why,.fm{font-size:13px}.why{color:var(--muted)}
+.xp{font:600 12px var(--sans);color:oklch(42% 0.08 80);background:oklch(95% 0.03 80);border-radius:3px;padding:1px 7px}
 .pill{display:inline-block;border-radius:3px;padding:1px 7px;font-size:11.5px;background:var(--neutral-bg);color:var(--muted)}
 .pill.pos{background:var(--bodyq-bg);color:var(--bodyq)}.pill.warn{background:var(--venture-bg);color:var(--venture)}
+.pill.lock{background:var(--neutral-bg);color:var(--faint)}
 .btn{background:var(--text);color:#fff;border:0;border-radius:3px;padding:8px 16px;font:600 14px var(--sans);cursor:pointer}
 .link{background:none;border:0;color:var(--mind);font:500 13.5px var(--sans);cursor:pointer;padding:0}
 .link:after{content:" \203A"}
@@ -53,16 +64,28 @@ ul.clean li{display:flex;gap:10px;align-items:center;padding:7px 0;border-bottom
 ul.clean li:last-child{border-bottom:0}
 .chk{width:18px;height:18px;border:1.6px solid var(--muted);border-radius:50%;cursor:pointer;flex:none;display:grid;place-items:center;font-size:11px}
 .chk.done{background:var(--bodyq);border-color:var(--bodyq);color:#fff}
-.bar{height:6px;background:var(--neutral-bg);border-radius:3px;overflow:hidden}.bar>b{display:block;height:100%;background:var(--text)}
-.row{display:flex;gap:10px;align-items:center}.sp{flex:1}
-textarea,input[type=text],input[type=password]{width:100%;border:1px solid var(--border);border-radius:3px;padding:8px;font:14px var(--sans);background:#fff}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.sp{flex:1}
+textarea,input[type=text],input[type=password],select{width:100%;border:1px solid var(--border);border-radius:3px;padding:8px;font:14px var(--sans);background:#fff}
 .overlay{position:fixed;inset:0;background:oklch(97% 0.014 80 / .97);display:none;align-items:center;justify-content:center;z-index:9}
 .overlay.on{display:flex}
-.focus{text-align:center;max-width:520px;width:100%}
-.ring{width:240px;height:240px;margin:18px auto}
+.focus,.lesson,.cheer{text-align:center;max-width:560px;width:100%}
+.ring{width:220px;height:220px;margin:14px auto}
 .time{font:600 40px var(--serif)}
-.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.lane h3{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.path{display:flex;align-items:flex-start;gap:0;padding:8px 0 4px;overflow:auto}
+.pnode{flex:1;min-width:90px;text-align:center;position:relative}
+.pnode .orb{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);margin:0 auto 8px;background:var(--surface);display:grid;place-items:center;font-size:12px;position:relative;z-index:1}
+.pnode.cert .orb{border-color:var(--gold);background:oklch(95% 0.04 80);color:oklch(45% 0.1 80)}
+.pnode.you .orb{border-color:var(--text);background:var(--text);color:#fff}
+.pnode.claimed .orb{border-color:var(--bodyq);background:var(--bodyq-bg)}
+.pnode.lock .orb{background:var(--neutral-bg);color:var(--faint)}
+.pnode:not(:last-child)::after{content:"";position:absolute;top:14px;left:50%;width:100%;height:2px;background:var(--border);z-index:0}
+.pnode .lab{font-size:12px}.pnode .st{font-size:11px;color:var(--muted)}
+.skills{display:flex;gap:8px;flex-wrap:wrap}
+.skill{border:1px solid var(--border);border-radius:3px;padding:6px 10px;font-size:12.5px;background:var(--surface);color:var(--muted)}
+.skill.ready{border-color:var(--text);color:var(--text);cursor:pointer}
+.skill.on{background:var(--bodyq-bg);border-color:var(--bodyq);color:var(--bodyq)}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.lane h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .tcard{border:1px solid var(--border);border-radius:3px;background:var(--surface);padding:10px 12px;margin-bottom:8px}
 .tcard .row{font-size:12.5px;color:var(--muted)}
 .mini{font-size:12px;color:var(--faint)}
@@ -71,27 +94,57 @@ textarea,input[type=text],input[type=password]{width:100%;border:1px solid var(-
 .hide{display:none}
 table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{border-bottom:1px solid var(--border);padding:7px 6px;text-align:left}th{font-weight:600;color:var(--muted);font-size:12px}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:9px 16px;border-radius:3px;font-size:13.5px;display:none;z-index:20}
+@keyframes pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1)}}
+.cheer .burst{animation:pop .45s ease-out}
+.xpfloat{font:700 28px var(--serif);color:oklch(42% 0.1 80);animation:pop .5s ease-out}
 </style>
 </head>
 <body>
-<div class="banner"><b>MOCKUP with SAMPLE DATA</b>, drawn from the Shiloh HQ vault snapshot of 2026-11-24 (NOW.md, status-tracker, khan-dashboard). Nothing here reads or writes the real vault. Draft, pending Dad: proposal 20261124-learning-dashboard.</div>
-<header>
-  <div><h1 id="hello">Good morning, Shiloh</h1><div class="sub" id="today">Tue Nov 24, 2026 · Week of Nov 23 · Friday review 11/27</div></div>
-  <div class="row"><span class="sub">Week:</span><span id="weekdots" style="letter-spacing:3px"></span><span class="sub" id="weektxt"></span></div>
+<div class="banner"><b>MOCKUP with SAMPLE DATA</b> from the Shiloh HQ vault snapshot of 2026-11-24 (NOW.md, status-tracker, khan-dashboard). Nothing here reads or writes the real vault. Draft, pending Dad's formal <code>decision:</code> on proposal 20261124-learning-dashboard.</div>
+<header class="top">
+  <svg class="colt" viewBox="0 0 80 80" aria-label="COLT mascot" fill="none">
+    <ellipse cx="40" cy="74" rx="20" ry="3.5" fill="oklch(90% 0.02 80)"/>
+    <path d="M24 64c1-12 8-20 16-26 3 10 3 20 0 30-2 5-8 8-14 6-5-2-3-6-2-10z" fill="oklch(99% 0.01 80)" stroke="oklch(24% 0.018 75)" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M40 34c6-10 16-12 24-6 6 4 7 11 3 16-5 6-13 6-19 2-4-8-6-10-8-12z" fill="oklch(99% 0.01 80)" stroke="oklch(24% 0.018 75)" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M50 22l1-9 7 7" stroke="oklch(24% 0.018 75)" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" fill="oklch(99% 0.01 80)"/>
+    <path d="M42 32c-6-3-11-1-16 3M40 38c-6-2-11 0-15 4" stroke="oklch(24% 0.018 75)" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="58" cy="32" r="2.1" fill="oklch(24% 0.018 75)"/>
+    <path d="M64 40c3 1 4 3 3 5" stroke="oklch(24% 0.018 75)" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div>
+    <h1>Good morning, Shiloh</h1>
+    <div class="speech" id="coltLine">Pick one quest. I'll sit with you.</div>
+    <div class="sub" id="today">Tue Nov 24, 2026 · Week of Nov 23 · Friday review 11/27</div>
+  </div>
+  <div class="xpbox">
+    <div class="xpnum"><span id="lvl">Level 2</span><span id="xpTxt">420 / 1000 XP to Level 3</span></div>
+    <div class="bar"><b id="xpBar" style="width:42%"></b></div>
+    <div class="ringdays" id="weekdots" title="Weekly ring with one grace day. Never a broken chain."></div>
+  </div>
 </header>
 <nav id="nav">
-  <button data-v="today" class="on">Today</button><button data-v="plan">Plan</button><button data-v="map">Map</button><button data-v="dad">Dad (Headmaster)</button><button data-v="agent">Agents &amp; events</button>
+  <button data-v="today" class="on">My Day</button>
+  <button data-v="board">Board</button>
+  <button data-v="map">Map</button>
+  <button data-v="dad">Dad (Headmaster)</button>
+  <button data-v="agent">Agents &amp; events</button>
 </nav>
 <main>
-<!-- TODAY -->
 <div id="v-today">
-  <section class="card row" style="flex-wrap:wrap;gap:16px">
+  <section class="card row">
     <div><b>How's your energy?</b> <span class="seg" id="energy"><button data-e="low">low</button><button data-e="ok" class="on">ok</button><button data-e="high">high</button></span></div>
     <div><b>This block:</b> <span class="seg" id="block"><button data-m="15">15</button><button data-m="25" class="on">25</button><button data-m="50">50</button></span> <span class="sub">min · 9:15–9:40 slot (draft schedule)</span></div>
   </section>
-  <section><h2>Pick one</h2><div class="grid3" id="sugs"></div>
+  <section>
+    <h2>Daily quests — pick one</h2>
+    <div class="grid3" id="sugs"></div>
     <div style="margin-top:8px"><button class="link" id="moreBtn">Something else (all tasks)</button></div>
     <div id="more" class="card hide" style="margin-top:8px"><ul class="clean" id="allTasks"></ul></div>
+  </section>
+  <section class="card">
+    <div class="row"><h2 style="margin:0">Your path · Mind · 7th grade reading</h2><span class="sp"></span><span class="mini">units as nodes · claimed ≠ certified</span></div>
+    <div class="path" id="path"></div>
+    <div class="sub" style="margin-top:8px">Constitution 101 — 90% mastery · 3 quizzes <b>claimed</b>, 0 <b>certified</b> (waiting on Dad) · source: Khan, 2026-11-22</div>
   </section>
   <section class="grid2">
     <div class="card"><h2>This week's missions <span class="mini">from NOW.md</span></h2><ul class="clean" id="missions"></ul></div>
@@ -108,42 +161,100 @@ table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{border-bottom:1
       <div><b class="fm">Tomorrow's first move</b><textarea rows="2" id="nFirst"></textarea></div>
     </div><div style="margin-top:8px"><button class="link" id="saveNote">Save daily note</button></div>
   </section>
-  <section class="card"><div class="row"><b>Focused minutes today</b><span class="sp"></span><span class="sub" id="minTxt"></span></div><div class="bar" style="margin-top:6px"><b id="minBar"></b></div>
-    <div class="row" style="margin-top:10px"><b>Khan this week</b><span class="sp"></span><span class="sub" id="khanTxt"></span></div><div class="bar" style="margin-top:6px"><b id="khanBar"></b></div>
-    <div class="mini" style="margin-top:6px">The 300 min/day target only shows if the 5-hour schedule proposal is approved. Khan 215/week is the approved plan.</div></section>
+  <section class="card">
+    <div class="row"><b>Focused minutes today</b><span class="sp"></span><span class="sub" id="minTxt"></span></div>
+    <div class="bar" style="margin-top:6px"><b id="minBar"></b></div>
+    <div class="row" style="margin-top:10px"><b>Khan this week</b><span class="sp"></span><span class="sub" id="khanTxt"></span></div>
+    <div class="bar" style="margin-top:6px"><b id="khanBar"></b></div>
+    <div class="mini" style="margin-top:6px">Khan 215/week is the approved plan. The 300 min/day bar is a default display, labeled proposed, pending the 5-hour schedule proposal.</div>
+  </section>
 </div>
-<!-- PLAN -->
-<div id="v-plan" class="hide">
-  <section><h2>Prioritize</h2><div class="sub" style="margin-bottom:12px">Move cards between lanes. Pin up to 2 to the top (your call). The faint number is the priority-board score. Dad sets academic weight.</div>
-  <div class="lanes"><div class="lane"><h3>Now</h3><div id="lane-now"></div></div><div class="lane"><h3>Next</h3><div id="lane-next"></div></div><div class="lane"><h3>Later</h3><div id="lane-later"></div></div></div></section>
+
+<div id="v-board" class="hide">
+  <section>
+    <div class="row" style="margin-bottom:8px">
+      <h2 style="margin:0">Your board</h2>
+      <span class="sub">Monday.com-style, yours to run. Harder views unlock with a short lesson — not an XP wall.</span>
+    </div>
+    <div class="card">
+      <div class="mini" style="margin-bottom:8px">SKILL-UP · start simple, add tools as you learn them</div>
+      <div class="skills" id="skills"></div>
+    </div>
+  </section>
+  <section class="row">
+    <span class="seg" id="views">
+      <button data-view="kanban" class="on">Kanban</button>
+      <button data-view="table">Table</button>
+      <button data-view="cal">Calendar</button>
+      <button data-view="time">Timeline</button>
+    </span>
+    <button class="btn" id="newTask">+ New task</button>
+    <button class="link" id="newProj">+ New project</button>
+    <span class="sp"></span>
+    <span class="sub">Group: All projects</span>
+  </section>
+  <div id="board-kanban">
+    <div class="lanes">
+      <div class="lane"><h3>Now · keep this short</h3><div id="lane-now"></div></div>
+      <div class="lane"><h3>Next</h3><div id="lane-next"></div></div>
+      <div class="lane"><h3>Later</h3><div id="lane-later"></div></div>
+    </div>
+  </div>
+  <div id="board-table" class="card hide" style="margin-top:8px"><table id="taskTable"><thead><tr><th>Name</th><th>Status</th><th>Priority</th><th>Due</th><th>Est.</th><th>Project</th></tr></thead><tbody></tbody></table></div>
+  <div id="board-locked" class="card hide" style="margin-top:8px;text-align:center;padding:28px">
+    <p id="lockMsg"></p>
+    <button class="btn" id="startLessonFromView">Start the 8-minute lesson</button>
+  </div>
+  <p class="mini">Dad's academic weight (W) and required-subject flags stay on his side. You own status, due dates, estimates, and how you break work down.</p>
 </div>
-<!-- MAP -->
+
 <div id="v-map" class="hide">
-  <section class="grid2"><div class="card"><h2>The Circle</h2><svg id="circle" viewBox="0 0 220 220" width="220" height="220"></svg><div class="mini">Weekly 0–10 scores are set at Friday review. None recorded yet, so the spokes here are illustrative only.</div></div>
-  <div class="card"><h2>Learning areas</h2><table id="areas"><thead><tr><th>Area</th><th>Quadrant</th><th>Progress</th><th>Source · as of</th></tr></thead><tbody></tbody></table></div></section>
+  <section class="grid2">
+    <div class="card"><h2>The Circle</h2><svg id="circle" viewBox="0 0 220 220" width="220" height="220"></svg><div class="mini">Weekly 0–10 scores are set at Friday review. None recorded yet, so the spokes here are illustrative only.</div></div>
+    <div class="card"><h2>Learning areas</h2><table id="areas"><thead><tr><th>Area</th><th>Quadrant</th><th>Progress</th><th>Source · as of</th></tr></thead><tbody></tbody></table>
+      <h2 style="margin-top:16px">Badges</h2>
+      <div class="sub">Empty until earned from real milestones: first focus · first certified quiz · ELA week of 4 sittings.</div>
+    </div>
+  </section>
 </div>
-<!-- DAD -->
+
 <div id="v-dad" class="hide">
-  <section class="card"><div class="row"><h2 style="margin:0">On track for 9th grade, Fall 2027?</h2><span class="sp"></span><span id="parentState" class="pill warn">Parent mode locked</span> <button class="link" id="unlock">Unlock (demo PIN 1234)</button></div>
-    <div class="grid3" style="margin-top:12px">
+  <section class="card">
+    <div class="row"><h2 style="margin:0">On track for 9th grade, Fall 2027?</h2><span class="sp"></span><span id="parentState" class="pill warn">Parent mode locked</span> <button class="link" id="unlock">Unlock (demo PIN 1234)</button></div>
+    <div class="mini" style="margin:8px 0 12px">Oversight board — P1 gates, not a game HUD. Engagement this week is shown faintly and does not move a gate.</div>
+    <div class="grid3">
       <div><b>Gate 1</b> · Doc 03 checklist<br><span class="pill">⚪ not measurable</span><div class="mini">No baseline diagnostics yet</div></div>
       <div><b>Gate 2</b> · system holds<br><span class="pill" id="g2">week 1 of 3</span><div class="mini" id="g2txt"></div></div>
-      <div><b>Gate 3</b> · HS credits<br><span class="pill">0 / 22</span><div class="mini">Starts at 9th grade</div></div></div></section>
-  <section class="card"><h2>Needs you</h2><ul class="clean" id="needs"></ul></section>
+      <div><b>Gate 3</b> · HS credits<br><span class="pill">0 / 22</span><div class="mini">Starts at 9th grade</div></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>Needs you</h2>
+    <table><thead><tr><th>Group</th><th>Item</th><th>Status</th><th>Due</th><th>Action</th></tr></thead><tbody id="needsBody"></tbody></table>
+  </section>
   <section class="card"><h2>This week</h2><table><tbody id="dadweek"></tbody></table></section>
 </div>
-<!-- AGENT -->
+
 <div id="v-agent" class="hide">
-  <section class="grid2"><div class="card"><h2>Try an agent tool call</h2><div class="sub" style="margin-bottom:8px">The UI, COLT and Grok Bot call the same tools. The guard runs in hq-core, not in the prompt.</div>
-    <ul class="clean">
-      <li><span class="sp"><code>hq.get_progress</code> as dad-bot (observer)</span><button class="link" data-call="progress">run</button></li>
-      <li><span class="sp"><code>hq.suggest_next</code> as colt</span><button class="link" data-call="suggest">run</button></li>
-      <li><span class="sp"><code>hq.update_task {verified: yes}</code> as colt</span><button class="link" data-call="deny">run</button></li>
-      <li><span class="sp"><code>hq.verify_evidence</code> as dad-bot</span><button class="link" data-call="deny2">run</button></li>
-    </ul><h2 style="margin-top:14px">Result</h2><div class="ev" id="result">(run a call)</div></div>
-  <div class="card"><h2>Event log <span class="mini">.hq/events/2026-11.jsonl</span></h2><div class="ev" id="events"></div></div></section>
+  <section class="grid2">
+    <div class="card">
+      <h2>Try an agent tool call</h2>
+      <div class="sub" style="margin-bottom:8px">The UI, COLT and Grok Bot call the same tools. The guard runs in hq-core, not in the prompt. Agents cannot verify, award Certified, or grant a Skill-up.</div>
+      <ul class="clean">
+        <li><span class="sp"><code>hq.get_progress</code> as dad-bot (observer)</span><button class="link" data-call="progress">run</button></li>
+        <li><span class="sp"><code>hq.suggest_next</code> as colt</span><button class="link" data-call="suggest">run</button></li>
+        <li><span class="sp"><code>hq.update_task {verified: yes}</code> as colt</span><button class="link" data-call="deny">run</button></li>
+        <li><span class="sp"><code>hq.complete_pm_lesson</code> as colt</span><button class="link" data-call="deny3">run</button></li>
+        <li><span class="sp"><code>hq.verify_evidence</code> as dad-bot</span><button class="link" data-call="deny2">run</button></li>
+      </ul>
+      <h2 style="margin-top:14px">Result</h2>
+      <div class="ev" id="result">(run a call)</div>
+    </div>
+    <div class="card"><h2>Event log <span class="mini">.hq/events/2026-11.jsonl</span></h2><div class="ev" id="events"></div></div>
+  </section>
 </div>
 </main>
+
 <div class="overlay" id="focus"><div class="focus card" style="padding:28px">
   <div id="fQ"></div><h2 id="fTitle" style="margin-top:6px"></h2><div class="sub" id="fMove"></div>
   <svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--neutral-bg)" stroke-width="8"/><circle id="arc" cx="60" cy="60" r="52" fill="none" stroke="var(--text)" stroke-width="8" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="326.7" stroke-dashoffset="0"/><text x="60" y="68" text-anchor="middle" id="fTime" class="time" style="font-size:22px;font-family:var(--serif)">25:00</text></svg>
@@ -152,37 +263,70 @@ table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{border-bottom:1
   <div id="fEnd" class="hide" style="margin-top:12px"><b>How did it go?</b><div class="row" style="justify-content:center;gap:10px;margin-top:8px"><button class="btn" id="oDone">Done ✓</button><button class="link" id="oPartly">Partly</button><button class="link" id="oStuck">Stuck</button></div>
     <div id="proof" class="hide" style="margin-top:12px;text-align:left"><b class="fm">Quick proof for Dad (optional): score, link, or one line</b><input type="text" id="proofTxt" placeholder="e.g. Unit 1 test 9/10"><div style="margin-top:8px;text-align:right"><button class="btn" id="saveProof">Save as pending evidence</button></div></div></div>
 </div></div>
+
+<div class="overlay" id="cheer"><div class="cheer card" style="padding:32px">
+  <div class="burst" style="font-size:42px;line-height:1">✓</div>
+  <div class="xpfloat" id="cheerXp">+25 XP</div>
+  <h2 style="margin:8px 0">Nice. It's pending for Dad.</h2>
+  <p class="sub" id="cheerLine">Claimed, not certified — he'll verify from his board.</p>
+  <button class="btn" id="cheerOk">Back to My Day</button>
+</div></div>
+
+<div class="overlay" id="lesson"><div class="lesson card" style="padding:28px;text-align:left">
+  <div class="mini">PM SKILL-UP · Brilliant-style lesson · about 8 minutes</div>
+  <h2 id="lesTitle" style="margin:6px 0 10px">Break it down</h2>
+  <p id="lesBody" class="fm"></p>
+  <div class="row" style="margin-top:16px;justify-content:flex-end;gap:12px">
+    <button class="link" id="lesSkip">close</button>
+    <button class="btn" id="lesNext">Next</button>
+  </div>
+</div></div>
+
 <div class="toast" id="toast"></div>
 <script>
-// ---------- SAMPLE DATA (from vault snapshot 2026-11-24; not live) ----------
 const Q={mind:"Mind",body:"Body",venture:"Venture",spirit:"Spirit",systems:"Systems"};
 const tasks=[
- {id:"t-khan-ela-7",title:"Khan 7th grade reading",q:"mind",first:"Open 7th reading → Unit 1 → take the unit test (test out if easy)",est:25,energy:"ok",due:"Fri 11/27",lane:"now",prio:6.2,slot:true,area:"ELA · priority 1",weekDone:0,weekGoal:4,unit:"sittings"},
- {id:"t-physics",title:"MS physics: Motion & forces",q:"mind",first:"Open Motion and forces (75%) → next skill quiz to reach 80%",est:25,energy:"ok",due:null,lane:"now",prio:5.1,area:"Science · priority 2",weekDone:0,weekGoal:3,unit:"sittings"},
- {id:"t-daily",title:"Write today's daily note",q:"systems",first:"Fill Did · Learned · Stuck · First move (5 min)",est:5,energy:"low",due:"today",lane:"now",prio:5.5,area:"Systems · mission",weekDone:0,weekGoal:3,unit:"notes"},
- {id:"t-math8",title:"8th TX math keep-warm: Unit 1",q:"mind",first:"Open 8th math Unit 1 (50%, 'Up next') → one practice set",est:20,energy:"low",due:null,lane:"next",prio:4.4,area:"Math keep-warm",weekDone:0,weekGoal:2,unit:"sittings"},
- {id:"t-bio",title:"MS biology: Cells & organisms",q:"mind",first:"Watch the first video in Cells and organisms (13%)",est:25,energy:"high",due:null,lane:"next",prio:4.8,area:"Science"},
- {id:"t-civ",title:"The Civ: start Unit 0",q:"mind",first:"Open civ-course → Unit 0 → read the campaign brief",est:50,energy:"high",due:null,lane:"next",prio:6.0,area:"The Civ (active)"},
- {id:"t-pick",title:"Pick the next course",q:"systems",first:"Read the 4 course one-liners: Kitchen / Gym / Panel / Forge",est:15,energy:"ok",due:"Fri 11/27",lane:"next",prio:4.0,area:"Mission"},
- {id:"t-knight",title:"Seat one open Knight",q:"spirit",first:"Open 60-companions/knights/README → choose one open seat",est:15,energy:"ok",due:"Fri 11/27",lane:"later",prio:3.2,area:"Mission"},
- {id:"t-gym",title:"The Gym: course kickoff",q:"body",first:"Read gym-18 Getting started",est:25,energy:"high",due:null,lane:"later",prio:3.0,area:"Not started"},
- {id:"t-venture",title:"Venture: competitor scan",q:"venture",first:"List 5 homeschool tools (pending Dad's approval of the Venture project)",est:25,energy:"high",due:null,lane:"later",prio:2.8,area:"Pending proposal"}
+ {id:"t-khan-ela-7",title:"Khan 7th grade reading",q:"mind",first:"Open 7th reading → Unit 1 → take the unit test (test out if easy)",est:25,energy:"ok",due:"Fri 11/27",lane:"now",prio:6.2,slot:true,area:"ELA · priority 1",project:"Khan ELA",weekDone:0,weekGoal:4,unit:"sittings",xp:25},
+ {id:"t-physics",title:"MS physics: Motion & forces",q:"mind",first:"Open Motion and forces (75%) → next skill quiz to reach 80%",est:25,energy:"ok",due:null,lane:"now",prio:5.1,area:"Science · priority 2",project:"Khan Science",weekDone:0,weekGoal:3,unit:"sittings",xp:25},
+ {id:"t-daily",title:"Write today's daily note",q:"systems",first:"Fill Did · Learned · Stuck · First move (5 min)",est:5,energy:"low",due:"today",lane:"now",prio:5.5,area:"Systems · mission",project:"Systems",weekDone:0,weekGoal:3,unit:"notes",xp:10},
+ {id:"t-math8",title:"8th TX math keep-warm: Unit 1",q:"mind",first:"Open 8th math Unit 1 (50%, 'Up next') → one practice set",est:20,energy:"low",due:null,lane:"next",prio:4.4,area:"Math keep-warm",project:"Khan Math",weekDone:0,weekGoal:2,unit:"sittings",xp:20},
+ {id:"t-bio",title:"MS biology: Cells & organisms",q:"mind",first:"Watch the first video in Cells and organisms (13%)",est:25,energy:"high",due:null,lane:"next",prio:4.8,area:"Science",project:"Khan Science",xp:25},
+ {id:"t-civ",title:"The Civ: start Unit 0",q:"mind",first:"Open civ-course → Unit 0 → read the campaign brief",est:50,energy:"high",due:null,lane:"next",prio:6.0,area:"The Civ (active)",project:"The Civ",xp:25},
+ {id:"t-pick",title:"Pick the next course",q:"systems",first:"Read the 4 course one-liners: Kitchen / Gym / Panel / Forge",est:15,energy:"ok",due:"Fri 11/27",lane:"next",prio:4.0,area:"Mission",project:"Systems",xp:15},
+ {id:"t-knight",title:"Seat one open Knight",q:"spirit",first:"Open 60-companions/knights/README → choose one open seat",est:15,energy:"ok",due:"Fri 11/27",lane:"later",prio:3.2,area:"Mission",project:"Round Table",xp:15},
+ {id:"t-gym",title:"The Gym: course kickoff",q:"body",first:"Read gym-18 Getting started",est:25,energy:"high",due:null,lane:"later",prio:3.0,area:"Not started",project:"The Gym",xp:25},
+ {id:"t-venture",title:"Venture: competitor scan",q:"venture",first:"List 5 homeschool tools (pending Dad's approval of the Venture project)",est:25,energy:"high",due:null,lane:"later",prio:2.8,area:"Pending proposal",project:"Venture",xp:25}
 ];
 let missions=[
  {t:"Set up the PC with Dad",q:"systems",d:false},{t:"First chat with COLT (rename if you want)",q:"systems",d:false},
- {t:"Write 3 daily notes",q:"systems",d:false,count:0,goal:3},{t:"Pick the next course: Kitchen / Gym / Panel / Forge",q:"mind",d:false},{t:"Seat one open Knight",q:"spirit",d:false}];
+ {t:"Write 3 daily notes",q:"systems",d:false,count:0,goal:3},{t:"Pick the next course: Kitchen / Gym / Panel / Forge",q:"systems",d:false},{t:"Seat one open Knight",q:"spirit",d:false}];
 const due=[["Reading baseline diagnostic (needs Dad)","this week"],["Khan ELA 4 × 25","Fri 11/27"],["Friday review with Dad","Fri 11/27"],["Readiness Examiner first sit (if approved)","Mon 11/30"]];
-const areas=[["7th grade ELA","mind",null,"log-only · 22 min","Khan · 11-23"],["8th grade math (TX)","mind",55,"","Khan · 11-22"],["7th grade math (TX)","mind",78,"","Khan · 11-22"],["6th grade math (TX)","mind",70,"weakest: Algebraic representations 13%","Khan · 11-22"],["Constitution 101","mind",90,"3 scores pending Dad","Khan · 11-22"],["MS physics","mind",35,"","Khan · 11-22"],["MS Earth & space","mind",26,"","Khan · 11-22"],["MS biology","mind",19,"","Khan · 11-22"],["The Civ","mind",0,"units done 0","status-tracker · 11-22"],["The Gym","body",0,"not started","status-tracker"],["The Hoops","body",null,"draft, pending Dad","proposal"],["Venture playbook","venture",null,"ongoing","status-tracker"],["Spirit & Character","spirit",null,"no data yet","—"],["System setup","systems",null,"in progress","status-tracker · 11-22"]];
-let evidence=[{p:"2026-11-16 Constitution 101: 14th Amendment unit test 12/12",v:"pending"},{p:"2026-11-17 Elections & voting rights quiz 1, 6/6",v:"pending"},{p:"2026-11-18 Elections & voting rights unit test 13/13",v:"pending"}];
+const areas=[["7th grade ELA","mind",null,"log-only · 22 min","Khan · 11-23"],["8th grade math (TX)","mind",55,"","Khan · 11-22"],["7th grade math (TX)","mind",78,"","Khan · 11-22"],["6th grade math (TX)","mind",70,"weakest: Algebraic representations 13%","Khan · 11-22"],["Constitution 101","mind",90,"3 scores claimed, 0 certified","Khan · 11-22"],["MS physics","mind",35,"","Khan · 11-22"],["MS Earth & space","mind",26,"","Khan · 11-22"],["MS biology","mind",19,"","Khan · 11-22"],["The Civ","mind",0,"units done 0","status-tracker · 11-22"],["The Gym","body",0,"not started","status-tracker"],["The Hoops","body",null,"draft, pending Dad","proposal"],["Venture playbook","venture",null,"ongoing","status-tracker"],["Spirit & Character","spirit",null,"no data yet","—"],["System setup","systems",null,"in progress","status-tracker · 11-22"]];
+let evidence=[{p:"2026-11-16 Constitution 101: 14th Amendment unit test 12/12",v:"pending",due:"11-16"},{p:"2026-11-17 Elections & voting rights quiz 1, 6/6",v:"pending",due:"11-17"},{p:"2026-11-18 Elections & voting rights unit test 13/13",v:"pending",due:"11-18"}];
 const proposals=["Readiness Examiner","Hoops course","5-hour weekday schedule","Venture: Shiloh HQ product","This dashboard (20261124-learning-dashboard)"];
-let state={energy:"ok",block:25,focusMin:0,khanMin:0,notes:0,parent:false,events:[],days:1};
-// ---------- helpers ----------
+const pathNodes=[{n:"Unit 0",s:"cert",st:"certified"},{n:"Unit 1",s:"you",st:"you are here"},{n:"Unit 2",s:"lock",st:"after Unit 1"},{n:"Unit 3",s:"lock",st:"locked"},{n:"Unit 4",s:"lock",st:"locked"}];
+const skillMeta=[
+ {id:1,label:"1 · Break it down",need:0,teaches:"Projects and subitems. Slice a big job into a next action."},
+ {id:2,label:"2 · Table view",need:1,teaches:"Columns, sort, and filter — see all the work at once."},
+ {id:3,label:"3 · Plan the week",need:2,teaches:"Estimating, a Monday plan, and a Friday self-review."},
+ {id:4,label:"4 · Timeline",need:3,teaches:"Dependencies and a simple Gantt: what has to happen first."},
+ {id:5,label:"5 · Automations",need:4,teaches:"Two quiet rules. No nag-storms."},
+ {id:6,label:"6 · Your dashboard",need:5,teaches:"Which numbers matter — claimed vs certified, not just XP."}
+];
+const lessonSteps=[
+ "A project is an outcome. A task is one sitting. A subitem is the next physical move.",
+ "Look at 'Pick the next course'. That's a project hiding in a single line.",
+ "Practice: split it into three subitems — read the four one-liners, pick one, write why in a daily note.",
+ "Done. Your board can now hold projects and subitems. Schoolwork was never locked while you learned this."
+];
+let state={energy:"ok",block:25,focusMin:0,khanMin:0,parent:false,events:[],days:1,xp:420,unlocked:0,boardView:"kanban"};
 const $=s=>document.querySelector(s);
 const qtag=q=>`<span class="q ${q}"><i></i>${Q[q]}</span>`;
 function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(e._t);e._t=setTimeout(()=>e.style.display="none",2600)}
-function ev(type,subject,data,actor="shiloh",role="learner"){const ts=new Date(2026,10,24,9,15+state.events.length).toISOString().replace("Z","");state.events.push({ts:ts.slice(0,19)+"-06:00",learner:"shiloh",actor:{id:actor,role},type,subject,data});renderEvents()}
-function renderEvents(){$("#events").textContent=state.events.slice(-14).map(e=>JSON.stringify(e)).join("\n")||"(no events yet: pick a task)"}
-// ---------- suggestions (transparent scoring) ----------
+function ev(type,subject,data,actor="shiloh",role="learner"){const ts=new Date(2026,10,24,9,15+state.events.length).toISOString().slice(0,19)+"-06:00";state.events.push({ts,learner:"shiloh",actor:{id:actor,role},type,subject,data});renderEvents()}
+function renderEvents(){$("#events").textContent=state.events.slice(-14).map(e=>JSON.stringify(e)).join("\n")||"(no events yet: pick a quest)"}
+function xpAdd(n,why){state.xp+=n;ev("xp.earned",null,{amount:n,reason:why});renderXp()}
+function renderXp(){const lvl=1+Math.floor(state.xp/1000),into=state.xp%1000;$("#lvl").textContent="Level "+lvl;$("#xpTxt").textContent=into+" / 1000 XP to Level "+(lvl+1);$("#xpBar").style.width=(into/10)+"%"}
 function score(t){let s=t.prio,why=[];
  if(t.slot){s+=3;why.push("planned for this slot")}
  if(t.weekGoal&&t.weekDone<t.weekGoal){s+=1.5;why.push(`${t.weekDone} of ${t.weekGoal} ${t.unit} this week`)}
@@ -194,17 +338,17 @@ function score(t){let s=t.prio,why=[];
  if(t.done)s-=99;return{s,why}}
 function renderToday(){
  const ranked=tasks.filter(t=>!t.done).map(t=>({t,...score(t)})).sort((a,b)=>b.s-a.s);
- $("#sugs").innerHTML=ranked.slice(0,3).map((r,i)=>`<div class="card sug ${i==0?"default":""}">${qtag(r.t.q)} ${i==0?'<span class="pill pos" style="align-self:flex-start">suggested</span>':""}<h3>${r.t.title}</h3><div class="fm"><b>First move:</b> ${r.t.first}</div><div class="why">${r.t.est} min · ${r.why.join(" · ")||r.t.area}</div><span class="sp"></span>${i==0?`<button class="btn" data-start="${r.t.id}">Start</button>`:`<button class="link" data-start="${r.t.id}">start</button>`}</div>`).join("");
- $("#allTasks").innerHTML=ranked.slice(3).map(r=>`<li>${qtag(r.t.q)}<span class="sp">${r.t.title} <span class="mini">${r.t.est} min</span></span><button class="link" data-start="${r.t.id}">start</button></li>`).join("");
+ $("#sugs").innerHTML=ranked.slice(0,3).map((r,i)=>`<div class="card sug ${i==0?"default":""}">${qtag(r.t.q)} <span class="xp">+${r.t.xp} XP</span> ${i==0?'<span class="pill pos">suggested</span>':""}<h3>${r.t.title}</h3><div class="fm"><b>First move:</b> ${r.t.first}</div><div class="why">${r.t.est} min · ${r.why.join(" · ")||r.t.area}</div><span class="sp"></span>${i==0?`<button class="btn" data-start="${r.t.id}">Start</button>`:`<button class="link" data-start="${r.t.id}">start</button>`}</div>`).join("");
+ $("#allTasks").innerHTML=ranked.slice(3).map(r=>`<li>${qtag(r.t.q)}<span class="sp">${r.t.title} <span class="mini">${r.t.est} min · +${r.t.xp} XP</span></span><button class="link" data-start="${r.t.id}">start</button></li>`).join("");
  $("#missions").innerHTML=missions.map((m,i)=>`<li><span class="chk ${m.d?"done":""}" data-m="${i}">${m.d?"✓":""}</span><span class="sp">${m.t}${m.goal?` <span class="mini">(${m.count}/${m.goal})</span>`:""}</span>${qtag(m.q)}</li>`).join("");
  $("#due").innerHTML=due.map(d=>`<li><span class="sp">${d[0]}</span><span class="pill">${d[1]}</span></li>`).join("");
- $("#minTxt").textContent=`${state.focusMin} / 300 (if approved)`;$("#minBar").style.width=Math.min(100,state.focusMin/3)+"%";
- $("#khanTxt").textContent=`${state.khanMin} / 215 min (last week: 16)`;$("#khanBar").style.width=Math.min(100,state.khanMin/2.15)+"%";
- const dots=[1,2,3,4,5].map(i=>i<=state.days?"●":"○").join("");$("#weekdots").textContent=dots;$("#weektxt").textContent=`${state.days} of 5 school days started (grace built in)`;
+ $("#minTxt").textContent=`${state.focusMin} / 300 (proposed)`;$("#minBar").style.width=Math.min(100,state.focusMin/3)+"%";
+ $("#khanTxt").textContent=`${state.khanMin} / 215 min approved (last week: 16)`;$("#khanBar").style.width=Math.min(100,state.khanMin/2.15)+"%";
+ $("#weekdots").innerHTML=[1,2,3,4,5].map(i=>`<span class="dot ${i<=state.days?"on":(i===5?"grace":"")}"></span>`).join("")+`<span class="sub">${state.days} of 5 school days started · 1 grace left</span>`;
+ $("#path").innerHTML=pathNodes.map(n=>`<div class="pnode ${n.s}"><div class="orb">${n.s==="cert"?"★":n.s==="lock"?"·":""}</div><div class="lab">${n.n}</div><div class="st">${n.st}</div></div>`).join("");
  document.querySelectorAll("[data-start]").forEach(b=>b.onclick=()=>startFocus(b.dataset.start));
- document.querySelectorAll("[data-m]").forEach(c=>c.onclick=()=>{const m=missions[c.dataset.m];m.d=!m.d;ev("mission.ticked","NOW.md",{text:m.t,done:m.d});renderToday();toast(m.d?"Mission ticked in NOW.md":"Mission unticked")});
+ document.querySelectorAll("[data-m]").forEach(c=>c.onclick=()=>{const m=missions[c.dataset.m];m.d=!m.d;if(m.d)xpAdd(15,"mission");ev("mission.ticked","NOW.md",{text:m.t,done:m.d});renderToday();toast(m.d?"Mission ticked in NOW.md · +15 XP":"Mission unticked")});
 }
-// ---------- focus timer ----------
 let cur=null,remain=0,total=0,tick=null,speed=1,paused=false;
 function startFocus(id){cur=tasks.find(t=>t.id===id);total=remain=Math.min(cur.est,state.block)*60;speed=1;paused=false;
  $("#fQ").innerHTML=qtag(cur.q);$("#fTitle").textContent=cur.title;$("#fMove").textContent="First move: "+cur.first;
@@ -212,48 +356,95 @@ function startFocus(id){cur=tasks.find(t=>t.id===id);total=remain=Math.min(cur.e
  ev("timer.started",cur.id,{minutes:total/60});clearInterval(tick);tick=setInterval(step,1000);draw()}
 function step(){if(paused)return;remain=Math.max(0,remain-speed);draw();if(remain<=0)finish()}
 function draw(){const m=Math.floor(remain/60),s=remain%60;$("#fTime").textContent=`${m}:${String(s).padStart(2,"0")}`;$("#arc").setAttribute("stroke-dashoffset",(326.7*(1-remain/total)).toFixed(1))}
-function finish(){clearInterval(tick);$("#fCtl").classList.add("hide");$("#fEnd").classList.remove("hide");const act=Math.round((total-remain)/60);cur._act=act;ev("timer.stopped",cur.id,{actual_min:act})}
+function finish(){clearInterval(tick);$("#fCtl").classList.add("hide");$("#fEnd").classList.remove("hide");const act=Math.round((total-remain)/60)||1;cur._act=act;ev("timer.stopped",cur.id,{actual_min:act})}
 $("#pause").onclick=()=>{paused=!paused;$("#pause").textContent=paused?"resume":"pause"};
 $("#fast").onclick=()=>{speed=120};$("#endEarly").onclick=()=>finish();
-function logMinutes(){state.focusMin+=cur._act;if(cur.q==="mind"&&/Khan|physics|biology|math/.test(cur.title))state.khanMin+=cur._act;if(cur.weekDone!=null)cur.weekDone++}
+function logMinutes(){state.focusMin+=cur._act;if(cur.q==="mind"&&/Khan|physics|biology|math|reading|Civ/i.test(cur.title))state.khanMin+=cur._act;if(cur.weekDone!=null)cur.weekDone++;xpAdd(cur._act,"focused minutes")}
 $("#oDone").onclick=()=>{$("#proof").classList.remove("hide")};
-$("#saveProof").onclick=()=>{logMinutes();cur.done=true;const p=$("#proofTxt").value||"(no proof yet)";evidence.unshift({p:`2026-11-24 ${cur.title}: ${p}`,v:"pending"});
- ev("task.completed",cur.id,{evidence:"50-evidence/2026-Q4/2026-11-24-"+cur.id+".md"});ev("evidence.filed","50-evidence/2026-Q4/2026-11-24-"+cur.id+".md",{verified:"pending"});
- if(cur.id==="t-daily"){missions[2].count++;}$("#proofTxt").value="";closeFocus();toast("Nice. Saved as pending for Dad to verify.")};
-$("#oPartly").onclick=()=>{logMinutes();ev("task.updated",cur.id,{outcome:"partly"});closeFocus();toast(`${cur._act} min logged. The task stays open.`)};
-$("#oStuck").onclick=()=>{logMinutes();ev("task.stuck",cur.id,{});closeFocus();$("#stuckTxt").focus();toast("Tell COLT what's stuck. Ask → hint → explain.")};
-function closeFocus(){$("#focus").classList.remove("on");renderAll()}
-// ---------- other interactions ----------
+$("#saveProof").onclick=()=>{logMinutes();cur.done=true;const p=$("#proofTxt").value||"(no proof yet)";evidence.unshift({p:`2026-11-24 ${cur.title}: ${p}`,v:"pending",due:"today"});
+ ev("task.completed",cur.id,{});ev("evidence.filed","50-evidence/2026-Q4/2026-11-24-"+cur.id+".md",{verified:"pending"});
+ xpAdd(cur.xp,"quest bonus");
+ if(cur.id==="t-daily"){missions[2].count++;}
+ $("#proofTxt").value="";$("#focus").classList.remove("on");
+ $("#cheerXp").textContent="+"+(cur.xp+cur._act)+" XP";$("#cheer").classList.add("on");
+ ev("quest.completed",cur.id,{});renderAll()};
+$("#cheerOk").onclick=()=>{$("#cheer").classList.remove("on");showView("today")};
+$("#oPartly").onclick=()=>{logMinutes();ev("task.updated",cur.id,{outcome:"partly"});$("#focus").classList.remove("on");renderAll();toast(cur._act+" min logged · +"+cur._act+" XP. The quest stays open.")};
+$("#oStuck").onclick=()=>{logMinutes();ev("task.stuck",cur.id,{});$("#focus").classList.remove("on");showView("today");$("#stuckTxt").focus();toast("Tell COLT what's stuck. Minutes still count.")};
 document.querySelectorAll("#energy button").forEach(b=>b.onclick=()=>{state.energy=b.dataset.e;document.querySelectorAll("#energy button").forEach(x=>x.classList.toggle("on",x===b));ev("checkin.saved",null,{energy:state.energy,block_min:state.block});renderToday()});
 document.querySelectorAll("#block button").forEach(b=>b.onclick=()=>{state.block=+b.dataset.m;document.querySelectorAll("#block button").forEach(x=>x.classList.toggle("on",x===b));renderToday()});
 $("#moreBtn").onclick=()=>$("#more").classList.toggle("hide");
 $("#stuckBtn").onclick=()=>{if(!$("#stuckTxt").value)return;ev("note.added","40-journal/daily/2026-11-24.md",{section:"stuck"});$("#stuckTxt").value="";toast("Sent to COLT, and shown to Dad as a system flag")};
-$("#saveNote").onclick=()=>{ev("note.added","40-journal/daily/2026-11-24.md",{section:"did,learned,stuck,first_move"});missions[2].count=Math.min(3,missions[2].count+1);renderToday();toast("Daily note saved (1 more toward 3 this week)")};
-// plan
-function renderPlan(){["now","next","later"].forEach(l=>{$("#lane-"+l).innerHTML=tasks.filter(t=>t.lane===l).sort((a,b)=>(b.pinned|0)-(a.pinned|0)).map(t=>`<div class="tcard">${qtag(t.q)} ${t.done?'<span class="pill pos">done · pending verify</span>':""}<div style="margin:4px 0"><b>${t.pinned?"📌 ":""}${t.title}</b></div><div class="row"><span>${t.est} min${t.due?" · due "+t.due:""}</span><span class="sp"></span><span class="mini">${t.prio}</span></div><div class="row" style="margin-top:6px;gap:12px">${l!=="now"?`<button class="link" data-mv="${t.id}" data-to="${l==="later"?"next":"now"}">move up</button>`:""}${l!=="later"?`<button class="link" data-mv="${t.id}" data-to="${l==="now"?"next":"later"}">move down</button>`:""}<button class="link" data-pin="${t.id}">${t.pinned?"unpin":"pin"}</button></div></div>`).join("")});
- document.querySelectorAll("[data-mv]").forEach(b=>b.onclick=()=>{const t=tasks.find(x=>x.id===b.dataset.mv);t.lane=b.dataset.to;ev("task.updated",t.id,{lane:t.lane});renderAll()});
- document.querySelectorAll("[data-pin]").forEach(b=>b.onclick=()=>{const t=tasks.find(x=>x.id===b.dataset.pin);if(!t.pinned&&tasks.filter(x=>x.pinned).length>=2){toast("You can pin 2 at most. Unpin one first.");return}t.pinned=!t.pinned;ev("task.updated",t.id,{pinned:t.pinned});renderAll()})}
-// map
+$("#saveNote").onclick=()=>{ev("note.added","40-journal/daily/2026-11-24.md",{section:"did,learned,stuck,first_move"});missions[2].count=Math.min(3,missions[2].count+1);xpAdd(10,"daily note");renderToday();toast("Daily note saved · +10 XP")};
+
+function renderSkills(){
+ $("#skills").innerHTML=skillMeta.map(s=>{
+   const on=state.unlocked>=s.id, ready=state.unlocked===s.need;
+   return `<button class="skill ${on?"on":ready?"ready":""}" data-skill="${s.id}">${on?"✓ ":""}${s.label}${on?" (unlocked)":ready?"":" · locked"}</button>`;
+ }).join("");
+ document.querySelectorAll("[data-skill]").forEach(b=>b.onclick=()=>{
+   const s=skillMeta.find(x=>x.id===+b.dataset.skill);
+   if(state.unlocked>=s.id){toast("Already unlocked: "+s.teaches);return}
+   if(state.unlocked!==s.need){toast("Start the previous lesson first. This is not an XP wall — just one skill at a time.");return}
+   openLesson();
+ });
+}
+let lesI=0;
+function openLesson(){lesI=0;paintLesson();$("#lesson").classList.add("on")}
+function paintLesson(){$("#lesTitle").textContent="Break it down · step "+(lesI+1)+" of "+lessonSteps.length;$("#lesBody").textContent=lessonSteps[lesI];$("#lesNext").textContent=lesI===lessonSteps.length-1?"Unlock this skill":"Next"}
+$("#lesSkip").onclick=()=>$("#lesson").classList.remove("on");
+$("#lesNext").onclick=()=>{if(lesI<lessonSteps.length-1){lesI++;paintLesson();return}state.unlocked=Math.max(state.unlocked,1);ev("pm-skill.unlocked",null,{skill:1});$("#lesson").classList.remove("on");toast("Skill-up 1 unlocked. You can add projects and subitems.");renderAll()};
+function viewAllowed(v){if(v==="kanban")return true;if(v==="table")return state.unlocked>=2;if(v==="cal")return state.unlocked>=3;if(v==="time")return state.unlocked>=4;return false}
+function setBoardView(v){
+ state.boardView=v;
+ document.querySelectorAll("#views button").forEach(b=>b.classList.toggle("on",b.dataset.view===v));
+ const ok=viewAllowed(v);
+ $("#board-kanban").classList.toggle("hide",!(ok&&v==="kanban"));
+ $("#board-table").classList.toggle("hide",!(ok&&v==="table"));
+ $("#board-locked").classList.toggle("hide",ok);
+ if(!ok){const need={table:2,cal:3,time:4}[v];const s=skillMeta.find(x=>x.id===need);$("#lockMsg").textContent="The "+(v==="cal"?"calendar":v)+" view unlocks with a short lesson: "+s.teaches+" You can start it whenever you're ready — not when you hit a certain level.";}
+}
+document.querySelectorAll("#views button").forEach(b=>b.onclick=()=>setBoardView(b.dataset.view));
+$("#startLessonFromView").onclick=()=>openLesson();
+$("#newTask").onclick=()=>{const title=prompt("New task title");if(!title)return;tasks.push({id:"t-"+Date.now(),title,q:"systems",first:"Decide the first physical move",est:25,energy:"ok",due:null,lane:"next",prio:3,area:"You added this",project:"Inbox",xp:15});ev("task.created",title,{});renderAll();toast("Task added to Next")};
+$("#newProj").onclick=()=>{if(state.unlocked<1){openLesson();return}toast("Project created (sample). Vault workstreams already show as projects.")};
+
+function renderBoard(){
+ renderSkills();
+ setBoardView(state.boardView);
+ ["now","next","later"].forEach(l=>{
+  $("#lane-"+l).innerHTML=tasks.filter(t=>t.lane===l).sort((a,b)=>(b.pinned|0)-(a.pinned|0)).map(t=>`<div class="tcard">${qtag(t.q)} ${t.done?'<span class="pill pos">claimed · pending</span>':""}
+    <div style="margin:4px 0"><b>${t.pinned?"📌 ":""}${t.title}</b></div>
+    <div class="row"><span>${t.est} min${t.due?" · due "+t.due:""}</span><span class="sp"></span><span class="mini">P ${t.prio}${state.unlocked>=1?" · "+t.project:""}</span></div>
+    <div class="row" style="margin-top:6px;gap:12px">${l!=="now"?`<button class="link" data-mv="${t.id}" data-to="${l==="later"?"next":"now"}">move up</button>`:""}${l!=="later"?`<button class="link" data-mv="${t.id}" data-to="${l==="now"?"next":"later"}">move down</button>`:""}<button class="link" data-pin="${t.id}">${t.pinned?"unpin":"pin"}</button>${t.done?"":`<button class="link" data-start="${t.id}">start</button>`}</div>
+  </div>`).join("");
+ });
+ $("#taskTable tbody").innerHTML=tasks.map(t=>`<tr><td>${t.title}</td><td>${t.done?"claimed":t.lane}</td><td>${t.prio}</td><td>${t.due||"—"}</td><td>${t.est}</td><td>${t.project}</td></tr>`).join("");
+ document.querySelectorAll("#v-board [data-mv]").forEach(b=>b.onclick=()=>{const t=tasks.find(x=>x.id===b.dataset.mv);t.lane=b.dataset.to;ev("task.updated",t.id,{lane:t.lane});renderAll()});
+ document.querySelectorAll("#v-board [data-pin]").forEach(b=>b.onclick=()=>{const t=tasks.find(x=>x.id===b.dataset.pin);if(!t.pinned&&tasks.filter(x=>x.pinned).length>=2){toast("You can pin 2 at most. Unpin one first.");return}t.pinned=!t.pinned;ev("task.updated",t.id,{pinned:t.pinned});renderAll()});
+ document.querySelectorAll("#v-board [data-start]").forEach(b=>b.onclick=()=>startFocus(b.dataset.start));
+}
 function renderMap(){const sc={mind:6,body:2,venture:1,spirit:0,systems:2},col={mind:"var(--mind)",body:"var(--bodyq)",venture:"var(--venture)",spirit:"var(--spirit)",systems:"var(--systems)"};let svg='<circle cx="110" cy="110" r="90" fill="none" stroke="var(--border)"/>';Object.keys(sc).forEach((k,i)=>{const a=-Math.PI/2+i*2*Math.PI/5,r=12+78*sc[k]/10,x=110+Math.cos(a)*r,y=110+Math.sin(a)*r,lx=110+Math.cos(a)*103,ly=110+Math.sin(a)*103;svg+=`<line x1="110" y1="110" x2="${x}" y2="${y}" stroke="${col[k]}" stroke-width="6" stroke-linecap="round"/><text x="${lx}" y="${ly+4}" text-anchor="middle" font-size="10" fill="${col[k]}" font-family="sans-serif">${Q[k]}</text>`});$("#circle").innerHTML=svg;
  $("#areas tbody").innerHTML=areas.map(a=>`<tr><td>${a[0]}</td><td>${qtag(a[1])}</td><td style="min-width:140px">${a[2]==null?'<span class="mini">— '+a[3]+'</span>':`<div class="bar"><b style="width:${a[2]}%"></b></div><span class="mini">${a[2]}% ${a[3]}</span>`}</td><td class="mini">${a[4]}</td></tr>`).join("")}
-// dad
 function renderDad(){$("#parentState").textContent=state.parent?"Parent mode unlocked (Thomas)":"Parent mode locked";$("#parentState").className="pill "+(state.parent?"pos":"warn");
  const md=missions.filter(m=>m.d).length;$("#g2txt").textContent=`Missions ${md}/5 · notes ${missions[2].count}/5 · Friday review –`;
- $("#needs").innerHTML=evidence.filter(e=>e.v==="pending").map((e,i)=>`<li>⏳<span class="sp">Evidence: ${e.p}</span><button class="link" data-ver="${evidence.indexOf(e)}">${state.parent?"verify":"verify (unlock first)"}</button></li>`).join("")+proposals.map(p=>`<li>⚖<span class="sp">Proposal pending: ${p}</span><span class="mini">decide in Obsidian</span></li>`).join("")+`<li>!<span class="sp">Give the Reading baseline diagnostic (P1)</span><span class="pill warn">needs Thomas</span></li><li>!<span class="sp">Confirm Fall 2027 start + L3 targets</span><span class="pill warn">needs Thomas</span></li>`;
- $("#dadweek").innerHTML=[["Missions",md+" / 5"],["Daily notes",missions[2].count+" / 3"],["Focused minutes today",state.focusMin+" (target 300 if approved)"],["Khan minutes",state.khanMin+" / 215 (last week 16)"],["Evidence pending / verified",evidence.filter(e=>e.v==="pending").length+" / "+evidence.filter(e=>e.v==="yes").length],["Stuck flags",state.events.filter(e=>e.type==="task.stuck").length]].map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td></tr>`).join("");
- document.querySelectorAll("[data-ver]").forEach(b=>b.onclick=()=>{if(!state.parent){toast("Only Dad's unlocked parent session can verify");return}const e=evidence[b.dataset.ver];e.v="yes";ev("evidence.verified",e.p,{verdict:"yes",how:"quiz"},"thomas","parent");toast("Row appended to verifications.md (by thomas)");renderAll()})}
+ const evRows=evidence.map((e,i)=>`<tr><td>Needs verify</td><td>${e.p}</td><td><span class="pill ${e.v==="yes"?"pos":"warn"}">${e.v==="yes"?"certified":"pending"}</span></td><td>${e.due||""}</td><td><button class="link" data-ver="${i}">${state.parent?"verify":"verify (unlock first)"}</button></td></tr>`).join("");
+ const pr=proposals.map(p=>`<tr><td>Pending proposals</td><td>${p}</td><td><span class="pill">pending</span></td><td>Fri 11/27</td><td class="mini">decide in Obsidian</td></tr>`).join("");
+ $("#needsBody").innerHTML=evRows+pr+`<tr><td>Open loops</td><td>Give the Reading baseline diagnostic (P1)</td><td><span class="pill warn">needs Thomas</span></td><td>this week</td><td>—</td></tr><tr><td>Open loops</td><td>Confirm Fall 2027 start + L3 targets</td><td><span class="pill warn">needs Thomas</span></td><td>—</td><td>—</td></tr>`;
+ $("#dadweek").innerHTML=[["Missions",md+" / 5"],["Daily notes",missions[2].count+" / 3"],["Focused minutes today",state.focusMin+" (300 is proposed)"],["Khan minutes",state.khanMin+" / 215 approved (last week 16)"],["Evidence pending / certified",evidence.filter(e=>e.v==="pending").length+" / "+evidence.filter(e=>e.v==="yes").length],["XP this week (engagement only)",state.xp+" (does not move a gate)"],["Stuck flags",state.events.filter(e=>e.type==="task.stuck").length]].map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td></tr>`).join("");
+ document.querySelectorAll("[data-ver]").forEach(b=>b.onclick=()=>{if(!state.parent){toast("Only Dad's unlocked parent session can verify");return}const e=evidence[b.dataset.ver];if(e.v==="yes")return;e.v="yes";ev("evidence.verified",e.p,{verdict:"yes",how:"quiz"},"thomas","parent");ev("node.certified",e.p,{});xpAdd(20,"certified bonus");toast("Row appended to verifications.md · Certified seal + bonus XP");renderAll()})}
 $("#unlock").onclick=()=>{if(state.parent){state.parent=false;renderDad();return}const pin=prompt("Parent PIN (demo: 1234)");if(pin==="1234"){state.parent=true;toast("Parent mode unlocked for 15 min")}else toast("Wrong PIN");renderDad()};
-// agent calls
 document.querySelectorAll("[data-call]").forEach(b=>b.onclick=()=>{const c=b.dataset.call;let out;
- if(c==="progress"){out={tool:"hq.get_progress",principal:"dad-bot",role:"agent:observer",result:{week:"2026-11-23",missions:{done:missions.filter(m=>m.d).length,total:5,source:"NOW.md"},daily_notes:{count:missions[2].count,goal:3},khan_min:{value:state.khanMin,goal:215,source:"khan-dashboard",as_of:"2026-11-22"},evidence:{pending:evidence.filter(e=>e.v==="pending").length,verified:evidence.filter(e=>e.v==="yes").length},readiness:{gate1:"not measurable (no baselines)",source:"hs-readiness"}}}}
- if(c==="suggest"){out={tool:"hq.suggest_next",principal:"colt",args:{energy:state.energy,minutes:state.block},result:tasks.filter(t=>!t.done).map(t=>({id:t.id,...score(t)})).sort((a,b)=>b.s-a.s).slice(0,3).map(r=>({id:r.id,score:+r.s.toFixed(1),why:r.why}))}}
+ if(c==="progress"){out={tool:"hq.get_progress",principal:"dad-bot",role:"agent:observer",result:{week:"2026-11-23",missions:{done:missions.filter(m=>m.d).length,total:5,source:"NOW.md"},khan_min:{value:state.khanMin,goal:215,source:"khan-dashboard",as_of:"2026-11-22"},xp:{value:state.xp,note:"engagement only"},readiness:{gate1:"not measurable (no baselines)",source:"hs-readiness"},pm_skills:{unlocked:state.unlocked}}}}
+ if(c==="suggest"){out={tool:"hq.suggest_next",principal:"colt",args:{energy:state.energy,minutes:state.block},result:tasks.filter(t=>!t.done).map(t=>({id:t.id,...score(t)})).sort((a,b)=>b.s-a.s).slice(0,3).map(r=>({id:r.id,score:+r.s.toFixed(1),why:r.why,xp:r.t?r.t.xp:undefined}))}}
  if(c==="deny"){out={tool:"hq.update_task",principal:"colt",args:{id:"t-khan-ela-7",patch:{verified:"yes"}},error:{code:403,type:"PROTECTED_FIELD",field:"verified",message:"Only a parent (human) session can set verified. Logged."}};ev("guard.denied","t-khan-ela-7",{principal:"colt",field:"verified"},"colt","agent:tutor")}
  if(c==="deny2"){out={tool:"hq.verify_evidence",principal:"dad-bot",error:{code:403,type:"ROLE_CEILING",message:"Agent tokens cannot hold the parent role."}};ev("guard.denied","verifications.md",{principal:"dad-bot",action:"verify_evidence"},"dad-bot","agent:observer")}
- $("#result").textContent=JSON.stringify(out,null,2);$("#result").className="ev"+(out.error?" deny":"")});
-// nav
-document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x===b));["today","plan","map","dad","agent"].forEach(v=>$("#v-"+v).classList.toggle("hide",v!==b.dataset.v));renderAll()});
-function renderAll(){renderToday();renderPlan();renderMap();renderDad();renderEvents()}
-renderAll();
+ if(c==="deny3"){out={tool:"hq.complete_pm_lesson",principal:"colt",args:{skill:1},error:{code:403,type:"ROLE",message:"Only the learner (or Dad) can mark a PM lesson complete. Agents cannot grant Skill-ups."}};ev("guard.denied","pm-skill",{principal:"colt",action:"complete_pm_lesson"},"colt","agent:tutor")}
+ $("#result").textContent=JSON.stringify(out,null,2);$("#result").className="ev"+(out&&out.error?" deny":"")});
+function showView(v){document.querySelectorAll("#nav button").forEach(x=>x.classList.toggle("on",x.dataset.v===v));["today","board","map","dad","agent"].forEach(k=>$("#v-"+k).classList.toggle("hide",k!==v));if(location.hash.slice(1)!==v)history.replaceState(null,"","#"+v);renderAll()}
+document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>showView(b.dataset.v));
+function renderAll(){renderXp();renderToday();renderBoard();renderMap();renderDad();renderEvents()}
+const startView=(location.hash||"#today").slice(1);["today","board","map","dad","agent"].includes(startView)?showView(startView):showView("today");
 </script>
 </body>
 </html>

@@ -1,14 +1,15 @@
 ---
 type: plan
-status: draft-pending-approval
+status: approved-in-chat
 date: 2026-11-24
+updated: 2026-11-24
 quadrant: "[[systems-self-command]]"
 author: DaD (Headmaster Grok Bot, at Thomas's request)
 proposal: "[[20261124-learning-dashboard]]"
 ---
 # HQ Dashboard: web-app research, recommendation, build plan
 
-Companion to [[dashboard-product-spec]] (what and why) and [[dashboard-agent-contract]] (the API agents use). **Nothing here is installed or built yet.** Installs need Dad's sign-off (Doc 08 Toolshed rule).
+Companion to [[dashboard-product-spec]] (what and why), [[dashboard-agent-contract]] (the API agents use), and [[co-build-guide]] (how Shiloh builds it). **Nothing is installed or built yet** (Node.js LTS is already on the PC; the app is not). Formal `decision:` on [[20261124-learning-dashboard]] is still pending Dad in Obsidian. Chat decisions of 2026-11-24 are in §10 below and in the spec §12.
 
 ## 1. Requirements that drive the architecture
 1. **The vault stays the source of truth.** Markdown + YAML in `Shiloh HQ`, synced by Obsidian Git ([[DECISIONS]] 2026-11-22: vault-first).
@@ -59,7 +60,7 @@ flowchart TB
 | Layer | Choice | Why |
 |---|---|---|
 | Runtime | Node.js 22 LTS + TypeScript | One language for UI, core, CLI and MCP. Agents and Cursor know it well. Shiloh can learn it ([[playbook-prototype-cursor]]). |
-| UI | Vite + React 19 + TypeScript, CSS variables for the Quiet Charter tokens ([[17-command-center-ui-build-brief\|Doc 17]]), Lora + Public Sans (self-hosted fonts, no CDN) | Doc 17 suggested Next.js for a hosted app. A local app doesn't need SSR, and Vite is lighter. Same design tokens. |
+| UI | Vite + React 19 + TypeScript, CSS variables for the Quiet Charter tokens ([[17-command-center-ui-build-brief\|Doc 17]]), Lora + Public Sans (self-hosted fonts, no CDN). My Day adds a path, XP bar, mascot, and a short CSS celebration. Headmaster is a denser board layout. | Doc 17 suggested Next.js for a hosted app. A local app doesn't need SSR, and Vite is lighter. Same tokens, two faces (spec §4.1 and §5.7). |
 | Local server | Hono (or Express) on `127.0.0.1:4317`, SSE for live updates | Small, typed, binds to loopback |
 | Markdown/YAML | `gray-matter` + `yaml` (frontmatter), `remark` / mdast for section and table edits, exact-line patching for checkboxes | Minimal diffs, formatting kept |
 | Validation | `zod` schemas shared by API, MCP and CLI | One contract |
@@ -74,6 +75,7 @@ flowchart TB
 ```ts
 interface StorageAdapter {
   learner(): Promise<LearnerConfig>;                 // .hq/learner.json
+  progress(): Promise<ProgressSnapshot>;             // status-tracker, khan, readiness, plus XP/badges from .hq/progress.json
   listTasks(q: TaskQuery): Promise<Task[]>;          // 45-tasks/*.md
   getTask(id: string): Promise<Task & { version: string }>;
   writeTask(t: TaskPatch, ifMatch: string): Promise<Task>;
@@ -83,7 +85,6 @@ interface StorageAdapter {
   appendFocusRow(date: string, row: FocusRow): Promise<void>;
   createEvidence(e: EvidenceDraft): Promise<EvidenceRef>;   // always verified: pending
   appendVerification(v: Verification, parent: ParentSession): Promise<void>; // parent only
-  progress(): Promise<ProgressSnapshot>;             // status-tracker, khan-dashboard, hs-readiness
   appendEvent(e: HqEvent): Promise<void>;
   eventsSince(cursor: string): AsyncIterable<HqEvent>;
 }
@@ -99,30 +100,35 @@ interface StorageAdapter {
 | Mission tick | Find the line under `## This week's missions` in [[NOW]] whose text matches. Replace only `- [ ]` with `- [x]`. If the line has changed since it was read, fail. |
 | Daily note | Path `40-journal/daily/YYYY-MM-DD.md`. Create it from [[daily]] if missing (fill `{{date}}`). Append after `**Did:**` etc. Never delete text. Focus rows go under `## Focused-time log` (proposed in [[20261124-five-hour-schedule]]) or a `## Focus sessions` table if that proposal isn't approved. |
 | Evidence | Path `50-evidence/YYYY-Qn/YYYY-MM-DD-<slug>.md` from [[evidence]]. `verified: pending`, empty `verified_by` and `verified_on`, `how_verified` suggested. Unique filename (vault lint rule). |
-| Task | `45-tasks/<id>.md`, frontmatter as in [[dashboard-product-spec]] §7. Body: `## Log` with dated lines (timer minutes, stuck notes). |
+| Project | `45-tasks/projects/<id>.md` (Skill-up 1). Vault workstreams are linked, not copied. |
+| Task | `45-tasks/<id>.md`, frontmatter as in [[dashboard-product-spec]] §7 (includes `project`, `parent`, `depends_on`). Body: `## Log` with dated lines (timer minutes, stuck notes). |
 | Verification | Append one row to the [[verifications]] table: Date · link to evidence · Verdict · How checked · By. **Parent session only**, plus the matching evidence frontmatter set *in the same parent action*. |
 | Proposals and `decision` | The app may create a proposal from `proposals/TEMPLATE.md`. It never writes `decision:`. |
 | Read-only for the app | `00-charter/`, `10-system/`, `AGENTS.md`, [[hs-readiness]] gates, [[status-tracker]] (owned by the status-update skill), `25-khan/` (owned by khan-sync), `private/`, `raw/` |
 | Events | `.hq/events/YYYY-MM.jsonl`, append-only, one JSON object per line (schema in [[dashboard-agent-contract]]) |
-| Learner config | `.hq/learner.json`: `{ "id":"shiloh", "display":"Shiloh", "ageBand":"13-15", "quadrants":[...], "weeklyTargets":{"khanMin":215,"focusMinPerDay":300}, "schoolDay":{"start":"09:00","end":"16:35"}, "timezone":"America/Chicago" }` |
+| Learner config | `.hq/learner.json`: `{ "id":"shiloh", "display":"Shiloh", "ageBand":"13-15", "quadrants":[...], "weeklyTargets":{"khanMin":215,"focusMinPerDay":300,"focusMinPerDayStatus":"proposed"}, "schoolDay":{"start":"09:00","end":"16:35"}, "timezone":"America/Chicago" }` |
+| XP / badges | `.hq/progress.json` (totals, level, weekly ring, grace used, badges). Default folder (§10). Rebuildable from events + [[verifications]]. |
 
 Vault lint (`scripts/lint_vault.py`) must keep passing: unique note names, no broken wikilinks, and proposal format.
 
 ## 7. Phased build plan
 | Phase | Time | Ships | Done when |
 |---|---|---|---|
-| **0. Decide** | This week (Fri 2026-11-27 review) | Dad decides [[20261124-learning-dashboard]] and the 6 questions in [[dashboard-product-spec]] §12. Node LTS installed if approved. | `decision: approved` |
-| **1. MVP: "Pick · Start · Done"** | 1 weekend (~12 h) | `hq-core` + VaultFsAdapter + guard + events. Today screen (check-in, 3 suggestions, drawer), focus timer, Done/Partly/Stuck, pending-evidence capture, NOW ticks, daily-note notes. Plan lanes and due dates. Read-only Map. Dad view (Needs-you queue, parent-PIN verify). `hq` CLI (`today`, `tasks`, `start`, `stop`, `done`, `note`, `progress`, `suggest`). MCP stdio with the same tools. Guard tests. | Shiloh runs a full morning in it. The guard tests pass. Vault lint passes. |
+| **0. Setup** | Session 0, as early as Wed 2026-11-25 | Confirm Node (already on the PC). Install VS Code with Dad. Create `C:\Users\shilo\Projects\hq-dashboard` (outside the vault). | `node -v` works in the project folder; a blank repo exists. See [[co-build-guide]]. |
+| **1. MVP: "Pick · Start · Done"** | Sessions 1–9 in [[co-build-guide]] (~12 h, 25–50 min each) | `hq-core` + VaultFsAdapter + guard + events + XP. **My Day** (quests, mascot, path, weekly ring, XP). Focus timer, check-off, celebration, notes. **Shiloh's Board:** always-on kanban (create task, status, priority, due), plus the Skill-up 1 lesson (projects + subitems) if time. Map of paths. **Headmaster** oversight board, PIN-only verify (Certified + bonus XP). `hq` CLI and MCP. Guard tests. | Shiloh runs a morning from My Day and moves a card on his board. Guard tests pass. Vault lint passes. |
+| **1b. v1 Skill-ups 2–6** | Sessions 10–14 in [[co-build-guide]] | Table view, calendar + Monday/Friday planning ritual, timeline and dependencies, simple automations, Shiloh's dashboard, Brilliant-style PM lessons that unlock each view. | He has run one Monday plan and one Friday self-review on his own board. |
 | **2. v1: Agent loop + rhythm** | Weeks 2–3 | MCP Streamable HTTP on loopback. `events_since` and subscriptions. DaD's 7 PM check-in uses `hq progress --json`. COLT stuck handoff. Daily-note draft at wrap-up. Friday review wizard. Khan feed from khan-sync output. Shiloh's Interest editing on the board. | One Friday review is run end-to-end in the app. |
 | **3. v1.5: Anywhere-at-home + clone** | Weeks 4–6 | PWA on a tablet over home Wi-Fi (pairing code, LAN only). `hq clone-learner` wizard: copy the HQ template, strip personal data, write `learner.json`. Age-band copy and timer defaults for younger learners. Dad's multi-learner switcher. | The brother's vault boots with zero Shiloh data. |
 | **4. v2: Package + insights** | Later | Tauri installer. Weekly pattern insights for Dad. Optional Obsidian side-panel view (thin client of the core API). Static read-only export for Dad's phone (option E). | One-click install on a second PC |
 | **5. Product (Venture)** | Only if [[20261124-venture-shiloh-hq-product]] is approved | Sanitized `homeschool-os-starter` and an optional hosted adapter for other families | Per [[shiloh-hq-venture-roadmap]] Phase 3 |
 
-**Who builds:** recommended as Shiloh's Venture Phase 3 project with Cursor and COLT, with Dad as code and privacy reviewer. The weekend MVP can be scaffolded by an agent first so Shiloh starts from something that works.
+**Who builds:** **Shiloh co-builds it** as his Venture project (Dad, chat with DaD, 2026-11-24), with COLT or VS Code + an AI helper, and Dad as code and privacy reviewer. Follow [[co-build-guide]]. Do not have an agent silently scaffold the whole MVP — Session 0 is Shiloh's first win. Editors: VS Code (to install in Session 0; it was not on the PC on 2026-11-24). COLT in Grok Build can help, but the project folder stays outside the vault.
+
+**Project folder:** `C:\Users\shilo\Projects\hq-dashboard` (not `Documents\hq-app`). Outside the vault so Obsidian Git does not sync `node_modules`, and COLT's token rules stay clean.
 
 ### MVP repo layout (separate folder, not inside the vault)
 ```
-hq-app/                      (own git repo, e.g. Documents\hq-app)
+hq-dashboard/                (own git repo, C:\Users\shilo\Projects\hq-dashboard)
   packages/core/             services, guard, schemas (zod), events, suggest
   packages/adapter-vault/    VaultFsAdapter (gray-matter, remark, chokidar)
   packages/server/           Hono REST + SSE + /mcp on 127.0.0.1:4317
@@ -148,3 +154,15 @@ The app lives outside the vault, so Obsidian Git doesn't sync `node_modules`, an
 - **Browser file access:** `showDirectoryPicker()` is Chromium-only, with no Firefox or Safari/iOS support (caniuse, progressivewebapps.com, Sept 2026). That rules out a browser-only app for a future iPad.
 - **Obsidian Local REST API:** has `/vault/{path}` with JSON PATCH of frontmatter keys and a built-in `/mcp`, but no field-level permissions (github.com/coddingtonbear/obsidian-local-rest-api).
 - **MCP:** the TypeScript SDK v2 (`@modelcontextprotocol/server` 2.4, 2026-07-28 spec) offers `createMcpHandler`, Streamable HTTP, stdio, and loopback Host/Origin guards (ts.sdk.modelcontextprotocol.io/v2).
+
+## 10. Decisions (2026-11-24)
+
+Dad decided these **in chat with DaD**. The formal `decision:` field on [[20261124-learning-dashboard]] is still `pending` — only Dad sets it in Obsidian. Full table: [[dashboard-product-spec]] §12.
+
+**Decided:** build now (reopens the 2026-11-22 "waits for v2" deferral); Node.js LTS approved (and already present, `v24.18.1` Krypton); Shiloh co-builds it as his Venture project; verifying happens in the app behind Dad's PIN (human parent session only); My Day takes a Duolingo + Brilliant play layer; **Shiloh also gets his own Monday.com-style Board** (kanban first, then Skill-up unlocks for table, calendar, timeline, dependencies, automations, and his dashboard), with short PM lessons. Dad's view stays oversight and verify.
+
+**Defaults for the two still-open items:**
+- Use `45-tasks/` and `.hq/` when Session 2 starts (event log, tasks, XP, badges, learner config).
+- Always show the approved Khan **215 min/week** ring. Show the **300 min/day** bar labeled *proposed*, pending [[20261124-five-hour-schedule]].
+
+**Not yet done:** Dad setting the proposal `decision:` field; confirming those two defaults; sitting with Shiloh to install VS Code in Session 0.

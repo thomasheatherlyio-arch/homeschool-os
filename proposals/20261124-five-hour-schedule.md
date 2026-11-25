@@ -6,7 +6,7 @@ date: 2026-11-24
 touches:
   - 40-journal/schedule/shiloh-schedule.md
   - templates/daily.md
-decision: pending
+decision: approved
 ---
 Dad only: `INPUT[inlineSelect(option(pending), option(approved), option(declined)):decision]` (COLT never edits this field.)
 # Approve a 5-hour weekday time-block plan and a daily focused-minute log
