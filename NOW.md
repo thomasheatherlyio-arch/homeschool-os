@@ -1,6 +1,6 @@
 ---
 type: hot-cache
-updated: 2026-11-23
+updated: 2026-11-24
 ---
 # NOW — read this first (agents: this + AGENTS.md is the default load)
 
@@ -36,6 +36,7 @@ updated: 2026-11-23
 - Shiloh asked 2026-11-23 to start Khan ELA at 7th grade (skip 6th; use unit tests to test out of easy units). Confirm at Friday 2026-11-27 review. The approved proposal was not edited; see [[khan-priority-plan]].
 - [[20261122-readiness-examiner|Proposal: Readiness Examiner]] (short check-sits; 2-week schedule from 2026-11-30).
 - [[20261123-hoops-course|Proposal: The Hoops course]] (AAU tryout prep; how it counts toward Gym/PE).
+- [[20261124-five-hour-schedule|Proposal: 5-hour weekday schedule]] (at least 300 focused minutes Mon–Fri; daily time log).
 
 ## Next review
 Friday 2026-11-27 — weekly review with Dad.

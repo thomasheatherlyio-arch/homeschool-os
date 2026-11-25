@@ -58,3 +58,4 @@ type: log
 - 2026-11-23 — COLT — Drafted The Hoops course (`20-courses/hoops/`, status: draft-pending-approval), including the 10-week AAU prep plan, baseline test, training log, and [[hoops-training-log-template]].
 - 2026-11-23 — COLT — Added proposal [[20261123-hoops-course]] (decision left pending); linked from NOW.md Waiting on Dad.
 - 2026-11-23 — COLT — Updated [[index]], [[HOME]], [[body-discipline]], and the Knights seat map with [[hoops-course]] and [[basketball]]. No commit.
+- 2026-11-24 — COLT — Added proposal [[20261124-five-hour-schedule]] (decision left pending): draft Mon–Fri 5-hour focused-work schedule and daily time-log method. Did not overwrite [[shiloh-schedule]] (one-line pointer only). No calendar events. No commit.

@@ -9,6 +9,8 @@ quadrant: "[[systems-self-command]]"
 
 Standing template for days and weeks. **Status: draft.** Times are **PROPOSED — Shiloh + Dad adjust.** Shiloh asked that the school day start at **9:00 AM** (shifted from 8:00). Nothing here is logged time, and nothing here is a legal requirement.
 
+A 5-hour weekday revision is pending Dad's decision: [[20261124-five-hour-schedule]]. This note is unchanged until that proposal is approved.
+
 Texas does not mandate instructional hours or a number of school days ([[03-academic-tracker-tx-compliance|Doc 03]]). This template exists so the Monday / daily / Friday rhythm in [[04-student-dashboard|Doc 04]] has a clock, and so COLT can later mirror approved times onto a Google Calendar named **Homie School** (in Shiloh's Gmail).
 
 Khan sitting lengths follow [[khan-priority-plan]]: **ELA 4 × 25 min**, **science 3 × 25 min**, **math keep-warm 2 × 20 min** (215 min/week, 9 sessions). Dad approved those weekly minutes and dates on 2026-11-22 ([[20261122-khan-priority-plan]]). The **clock times** in this note are still draft until Shiloh and Dad approve them. If a week is too heavy, cut math keep-warm first, then one science block — not the ELA blocks — unless Dad says otherwise.
