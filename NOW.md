@@ -23,6 +23,7 @@ updated: 2026-11-24
 - [x] First Khan sync (tell COLT: "Khan sync") — done 2026-11-22; evidence pending Dad
 
 ## Last session (COLT writes)
+- 2026-11-24: Filed draft Venture Homeschool OS notes and playbooks. Proposal [[20261124-venture-shiloh-hq-product]] is waiting on Dad.
 - 2026-11-23: Seated the Hoops mentor ([[basketball]]) and drafted The Hoops course ([[hoops-course]], pending Dad) for AAU tryout prep. Proposal [[20261123-hoops-course]].
 - 2026-11-23: Shiloh asked to start Khan ELA at 7th grade, not 6th (skip 6th; test out of easy units). Living plan noted for Dad to confirm at Friday review. Approved proposal not edited.
 - 2026-11-22: Dad approved the Khan ELA + science plan. Added [[status-tracker]] and [[command-center]].
@@ -37,6 +38,7 @@ updated: 2026-11-24
 - [[20261122-readiness-examiner|Proposal: Readiness Examiner]] (short check-sits; 2-week schedule from 2026-11-30).
 - [[20261123-hoops-course|Proposal: The Hoops course]] (AAU tryout prep; how it counts toward Gym/PE).
 - [[20261124-five-hour-schedule|Proposal: 5-hour weekday schedule]] (at least 300 focused minutes Mon–Fri; daily time log).
+- [[20261124-venture-shiloh-hq-product|Proposal: Productize Shiloh HQ]] (Venture course project; persona, first sale, and parent-hosted Product Hunt; drafts only until you decide).
 
 ## Next review
 Friday 2026-11-27 — weekly review with Dad.

@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-11-23
+updated: 2026-11-24
 ---
 # Index — what's where (COLT keeps this current)
 
@@ -22,12 +22,12 @@ updated: 2026-11-23
 - [[17-command-center-ui-build-brief|17 Command Center UI brief]] (parked web app)
 
 ## Courses
-[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] · [[hoops-course|Hoops]] (draft) · [[shiloh-playbook|Venture playbook]]
+[[kitchen-course|Kitchen]] · [[gym-course|Gym]] · [[panel-course|Panel]] · [[forge-course|Forge]] · [[civ-course|Civ]] · [[hoops-course|Hoops]] (draft) · [[shiloh-playbook|Venture playbook]] · [[shiloh-hq-venture-dashboard|Homeschool OS venture]] (draft)
 
 ## Library & people
 - [[08-mind-mansion-living-library|08 Mind Mansion]]
 - **P1:** [[hs-readiness]] · [[verifications]] (Thomas only) · [[diagnostics]] · [[readiness-matrix]] (Examiner, draft) · [[khan-academy]] · [[khan-dashboard]] (`25-khan/`, incl. [[khan-constitution-101]] and other course notes) · [[khan-priority-plan]] · [[project-priority-board]] · [[status-tracker]] · [[command-center]] · `55-progress/reports/` (weekly parent reports)
-- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · [[20261122-obsidian-meta-bind]] · [[20261122-khan-priority-plan]] · [[20261122-readiness-examiner]] · [[20261123-hoops-course]] · lesson cards: `20-courses/<course>/cards/`
+- `proposals/`: changes waiting for Dad's decision · [[20261122-civ-course]] · [[20261122-khan-academy-connection]] · [[20261122-obsidian-meta-bind]] · [[20261122-khan-priority-plan]] · [[20261122-readiness-examiner]] · [[20261123-hoops-course]] · [[20261124-five-hour-schedule]] · [[20261124-venture-shiloh-hq-product]] · lesson cards: `20-courses/<course>/cards/`
 - [[HOME]] — Shiloh's home note; `HQ-map.canvas` is the visual board
 - Circle hubs (`05-circle/`): [[mind-mastery]] · [[body-discipline]] · [[venture-craft]] · [[spirit-character]] · [[systems-self-command]]
 - `maps/`: visual web pages (Shiloh map, system blueprint, [[command-center]]). See the folder's README.
